@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2c.locomotive.lexical.parser.LL
+namespace pl2c.technology.structural.loop_word.from_word
     {
-    class Left_left
+    class From_word
         {
         }
     }

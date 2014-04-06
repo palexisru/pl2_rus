@@ -1,5 +1,5 @@
 *************
-e1_hallo.pl2
+e1_empty.pl2
 
 Данный пример демонстрирует пустой файл программы, выполненной на PL2.
 Исходный код программы на pl2 начинается с новой строки.
@@ -29,10 +29,17 @@ e1_hallo.pl2
 - отступ на 4 пробела означает переход к более низкому уровню иерархии кода
 - продолжение сохраняет уровень первой строки контекста 
 
-meta source="pl2" name="example1"
-    program()    
-    {&
-    &}
+
+meta source="pl2" name="example_0_6"
+    namespace example
+    {@
+        class example
+        {*
+            static integer Main( String arguments[])    
+            {&
+            &}
+        *}
+    @}
 /meta
 
- *** e1_hallo.pl2 ***
+ *** e6_empty.pl2 ***

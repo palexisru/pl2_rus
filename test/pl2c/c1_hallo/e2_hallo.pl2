@@ -14,8 +14,8 @@ meta source="pl2" name="example2"
 
     program \ программа для запуска средствами операционной системы \
        (String arguments \параметры командной строки выполняемого файла\ [])
-    {
+    {&
         Console.write_line("Здравствуй, мир!");
-    }
+    &}
 /meta
  *** e2_hallo.pl2 ***

@@ -24,16 +24,16 @@ meta source="pl2" name="example5"
     using numbers;
     using user.OS.IO;
     namespace start
-    {
+    {@
         class Example5 \ пятый пример начального уровня \
-        {
+        {*
             String example_text := source["example_5_text"].text; // получаем строку исходников в переменную
 
             static void main \ основная функция исполнения третьего примера начального уровня \
                ( String aruments \ одномерный массив строк после имени исполняемого файла при запуске программы \
                            []
                )
-            {
+            {&
                 local numbers.Integer counter \ индексатор для перечисления параметров \;
                 local numbers.Integer parameters_count \ количество переданных параметров при вызове исполняемого файла \;
                 parameters_count := arguments.lenght();
@@ -47,9 +47,9 @@ meta source="pl2" name="example5"
 
                         Console.write_line(arguments[counter]);
                     }
-            }
-        }
-    }
+            &}
+        *}
+    @}
 
 /meta
 

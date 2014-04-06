@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-    namespace pl2c.locomotive.link.reflection.tree
+    namespace pl2c.locomotive.front.lexical.parser.sequence
     {
-        class Tree
+        class Sequence
         {
         }
     }

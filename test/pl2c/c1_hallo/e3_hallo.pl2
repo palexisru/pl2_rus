@@ -10,11 +10,11 @@ meta source="pl2" name="example2"
 
     program \ программа для запуска средствами операционной системы \
        (String arguments \параметры командной строки выполняемого файла\ [])
-    {
+    {&
         local String string_for_out \ строка для вывода \
            := "Здравствуй, мир!";
 
         Console.write_line(string_for_out);
-    }
+    &}
 /meta
  *** e3_hallo.pl2 ***
