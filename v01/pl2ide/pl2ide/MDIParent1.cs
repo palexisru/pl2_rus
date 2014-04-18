@@ -9,12 +9,11 @@ using System.Windows.Forms;
 
 namespace pl2ide
     {
- 
-    public partial class Form_PL2_IDE : Form
+    public partial class MDIParent1 : Form
         {
         private int childFormNumber = 0;
 
-        public Form_PL2_IDE()
+        public MDIParent1()
             {
             InitializeComponent();
             }
@@ -31,7 +30,7 @@ namespace pl2ide
             {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath( Environment.SpecialFolder.Personal );
-            openFileDialog.Filter = pl2ide.Common.file_dialog_extentions;
+            openFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             if (openFileDialog.ShowDialog( this ) == DialogResult.OK)
                 {
                 string FileName = openFileDialog.FileName;
@@ -42,7 +41,7 @@ namespace pl2ide
             {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath( Environment.SpecialFolder.Personal );
-            saveFileDialog.Filter = Common.file_dialog_extentions;
+            saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             if (saveFileDialog.ShowDialog( this ) == DialogResult.OK)
                 {
                 string FileName = saveFileDialog.FileName;

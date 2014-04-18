@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="common.cs" />
     <Compile Include="pl2_ide_main.cs">
       <SubType>Form</SubType>
     </Compile>
