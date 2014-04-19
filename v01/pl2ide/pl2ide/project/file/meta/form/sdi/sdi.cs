@@ -19,19 +19,32 @@ namespace pl2ide.project.file.meta.form.sdi
                 default_linked_object.prepare_data_grid(data_values);
                 form_data = default_linked_object;
             }
-        [Browsable( true ) , Description( "значения разных типов" ) , Category( "Data" )]
-        public Default inner_value
+        [Browsable( true ) , Description( "внутренние значения разных типов" ) , Category( "Data" )]
+        public Default default_values
             {
             get
                 {
-                   return default_linked_object;
+                     data_values.SelectedObject = default_linked_object;
+                     return default_linked_object;
+                }
+            }
+
+        [Browsable( true ) , Description( "название формы" ) , Category( "Data" )]
+        public string tytle
+            {
+            get
+                {
+                    return Text;
                 }
             set
                 {
-                data_values.SelectedObject = value;
+                    Text = value;
                 }
             }
-            public object form_data{
+
+        [Browsable( true ) , Description( "данные в форме" ) , Category( "Data" )]
+        public object form_data
+            {
                 get{
                     return data_values.SelectedObject;
                 }

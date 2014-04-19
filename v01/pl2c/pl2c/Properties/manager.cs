@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2c.locomotive.debug.value
+namespace pl2
     {
-    class Value
+    public class Manager
         {
         }
     }

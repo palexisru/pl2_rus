@@ -55,6 +55,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="project\file\meta\form\color\colors.cs" />
+    <Compile Include="project\file\meta\form\data.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="project\file\meta\form\mode\classic\default.cs">
       <SubType>Component</SubType>
     </Compile>

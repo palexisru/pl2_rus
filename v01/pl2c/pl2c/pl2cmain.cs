@@ -9,6 +9,9 @@ namespace pl2c
         {
         static void Main(string[] args)
             {
+            Console.WriteLine("комилятор");
+            Console.ReadKey();
             }
         }
     }
+    

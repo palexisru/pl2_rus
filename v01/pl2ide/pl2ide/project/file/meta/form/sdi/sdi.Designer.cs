@@ -90,6 +90,7 @@
             this.background_worker_action = new System.ComponentModel.BackgroundWorker();
             this.split_container_panel = new System.Windows.Forms.SplitContainer();
             this.data_values = new System.Windows.Forms.PropertyGrid();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -336,6 +337,12 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.tool_usage,
+            this.tool_prepare,
+            this.tool_action,
+            this.tool_check,
+            this.toolStripSeparator10,
             this.создатьToolStripButton,
             this.открытьToolStripButton,
             this.сохранитьToolStripButton,
@@ -345,12 +352,7 @@
             this.копироватьToolStripButton,
             this.вставкаToolStripButton,
             this.toolStripSeparator7,
-            this.справкаToolStripButton,
-            this.toolStripSeparator10,
-            this.tool_usage,
-            this.tool_prepare,
-            this.tool_action,
-            this.tool_check});
+            this.справкаToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(644, 25);
@@ -601,6 +603,15 @@
             this.data_values.TabIndex = 0;
             this.data_values.Click += new System.EventHandler(this.data_values_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "tool_rainbow";
+            // 
             // SDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,5 +701,6 @@
         private System.Windows.Forms.ToolStripButton tool_prepare;
         private System.Windows.Forms.ToolStripButton tool_action;
         private System.Windows.Forms.ToolStripButton tool_check;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
         }
     }

@@ -6,7 +6,7 @@ using System.Text;
 
     namespace pl2
     {
-        class test
+        class Test
         {
             static void test()
             {
