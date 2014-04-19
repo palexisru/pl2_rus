@@ -1,0 +1,1040 @@
+<html charset="win1251">
+<head>
+<meta http-equiv="Content-Type";content="text/html"; charset="win1251"/>
+<title>PL/2 Радуга v1.00 руководство по языку</title> 
+</head>
+<body>
+<p align="right">
+(c) Алексей Подоров, 2014 г.</p>
+<h1 align="center">Учебный язык программирования PL/2 Радуга</h1>
+<h3 align="center">Версия 1.00. Руководство по языку</h3>
+<p>
+Оглавление
+<br>
+<ol>
+<li>Общие сведения</li>
+<li>Структура проекта</li>
+<ol>
+<li>Файл с исходным текстом</li>
+<li>Файл проекта</li>
+<li>Файлы игрового пространства</li>
+</ol>
+<li>Структура файла</li>
+<ol>
+<li>Разделы програмного файла</li>
+<li>Виды разделов</li>
+</ol>
+</ol>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Для 
+
+обучения программированию предложены сотни языков, 
+
+включая управление графическими элементами. По этому 
+
+предложение нового языка для обучения требует 
+
+дополнительных обоснований.<br>
+<br>
+Попробую описать 
+
+преимущества предлагаемого языка обучения 
+
+программированию (рабочее название PL/2) и 
+
+программирования игр (рабочее название PL/2 script), и 
+
+предлагаю найти недостатки в подходе.<br>
+<a 
+
+name="habracut"></a><br>
+<br>
+Основными парадигмами 
+
+предполагаются следующие:<br>
+Ассемблерный код, 
+
+позволяющий управлять процессором<br>
+Логическое 
+
+программирование, представленное языками Prolog, 
+
+SQL<br>
+Функциональное программирование<br>
+Императивное программирование, описываемое 
+
+алгоритмами<br>
+Объектное программирование, 
+
+заключающееся в передаче и обработке сигналов<br>
+<br>
+В 
+
+настоящее время эти методики объединяются в расширениях 
+
+существующих языков программирования. Предлагается 
+
+подход для объединения парадигм в едином синтаксисе, 
+
+заранее разрешающем конфликты между различными 
+
+подходами, что уменьшит затраты времени на изучение 
+
+различных синтаксисов.<br>
+<br>
+Итак, ключевые элементы 
+
+учебного языка программирования.<br>
+<br>
+<h3>Исходный 
+
+текст</h3><br>
+<br>
+Файл с исходным текстом состоит из 
+
+произвольного текста (комментарии, описание алгоритма), в 
+
+который могут включаться [именованные] фрагменты на 
+
+различных языках программирования — PL/2, sql, html, текст, 
+
+PL/2 script.<br>
+<br>
+начало вставки кода обозначается 
+
+ключевым словом <b>meta</b> (мета) в первой позиции 
+
+строки<br>
+<br>
+окончание вставки обозначается 
+
+последовательность <b>/meta</b> в первой позиции 
+
+строки<br>
+<br>
+Синтаксис PL/2 включает единообразные 
+
+требования к отступам, в частности, текст программы 
+
+смещен не менее чем на 4 позиции от начала строки.<br>
+<br>
+<h3>Структура текста программы</h3><br>
+<br>
+Размер 
+
+сдвига между уровнями вложенности составляет 4 пробела. 
+
+Продолжение оператора на следующей строке смещается не 
+
+менее, чем на 3 пробела относительно уровня оператора<br>
+<br>
+Основной уровень программы смещен на 4 пробела 
+
+относительно символа разметки исходного файла 
+
+<b>meta</b>, соответственно, ни один символ программы не 
+
+может иметь отступ менее 4 пробелов<br>
+<br>
+<h3>Синтаксис</h3><br>
+<br>
+Для разных видов блоков 
+
+предполагаются разные виды скобок:<br>
+<br>
+круглые скобки 
+
+(...) используются для описания и передачи параметров при 
+
+вызове методов<br>
+<br>
+квадратные скобки [...] используются 
+
+для описания размерности массивов и указания индекса при 
+
+доступе к элементу массива.<br>
+<br>
+фигурные скобки {...} 
+
+используются для указания различных элементов структуры 
+
+программы. Для локализации ошибок фигурные скобки 
+
+снабжаются дополнительными символами.<br>
+<br>
+{-… -} — 
+
+аналог круглых скобок — используется при описании тела 
+
+реляционного класса<br>
+<br>
+{#… #} — используется при 
+
+описании тела функционального блока<br>
+<br>
+{$… $} — 
+
+внешние обрамляющие скобки при описании константы 
+
+структурного класса<br>
+<br>
+{*… *} — описание тела класса 
+
+или интерфейса<br>
+<br>
+{&amp;… &amp;} — описание тела 
+
+метода<br>
+<br>
+{@… @} — тело пространства имен<br>
+<br>
+{|… 
+
+|} — параллельно выполняемые блоки<br>
+<br>
+{%… %} — 
+
+управляемый блок<br>
+<br>
+{=… =} — класс 
+
+ответственности<br>
+<br>
+{… } — внутренний блок в теле 
+
+метода<br>
+<br>
+<h3>Операторы</h3><br>
+<br>
+<pre><code 
+
+class="cs">== сравнение на равенство
+=/= сравнение на 
+
+неравенство
+
+:= присваивание значения переменной
+++ 
+
+преффиксный инкримент
+-- преффиксный декремент
+
++ 
+
+сложение
+- вычитание
+* умножение
+/ деление
+-/- рациональное 
+
+деление (выделяется только для наглядности формул, в т.ч. в 
+
+IDE)
+
+(? boolean ? value_true :: value_false ?) - тернарный 
+
+оператор
+</code></pre><br>
+<br>
+<h3>Императивное 
+
+программирование</h3><br>
+<br>
+Предлагается следующий 
+
+синтаксис для структурного программирования:<br>
+<br>
+Операторы, заключенные между скобками {&amp; и &amp;}, 
+
+выполняются последовательно в порядке, указанном в тексте 
+
+программы<br>
+<br>
+Для изменения порядка выполнения 
+
+используются операторы цикла и ветвления<br>
+<br>
+выполнение при исполнении условия<br>
+<br>
+<pre><code 
+
+class="cs"><span class="keyword">if</span> (условие){
+    ...
+}
+</code></pre><br>
+<br>
+выполнение блока при исполнении 
+
+первого из условий и блок else при не выполнении ни одного 
+
+из условий<br>
+<br>
+<pre><code class="cs">decision{
+    <span 
+
+class="keyword">if</span> (&lt;условие<span 
+
+class="number">1</span>&gt;)
+       ...
+    <span 
+
+class="keyword">if</span> (&lt;условие<span 
+
+class="number">2</span>&gt;)
+       ...
+    <span 
+
+class="keyword">else</span>
+       ...
+}
+</code></pre><br>
+<br>
+переключатель по численному значению с указанием 
+
+константы или члена перечисления<br>
+<br>
+<pre><code 
+
+class="cs"><span class="keyword">switch</span> 
+
+(&lt;выражение&gt;){
+    <span class="keyword">case</span> 
+
+&lt;значение<span class="number">1</span>&gt;:
+        ...
+    <span 
+
+class="keyword">case</span> &lt;значение<span 
+
+class="number">2</span>&gt;:
+        ...
+    <span 
+
+class="keyword">else</span>
+    ...
+}
+</code></pre><br>
+<br>
+В 
+
+выражениях можно также использовать оператор тернарного 
+
+выбора <br>
+<br>
+Оператор цикла<br>
+<pre><code 
+
+class="cs">loop [<span class="keyword">explicit</span>] 
+
+[метка]
+{
+    <span class="keyword">for</span> &lt;[тип] 
+
+переменная [ := инициализатор]&gt;;
+    <span 
+
+class="keyword">from</span> &lt;контейнер&gt;;
+    <span 
+
+class="keyword">while</span> &lt;условие, при котором цикл 
+
+продолжает итерации&gt;; 
+    next &lt;оператор итерации&gt;;
+    
+
+<span class="keyword">where</span> &lt;условие выполнения 
+
+тела цикла&gt;
+    ...
+    <span class="keyword">continue</span>;
+    ...
+ 
+
+   <span class="keyword">break</span> [метка блока];
+    ...
+}
+</code></pre><br>
+Здесь:<br>
+loop — оператор начала 
+
+цикла<br>
+explicit — цикл исполняется хотя бы один раз, 
+
+проверка условия выхода из цикла перед первым проходом не 
+
+выполняется<br>
+for — список переменных цикла и их 
+
+инициализация<br>
+while — условие, при котором цикл 
+
+продолжает итерации<br>
+next — команды, выполняемые 
+
+после итерации<br>
+from — контейнер, из которого 
+
+выбираются элементы при проходе по циклу<br>
+where — 
+
+условие для выполнения тела цикла<br>
+continue — оператор 
+
+досрочного перехода к следующей итерации<br>
+break — 
+
+оператор досрочного выхода из текущего или указанного 
+
+цикла<br>
+<br>
+<h3>Обработка ошибок</h3><br>
+<br>
+управление транзакциями и участками с возможностью 
+
+отказа<br>
+<br>
+<pre><code class="cs">transaction{
+    finalize
+    {
+    
+
+}
+    <span class="keyword">catch</span>
+    {
+    }
+    {
+        <span 
+
+class="keyword">throw</span> <span class="comment">//  
+
+выполнить catch и finalize</span>
+        revoke <span 
+
+class="comment">// отменить все изменения состояния 
+
+программы, очистить очередь исходящих сигналов и 
+
+выполнить код finalize</span>
+    }
+}
+</code></pre><br>
+<br>
+<h3>Объектно-ориентированное 
+
+программирование</h3><br>
+<br>
+<b>new </b> — создание 
+
+нового объекта <br>
+<b>drop</b> — удаление объекта <br>
+<br>
+работа с коллекциями<br>
+<br>
+select <b>::=</b> — 
+
+получение информации об именованных объектах 
+
+коллекции <br>
+insert <b>+=</b> — включение нового объекта 
+
+в коллекцию <br>
+delete <b>-=</b> — удаление объекта из 
+
+коллекции <br>
+update — множественные обновления в 
+
+коллекции<br>
+<br>
+управление правами действий объекта 
+
+над объектами указанного класса или его 
+
+свойствами/методами<br>
+<br>
+grant <b>+=</b> — назначить 
+
+разрешающие права объекта на класс или свойство<br>
+deny 
+
+<b>+=</b> — назначить запрещающие права объекту на класс 
+
+или свойство<br>
+revoke — удалить права объекта на 
+
+класс<br>
+<br>
+<h3>Виды классов</h3><br>
+<br>
+Классы 
+
+делятся на следующие типы:<br>
+<br>
+<ul>
+<li><b>domain 
+
+class</b> — элементарный класс среды исполнения</li>
+<li><b>relation class</b> — связь между указанными 
+
+объектами (аналогично предложениям Prolog, списку 
+
+параметров функций), методы и свойства отсутствуют, 
+
+доступ происходит только к открытым членам. По 
+
+возможностям аналогично набору, возвращаемому из 
+
+реляционной базы данных</li>
+<li><b>structure class</b> — 
+
+структура с открытыми элементами. Для доступа к элементу 
+
+текущего объекта используется слово this. Может содержать 
+
+методы для обработки.</li>
+<li><b>system class</b> — система, 
+
+которая может содержать закрытые и защищенные 
+
+наследуемые элементы.</li>
+<li><b>process class</b> — 
+
+процесс, которому можно передать инициализирующие 
+
+значения и получить результирующие значения. 
+
+Соответствует службе. Любой метод получает не только 
+
+указатель на себя (<b>this</b>), но и указатель на вызвавший 
+
+класс или объект (<b>sender</b>). Это позволяет проверить 
+
+авторизацию объекта, осуществляющего доступ к методу. 
+
+Содержит стандартные методы.</li>
+</ul><br>
+<br>
+<h3>Не 
+
+императивное программирование</h3><br>
+<br>
+операторы 
+
+работы с лямбда-выражениями и списками<br>
+<br>
+<ul>
+<li><b>::=</b> — определение раскрытия выражения</li>
+<li><b>|&gt;</b> — конвейер для всех элементов из левой 
+
+коллекции, задаваемый правым выражением</li>
+</ul><br>
+<br>
+кванторы существования и всеобщности на 
+
+упорядоченных списках<br>
+<br>
+<ul>
+<li><b>&amp;&gt;</b> — 
+
+коллекция из всех элементов из левой коллекции, 
+
+удовлетворяющих правому выражению</li>
+<li><b>!&gt;</b> — 
+
+конвейер для всех элементов из левой коллекции, не 
+
+удовлетворяющих заданному правому выражению</li>
+<li><b>%&gt;</b> — коллекция из первого элемента из левой 
+
+коллекции, удовлетворяющего правому выражению 
+
+(арифметически — остаток от деления)</li>
+<li><b>$&gt;</b> 
+
+— коллекция из последнего элемента из левого списка, 
+
+удовлетворяющего заданному правому выражению </li>
+<li><b>~&gt;</b> — все элементы списка, кроме первого, 
+
+удовлетворяющие правому условию</li>
+</ul><br>
+например, 
+
+<br>
+head ::= <b>%&gt;</b> (\true),<br>
+tail ::= <b>~&gt;</b> 
+
+(\true)<br>
+<br>
+<h3>Ассемблер</h3><br>
+<br>
+Используется 
+
+класс процессора, аргументами методов которого являются 
+
+аргументы ассемблерных команд, а свойствами — регистры 
+
+процессорного ядра.<br>
+Такой подход позволяет 
+
+использовать наследование, как переход к новому поколению 
+
+линейки процессоров, а также использовать полные имена 
+
+команд вместо коротких мнемоник и возможность 
+
+равноправного описания в системах помощи.<br>
+<br>
+<h3>Hallo, world</h3><br>
+<br>
+<pre><code 
+
+class="cs">hallo.pl2
+При использовании program код 
+
+помещается в метод <span 
+
+class="keyword">default</span>.Default.Main()
+
+meta 
+
+source=<span class="string">"pl2"</span> name=<span 
+
+class="string">"example2"</span>
+    <span 
+
+class="keyword">using</span> user.OS.IO; <span 
+
+class="comment">// using OS Console interface</span>
+
+    program 
+
+(String arguments[] \execution time command line parameters\ )
+  
+
+  {&amp;
+        Console.write_line(<span class="string">"Hallo, 
+
+world!"</span>);
+    &amp;}
+/meta
+ 
+*** hallo.pl2 ***
+</code></pre><br>
+<br>
+<h3>PL/2 script</h3><br>
+<br>
+Язык 
+
+PL/2 script предоставляет возможность описания сценариев и 
+
+расширения классов во время описания переменной для 
+
+программирования игр.<br>
+<br>
+Вместо функциональной 
+
+переменной предлагается использовать строку, которая (как в 
+
+Excel) начинается со знака равенства.<br>
+<br>
+При этом 
+
+описание классов и объектов удобно хранить в XML, а код 
+
+использовать для активной обработки.<br>
+<br>
+Описание 
+
+класса:<br>
+<pre><code class="xml"><span class="pi">&lt;?xml 
+
+version="1.0" encoding="windows-1251"?&gt;</span>
+<span 
+
+class="tag">&lt;<span class="title">pl2script</span>&gt;</span>
+    
+
+<span class="tag">&lt;<span class="title">type</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"type.class.Scene"</span> <span 
+
+class="attribute">save</span>=<span 
+
+class="value">"true"</span>&gt;</span>
+        <span 
+
+class="tag">&lt;<span class="title">help</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"class.Scene.help"</span>&gt;</span>pl2script/ga
+
+me/scene.htm<span class="tag">&lt;/<span 
+
+class="title">help</span>&gt;</span>
+        <span 
+
+class="tag">&lt;<span class="title">system</span>&gt;</span>
+         
+
+   <span class="tag">&lt;<span class="title">class</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"class.Scene"</span> <span 
+
+class="attribute">domain</span>=<span 
+
+class="value">"type"</span> <span 
+
+class="attribute">save</span>=<span 
+
+class="value">"true"</span>&gt;</span>
+                <span 
+
+class="tag">&lt;<span class="title">name</span>&gt;</span>
+             
+
+       <span class="tag">&lt;<span 
+
+class="title">ascii</span>&gt;</span>Scene<span 
+
+class="tag">&lt;/<span class="title">ascii</span>&gt;</span>
+             
+
+       <span class="tag">&lt;<span 
+
+class="title">local</span>&gt;</span>Сцена<span 
+
+class="tag">&lt;/<span class="title">local</span>&gt;</span>
+             
+
+   <span class="tag">&lt;/<span 
+
+class="title">name</span>&gt;</span>
+                <span 
+
+class="tag">&lt;<span class="title">tip</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"class.Scene.tip"</span>&gt;</span>
+                    <span 
+
+class="tag">&lt;<span class="title">ascii</span>&gt;</span>Game 
+
+class as a main class for a game<span class="tag">&lt;/<span 
+
+class="title">ascii</span>&gt;</span>
+                    <span 
+
+class="tag">&lt;<span 
+
+class="title">local</span>&gt;</span>Класс для описания 
+
+контекста игры<span class="tag">&lt;/<span 
+
+class="title">local</span>&gt;</span>
+                <span 
+
+class="tag">&lt;/<span class="title">tip</span>&gt;</span>
+            
+
+<span class="tag">&lt;/<span 
+
+class="title">class</span>&gt;</span>
+            <span 
+
+class="tag">&lt;<span class="title">property</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"class.Scene..."</span> <span 
+
+class="attribute">domain</span>=<span 
+
+class="value">"string"</span> <span 
+
+class="attribute">save</span>=<span 
+
+class="value">"true"</span>&gt;</span>
+                <span 
+
+class="tag">&lt;<span class="title">name</span>&gt;</span>
+             
+
+       <span class="tag">&lt;<span 
+
+class="title">ascii</span>&gt;</span>prop ...<span 
+
+class="tag">&lt;/<span class="title">ascii</span>&gt;</span>
+             
+
+       <span class="tag">&lt;<span 
+
+class="title">local</span>&gt;</span>prop ...<span 
+
+class="tag">&lt;/<span class="title">local</span>&gt;</span>
+             
+
+   <span class="tag">&lt;/<span 
+
+class="title">name</span>&gt;</span>
+                <span 
+
+class="tag">&lt;<span class="title">tip</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"class.Scene..tip"</span>&gt;</span>
+                    <span 
+
+class="tag">&lt;<span class="title">ascii</span>&gt;</span>tip 
+
+...<span class="tag">&lt;/<span 
+
+class="title">ascii</span>&gt;</span>
+                    <span 
+
+class="tag">&lt;<span 
+
+class="title">local</span>&gt;</span>Сообщение при ...<span 
+
+class="tag">&lt;/<span class="title">local</span>&gt;</span>
+             
+
+   <span class="tag">&lt;/<span 
+
+class="title">tip</span>&gt;</span>
+            <span 
+
+class="tag">&lt;/<span class="title">property</span>&gt;</span>
+   
+
+     <span class="tag">&lt;/<span 
+
+class="title">system</span>&gt;</span>
+    <span 
+
+class="tag">&lt;/<span class="title">type</span>&gt;</span>
+<span class="tag">&lt;/<span 
+
+class="title">pl2script</span>&gt;</span>
+</code></pre><br>
+<br>
+Описание объекта:<br>
+<pre><code class="xml"><span 
+
+class="pi">&lt;?xml version="1.0" encoding="windows-1251"?
+
+&gt;</span>
+<span class="tag">&lt;<span 
+
+class="title">pl2script</span>&gt;</span>
+    <span 
+
+class="tag">&lt;<span class="title">scene</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game."</span>&gt;</span>
+        <span 
+
+class="tag">&lt;<span 
+
+class="title">name</span>&gt;</span>Ноосфера<span 
+
+class="tag">&lt;/<span class="title">name</span>&gt;</span>
+        
+
+<span class="tag">&lt;<span 
+
+class="title">description</span>&gt;</span>Большой мир<span 
+
+class="tag">&lt;/<span 
+
+class="title">description</span>&gt;</span>
+        <span 
+
+class="tag">&lt;<span 
+
+class="title">message</span>&gt;</span>Вы попали в большой 
+
+мир<span class="tag">&lt;/<span 
+
+class="title">message</span>&gt;</span>
+        <span 
+
+class="tag">&lt;<span class="title">way</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game.universe"</span> <span 
+
+class="attribute">path</span>=<span 
+
+class="value">"Universe/index"</span> <span 
+
+class="attribute">enabled</span>=<span 
+
+class="value">"true"</span>&gt;</span>Вселенная<span 
+
+class="tag">&lt;/<span class="title">way</span>&gt;</span>
+        
+
+<span class="tag">&lt;<span class="title">way</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game.solar"</span> <span 
+
+class="attribute">path</span>=<span 
+
+class="value">"Solar/index"</span> <span 
+
+class="attribute">enabled</span>=<span 
+
+class="value">"true"</span>&gt;</span>Солнечная 
+
+система<span class="tag">&lt;/<span 
+
+class="title">way</span>&gt;</span>
+        <span 
+
+class="tag">&lt;<span class="title">way</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game.earth"</span> <span 
+
+class="attribute">path</span>=<span 
+
+class="value">"Earth/index"</span> <span 
+
+class="attribute">enabled</span>=<span 
+
+class="value">"true"</span>&gt;</span>Земля<span 
+
+class="tag">&lt;/<span class="title">way</span>&gt;</span>
+        
+
+<span class="tag">&lt;<span class="title">way</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game.country"</span> <span 
+
+class="attribute">path</span>=<span 
+
+class="value">"country/index"</span> <span 
+
+class="attribute">enabled</span>=<span 
+
+class="value">"true"</span>&gt;</span>По стране<span 
+
+class="tag">&lt;/<span class="title">way</span>&gt;</span>
+        
+
+<span class="tag">&lt;<span class="title">way</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game.body"</span> <span 
+
+class="attribute">path</span>=<span 
+
+class="value">"body/index"</span> <span 
+
+class="attribute">enabled</span>=<span 
+
+class="value">"true"</span>&gt;</span>В себя<span 
+
+class="tag">&lt;/<span class="title">way</span>&gt;</span>
+        
+
+<span class="tag">&lt;<span class="title">way</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game.school"</span> <span 
+
+class="attribute">path</span>=<span 
+
+class="value">"school/index"</span> <span 
+
+class="attribute">enabled</span>=<span 
+
+class="value">"true"</span>&gt;</span>В школу<span 
+
+class="tag">&lt;/<span class="title">way</span>&gt;</span>
+        
+
+<span class="tag">&lt;<span class="title">way</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game.plant"</span> <span 
+
+class="attribute">path</span>=<span 
+
+class="value">"plant/index"</span> <span 
+
+class="attribute">enabled</span>=<span 
+
+class="value">"true"</span>&gt;</span>На завод<span 
+
+class="tag">&lt;/<span class="title">way</span>&gt;</span>
+        
+
+<span class="tag">&lt;<span class="title">way</span> <span 
+
+class="attribute">id</span>=<span 
+
+class="value">"game.university"</span> <span 
+
+class="attribute">path</span>=<span 
+
+class="value">"university/index"</span> <span 
+
+class="attribute">enabled</span>=<span 
+
+class="value">"true"</span>&gt;</span>В университет<span 
+
+class="tag">&lt;/<span class="title">way</span>&gt;</span>
+     
+
+<span class="tag">&lt;/<span 
+
+class="title">scene</span>&gt;</span>
+<span 
+
+class="tag">&lt;/<span class="title">pl2script</span>&gt;</span>
+
+</code></pre><br>
+<br>
+Ссылки:<br>
+<a 
+
+href="http://habrahabr.ru/post/219419/">http://habrahabr.ru/post/219419/
+</a> Предложения по учебному языку программирования<br>
+<a 
+
+href="http://habrahabr.ru/post/136272/">habrahabr.ru/post/136
+
+272/</a> Какой язык программирования должен быть первым 
+
+при изучении в школе?<br>
+<a 
+
+href="http://habrahabr.ru/post/176243/">habrahabr.ru/post/176
+
+243/</a> «Национальные» языки программирования<br>
+<br>
+</body></html>

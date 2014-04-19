@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E8FB457-B52D-4CCA-89BE-F6D7650F6CD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pl2</RootNamespace>
+    <AssemblyName>pl2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="data\identifier\description\local\ascii\draft\draft.cs" />
+    <Compile Include="data\identifier\format\integer\integer.cs" />
+    <Compile Include="data\identifier\format\logical\logical.cs" />
+    <Compile Include="data\identifier\format\real\real.cs" />
+    <Compile Include="data\identifier\simbol\simbol.cs" />
+    <Compile Include="data\meagure\local\ascii\draft\draft.cs" />
+    <Compile Include="data\meagure\si\m\m.cs" />
+    <Compile Include="data\meagure\si\t\t.cs" />
+    <Compile Include="locomotive\back\debug\point\point.cs" />
+    <Compile Include="locomotive\back\debug\profile\profile.cs" />
+    <Compile Include="locomotive\back\debug\value\value.cs" />
+    <Compile Include="locomotive\back\generation\clr\clr.cs" />
+    <Compile Include="locomotive\back\generation\jvm\jvm.cs" />
+    <Compile Include="locomotive\front\lexical\parser\sequence\sequence.cs" />
+    <Compile Include="manager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\message\error\" />
+    <Folder Include="data\message\runtime\" />
+    <Folder Include="data\message\warning\" />
+    <Folder Include="data\source\form\button\" />
+    <Folder Include="data\source\form\input\check\" />
+    <Folder Include="data\source\form\input\complex\" />
+    <Folder Include="data\source\form\input\list\" />
+    <Folder Include="data\source\form\input\radio\" />
+    <Folder Include="data\source\form\input\text\" />
+    <Folder Include="data\source\form\label\" />
+    <Folder Include="data\source\form\prompt\" />
+    <Folder Include="data\source\form\section\" />
+    <Folder Include="data\source\form\table\" />
+    <Folder Include="data\source\form\tree\" />
+    <Folder Include="data\source\game\" />
+    <Folder Include="data\source\html\" />
+    <Folder Include="data\source\menu\" />
+    <Folder Include="data\source\meta\" />
+    <Folder Include="data\source\pl2\" />
+    <Folder Include="data\source\sql\" />
+    <Folder Include="data\source\table\" />
+    <Folder Include="data\source\text\" />
+    <Folder Include="data\source\tree\" />
+    <Folder Include="locomotive\back\trace\expression\format\" />
+    <Folder Include="locomotive\link\" />
+    <Folder Include="locomotive\middle\" />
+    <Folder Include="locomotive\prepocess\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
