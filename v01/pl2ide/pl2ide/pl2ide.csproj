@@ -54,9 +54,23 @@
       <DependentUpon>pl2_ide_main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="project\file\meta\form\color\colors.cs" />
+    <Compile Include="project\file\meta\form\mode\classic\default.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="project\file\meta\form\region\column\column.cs" />
+    <Compile Include="project\file\meta\form\sdi\sdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="project\file\meta\form\sdi\sdi.Designer.cs">
+      <DependentUpon>sdi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="pl2_ide_main.resx">
       <DependentUpon>pl2_ide_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="project\file\meta\form\sdi\sdi.resx">
+      <DependentUpon>sdi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +81,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -77,6 +92,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

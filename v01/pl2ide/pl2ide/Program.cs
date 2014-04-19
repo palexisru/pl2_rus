@@ -13,9 +13,16 @@ namespace pl2ide
         [STAThread]
         static void Main()
             {
-            Application.EnableVisualStyles();
+
             Application.SetCompatibleTextRenderingDefault( false );
-            Application.Run( new Form_PL2_IDE() );
+            Application.EnableVisualStyles();            
+
+            Form ide = new Form_PL2_IDE();
+            Form sdi = new pl2ide.project.file.meta.form.sdi.SDI();
+
+            ide.Show();
+            sdi.Show();
+            Application.Run( ide );
             }
         }
     }
