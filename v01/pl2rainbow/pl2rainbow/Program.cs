@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace pl2.ide
+namespace pl2.rainbow
     {
     static class Program
         {
@@ -13,16 +13,10 @@ namespace pl2.ide
         [STAThread]
         static void Main()
             {
-
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault( false );
-            Application.EnableVisualStyles();            
-
-            Form ide = new Form_PL2_IDE();
-            Form sdi = new pl2.ide.project.file.meta.form.sdi.SDI();
-
-            ide.Show();
-            sdi.Show();
-            Application.Run( ide );
+            Application.Run( new pl2.rainbow.form.gdi.sdi.main.main_sdi_form() );
+            // Application.Run( new rainbow_window() );
             }
         }
     }

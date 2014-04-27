@@ -1,4 +1,4 @@
-﻿namespace pl2ide.project.file.meta.form.sdi
+﻿namespace pl2.ide.project.file.meta.form.sdi
     {
     partial class SDI
         {
@@ -577,8 +577,8 @@
             // 
             // background_worker_action
             // 
-            this.background_worker_action.WorkerReportsProgress = global::pl2ide.Properties.Settings.Default.action;
-            this.background_worker_action.WorkerSupportsCancellation = global::pl2ide.Properties.Settings.Default.stop;
+            this.background_worker_action.WorkerReportsProgress = global::pl2.ide.Properties.Settings.Default.action;
+            this.background_worker_action.WorkerSupportsCancellation = global::pl2.ide.Properties.Settings.Default.stop;
             // 
             // split_container_panel
             // 

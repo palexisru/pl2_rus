@@ -6,17 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-//using pl2.rainbow.form.gdi.sdi.main;
 
-
-namespace pl2.ide
+namespace pl2.project
     {
- 
-    public partial class Form_PL2_IDE : Form
+    public partial class main_form : Form
         {
         private int childFormNumber = 0;
 
-        public Form_PL2_IDE()
+        public main_form()
             {
             InitializeComponent();
             }
@@ -33,7 +30,7 @@ namespace pl2.ide
             {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath( Environment.SpecialFolder.Personal );
-            openFileDialog.Filter = pl2.ide.Common.file_dialog_extentions;
+            openFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             if (openFileDialog.ShowDialog( this ) == DialogResult.OK)
                 {
                 string FileName = openFileDialog.FileName;
@@ -44,7 +41,7 @@ namespace pl2.ide
             {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath( Environment.SpecialFolder.Personal );
-            saveFileDialog.Filter = Common.file_dialog_extentions;
+            saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             if (saveFileDialog.ShowDialog( this ) == DialogResult.OK)
                 {
                 string FileName = saveFileDialog.FileName;
@@ -106,10 +103,9 @@ namespace pl2.ide
                 }
             }
 
-        private void rainbow_ToolStripButton_Click(object sender , EventArgs e)
+        private void toolStripButton1_Click(object sender , EventArgs e)
             {
                 pl2.rainbow.form.gdi.sdi.main.main_sdi_form f = new pl2.rainbow.form.gdi.sdi.main.main_sdi_form();
-                f.ide = this;
                 f.Show();
             }
         }

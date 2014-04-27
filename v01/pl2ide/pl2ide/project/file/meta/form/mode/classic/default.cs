@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using pl2ide.project.file.meta.form;
 
-namespace pl2ide.project.file.meta.form.mode.classic
+namespace pl2.ide.project.file.meta.form.mode.classic
     {
 
     public enum Enumerated
@@ -49,7 +49,7 @@ namespace pl2ide.project.file.meta.form.mode.classic
         [Browsable( false )]
         public void Show(string message = "Введите данные")
             {
-                pl2ide.project.file.meta.form.sdi.SDI sdi_data_form = new pl2ide.project.file.meta.form.sdi.SDI();
+                pl2.ide.project.file.meta.form.sdi.SDI sdi_data_form = new pl2.ide.project.file.meta.form.sdi.SDI();
                 sdi_data_form.form_data = this;
                 sdi_data_form.tytle = message;
                 sdi_data_form.Show();

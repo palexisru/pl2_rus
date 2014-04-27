@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using pl2ide.project.file.meta.form.mode.classic;
+using pl2.ide.project.file.meta.form.mode.classic;
 
-namespace pl2ide.project.file.meta.form.sdi
+namespace pl2.ide.project.file.meta.form.sdi
     {
     public partial class SDI : Form
         {
