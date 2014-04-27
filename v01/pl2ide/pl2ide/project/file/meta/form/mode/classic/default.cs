@@ -7,16 +7,16 @@ using System.ComponentModel;
 using pl2ide.project.file.meta.form;
 
 namespace pl2.ide.project.file.meta.form.mode.classic
-    {
+{
 
     public enum Enumerated
     {
-        ноль, один, два, три, четыре
+        ноль , один , два , три , четыре
     }
     public class Default : Data
-        {
+    {
         private Int32 integer_value_private = 1;
-        private float real_value_private = (float) Math.PI;
+        private float real_value_private = (float)Math.PI;
         private bool logical_value_private = true;
         private string string_value_private = "тестовая строка";
         private Enumerated group_value_private;
@@ -41,18 +41,18 @@ namespace pl2.ide.project.file.meta.form.mode.classic
 
         [Browsable( false )]
         public void prepare_data_grid(PropertyGrid data)
-            {
+        {
             число_действительное = real_value_private;
             строка = string_value_private;
             data.SelectedObject = this;
-            }
+        }
         [Browsable( false )]
         public void Show(string message = "Введите данные")
-            {
-                pl2.ide.project.file.meta.form.sdi.SDI sdi_data_form = new pl2.ide.project.file.meta.form.sdi.SDI();
-                sdi_data_form.form_data = this;
-                sdi_data_form.tytle = message;
-                sdi_data_form.Show();
-            }
+        {
+            pl2.ide.project.file.meta.form.sdi.SDI sdi_data_form = new pl2.ide.project.file.meta.form.sdi.SDI();
+            sdi_data_form.form_data = this;
+            sdi_data_form.tytle = message;
+            sdi_data_form.Show();
         }
     }
+}

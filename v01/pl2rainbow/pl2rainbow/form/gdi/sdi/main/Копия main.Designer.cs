@@ -1,6 +1,6 @@
 ﻿namespace pl2.rainbow.form.gdi.sdi.main
     {
-    partial class main_sdi_form
+    partial class main_sdi_form_copy
         {
         /// <summary>
         /// Требуется переменная конструктора.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
             {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main_sdi_form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main_sdi_form_copy));
             this.menu_strip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,10 +87,34 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.project_rainbow = new pl2.rainbow.form.gdi.components.Rainbow();
+            this.flow_layout_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.level_pB = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_pA = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p9 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p8 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p7 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p6 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p5 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p4 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p3 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p2 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_p1 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_0 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n1 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n2 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n3 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n4 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n5 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n6 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n7 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n8 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_n9 = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_nA = new pl2.rainbow.form.gdi.components.Abstraction();
+            this.level_nB = new pl2.rainbow.form.gdi.components.Abstraction();
             this.menu_strip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.flow_layout_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu_strip
@@ -328,15 +352,14 @@
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.настройкиToolStripMenuItem.Text = "&Настройки";
             // 
             // параметрыToolStripMenuItem
             // 
             this.параметрыToolStripMenuItem.Name = "параметрыToolStripMenuItem";
-            this.параметрыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.параметрыToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.параметрыToolStripMenuItem.Text = "&Параметры";
-            this.параметрыToolStripMenuItem.Click += new System.EventHandler(this.параметрыToolStripMenuItem_Click);
             // 
             // helpMenu
             // 
@@ -583,32 +606,383 @@
             this.vScrollBar1.Size = new System.Drawing.Size(17, 382);
             this.vScrollBar1.TabIndex = 4;
             // 
-            // project_rainbow
+            // flow_layout_panel
             // 
-            this.project_rainbow.AutoScroll = true;
-            this.project_rainbow.AutoScrollMargin = new System.Drawing.Size(0, 35);
-            this.project_rainbow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.project_rainbow.Location = new System.Drawing.Point(0, 49);
-            this.project_rainbow.Name = "project_rainbow";
-            this.project_rainbow.selected_level = pl2.rainbow.description.Abstraction_level.Interface_target;
-            this.project_rainbow.selected_level_previous = pl2.rainbow.description.Abstraction_level.Interface_target;
-            this.project_rainbow.selected_phase = pl2.rainbow.description.Phase_direction.action;
-            this.project_rainbow.selected_phase_previous = pl2.rainbow.description.Phase_direction.invariant;
-            this.project_rainbow.Size = new System.Drawing.Size(619, 382);
-            this.project_rainbow.TabIndex = 5;
+            this.flow_layout_panel.AutoScroll = true;
+            this.flow_layout_panel.CausesValidation = false;
+            this.flow_layout_panel.Controls.Add(this.level_pB);
+            this.flow_layout_panel.Controls.Add(this.level_pA);
+            this.flow_layout_panel.Controls.Add(this.level_p9);
+            this.flow_layout_panel.Controls.Add(this.level_p8);
+            this.flow_layout_panel.Controls.Add(this.level_p7);
+            this.flow_layout_panel.Controls.Add(this.level_p6);
+            this.flow_layout_panel.Controls.Add(this.level_p5);
+            this.flow_layout_panel.Controls.Add(this.level_p4);
+            this.flow_layout_panel.Controls.Add(this.level_p3);
+            this.flow_layout_panel.Controls.Add(this.level_p2);
+            this.flow_layout_panel.Controls.Add(this.level_p1);
+            this.flow_layout_panel.Controls.Add(this.level_0);
+            this.flow_layout_panel.Controls.Add(this.level_n1);
+            this.flow_layout_panel.Controls.Add(this.level_n2);
+            this.flow_layout_panel.Controls.Add(this.level_n3);
+            this.flow_layout_panel.Controls.Add(this.level_n4);
+            this.flow_layout_panel.Controls.Add(this.level_n5);
+            this.flow_layout_panel.Controls.Add(this.level_n6);
+            this.flow_layout_panel.Controls.Add(this.level_n7);
+            this.flow_layout_panel.Controls.Add(this.level_n8);
+            this.flow_layout_panel.Controls.Add(this.level_n9);
+            this.flow_layout_panel.Controls.Add(this.level_nA);
+            this.flow_layout_panel.Controls.Add(this.level_nB);
+            this.flow_layout_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flow_layout_panel.Location = new System.Drawing.Point(0, 49);
+            this.flow_layout_panel.Name = "flow_layout_panel";
+            this.flow_layout_panel.Size = new System.Drawing.Size(619, 382);
+            this.flow_layout_panel.TabIndex = 5;
+            this.flow_layout_panel.Layout += new System.Windows.Forms.LayoutEventHandler(this.flow_layout_panel_Layout);
             // 
-            // main_sdi_form
+            // level_pB
+            // 
+            this.level_pB.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_pB.AccessibleName = "abstraction_panel";
+            this.level_pB.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_pB, true);
+            this.level_pB.level = pl2.rainbow.description.Abstraction_level.Interface_infinity;
+            this.level_pB.Location = new System.Drawing.Point(0, 0);
+            this.level_pB.Margin = new System.Windows.Forms.Padding(0);
+            this.level_pB.Name = "level_pB";
+            this.level_pB.Size = new System.Drawing.Size(580, 36);
+            this.level_pB.TabIndex = 0;
+            this.level_pB.Load += new System.EventHandler(this.level_pB_Load);
+            this.level_pB.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_pA
+            // 
+            this.level_pA.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_pA.AccessibleName = "abstraction_panel";
+            this.level_pA.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_pA, true);
+            this.level_pA.level = pl2.rainbow.description.Abstraction_level.Interface_logical;
+            this.level_pA.Location = new System.Drawing.Point(0, 36);
+            this.level_pA.Margin = new System.Windows.Forms.Padding(0);
+            this.level_pA.Name = "level_pA";
+            this.level_pA.Size = new System.Drawing.Size(580, 36);
+            this.level_pA.TabIndex = 1;
+            this.level_pA.Load += new System.EventHandler(this.level_pA_Load);
+            this.level_pA.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p9
+            // 
+            this.level_p9.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p9.AccessibleName = "abstraction_panel";
+            this.level_p9.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p9, true);
+            this.level_p9.level = pl2.rainbow.description.Abstraction_level.Interface_target;
+            this.level_p9.Location = new System.Drawing.Point(0, 72);
+            this.level_p9.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p9.Name = "level_p9";
+            this.level_p9.Size = new System.Drawing.Size(580, 36);
+            this.level_p9.TabIndex = 2;
+            this.level_p9.Load += new System.EventHandler(this.level_p9_Load);
+            this.level_p9.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p8
+            // 
+            this.level_p8.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p8.AccessibleName = "abstraction_panel";
+            this.level_p8.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p8, true);
+            this.level_p8.level = pl2.rainbow.description.Abstraction_level.Interface_functional;
+            this.level_p8.Location = new System.Drawing.Point(0, 108);
+            this.level_p8.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p8.Name = "level_p8";
+            this.level_p8.Size = new System.Drawing.Size(580, 36);
+            this.level_p8.TabIndex = 3;
+            this.level_p8.Load += new System.EventHandler(this.level_p8_Load);
+            this.level_p8.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p7
+            // 
+            this.level_p7.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p7.AccessibleName = "abstraction_panel";
+            this.level_p7.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p7, true);
+            this.level_p7.level = pl2.rainbow.description.Abstraction_level.Interface_session;
+            this.level_p7.Location = new System.Drawing.Point(0, 144);
+            this.level_p7.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p7.Name = "level_p7";
+            this.level_p7.Size = new System.Drawing.Size(580, 36);
+            this.level_p7.TabIndex = 4;
+            this.level_p7.Load += new System.EventHandler(this.level_p7_Load);
+            this.level_p7.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p6
+            // 
+            this.level_p6.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p6.AccessibleName = "abstraction_panel";
+            this.level_p6.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p6, true);
+            this.level_p6.level = pl2.rainbow.description.Abstraction_level.Interface_politic;
+            this.level_p6.Location = new System.Drawing.Point(0, 180);
+            this.level_p6.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p6.Name = "level_p6";
+            this.level_p6.Size = new System.Drawing.Size(580, 36);
+            this.level_p6.TabIndex = 5;
+            this.level_p6.Load += new System.EventHandler(this.level_p6_Load);
+            this.level_p6.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p5
+            // 
+            this.level_p5.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p5.AccessibleName = "abstraction_panel";
+            this.level_p5.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p5, true);
+            this.level_p5.level = pl2.rainbow.description.Abstraction_level.Interface_control;
+            this.level_p5.Location = new System.Drawing.Point(0, 216);
+            this.level_p5.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p5.Name = "level_p5";
+            this.level_p5.Size = new System.Drawing.Size(580, 36);
+            this.level_p5.TabIndex = 6;
+            this.level_p5.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p4
+            // 
+            this.level_p4.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p4.AccessibleName = "abstraction_panel";
+            this.level_p4.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p4, true);
+            this.level_p4.level = pl2.rainbow.description.Abstraction_level.Interface_exchange;
+            this.level_p4.Location = new System.Drawing.Point(0, 252);
+            this.level_p4.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p4.Name = "level_p4";
+            this.level_p4.Size = new System.Drawing.Size(580, 36);
+            this.level_p4.TabIndex = 7;
+            this.level_p4.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p3
+            // 
+            this.level_p3.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p3.AccessibleName = "abstraction_panel";
+            this.level_p3.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p3, true);
+            this.level_p3.level = pl2.rainbow.description.Abstraction_level.Interface_concurent;
+            this.level_p3.Location = new System.Drawing.Point(0, 288);
+            this.level_p3.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p3.Name = "level_p3";
+            this.level_p3.Size = new System.Drawing.Size(580, 36);
+            this.level_p3.TabIndex = 8;
+            this.level_p3.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p2
+            // 
+            this.level_p2.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p2.AccessibleName = "abstraction_panel";
+            this.level_p2.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p2, true);
+            this.level_p2.level = pl2.rainbow.description.Abstraction_level.Interface_technology;
+            this.level_p2.Location = new System.Drawing.Point(0, 324);
+            this.level_p2.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p2.Name = "level_p2";
+            this.level_p2.Size = new System.Drawing.Size(580, 36);
+            this.level_p2.TabIndex = 9;
+            this.level_p2.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_p1
+            // 
+            this.level_p1.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_p1.AccessibleName = "abstraction_panel";
+            this.level_p1.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_p1, true);
+            this.level_p1.level = pl2.rainbow.description.Abstraction_level.Interface_above_reality;
+            this.level_p1.Location = new System.Drawing.Point(0, 360);
+            this.level_p1.Margin = new System.Windows.Forms.Padding(0);
+            this.level_p1.Name = "level_p1";
+            this.level_p1.Size = new System.Drawing.Size(580, 36);
+            this.level_p1.TabIndex = 10;
+            this.level_p1.Visible = false;
+            this.level_p1.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_0
+            // 
+            this.level_0.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_0.AccessibleName = "abstraction_panel";
+            this.level_0.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_0, true);
+            this.level_0.level = pl2.rainbow.description.Abstraction_level.Class_reality;
+            this.level_0.Location = new System.Drawing.Point(0, 398);
+            this.level_0.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.level_0.Name = "level_0";
+            this.level_0.Size = new System.Drawing.Size(580, 36);
+            this.level_0.TabIndex = 11;
+            this.level_0.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n1
+            // 
+            this.level_n1.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n1.AccessibleName = "abstraction_panel";
+            this.level_n1.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n1, true);
+            this.level_n1.level = pl2.rainbow.description.Abstraction_level.Class_below_reality;
+            this.level_n1.Location = new System.Drawing.Point(0, 436);
+            this.level_n1.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n1.Name = "level_n1";
+            this.level_n1.Size = new System.Drawing.Size(580, 36);
+            this.level_n1.TabIndex = 12;
+            this.level_n1.Visible = false;
+            this.level_n1.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n2
+            // 
+            this.level_n2.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n2.AccessibleName = "abstraction_panel";
+            this.level_n2.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n2, true);
+            this.level_n2.level = pl2.rainbow.description.Abstraction_level.Class_executive;
+            this.level_n2.Location = new System.Drawing.Point(0, 472);
+            this.level_n2.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n2.Name = "level_n2";
+            this.level_n2.Size = new System.Drawing.Size(580, 36);
+            this.level_n2.TabIndex = 13;
+            this.level_n2.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n3
+            // 
+            this.level_n3.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n3.AccessibleName = "abstraction_panel";
+            this.level_n3.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n3, true);
+            this.level_n3.level = pl2.rainbow.description.Abstraction_level.Class_responsibility;
+            this.level_n3.Location = new System.Drawing.Point(0, 508);
+            this.level_n3.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n3.Name = "level_n3";
+            this.level_n3.Size = new System.Drawing.Size(580, 36);
+            this.level_n3.TabIndex = 14;
+            this.level_n3.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n4
+            // 
+            this.level_n4.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n4.AccessibleName = "abstraction_panel";
+            this.level_n4.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n4, true);
+            this.level_n4.level = pl2.rainbow.description.Abstraction_level.Class_parallel;
+            this.level_n4.Location = new System.Drawing.Point(0, 544);
+            this.level_n4.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n4.Name = "level_n4";
+            this.level_n4.Size = new System.Drawing.Size(580, 36);
+            this.level_n4.TabIndex = 15;
+            this.level_n4.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n5
+            // 
+            this.level_n5.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n5.AccessibleName = "abstraction_panel";
+            this.level_n5.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n5, true);
+            this.level_n5.level = pl2.rainbow.description.Abstraction_level.Class_specialist;
+            this.level_n5.Location = new System.Drawing.Point(0, 580);
+            this.level_n5.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n5.Name = "level_n5";
+            this.level_n5.Size = new System.Drawing.Size(580, 36);
+            this.level_n5.TabIndex = 16;
+            this.level_n5.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n6
+            // 
+            this.level_n6.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n6.AccessibleName = "abstraction_panel";
+            this.level_n6.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n6, true);
+            this.level_n6.level = pl2.rainbow.description.Abstraction_level.Class_process;
+            this.level_n6.Location = new System.Drawing.Point(0, 616);
+            this.level_n6.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n6.Name = "level_n6";
+            this.level_n6.Size = new System.Drawing.Size(580, 36);
+            this.level_n6.TabIndex = 17;
+            this.level_n6.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n7
+            // 
+            this.level_n7.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n7.AccessibleName = "abstraction_panel";
+            this.level_n7.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n7, true);
+            this.level_n7.level = pl2.rainbow.description.Abstraction_level.Class_system;
+            this.level_n7.Location = new System.Drawing.Point(0, 652);
+            this.level_n7.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n7.Name = "level_n7";
+            this.level_n7.Size = new System.Drawing.Size(580, 36);
+            this.level_n7.TabIndex = 18;
+            this.level_n7.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n8
+            // 
+            this.level_n8.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n8.AccessibleName = "abstraction_panel";
+            this.level_n8.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n8, true);
+            this.level_n8.level = pl2.rainbow.description.Abstraction_level.Class_structure;
+            this.level_n8.Location = new System.Drawing.Point(0, 688);
+            this.level_n8.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n8.Name = "level_n8";
+            this.level_n8.Size = new System.Drawing.Size(580, 36);
+            this.level_n8.TabIndex = 19;
+            this.level_n8.Load += new System.EventHandler(this.level_n8_Load);
+            this.level_n8.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_n9
+            // 
+            this.level_n9.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_n9.AccessibleName = "abstraction_panel";
+            this.level_n9.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_n9, true);
+            this.level_n9.level = pl2.rainbow.description.Abstraction_level.Class_tuple;
+            this.level_n9.Location = new System.Drawing.Point(0, 724);
+            this.level_n9.Margin = new System.Windows.Forms.Padding(0);
+            this.level_n9.Name = "level_n9";
+            this.level_n9.Size = new System.Drawing.Size(580, 36);
+            this.level_n9.TabIndex = 20;
+            this.level_n9.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_nA
+            // 
+            this.level_nA.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_nA.AccessibleName = "abstraction_panel";
+            this.level_nA.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_nA, true);
+            this.level_nA.level = pl2.rainbow.description.Abstraction_level.Class_domain;
+            this.level_nA.Location = new System.Drawing.Point(0, 760);
+            this.level_nA.Margin = new System.Windows.Forms.Padding(0);
+            this.level_nA.Name = "level_nA";
+            this.level_nA.Size = new System.Drawing.Size(580, 36);
+            this.level_nA.TabIndex = 21;
+            this.level_nA.Click += new System.EventHandler(this.level_Click);
+            // 
+            // level_nB
+            // 
+            this.level_nB.AccessibleDescription = "Панель уровня абстрактности";
+            this.level_nB.AccessibleName = "abstraction_panel";
+            this.level_nB.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            this.flow_layout_panel.SetFlowBreak(this.level_nB, true);
+            this.level_nB.level = pl2.rainbow.description.Abstraction_level.Class_infinity;
+            this.level_nB.Location = new System.Drawing.Point(0, 796);
+            this.level_nB.Margin = new System.Windows.Forms.Padding(0);
+            this.level_nB.Name = "level_nB";
+            this.level_nB.Size = new System.Drawing.Size(580, 36);
+            this.level_nB.TabIndex = 22;
+            this.level_nB.Click += new System.EventHandler(this.level_Click);
+            // 
+            // main_sdi_form_copy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 453);
-            this.Controls.Add(this.project_rainbow);
+            this.Controls.Add(this.flow_layout_panel);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menu_strip);
             this.MainMenuStrip = this.menu_strip;
-            this.Name = "main_sdi_form";
+            this.Name = "main_sdi_form_copy";
             this.Text = "Радуга проекта";
             this.Load += new System.EventHandler(this.main_Load);
             this.menu_strip.ResumeLayout(false);
@@ -617,6 +991,7 @@
             this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.flow_layout_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -681,7 +1056,30 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.VScrollBar vScrollBar1;
-        private components.Rainbow project_rainbow;
+        private System.Windows.Forms.FlowLayoutPanel flow_layout_panel;
+        private components.Abstraction level_pB;
+        private components.Abstraction level_pA;
+        private components.Abstraction level_p9;
+        private components.Abstraction level_p8;
+        private components.Abstraction level_p7;
+        private components.Abstraction level_p6;
+        private components.Abstraction level_p5;
+        private components.Abstraction level_p4;
+        private components.Abstraction level_p3;
+        private components.Abstraction level_p2;
+        private components.Abstraction level_p1;
+        private components.Abstraction level_0;
+        private components.Abstraction level_n1;
+        private components.Abstraction level_n2;
+        private components.Abstraction level_n3;
+        private components.Abstraction level_n4;
+        private components.Abstraction level_n5;
+        private components.Abstraction level_n6;
+        private components.Abstraction level_n7;
+        private components.Abstraction level_n8;
+        private components.Abstraction level_n9;
+        private components.Abstraction level_nA;
+        private components.Abstraction level_nB;
         }
     }
 
