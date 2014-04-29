@@ -94,11 +94,11 @@ namespace pl2.rainbow.form.gdi.components
                     pl2.rainbow.form.gdi.components.Abstraction a = c as pl2.rainbow.form.gdi.components.Abstraction;
                     if (options.visible_symmetric)
                     {
-                        a.Visible = Math.Abs( Math.Abs( a.level_number ) - current_active_level ) <= options.number_of_colors / 2;
+                        a.Visible = Math.Abs( Math.Abs( a.level_number ) - current_active_level ) < options.number_of_colors;
                     }
                     else
                     {
-                        a.Visible = Math.Abs( a.level_number - current_active_level ) <= options.number_of_colors / 2;
+                        a.Visible = Math.Abs( a.level_number - current_active_level ) < options.number_of_colors;
                     }
                 }
             }

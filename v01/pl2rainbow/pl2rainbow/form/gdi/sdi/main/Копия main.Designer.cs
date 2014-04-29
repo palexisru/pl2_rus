@@ -764,7 +764,7 @@
             this.level_p3.AccessibleName = "abstraction_panel";
             this.level_p3.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.flow_layout_panel.SetFlowBreak(this.level_p3, true);
-            this.level_p3.level = pl2.rainbow.description.Abstraction_level.Interface_concurent;
+            this.level_p3.level = pl2.rainbow.description.Abstraction_level.Interface_alignment;
             this.level_p3.Location = new System.Drawing.Point(0, 288);
             this.level_p3.Margin = new System.Windows.Forms.Padding(0);
             this.level_p3.Name = "level_p3";
@@ -792,7 +792,7 @@
             this.level_p1.AccessibleName = "abstraction_panel";
             this.level_p1.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.flow_layout_panel.SetFlowBreak(this.level_p1, true);
-            this.level_p1.level = pl2.rainbow.description.Abstraction_level.Interface_above_reality;
+            this.level_p1.level = pl2.rainbow.description.Abstraction_level.Interface_technology;
             this.level_p1.Location = new System.Drawing.Point(0, 360);
             this.level_p1.Margin = new System.Windows.Forms.Padding(0);
             this.level_p1.Name = "level_p1";
@@ -821,7 +821,7 @@
             this.level_n1.AccessibleName = "abstraction_panel";
             this.level_n1.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.flow_layout_panel.SetFlowBreak(this.level_n1, true);
-            this.level_n1.level = pl2.rainbow.description.Abstraction_level.Class_below_reality;
+            this.level_n1.level = pl2.rainbow.description.Abstraction_level.Class_responsibility;
             this.level_n1.Location = new System.Drawing.Point(0, 436);
             this.level_n1.Margin = new System.Windows.Forms.Padding(0);
             this.level_n1.Name = "level_n1";
@@ -836,7 +836,7 @@
             this.level_n2.AccessibleName = "abstraction_panel";
             this.level_n2.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.flow_layout_panel.SetFlowBreak(this.level_n2, true);
-            this.level_n2.level = pl2.rainbow.description.Abstraction_level.Class_executive;
+            this.level_n2.level = pl2.rainbow.description.Abstraction_level.Class_responsibility;
             this.level_n2.Location = new System.Drawing.Point(0, 472);
             this.level_n2.Margin = new System.Windows.Forms.Padding(0);
             this.level_n2.Name = "level_n2";
@@ -850,7 +850,7 @@
             this.level_n3.AccessibleName = "abstraction_panel";
             this.level_n3.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.flow_layout_panel.SetFlowBreak(this.level_n3, true);
-            this.level_n3.level = pl2.rainbow.description.Abstraction_level.Class_responsibility;
+            this.level_n3.level = pl2.rainbow.description.Abstraction_level.Class_stability;
             this.level_n3.Location = new System.Drawing.Point(0, 508);
             this.level_n3.Margin = new System.Windows.Forms.Padding(0);
             this.level_n3.Name = "level_n3";
