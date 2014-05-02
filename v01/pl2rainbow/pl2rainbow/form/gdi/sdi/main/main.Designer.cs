@@ -88,6 +88,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.project_rainbow = new pl2.rainbow.form.gdi.components.Rainbow();
+            this.sphera_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_strip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -345,6 +346,7 @@
             this.indexToolStripMenuItem,
             this.searchToolStripMenuItem,
             this.toolStripSeparator8,
+            this.sphera_ToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpMenu.Name = "helpMenu";
             this.helpMenu.Size = new System.Drawing.Size(65, 20);
@@ -383,6 +385,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.aboutToolStripMenuItem.Text = "&О программе ... ...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
@@ -587,6 +590,7 @@
             // 
             this.project_rainbow.AutoScroll = true;
             this.project_rainbow.AutoScrollMargin = new System.Drawing.Size(0, 35);
+            this.project_rainbow.AutoSize = true;
             this.project_rainbow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.project_rainbow.Location = new System.Drawing.Point(0, 49);
             this.project_rainbow.Name = "project_rainbow";
@@ -596,6 +600,13 @@
             this.project_rainbow.selected_phase_previous = pl2.rainbow.description.Phase_direction.invariant;
             this.project_rainbow.Size = new System.Drawing.Size(619, 382);
             this.project_rainbow.TabIndex = 5;
+            this.project_rainbow.Layout += new System.Windows.Forms.LayoutEventHandler(this.project_rainbow_Layout);
+            // 
+            // sphera_ToolStripMenuItem
+            // 
+            this.sphera_ToolStripMenuItem.Name = "sphera_ToolStripMenuItem";
+            this.sphera_ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.sphera_ToolStripMenuItem.Text = "Сфера ...";
             // 
             // main_sdi_form
             // 
@@ -682,6 +693,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private components.Rainbow project_rainbow;
+        private System.Windows.Forms.ToolStripMenuItem sphera_ToolStripMenuItem;
         }
     }
 

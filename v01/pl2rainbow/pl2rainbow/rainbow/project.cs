@@ -40,7 +40,7 @@ namespace pl2.rainbow
         {
             current_abstraction_center = Abstraction_level.Interface_target;
             current_phase_center = Phase_direction.action;
-            center_allwase_visible = false;
+            center_allwase_visible = true;
             visible_specials = false;
             visible_symmetric = true;
             number_of_colors = 3;

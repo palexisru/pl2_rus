@@ -155,6 +155,18 @@ namespace pl2.rainbow.form.gdi.sdi.main
             sdi.property.Options f = new sdi.property.Options( project_rainbow.options );
             f.ShowDialog();
             project_rainbow.PerformLayout();
+            statusStrip.Text = project_rainbow.selected_level.ToString();
+        }
+
+        private void project_rainbow_Layout(object sender , LayoutEventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            Form f = new pl2.rainbow.form.gdi.sdi.property.About();
+            f.ShowDialog();
         }
     }
 }

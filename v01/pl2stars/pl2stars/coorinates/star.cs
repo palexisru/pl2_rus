@@ -31,7 +31,9 @@ namespace pl2.rainbow.stars.coorinates
         public float x;
         public float y;
         public float d;
+        public float B;
         public bool visable;
+
         public Star(
                 string p_name ,
                 double p_gloss ,
@@ -111,6 +113,64 @@ namespace pl2.rainbow.stars.coorinates
                 visable = true;
             }
         }
+
+        public void DrawStar()
+        {
+            float t;
+            //float x;
+            //float y;
+            // DIM s AS TStar
+            float st;
+            float ct;
+
+            CalcXY(); //stars(i), x, y, vis
+            if (Sky.CurStars != "   ")
+            {
+                if (constellation != Sky.CurStars)
+                {
+                    visable = false;
+                }
+
+                //stars(i).v = vis
+
+                if (visable)
+                {
+                    DrawStarIn();// x, y, stars(i).B
+                    // stars(i).x = x
+                    //stars(i).y = y
+                    if ((x * x + y * y) < 64)
+                    {
+                        // LOCATE 1, 1
+                        // PRINT stars(i).id; " "; StarName(stars(i).sc + stars(i).id);
+                        Sky.CurStars = constellation;
+                    }
+                }
+            }
+        }
+
+        private void DrawStarIn()//x AS SINGLE, y AS SINGLE, B AS SINGLE)
+        {
+            float r;
+            float e;
+            int i;
+            if (x > -800 && y > -600 && x < 800 && y < 600)
+            {
+                r = (float)Math.Exp( (7 - B) / Sky.b0 );
+                if (r > 1)
+                {
+                    e = (int)Math.Ceiling( Math.Sqrt( r ) );
+                    // CIRCLE (y, -x), e + 1, 0, , , SQR(r) / e * 3
+                    // FOR i = e TO 1 STEP -1
+                    //   CIRCLE (y, -x), i, 15, , , SQR(r) / e * 3
+                    //NEXT i
+                }
+                else
+                {
+                    //PSET (y, -x), 15
+                }
+            }
+        }
+
 
     }
 }

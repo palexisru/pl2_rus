@@ -7,7 +7,7 @@ namespace pl2.rainbow.stars.coorinates
 {
     public class Catalog
     {
-        public Star[] almanac = { 
+        public static Star[] almanac = { 
         
             
                 new Star(	"alpha ",-1.46, 6,"h",44,"m", 2.8,"s",-16 ,"ш",40,"'",51,"''","CMa"	) ,

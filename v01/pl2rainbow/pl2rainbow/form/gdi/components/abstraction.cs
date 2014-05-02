@@ -32,16 +32,26 @@ namespace pl2.rainbow.form.gdi.components
             }
         }
 
+        [Browsable( true ) , Description( "Признак дополнительного уровня" ) , Category( "Data" )]
+        public bool extention_level { get; set;}
+
         private void store_button_names()
         {
-            string button_cuption;
             switch(abstraction_level_private){
                 case Abstraction_level.Class_infinity:
                     {
-                        cell_act.single_button.Text = abstraction_level_private.ToString();
-                        cell_plan.single_button.Text = abstraction_level_private.ToString();
+                        cell_act.single_button.Text = "-";
+                        cell_plan.single_button.Text = "-";
                         cell_do.single_button.Text = "Пустота";
-                        cell_check.single_button.Text = abstraction_level_private.ToString();
+                        cell_check.single_button.Text = "-";
+                    }
+                    break;
+                case Abstraction_level.Class_void:
+                    {
+                        cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
+                        cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
+                        cell_do.single_button.Text = "do " + abstraction_level_private.ToString();
+                        cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
                 case Abstraction_level.Class_domain:
@@ -49,7 +59,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_act.single_button.Text = "Существование";
                         cell_plan.single_button.Text = "Связь";
                         cell_do.single_button.Text = "Способность";
-                        cell_check.single_button.Text = "Сигнал";
+                        cell_check.single_button.Text = "Случайность";
                     }
                     break;
                 case Abstraction_level.Class_tuple:
@@ -110,10 +120,18 @@ namespace pl2.rainbow.form.gdi.components
                     break;
                 case Abstraction_level.Class_responsibility:
                     {
-                        cell_act.single_button.Text = abstraction_level_private.ToString();
-                        cell_plan.single_button.Text = "";
-                        cell_do.single_button.Text = "";
-                        cell_check.single_button.Text = "";
+                        cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
+                        cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
+                        cell_do.single_button.Text = "do " + abstraction_level_private.ToString();
+                        cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
+                    }
+                    break;
+                case Abstraction_level.Class_below_reality:
+                    {
+                        cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
+                        cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
+                        cell_do.single_button.Text = "do " + abstraction_level_private.ToString();
+                        cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
                 case Abstraction_level.Class_reality:
@@ -124,12 +142,20 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Результат";
                     }
                     break;
+                case Abstraction_level.Interface_above_reality:
+                    {
+                        cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
+                        cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
+                        cell_do.single_button.Text = "do " + abstraction_level_private.ToString();
+                        cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
+                    }
+                    break;
                 case Abstraction_level.Interface_technology:
                     {
-                        cell_act.single_button.Text = abstraction_level_private.ToString();
-                        cell_plan.single_button.Text = "";
-                        cell_do.single_button.Text = "";
-                        cell_check.single_button.Text = "";
+                        cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
+                        cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
+                        cell_do.single_button.Text = "do " + abstraction_level_private.ToString();
+                        cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
                 case Abstraction_level.Interface_alignment:
@@ -196,12 +222,20 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Отрицание";
                     }
                     break;
+                case Abstraction_level.Interface_abstract:
+                    {
+                        cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
+                        cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
+                        cell_do.single_button.Text = "do " + abstraction_level_private.ToString();
+                        cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
+                    }
+                    break;
                 case Abstraction_level.Interface_infinity:
                     {
                         cell_act.single_button.Text = "Идея";
-                        cell_plan.single_button.Text = abstraction_level_private.ToString();
-                        cell_do.single_button.Text = abstraction_level_private.ToString();
-                        cell_check.single_button.Text = abstraction_level_private.ToString();
+                        cell_plan.single_button.Text = "-";
+                        cell_do.single_button.Text = "-";
+                        cell_check.single_button.Text = "-";
                     }
                     break;
             }
@@ -267,12 +301,12 @@ namespace pl2.rainbow.form.gdi.components
 
 
             #region up_left_2_down
-            if (abstraction_level >= Abstraction_level.Interface_logical && abstraction_level <= Abstraction_level.Interface_infinity)
+            if (abstraction_level >= Abstraction_level.Interface_abstract && abstraction_level <= Abstraction_level.Interface_infinity)
             {
                 pt = new Point[] { 
-                    new Point( dt + dt - 1, -1),
-                    new Point( dt + dt - 1, dt -1),
-                    new Point( dt - 1, dt - 1)};
+                    new Point( dt2, 0),
+                    new Point( dt2, dt),
+                    new Point( dt, dt )};
                 if (abstraction_level == Abstraction_level.Interface_infinity)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
@@ -280,78 +314,77 @@ namespace pl2.rainbow.form.gdi.components
             #endregion
 
             #region up_left_2_up
-            if (abstraction_level >= Abstraction_level.Interface_functional && abstraction_level <= Abstraction_level.Interface_infinity)
+            if (abstraction_level >= Abstraction_level.Interface_target && abstraction_level <= Abstraction_level.Interface_infinity)
             {
                 pt = new Point[] { 
-                    new Point( dt - 1, -1),
-                    new Point( dt + dt - 1, -1),
-                    new Point( dt - 1, dt - 1)};
-                if (abstraction_level == Abstraction_level.Interface_target || abstraction_level == Abstraction_level.Interface_logical)
+                    new Point( dt, 0 ),
+                    new Point( dt2, 0 ),
+                    new Point( dt, dt )};
+                if (abstraction_level == Abstraction_level.Interface_logical || abstraction_level == Abstraction_level.Interface_abstract)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_left_1_up
-            if (abstraction_level >= Abstraction_level.Interface_politic && abstraction_level <= Abstraction_level.Interface_target)
+            if (abstraction_level >= Abstraction_level.Interface_session && abstraction_level <= Abstraction_level.Interface_logical)
             {
                 pt = new Point[] { 
-                    new Point( -1, -1),
-                    new Point( dt - 1, -1),
-                    new Point( dt - 1, dt - 1)};
-                if (abstraction_level >= Abstraction_level.Interface_session && abstraction_level <= Abstraction_level.Interface_functional)
+                    new Point( 0, 0 ),
+                    new Point( dt, 0 ),
+                    new Point( dt, dt )};
+                if (abstraction_level >= Abstraction_level.Interface_functional && abstraction_level <= Abstraction_level.Interface_target)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_left_1_down
-            if (abstraction_level >= Abstraction_level.Interface_exchange && abstraction_level <= Abstraction_level.Interface_session)
+            if (abstraction_level >= Abstraction_level.Interface_control && abstraction_level <= Abstraction_level.Interface_functional)
             {
                 pt = new Point[] { 
-                    new Point( -1, -1),
-                    new Point( -1, dt - 1),
-                    new Point( dt - 1, dt - 1)};
-                if (abstraction_level >= Abstraction_level.Interface_control && abstraction_level <= Abstraction_level.Interface_politic)
+                    new Point( 0, 0 ),
+                    new Point( 0, dt ),
+                    new Point( dt, dt )};
+                if (abstraction_level >= Abstraction_level.Interface_politic && abstraction_level <= Abstraction_level.Interface_session)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_2_up
-            if (abstraction_level >= Abstraction_level.Interface_exchange && abstraction_level <= Abstraction_level.Interface_control)
+            if (abstraction_level >= Abstraction_level.Interface_exchange && abstraction_level <= Abstraction_level.Interface_politic)
             {
                 pt = new Point[] { 
-                    new Point( -1, dt - 1),
-                    new Point( dt - 1, dt-1),
-                    new Point( -1, dt + dt - 1)};
-                if (abstraction_level == Abstraction_level.Interface_exchange)
+                    new Point( 0, dt ),
+                    new Point( dt, dt),
+                    new Point( 0, dt2 )};
+                if (abstraction_level == Abstraction_level.Interface_exchange || abstraction_level == Abstraction_level.Interface_control)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_2_down
-            if (abstraction_level >= Abstraction_level.Interface_control && abstraction_level <= Abstraction_level.Interface_exchange)
+            if (abstraction_level >= Abstraction_level.Interface_exchange && abstraction_level <= Abstraction_level.Interface_exchange)
             {
                 pt = new Point[] { 
-                    new Point( dt - 1, dt * 2 - 1),
-                    new Point( dt - 1, dt - 1),
-                    new Point( -1, dt * 2 - 1)};
-                if (abstraction_level == Abstraction_level.Interface_control || abstraction_level == Abstraction_level.Interface_exchange)
+                    new Point( dt, dt2 ),
+                    new Point( dt, dt ),
+                    new Point( 0, dt2 )};
+                if (abstraction_level == Abstraction_level.Interface_alignment)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
-
 #if false
-                if (abstraction_level >= Abstraction_level.Interface_technology && abstraction_level <= Abstraction_level.Interface_alignment)
+                if (abstraction_level >= Abstraction_level.Interface_control && abstraction_level <= Abstraction_level.Interface_politic)
                 {
                 pt = new Point[] { 
                     new Point( -1, hh - dt*3),
                     new Point( dt - 1, hh - dt *3 ),
                     new Point( dt - 1, hh - dt *3/2)};
-                if (abstraction_level == Abstraction_level.Interface_technology)
+                if (abstraction_level == Abstraction_level.Interface_infinity)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
                 }
@@ -361,9 +394,9 @@ namespace pl2.rainbow.form.gdi.components
             if (abstraction_level >= Abstraction_level.Interface_technology && abstraction_level <= Abstraction_level.Interface_alignment)
             {
                 pt = new Point[] { 
-                    new Point( -1, hh - dt*3),
-                    new Point( dt - 1, hh - dt*3/2 ),
-                    new Point( -1, hh - dt*2)};
+                    new Point( 0, hh - dt*3),
+                    new Point( dt, hh - dt*3/2 ),
+                    new Point( 0, hh - dt2)};
                 if (abstraction_level == Abstraction_level.Interface_alignment)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
@@ -372,9 +405,9 @@ namespace pl2.rainbow.form.gdi.components
             if (abstraction_level >= Abstraction_level.Interface_technology && abstraction_level <= Abstraction_level.Interface_alignment)
             {
                 pt = new Point[] { 
-                    new Point( -1, hh - dt*2),
-                    new Point( dt - 1, hh - dt*3/2),
-                    new Point( -1, hh - dt + 1)};
+                    new Point( 0, hh - dt2),
+                    new Point( dt, hh - dt*3/2),
+                    new Point( 0, hh - dt)};
                 if (abstraction_level == Abstraction_level.Interface_technology)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
@@ -395,37 +428,37 @@ namespace pl2.rainbow.form.gdi.components
 #endif
 
             #region center
-            if (abstraction_level >= Abstraction_level.Class_responsibility && abstraction_level <= Abstraction_level.Interface_technology)
+            if (abstraction_level >= Abstraction_level.Class_below_reality && abstraction_level <= Abstraction_level.Interface_above_reality)
             {
                 pt = new Point[] { 
-                    new Point( -1, hh - dt),
-                    new Point( dt*2/3, hh-dt/3),
-                    new Point( -1, hh - dt/4)};
-                if (abstraction_level == Abstraction_level.Interface_technology)
+                    new Point( 0, hh - dt ),
+                    new Point( dt*2/3 + 1, hh-dt/3 ),
+                    new Point( 0, hh - dt/4 )};
+                if (abstraction_level == Abstraction_level.Interface_above_reality)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
 
-            if (abstraction_level >= Abstraction_level.Class_responsibility && abstraction_level <= Abstraction_level.Interface_technology)
+            if (abstraction_level >= Abstraction_level.Class_below_reality && abstraction_level <= Abstraction_level.Interface_above_reality)
             {
                 pt = new Point[] { 
-                    new Point( -1, hh - dt/4),
-                    new Point( dt*2/3, hh-dt/3),
-                    new Point( dt - 1, hh),
-                    new Point( dt*2/3, hh+dt/3),
-                    new Point( -1, hh + dt/4)};
+                    new Point( 0, hh - dt/4 ),
+                    new Point( dt*2/3 + 1, hh-dt/3 ),
+                    new Point( dt, hh),
+                    new Point( dt*2/3 + 1, hh+dt/3 ),
+                    new Point( 0, hh + dt/4  )};
                 if (abstraction_level == Abstraction_level.Class_reality)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
 
-            if (abstraction_level >= Abstraction_level.Class_responsibility && abstraction_level <= Abstraction_level.Interface_technology)
+            if (abstraction_level >= Abstraction_level.Class_below_reality && abstraction_level <= Abstraction_level.Interface_above_reality)
             {
                 pt = new Point[] { 
-                    new Point( -1, hh + dt),
-                    new Point( dt*2/3, hh + dt/3),
-                    new Point( -1, hh + dt/4)};
-                if (abstraction_level == Abstraction_level.Class_responsibility)
+                    new Point( 0, hh + dt ),
+                    new Point( dt*2/3 + 1, hh + dt/3 ),
+                    new Point( 0, hh + dt/4 )};
+                if (abstraction_level == Abstraction_level.Class_below_reality)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
@@ -448,10 +481,10 @@ namespace pl2.rainbow.form.gdi.components
             if (abstraction_level >= Abstraction_level.Class_stability && abstraction_level <= Abstraction_level.Class_responsibility)
             {
                 pt = new Point[] { 
-                    new Point( -1, hh + dt),
-                    new Point( dt-1, hh + dt*3/2),
-                    new Point( -1, hh + dt*2)};
-                if (abstraction_level == Abstraction_level.Class_stability)
+                    new Point( 0, hh + dt),
+                    new Point( dt, hh + dt*3/2),
+                    new Point( 0, hh + dt2)};
+                if (abstraction_level == Abstraction_level.Class_responsibility)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
@@ -459,10 +492,10 @@ namespace pl2.rainbow.form.gdi.components
             if (abstraction_level >= Abstraction_level.Class_stability && abstraction_level <= Abstraction_level.Class_responsibility)
             {
                 pt = new Point[] { 
-                    new Point( -1, hh+dt*2),
-                    new Point( dt-1, hh+dt*3/2),
-                    new Point( -1, hh+dt*3)};
-                if (abstraction_level == Abstraction_level.Class_responsibility)
+                    new Point( 0, hh+dt2 ),
+                    new Point( dt, hh+dt*3/2 ),
+                    new Point( 0, hh+dt*3 )};
+                if (abstraction_level == Abstraction_level.Class_stability)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
@@ -479,78 +512,80 @@ namespace pl2.rainbow.form.gdi.components
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
                 }
+#endif
 
-            if (abstraction_level >= 11 && abstraction_level <= 14)
+            #region down_2_up
+            if (abstraction_level >= Abstraction_level.Class_parallel && abstraction_level <= Abstraction_level.Class_parallel)
                 {
                 pt = new Point[] { 
-                    new Point( -1, h-dt2),
-                    new Point( dt-1, h-dt2),
-                    new Point( dt-1, h-dt)};
-                if (abstraction_level == 12 || abstraction_level == 13)
+                    new Point( 0, h-dt2-1),
+                    new Point( dt, h-dt2-1),
+                    new Point( dt, h-dt-1)};
+                if (abstraction_level == Abstraction_level.Class_stability)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
                 }
-#endif
+            #endregion
 
             #region down_2_down
-            if (abstraction_level >= Abstraction_level.Class_specialist && abstraction_level <= Abstraction_level.Class_parallel)
+            if (abstraction_level >= Abstraction_level.Class_process && abstraction_level <= Abstraction_level.Class_parallel)
             {
                 pt = new Point[] { 
-                    new Point( -1, h-dt*2),
-                    new Point( -1, h-dt),
-                    new Point( dt-1, h-dt)};
-                if (abstraction_level == Abstraction_level.Class_parallel || abstraction_level == Abstraction_level.Class_parallel)
+                    new Point( 0, h-dt2-1 ),
+                    new Point( 0, h-dt-1 ),
+                    new Point( dt, h-dt-1 )};
+                if (abstraction_level == Abstraction_level.Class_specialist || abstraction_level == Abstraction_level.Class_parallel)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region down_1_up
-            if (abstraction_level >= Abstraction_level.Class_system && abstraction_level <= Abstraction_level.Class_parallel)
+            if (abstraction_level >= Abstraction_level.Class_structure && abstraction_level <= Abstraction_level.Class_specialist)
             {
                 pt = new Point[] { 
-                    new Point( -1, h-dt),
-                    new Point( dt-1, h-dt),
-                    new Point( -1, h)};
-                if (abstraction_level >= Abstraction_level.Class_process && abstraction_level <= Abstraction_level.Class_specialist)
+                    new Point( 0, h-dt-1 ),
+                    new Point( dt, h-dt-1 ),
+                    new Point( 0, h-1 )};
+                if (abstraction_level >= Abstraction_level.Class_system && abstraction_level <= Abstraction_level.Class_process)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region down_1_down
-            if (abstraction_level >= Abstraction_level.Class_tuple && abstraction_level <= Abstraction_level.Class_process)
+            if (abstraction_level >= Abstraction_level.Class_domain && abstraction_level <= Abstraction_level.Class_system)
             {
                 pt = new Point[] { 
-                    new Point( -1, h),
-                    new Point( dt-1, h-dt),
-                    new Point( dt-1, h)};
-                if (abstraction_level >= Abstraction_level.Class_structure && abstraction_level <= Abstraction_level.Class_system)
+                    new Point( 0, h-1 ),
+                    new Point( dt, h-dt-1 ),
+                    new Point( dt, h-1 )};
+                if (abstraction_level >= Abstraction_level.Class_tuple && abstraction_level <= Abstraction_level.Class_structure)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region down_left_2_down
-            if (abstraction_level >= Abstraction_level.Class_infinity && abstraction_level <= Abstraction_level.Class_structure)
+            if (abstraction_level >= Abstraction_level.Class_infinity && abstraction_level <= Abstraction_level.Class_tuple)
             {
                 pt = new Point[] { 
-                    new Point( dt-1, h-dt),
-                    new Point( dt-1, h),
-                    new Point( dt*2-1, h)};
-                if (abstraction_level >= Abstraction_level.Class_domain && abstraction_level <= Abstraction_level.Class_tuple)
+                    new Point( dt, h-dt-1),
+                    new Point( dt, h-1 ),
+                    new Point( dt2, h-1 )};
+                if (abstraction_level >= Abstraction_level.Class_void && abstraction_level <= Abstraction_level.Class_domain)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region down_left_2_up
-            if (abstraction_level >= Abstraction_level.Class_infinity && abstraction_level <= Abstraction_level.Class_domain)
+            if (abstraction_level >= Abstraction_level.Class_infinity && abstraction_level <= Abstraction_level.Class_void)
             {
                 pt = new Point[] { 
-                    new Point( dt-1, h-dt),
-                    new Point( dt*2-1, h-dt),
-                    new Point( dt*2-1, h)};
+                    new Point( dt, h-dt-1),
+                    new Point( dt2, h-dt-1),
+                    new Point( dt2, h-1)};
                 if (abstraction_level >= Abstraction_level.Class_infinity && abstraction_level <= Abstraction_level.Class_infinity)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
@@ -684,6 +719,10 @@ namespace pl2.rainbow.form.gdi.components
             switch (abstraction_level)
             {
                 case Abstraction_level.Class_infinity: // 1 пустой тип - void, empty, nil, null
+                    return_value = Color.FromArgb( 96 , 0 , 160 ); // (143, 0, 143);
+                    break;
+
+                case Abstraction_level.Class_void: // 1 пустой тип - void, empty, nil, null
                     return_value = Color.FromArgb( 80 , 0 , 176 ); // (143, 0, 143);
                     break;
 
@@ -700,31 +739,39 @@ namespace pl2.rainbow.form.gdi.components
                     break;
 
                 case Abstraction_level.Class_system: // 5 система, которая может содержать закрытые и защищенные наследуемые элементы.
-                    return_value = Color.FromArgb( 0 , 128 , 128 );  // ( 1, 58, 135);
+                    return_value = Color.FromArgb( 0 , 112 , 144 );  // ( 1, 58, 135);
                     break;
 
                 case Abstraction_level.Class_process: // 6 процесс, которому можно передать инициализирующие значения и получить результирующие значения. Соответствует службе. Любой метод получает не только указатель на себя (this), но и указатель на вызвавший класс или объект (sender). Это позволяет проверить авторизацию объекта, осуществляющего доступ к методу. Для предотвращения низкоуровневой подмены sender, параметры обрабатываемого события запрашиваются у вызывающего объекта после получения идентификатора сообщения. Содержит стандартные методы.
-                    return_value = Color.FromArgb( 0 , 144 , 112 ); // ( 1, 88, 116);
+                    return_value = Color.FromArgb( 0 , 128 , 128 ); // ( 1, 88, 116);
                     break;
 
                 case Abstraction_level.Class_specialist: // 7 специализированный класс, который выполняет указанный соглашениями набор функций. Соответствует COM-модели. Поддерживает свойство possibility с интерфейсом control interface
-                    return_value = Color.FromArgb( 0 , 160 , 96 ); // ( 0, 96, 84);
+                    return_value = Color.FromArgb( 0 , 144 , 112 ); // ( 0, 96, 84);
                     break;
 
                 case Abstraction_level.Class_parallel: // 8 асинхронно работающий класс, передающий сообщения о выполнении задачи. Поддерживает свойство manager с интерфейсом exchange interface
-                    return_value = Color.FromArgb( 0 , 176 , 80 ); // ( 0, 117, 0);
+                    return_value = Color.FromArgb( 0 , 160 , 96 ); // ( 0, 117, 0);
                     break;
 
                 case Abstraction_level.Class_stability: // 9 таможня, обеспечивающее ответственность за выполнение задачи. Поддерживает свойство environment с интерфейсом concurent interface
-                    return_value = Color.FromArgb( 0 , 192 , 64 ); // ( 65, 137, 3);
+                    return_value = Color.FromArgb( 0 , 176 , 80 ); // ( 65, 137, 3);
                     break;
 
                 case Abstraction_level.Class_responsibility: // 10 исполняемый класс
-                    return_value = Color.FromArgb( 0 , 208 , 48 ); // ( 110, 141, 3);
+                    return_value = Color.FromArgb( 0 , 192 , 64 ); // ( 110, 141, 3);
+                    break;
+
+                case Abstraction_level.Class_below_reality:    // 11 среда исполнения
+                    return_value = Color.FromArgb( 0 , 208 , 32 ); // ( 138, 157, 3);
                     break;
 
                 case Abstraction_level.Class_reality:    // 11 среда исполнения
-                    return_value = Color.FromArgb( 0 , 208 , 0 ); // ( 138, 157, 3);
+                    return_value = Color.FromArgb( 32, 255 , 32 ); // ( 138, 157, 3);
+                    break;
+
+                case Abstraction_level.Interface_above_reality:    // 11 среда исполнения
+                    return_value = Color.FromArgb( 32 , 208 , 0 ); // ( 138, 157, 3);
                     break;
 
                 case Abstraction_level.Interface_technology: // 12 технологические элементы
@@ -763,8 +810,12 @@ namespace pl2.rainbow.form.gdi.components
                     return_value = Color.FromArgb( 224 , 0 , 32 ); // ( 248, 26, 3);
                     break;
 
-                case Abstraction_level.Interface_infinity: // 21 универсальный интерфейс
+                case Abstraction_level.Interface_abstract: // 21 универсальный интерфейс
                     return_value = Color.FromArgb( 192 , 0 , 64 ); // ( 255, 0, 0);
+                    break;
+
+                case Abstraction_level.Interface_infinity: // 21 универсальный интерфейс
+                    return_value = Color.FromArgb( 176 , 0 , 80 ); // ( 255, 0, 0);
                     break;
 
             }
