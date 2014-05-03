@@ -64,6 +64,7 @@
     <Compile Include="description\xml\node\level.cs" />
     <Compile Include="description\xml\node\link.cs" />
     <Compile Include="description\xml\node\node.cs" />
+    <Compile Include="description\sphere.cs" />
     <Compile Include="form\gdi\components\abstraction.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,17 +83,17 @@
     <Compile Include="form\gdi\components\rainbow.Designer.cs">
       <DependentUpon>rainbow.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\gdi\sdi\chield\list\cell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\gdi\sdi\chield\list\cell.Designer.cs">
+      <DependentUpon>cell.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\gdi\sdi\main\main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\gdi\sdi\main\main.Designer.cs">
       <DependentUpon>main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="form\gdi\sdi\main\Копия main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\gdi\sdi\main\Копия main.Designer.cs">
-      <DependentUpon>Копия main.cs</DependentUpon>
     </Compile>
     <Compile Include="form\gdi\sdi\property\about.cs">
       <SubType>Form</SubType>
@@ -131,11 +132,11 @@
     <EmbeddedResource Include="form\gdi\components\rainbow.resx">
       <DependentUpon>rainbow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\gdi\sdi\chield\list\cell.resx">
+      <DependentUpon>cell.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\gdi\sdi\main\main.resx">
       <DependentUpon>main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="form\gdi\sdi\main\Копия main.resx">
-      <DependentUpon>Копия main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\gdi\sdi\property\about.resx">
       <DependentUpon>about.cs</DependentUpon>

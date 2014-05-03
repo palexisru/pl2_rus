@@ -26,6 +26,10 @@ namespace pl2.rainbow.form.gdi.components
             set
             {
                 abstraction_level_private = value;
+                cell_act.abstraction_level = value;
+                cell_plan.abstraction_level = value;
+                cell_do.abstraction_level = value;
+                cell_check.abstraction_level = value;
                 store_button_names();
 
                 // cell_act.single_button.Text = level.ToString();
@@ -821,6 +825,115 @@ namespace pl2.rainbow.form.gdi.components
             }
             return return_value;
 
+        }
+
+        public static string abstraction_name(Abstraction_level abstraction_level)
+        {
+            string return_value = "не определено";
+            switch (abstraction_level)
+            {
+                case Abstraction_level.Class_infinity: // 1 пустой тип - void, empty, nil, null
+                    return_value = "Пустой";
+                    break;
+
+                case Abstraction_level.Class_void: // 1 пустой тип - void, empty, nil, null
+                    return_value = "Не заполненный";
+                    break;
+
+                case Abstraction_level.Class_domain:  // 2 элементарный класс среды исполнения (ValueType)
+                    return_value = "Хаотический";
+                    break;
+
+                case Abstraction_level.Class_tuple: // 3 связь между указанными объектами (аналогично предложениям Prolog, списку параметров функций), методы и свойства отсутствуют, доступ происходит только к открытым членам. По возможностям аналогично набору, возвращаемому из реляционной базы данных
+                    return_value = "Физический";
+                    break;
+
+                case Abstraction_level.Class_structure: // 4 структура с открытыми элементами. Для доступа к элементу текущего объекта используется слово this. Может содержать методы для обработки.
+                    return_value = "Канальный";
+                    break;
+
+                case Abstraction_level.Class_system: // 5 система, которая может содержать закрытые и защищенные наследуемые элементы.
+                    return_value = "Системный";
+                    break;
+
+                case Abstraction_level.Class_process: // 6 процесс, которому можно передать инициализирующие значения и получить результирующие значения. Соответствует службе. Любой метод получает не только указатель на себя (this), но и указатель на вызвавший класс или объект (sender). Это позволяет проверить авторизацию объекта, осуществляющего доступ к методу. Для предотвращения низкоуровневой подмены sender, параметры обрабатываемого события запрашиваются у вызывающего объекта после получения идентификатора сообщения. Содержит стандартные методы.
+                    return_value = "Межсетевой";
+                    break;
+
+                case Abstraction_level.Class_specialist: // 7 специализированный класс, который выполняет указанный соглашениями набор функций. Соответствует COM-модели. Поддерживает свойство possibility с интерфейсом control interface
+                    return_value = "Специальный";
+                    break;
+
+                case Abstraction_level.Class_parallel: // 8 асинхронно работающий класс, передающий сообщения о выполнении задачи. Поддерживает свойство manager с интерфейсом exchange interface
+                    return_value = "Параллельный";
+                    break;
+
+                case Abstraction_level.Class_stability: // 9 таможня, обеспечивающее ответственность за выполнение задачи. Поддерживает свойство environment с интерфейсом concurent interface
+                    return_value = "Устойчивый";
+                    break;
+
+                case Abstraction_level.Class_responsibility: // 10 исполняемый класс
+                    return_value = "Ответственный";
+                    break;
+
+                case Abstraction_level.Class_below_reality:    // 11 среда исполнения
+                    return_value = "Нижний приреал";
+                    break;
+
+                case Abstraction_level.Class_reality:    // 11 среда исполнения
+                    return_value = "Преобразующий";
+                    break;
+
+                case Abstraction_level.Interface_above_reality:    // 11 среда исполнения
+                    return_value = "Верхний приреал";
+                    break;
+
+                case Abstraction_level.Interface_technology: // 12 технологические элементы
+                    return_value = "Технологический";
+                    break;
+
+                case Abstraction_level.Interface_alignment: // 13 оценка соответствия с внешними аналогами
+                    return_value = "Выравнивающий";
+                    break;
+
+                case Abstraction_level.Interface_exchange: // 14 взаимодействие с окружающей средой
+                    return_value = "Оценивающий";
+                    break;
+
+                case Abstraction_level.Interface_control: // 15 описание управления
+                    return_value = "Управляющий";
+                    break;
+
+                case Abstraction_level.Interface_politic: // 16 описание стратегии
+                    return_value = "Транспортный";
+                    break;
+
+                case Abstraction_level.Interface_session: // 17 интерфейсы для хранения текущего состояния
+                    return_value = "Сеансовый";
+                    break;
+
+                case Abstraction_level.Interface_functional: // 18 функциональные связи, конечные автоматы
+                    return_value = "Представительский";
+                    break;
+
+                case Abstraction_level.Interface_target: // 19 описание целевых функций
+                    return_value = "Прикладной";
+                    break;
+
+                case Abstraction_level.Interface_logical: // 20 логические элементы
+                    return_value = "Логический";
+                    break;
+
+                case Abstraction_level.Interface_abstract: // 21 универсальный интерфейс
+                    return_value = "Абстрактный";
+                    break;
+
+                case Abstraction_level.Interface_infinity: // 21 универсальный интерфейс
+                    return_value = "Идейный";
+                    break;
+
+            }
+            return return_value;
         }
 
         private void level_image_Click(object sender , EventArgs e)

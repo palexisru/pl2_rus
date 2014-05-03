@@ -1,15 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.ComponentModel;
-using System.Drawing;
+using System.Windows.Forms;
+using pl2.rainbow.description;
 
-namespace pl2.rainbow.description
+namespace pl2.rainbow.form.gdi.sdi.chield.list
 {
-    public enum Abstraction_level
+    public partial class Cell : Form
     {
-        Class_infinity = -12 , // абсолютная пустота
+        private int childFormNumber = 0;
+
+        public Cell()
+        {
+            InitializeComponent();
+            StoryList();
+        }
+
+        private void StoryList()
+        {
+#if false
+            Class_infinity = -12 , // абсолютная пустота
 
         Class_void = -11 , // пустой тип - void, empty, nil, null
 
@@ -58,44 +72,103 @@ namespace pl2.rainbow.description
         Interface_abstract = 11 , // универсальный интерфейс
 
         Interface_infinity = 12 // абсолютная идея
+#endif
+        }
 
-    }
-
-    /// <summary>
-    /// описание компонентов абстрактности
-    /// </summary>
-    public class Abstraction
-    {
-
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
+        [Browsable( true ) , Description( "Фаза обработки" ) , Category( "Data" )]
         public Abstraction_level abstraction_level { get; set; }
 
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
-        public string science { get; set; }
+        [Browsable( true ) , Description( "Фаза обработки" ) , Category( "Data" )]
+        public Phase_direction phase { get; set; }
 
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
-        public string programming { get; set; }
-
-        [Browsable( true ) , Description( "Уровень модели взаимосвязи открытых систем" ) , Category( "Data" )]
-        public string OSI { get; set; }
-
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
-        public string tag { get{ return abstraction_level.ToString();} }
-
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
-        public Int32 value { get { return (Int32)abstraction_level; } }
-
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
-        public Color color { get; set; }
-
-        public Abstraction(Abstraction_level abstraction_level_new , string science_new
-            , string programming_new , string OSI_new , Color color_new)
+        private void ShowNewForm(object sender , EventArgs e)
         {
-            abstraction_level = abstraction_level_new;
-            science = science_new;
-            programming = programming_new;
-            OSI = OSI_new;
-            color = color_new;        
+            Form childForm = new Form();
+            childForm.MdiParent = this;
+            childForm.Text = "Окно " + childFormNumber++;
+            childForm.Show();
+        }
+
+        private void OpenFile(object sender , EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Environment.GetFolderPath( Environment.SpecialFolder.Personal );
+            openFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
+            if (openFileDialog.ShowDialog( this ) == DialogResult.OK)
+            {
+                string FileName = openFileDialog.FileName;
+            }
+        }
+
+        private void SaveAsToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath( Environment.SpecialFolder.Personal );
+            saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
+            if (saveFileDialog.ShowDialog( this ) == DialogResult.OK)
+            {
+                string FileName = saveFileDialog.FileName;
+            }
+        }
+
+        private void ExitToolsStripMenuItem_Click(object sender , EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CutToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+        }
+
+        private void CopyToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+        }
+
+        private void PasteToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+        }
+
+        private void ToolBarToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+        }
+
+        private void StatusBarToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+        }
+
+        private void CascadeToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            LayoutMdi( MdiLayout.Cascade );
+        }
+
+        private void TileVerticalToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            LayoutMdi( MdiLayout.TileVertical );
+        }
+
+        private void TileHorizontalToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            LayoutMdi( MdiLayout.TileHorizontal );
+        }
+
+        private void ArrangeIconsToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            LayoutMdi( MdiLayout.ArrangeIcons );
+        }
+
+        private void CloseAllToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+        private void cell_list_box_SelectedIndexChanged(object sender , EventArgs e)
+        {
+
         }
     }
 }

@@ -52,6 +52,7 @@
             this.single_button.TabIndex = 0;
             this.single_button.Text = "single cell button";
             this.single_button.UseVisualStyleBackColor = true;
+            this.single_button.Click += new System.EventHandler(this.single_button_Click);
             // 
             // context_menu
             // 
