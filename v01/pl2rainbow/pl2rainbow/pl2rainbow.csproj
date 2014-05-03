@@ -83,11 +83,17 @@
     <Compile Include="form\gdi\components\rainbow.Designer.cs">
       <DependentUpon>rainbow.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\gdi\sdi\chield\list\cell.cs">
+    <Compile Include="form\gdi\sdi\chield\node\cell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\gdi\sdi\chield\list\cell.Designer.cs">
+    <Compile Include="form\gdi\sdi\chield\node\cell.Designer.cs">
       <DependentUpon>cell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\gdi\sdi\chield\node\relations\card\item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\gdi\sdi\chield\node\relations\card\item.Designer.cs">
+      <DependentUpon>item.cs</DependentUpon>
     </Compile>
     <Compile Include="form\gdi\sdi\main\main.cs">
       <SubType>Form</SubType>
@@ -132,8 +138,11 @@
     <EmbeddedResource Include="form\gdi\components\rainbow.resx">
       <DependentUpon>rainbow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\gdi\sdi\chield\list\cell.resx">
+    <EmbeddedResource Include="form\gdi\sdi\chield\node\cell.resx">
       <DependentUpon>cell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\gdi\sdi\chield\node\relations\card\item.resx">
+      <DependentUpon>item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\gdi\sdi\main\main.resx">
       <DependentUpon>main.cs</DependentUpon>
@@ -172,7 +181,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="description\xml\project\file\" />
-    <Folder Include="form\gdi\sdi\chield\node\relations\card\" />
     <Folder Include="form\gdi\sdi\chield\node\relations\list\" />
     <Folder Include="form\gdi\sdi\chield\node\rename\" />
   </ItemGroup>
