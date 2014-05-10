@@ -1,0 +1,11 @@
+
+
+meta source="form" name="example"
+    User.Scene test_one_window
+    {
+        window test
+        {
+            menu 
+        }
+    } 
+/meta

@@ -1,0 +1,18 @@
+
+
+meta source="form" name="example"
+    namespace pl2.test.options
+    {@
+        User.Form.Controls.Group test_level
+        {*
+            tytle := "Основные настройки";
+            Controls.Label label1 := new("");
+            Contols.Check common_only
+            {
+                state := checked;
+                label := "Рарешить только общедоступное";
+                line := Break_after;
+            } 
+        *}
+    @}
+/meta

@@ -1,0 +1,15 @@
+
+
+meta source="scene" name="example"
+    User.Scene test_scene
+    {
+        Universal.Way to_options
+        {
+            
+        }
+        window test
+        {
+            menu 
+        }
+    } 
+/meta
