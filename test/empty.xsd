@@ -1,0 +1,90 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="Rainbow" targetNamespace="rainbow.xsd" xmlns:mstns="rainbow.xsd" xmlns="rainbow.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="Rainbow" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Project">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="project_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-65530" msdata:Caption="Проект" type="xs:int" />
+              <xs:element name="project_name" msdata:Caption="Название проекта" type="xs:string" minOccurs="0" />
+              <xs:element name="project_description" msdata:Caption="Описание проекта" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Cell">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="project_id" msdata:Caption="Проект" type="xs:int" />
+              <xs:element name="cell_level" msdata:Caption="Уровень" type="xs:int" default="0" />
+              <xs:element name="cell_phase" msdata:Caption="Фаза" type="xs:int" default="1" />
+              <xs:element name="cell_common_name" msdata:Caption="Общее наименование ячейки" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Element">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="project_id" msdata:Caption="Проект" type="xs:int" />
+              <xs:element name="cell_level" msdata:Caption="Уровень" type="xs:int" default="0" />
+              <xs:element name="cell_phase" msdata:Caption="Фаза" type="xs:int" default="1" minOccurs="0" />
+              <xs:element name="element_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-65530" msdata:Caption="Идентификатор ячейки" type="xs:int" />
+              <xs:element name="element_name" msdata:Caption="Название элемента" type="xs:string" minOccurs="0" />
+              <xs:element name="element_description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Link_elements">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="link_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-65530" type="xs:int" />
+              <xs:element name="element_id_parent" type="xs:int" minOccurs="0" />
+              <xs:element name="element_id_chield" type="xs:int" minOccurs="0" />
+              <xs:element name="link_description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Project_id_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Project" />
+      <xs:field xpath="mstns:project_id" />
+    </xs:unique>
+    <xs:unique name="Cell_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Cell" />
+      <xs:field xpath="mstns:project_id" />
+      <xs:field xpath="mstns:cell_level" />
+      <xs:field xpath="mstns:cell_phase" />
+    </xs:unique>
+    <xs:unique name="cell">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:project_id" />
+      <xs:field xpath="mstns:cell_level" />
+      <xs:field xpath="mstns:cell_phase" />
+    </xs:unique>
+    <xs:unique name="Element_id_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Element" />
+      <xs:field xpath="mstns:element_id" />
+    </xs:unique>
+    <xs:unique name="Link_element_id_parent_Key">
+      <xs:selector xpath=".//mstns:Link_elements" />
+      <xs:field xpath="mstns:element_id_parent" />
+    </xs:unique>
+    <xs:unique name="Link_element_id_chield_Key">
+      <xs:selector xpath=".//mstns:Link_elements" />
+      <xs:field xpath="mstns:element_id_chield" />
+    </xs:unique>
+    <xs:unique name="Link_id_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Link_elements" />
+      <xs:field xpath="mstns:link_id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Project_Cell_Relation" msdata:parent="Project" msdata:child="Cell" msdata:parentkey="project_id" msdata:childkey="project_id" />
+      <msdata:Relationship name="Cell_Cell_value_Relation" msdata:parent="Cell" msdata:child="Element" msdata:parentkey="project_id cell_level cell_phase" msdata:childkey="project_id cell_level cell_phase" />
+      <msdata:Relationship name="Cell_value_link_parent_Relation" msdata:parent="Element" msdata:child="Link_elements" msdata:parentkey="element_id" msdata:childkey="element_id_parent" />
+      <msdata:Relationship name="Cell_value_link_chield_Relation" msdata:parent="Element" msdata:child="Link_elements" msdata:parentkey="element_id" msdata:childkey="element_id_chield" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

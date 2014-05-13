@@ -7,6 +7,9 @@ using System.Drawing;
 
 namespace pl2.rainbow.description
 {
+    /// <summary>
+    /// Уровень абстрактности
+    /// </summary>
     public enum Abstraction_level
     {
         Class_infinity = -12 , // абсолютная пустота
@@ -61,6 +64,14 @@ namespace pl2.rainbow.description
 
     }
 
+    public enum Abstraction_level_importance
+    {
+        Level_main,
+        Level_important,
+        Level_probably,
+        Level_reserved
+    }
+
     /// <summary>
     /// описание компонентов абстрактности
     /// </summary>
@@ -70,31 +81,35 @@ namespace pl2.rainbow.description
         [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
         public Abstraction_level abstraction_level { get; set; }
 
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
+        [Browsable( true ) , Description( "Раздел знаний" ) , Category( "Data" )]
         public string science { get; set; }
 
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
+        [Browsable( true ) , Description( "Вид программной единицы" ) , Category( "Data" )]
         public string programming { get; set; }
 
         [Browsable( true ) , Description( "Уровень модели взаимосвязи открытых систем" ) , Category( "Data" )]
         public string OSI { get; set; }
 
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
+        [Browsable( true ) , Description( "Важность уровня" ) , Category( "Data" )]
+        public Abstraction_level_importance importance { get; set; } 
+
+        [Browsable( true ) , Description( "Тег уровня" ) , Category( "Data" )]
         public string tag { get{ return abstraction_level.ToString();} }
 
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
+        [Browsable( true ) , Description( "Численный индекс уровня" ) , Category( "Data" )]
         public Int32 value { get { return (Int32)abstraction_level; } }
 
-        [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
+        [Browsable( true ) , Description( "Цвет для вывода уровня" ) , Category( "Data" )]
         public Color color { get; set; }
 
-        public Abstraction(Abstraction_level abstraction_level_new , string science_new
+        public Abstraction(Abstraction_level abstraction_level_new , string science_new, Abstraction_level_importance importance_new
             , string programming_new , string OSI_new , Color color_new)
         {
             abstraction_level = abstraction_level_new;
             science = science_new;
             programming = programming_new;
             OSI = OSI_new;
+            importance = importance_new;
             color = color_new;        
         }
     }

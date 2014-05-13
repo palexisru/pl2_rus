@@ -39,6 +39,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="description\abstraction.cs" />
+    <Compile Include="description\cell.cs" />
     <Compile Include="description\phase.cs" />
     <Compile Include="description\xml\list\authors.cs" />
     <Compile Include="description\xml\list\directions.cs" />
@@ -65,6 +67,26 @@
     <Compile Include="description\xml\node\link.cs" />
     <Compile Include="description\xml\node\node.cs" />
     <Compile Include="description\sphere.cs" />
+    <Compile Include="description\xml\project\file\rainbow.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rainbow.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="description\xml\project\rainbow.cs">
+      <DependentUpon>rainbow.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="description\xml\project\rainbow.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rainbow.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="description\xml\project\visual\rainbow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="description\xml\project\visual\rainbow.Designer.cs">
+      <DependentUpon>rainbow.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\gdi\components\abstraction.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,6 +151,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="description\xml\project\visual\rainbow.resx">
+      <DependentUpon>rainbow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\gdi\components\abstraction.resx">
       <DependentUpon>abstraction.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +194,25 @@
     <EmbeddedResource Include="rainbow_window.resx">
       <DependentUpon>rainbow_window.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="description\xml\project\file\rainbow.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>rainbow.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="description\xml\project\file\rainbow.dbml.layout">
+      <DependentUpon>rainbow.dbml</DependentUpon>
+    </None>
+    <None Include="description\xml\project\rainbow.xsc">
+      <DependentUpon>rainbow.xsd</DependentUpon>
+    </None>
+    <None Include="description\xml\project\rainbow.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rainbow.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="description\xml\project\rainbow.xss">
+      <DependentUpon>rainbow.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -180,9 +224,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="description\xml\project\file\" />
     <Folder Include="form\gdi\sdi\chield\node\relations\list\" />
     <Folder Include="form\gdi\sdi\chield\node\rename\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="description\xml\project\file\empty.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

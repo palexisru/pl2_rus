@@ -168,5 +168,11 @@ namespace pl2.rainbow.form.gdi.sdi.main
             Form f = new pl2.rainbow.form.gdi.sdi.property.About();
             f.ShowDialog();
         }
+
+        private void источникToolStripMenuItem_Click(object sender , EventArgs e)
+        {
+            Form f = new pl2.rainbow.description.xml.project.visual.Rainbow();
+            f.Show();
+        }
     }
 }

@@ -63,6 +63,7 @@
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.sphera_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -88,7 +89,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.project_rainbow = new pl2.rainbow.form.gdi.components.Rainbow();
-            this.sphera_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.источникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_strip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -321,7 +322,8 @@
             // 
             this.сервисToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.настройкиToolStripMenuItem,
-            this.параметрыToolStripMenuItem});
+            this.параметрыToolStripMenuItem,
+            this.источникToolStripMenuItem});
             this.сервисToolStripMenuItem.Name = "сервисToolStripMenuItem";
             this.сервисToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.сервисToolStripMenuItem.Text = "&Сервис";
@@ -379,6 +381,12 @@
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(186, 6);
+            // 
+            // sphera_ToolStripMenuItem
+            // 
+            this.sphera_ToolStripMenuItem.Name = "sphera_ToolStripMenuItem";
+            this.sphera_ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.sphera_ToolStripMenuItem.Text = "Сфера ...";
             // 
             // aboutToolStripMenuItem
             // 
@@ -602,11 +610,12 @@
             this.project_rainbow.TabIndex = 5;
             this.project_rainbow.Layout += new System.Windows.Forms.LayoutEventHandler(this.project_rainbow_Layout);
             // 
-            // sphera_ToolStripMenuItem
+            // источникToolStripMenuItem
             // 
-            this.sphera_ToolStripMenuItem.Name = "sphera_ToolStripMenuItem";
-            this.sphera_ToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.sphera_ToolStripMenuItem.Text = "Сфера ...";
+            this.источникToolStripMenuItem.Name = "источникToolStripMenuItem";
+            this.источникToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.источникToolStripMenuItem.Text = "Источник";
+            this.источникToolStripMenuItem.Click += new System.EventHandler(this.источникToolStripMenuItem_Click);
             // 
             // main_sdi_form
             // 
@@ -694,6 +703,7 @@
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private components.Rainbow project_rainbow;
         private System.Windows.Forms.ToolStripMenuItem sphera_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem источникToolStripMenuItem;
         }
     }
 
