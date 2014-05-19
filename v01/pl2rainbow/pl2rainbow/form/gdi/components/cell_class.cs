@@ -18,10 +18,10 @@ namespace pl2.rainbow.form.gdi.components
         }
 
         [Browsable( true ) , Description( "Фаза обработки" ) , Category( "Data" )]
-        public Abstraction_level abstraction_level { get; set; }
+        public Abstraction_level_enum abstraction_level { get; set; }
 
         [Browsable( true ) , Description( "Фаза обработки" ) , Category( "Data" )]
-        public Phase_direction phase { get; set; }
+        public Phase_direction_enum phase { get; set; }
 
         private void rename_menu_item_Click(object sender , EventArgs e)
         {

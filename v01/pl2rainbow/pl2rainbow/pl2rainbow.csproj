@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="description\abstraction.cs" />
     <Compile Include="description\cell.cs" />
+    <Compile Include="description\importance.cs" />
     <Compile Include="description\phase.cs" />
     <Compile Include="description\xml\list\authors.cs" />
     <Compile Include="description\xml\list\directions.cs" />
@@ -72,14 +73,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rainbow.dbml</DependentUpon>
     </Compile>
-    <Compile Include="description\xml\project\rainbow.cs">
-      <DependentUpon>rainbow.xsd</DependentUpon>
+    <Compile Include="description\xml\project\rainbow_base.cs">
+      <DependentUpon>rainbow_base.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="description\xml\project\rainbow.Designer.cs">
+    <Compile Include="description\xml\project\rainbow_base.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rainbow.xsd</DependentUpon>
+      <DependentUpon>rainbow_base.xsd</DependentUpon>
     </Compile>
     <Compile Include="description\xml\project\visual\rainbow.cs">
       <SubType>Form</SubType>
@@ -87,17 +88,17 @@
     <Compile Include="description\xml\project\visual\rainbow.Designer.cs">
       <DependentUpon>rainbow.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\gdi\components\abstraction.cs">
+    <Compile Include="form\gdi\components\abstraction_control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="form\gdi\components\abstraction.Designer.cs">
-      <DependentUpon>abstraction.cs</DependentUpon>
+    <Compile Include="form\gdi\components\abstraction_control.Designer.cs">
+      <DependentUpon>abstraction_control.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\gdi\components\cell.cs">
+    <Compile Include="form\gdi\components\cell_class.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="form\gdi\components\cell.Designer.cs">
-      <DependentUpon>cell.cs</DependentUpon>
+    <Compile Include="form\gdi\components\cell_class.Designer.cs">
+      <DependentUpon>cell_class.cs</DependentUpon>
     </Compile>
     <Compile Include="form\gdi\components\rainbow.cs">
       <SubType>UserControl</SubType>
@@ -154,11 +155,11 @@
     <EmbeddedResource Include="description\xml\project\visual\rainbow.resx">
       <DependentUpon>rainbow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\gdi\components\abstraction.resx">
-      <DependentUpon>abstraction.cs</DependentUpon>
+    <EmbeddedResource Include="form\gdi\components\abstraction_control.resx">
+      <DependentUpon>abstraction_control.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\gdi\components\cell.resx">
-      <DependentUpon>cell.cs</DependentUpon>
+    <EmbeddedResource Include="form\gdi\components\cell_class.resx">
+      <DependentUpon>cell_class.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\gdi\components\rainbow.resx">
       <DependentUpon>rainbow.cs</DependentUpon>
@@ -202,16 +203,16 @@
     <None Include="description\xml\project\file\rainbow.dbml.layout">
       <DependentUpon>rainbow.dbml</DependentUpon>
     </None>
-    <None Include="description\xml\project\rainbow.xsc">
-      <DependentUpon>rainbow.xsd</DependentUpon>
+    <None Include="description\xml\project\rainbow_base.xsc">
+      <DependentUpon>rainbow_base.xsd</DependentUpon>
     </None>
-    <None Include="description\xml\project\rainbow.xsd">
+    <None Include="description\xml\project\rainbow_base.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>rainbow.Designer.cs</LastGenOutput>
+      <LastGenOutput>rainbow_base.Designer.cs</LastGenOutput>
     </None>
-    <None Include="description\xml\project\rainbow.xss">
-      <DependentUpon>rainbow.xsd</DependentUpon>
+    <None Include="description\xml\project\rainbow_base.xss">
+      <DependentUpon>rainbow_base.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

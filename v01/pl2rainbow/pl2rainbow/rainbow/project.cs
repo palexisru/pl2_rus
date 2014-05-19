@@ -25,10 +25,10 @@ namespace pl2.rainbow
         public bool center_allwase_visible { get; set; }
 
         [Browsable( true ) , Description( "Текущий центр уровней" ) , Category( "Data" )]
-        public pl2.rainbow.description.Abstraction_level current_abstraction_center { get; set; }
+        public pl2.rainbow.description.Abstraction_level_enum current_abstraction_center { get; set; }
 
         [Browsable( true ) , Description( "Текущий центр фаз" ) , Category( "Data" )]
-        public pl2.rainbow.description.Phase_direction current_phase_center { get; set; }
+        public pl2.rainbow.description.Phase_direction_enum current_phase_center { get; set; }
 
         [Browsable( true ) , Description( "Выводить резервные строки" ) , Category( "Data" )]
         public bool visible_specials { get; set; }
@@ -38,8 +38,8 @@ namespace pl2.rainbow
 
         public Project()
         {
-            current_abstraction_center = Abstraction_level.Interface_target;
-            current_phase_center = Phase_direction.action;
+            current_abstraction_center = Abstraction_level_enum.Interface_target;
+            current_phase_center = Phase_direction_enum.action;
             center_allwase_visible = true;
             visible_specials = false;
             visible_symmetric = true;

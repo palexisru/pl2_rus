@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace pl2.rainbow.description.xml.project.visual
 {
-    public partial class Rainbow : Form
+    public partial class Rainbow_organisation : Form
     {
-        public Rainbow()
+        public Rainbow_organisation()
         {
             InitializeComponent();
         }

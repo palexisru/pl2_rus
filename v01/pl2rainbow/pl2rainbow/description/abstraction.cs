@@ -10,7 +10,7 @@ namespace pl2.rainbow.description
     /// <summary>
     /// Уровень абстрактности
     /// </summary>
-    public enum Abstraction_level
+    public enum Abstraction_level_enum
     {
         Class_infinity = -12 , // абсолютная пустота
 
@@ -64,22 +64,14 @@ namespace pl2.rainbow.description
 
     }
 
-    public enum Abstraction_level_importance
-    {
-        Level_main,
-        Level_important,
-        Level_probably,
-        Level_reserved
-    }
-
     /// <summary>
     /// описание компонентов абстрактности
     /// </summary>
-    public class Abstraction
+    public class Abstraction_system
     {
 
         [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
-        public Abstraction_level abstraction_level { get; set; }
+        public Abstraction_level_enum abstraction_level { get; set; }
 
         [Browsable( true ) , Description( "Раздел знаний" ) , Category( "Data" )]
         public string science { get; set; }
@@ -91,18 +83,18 @@ namespace pl2.rainbow.description
         public string OSI { get; set; }
 
         [Browsable( true ) , Description( "Важность уровня" ) , Category( "Data" )]
-        public Abstraction_level_importance importance { get; set; } 
+        public Importance_enum importance { get; set; }
 
         [Browsable( true ) , Description( "Тег уровня" ) , Category( "Data" )]
         public string tag { get{ return abstraction_level.ToString();} }
 
         [Browsable( true ) , Description( "Численный индекс уровня" ) , Category( "Data" )]
-        public Int32 value { get { return (Int32)abstraction_level; } }
+        public Single percent { get { return (Single)abstraction_level; } }
 
         [Browsable( true ) , Description( "Цвет для вывода уровня" ) , Category( "Data" )]
         public Color color { get; set; }
 
-        public Abstraction(Abstraction_level abstraction_level_new , string science_new, Abstraction_level_importance importance_new
+        public Abstraction_system(Abstraction_level_enum abstraction_level_new , string science_new , Importance_enum importance_new
             , string programming_new , string OSI_new , Color color_new)
         {
             abstraction_level = abstraction_level_new;

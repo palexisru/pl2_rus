@@ -15,16 +15,16 @@ namespace pl2.rainbow.form.gdi.components
         public pl2.rainbow.Project options = new pl2.rainbow.Project();
 
         [Browsable( true ) , Description( "Предыдущий уровень абстрактности" ) , Category( "Data" )]
-        public pl2.rainbow.description.Abstraction_level selected_level_previous { get; set; }
+        public pl2.rainbow.description.Abstraction_level_enum selected_level_previous { get; set; }
 
         [Browsable( true ) , Description( "Предыдущее выбранное направление" ) , Category( "Data" )]
-        public pl2.rainbow.description.Phase_direction selected_phase_previous { get; set; }
+        public pl2.rainbow.description.Phase_direction_enum selected_phase_previous { get; set; }
 
         [Browsable( true ) , Description( "Видимость неопознанных уровней абстрактности" ) , Category( "Behavior" )]
         public bool extended_visible { get { return options.visible_specials; } }
 
         [Browsable( true ) , Description( "Выбранный уровень абстрактности" ) , Category( "Data" )]
-        public pl2.rainbow.description.Abstraction_level selected_level
+        public pl2.rainbow.description.Abstraction_level_enum selected_level
         {
             get
             {
@@ -42,7 +42,7 @@ namespace pl2.rainbow.form.gdi.components
         }
 
         [Browsable( true ) , Description( "Выбранное направление" ) , Category( "Data" )]
-        public pl2.rainbow.description.Phase_direction selected_phase
+        public pl2.rainbow.description.Phase_direction_enum selected_phase
         {
             get { return options.current_phase_center; }
             set
@@ -63,7 +63,7 @@ namespace pl2.rainbow.form.gdi.components
 
         private void level_Click(object sender , EventArgs e)
         {
-            pl2.rainbow.form.gdi.components.Abstraction a = sender as pl2.rainbow.form.gdi.components.Abstraction;
+            pl2.rainbow.form.gdi.components.Abstraction_control a = sender as pl2.rainbow.form.gdi.components.Abstraction_control;
             selected_level = a.level;
             PerformLayout( this , this.Name );
         }
@@ -79,9 +79,9 @@ namespace pl2.rainbow.form.gdi.components
             // сброс всех уровней
             foreach (Control c in Controls)
             {
-                if (c is pl2.rainbow.form.gdi.components.Abstraction)
+                if (c is pl2.rainbow.form.gdi.components.Abstraction_control)
                 {
-                    pl2.rainbow.form.gdi.components.Abstraction a = c as pl2.rainbow.form.gdi.components.Abstraction;
+                    pl2.rainbow.form.gdi.components.Abstraction_control a = c as pl2.rainbow.form.gdi.components.Abstraction_control;
                     a.Visible = false;
                     a.Left = 0;
                     a.Top = 0;
@@ -90,9 +90,9 @@ namespace pl2.rainbow.form.gdi.components
             // определение видимости уровней абстрактности
             foreach (Control c in Controls)
             {
-                if (c is pl2.rainbow.form.gdi.components.Abstraction)
+                if (c is pl2.rainbow.form.gdi.components.Abstraction_control)
                 {
-                    pl2.rainbow.form.gdi.components.Abstraction a = c as pl2.rainbow.form.gdi.components.Abstraction;
+                    pl2.rainbow.form.gdi.components.Abstraction_control a = c as pl2.rainbow.form.gdi.components.Abstraction_control;
                     if (options.visible_specials || ! a.extention_level)
                     {
                         if (options.visible_symmetric)

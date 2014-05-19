@@ -11,7 +11,7 @@ namespace pl2.rainbow.description.xml.node
     public class Level
         {
         public int level_number;
-        public pl2.rainbow.description.Abstraction_level level;
+        public pl2.rainbow.description.Abstraction_level_enum level;
         public string name;
         public list.Synonims synonims;
         }

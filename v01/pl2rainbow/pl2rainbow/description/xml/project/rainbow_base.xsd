@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Rainbow" targetNamespace="rainbow.xsd" xmlns:mstns="rainbow.xsd" xmlns="rainbow.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Rainbow" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Rainbow" msprop:Generator_UserDSName="Rainbow">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Project_table" msprop:Generator_TableClassName="Project_tableDataTable" msprop:Generator_TableVarName="tableProject_table" msprop:Generator_RowChangedName="Project_tableRowChanged" msprop:Generator_TablePropName="Project_table" msprop:Generator_RowDeletingName="Project_tableRowDeleting" msprop:Generator_RowChangingName="Project_tableRowChanging" msprop:Generator_RowEvHandlerName="Project_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="Project_tableRowDeleted" msprop:Generator_RowClassName="Project_tableRow" msprop:Generator_UserTableName="Project_table" msprop:Generator_RowEvArgName="Project_tableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="project_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-65530" msdata:Caption="Проект" msprop:Generator_ColumnVarNameInTable="columnproject_id" msprop:Generator_ColumnPropNameInRow="project_id" msprop:Generator_ColumnPropNameInTable="project_idColumn" msprop:Generator_UserColumnName="project_id" type="xs:int" />
+              <xs:element name="project_name" msdata:Caption="Название проекта" msprop:Generator_ColumnVarNameInTable="columnproject_name" msprop:Generator_ColumnPropNameInRow="project_name" msprop:Generator_ColumnPropNameInTable="project_nameColumn" msprop:Generator_UserColumnName="project_name" type="xs:string" minOccurs="0" />
+              <xs:element name="project_description" msdata:Caption="Описание проекта" msprop:Generator_ColumnVarNameInTable="columnproject_description" msprop:Generator_ColumnPropNameInRow="project_description" msprop:Generator_ColumnPropNameInTable="project_descriptionColumn" msprop:Generator_UserColumnName="project_description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Cell_table" msprop:Generator_TableClassName="Cell_tableDataTable" msprop:Generator_TableVarName="tableCell_table" msprop:Generator_RowChangedName="Cell_tableRowChanged" msprop:Generator_TablePropName="Cell_table" msprop:Generator_RowDeletingName="Cell_tableRowDeleting" msprop:Generator_RowChangingName="Cell_tableRowChanging" msprop:Generator_RowEvHandlerName="Cell_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="Cell_tableRowDeleted" msprop:Generator_RowClassName="Cell_tableRow" msprop:Generator_UserTableName="Cell_table" msprop:Generator_RowEvArgName="Cell_tableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="project_id" msdata:Caption="Проект" msprop:Generator_ColumnVarNameInTable="columnproject_id" msprop:Generator_ColumnPropNameInRow="project_id" msprop:Generator_ColumnPropNameInTable="project_idColumn" msprop:Generator_UserColumnName="project_id" type="xs:int" />
+              <xs:element name="cell_level" msdata:Caption="Уровень" msprop:Generator_ColumnVarNameInTable="columncell_level" msprop:Generator_ColumnPropNameInRow="cell_level" msprop:Generator_ColumnPropNameInTable="cell_levelColumn" msprop:Generator_UserColumnName="cell_level" type="xs:int" default="0" />
+              <xs:element name="cell_phase" msdata:Caption="Фаза" msprop:Generator_ColumnVarNameInTable="columncell_phase" msprop:Generator_ColumnPropNameInRow="cell_phase" msprop:Generator_ColumnPropNameInTable="cell_phaseColumn" msprop:Generator_UserColumnName="cell_phase" type="xs:int" default="1" />
+              <xs:element name="cell_common_name" msdata:Caption="Общее наименование ячейки" msprop:Generator_ColumnVarNameInTable="columncell_common_name" msprop:Generator_ColumnPropNameInRow="cell_common_name" msprop:Generator_ColumnPropNameInTable="cell_common_nameColumn" msprop:Generator_UserColumnName="cell_common_name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Element_table" msprop:Generator_TableClassName="Element_tableDataTable" msprop:Generator_TableVarName="tableElement_table" msprop:Generator_RowChangedName="Element_tableRowChanged" msprop:Generator_TablePropName="Element_table" msprop:Generator_RowDeletingName="Element_tableRowDeleting" msprop:Generator_RowChangingName="Element_tableRowChanging" msprop:Generator_RowEvHandlerName="Element_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="Element_tableRowDeleted" msprop:Generator_RowClassName="Element_tableRow" msprop:Generator_UserTableName="Element_table" msprop:Generator_RowEvArgName="Element_tableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="project_id" msdata:Caption="Проект" msprop:Generator_ColumnVarNameInTable="columnproject_id" msprop:Generator_ColumnPropNameInRow="project_id" msprop:Generator_ColumnPropNameInTable="project_idColumn" msprop:Generator_UserColumnName="project_id" type="xs:int" />
+              <xs:element name="cell_level" msdata:Caption="Уровень" msprop:Generator_ColumnVarNameInTable="columncell_level" msprop:Generator_ColumnPropNameInRow="cell_level" msprop:Generator_ColumnPropNameInTable="cell_levelColumn" msprop:Generator_UserColumnName="cell_level" type="xs:int" default="0" />
+              <xs:element name="cell_phase" msdata:Caption="Фаза" msprop:Generator_ColumnVarNameInTable="columncell_phase" msprop:Generator_ColumnPropNameInRow="cell_phase" msprop:Generator_ColumnPropNameInTable="cell_phaseColumn" msprop:Generator_UserColumnName="cell_phase" type="xs:int" default="1" minOccurs="0" />
+              <xs:element name="element_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-65530" msdata:Caption="Идентификатор ячейки" msprop:Generator_ColumnVarNameInTable="columnelement_id" msprop:Generator_ColumnPropNameInRow="element_id" msprop:Generator_ColumnPropNameInTable="element_idColumn" msprop:Generator_UserColumnName="element_id" type="xs:int" />
+              <xs:element name="element_name" msdata:Caption="Название элемента" msprop:Generator_ColumnVarNameInTable="columnelement_name" msprop:Generator_ColumnPropNameInRow="element_name" msprop:Generator_ColumnPropNameInTable="element_nameColumn" msprop:Generator_UserColumnName="element_name" type="xs:string" minOccurs="0" />
+              <xs:element name="element_description" msprop:Generator_ColumnVarNameInTable="columnelement_description" msprop:Generator_ColumnPropNameInRow="element_description" msprop:Generator_ColumnPropNameInTable="element_descriptionColumn" msprop:Generator_UserColumnName="element_description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Link_elements_table" msprop:Generator_TableClassName="Link_elements_tableDataTable" msprop:Generator_TableVarName="tableLink_elements_table" msprop:Generator_RowChangedName="Link_elements_tableRowChanged" msprop:Generator_TablePropName="Link_elements_table" msprop:Generator_RowDeletingName="Link_elements_tableRowDeleting" msprop:Generator_RowChangingName="Link_elements_tableRowChanging" msprop:Generator_RowEvHandlerName="Link_elements_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="Link_elements_tableRowDeleted" msprop:Generator_RowClassName="Link_elements_tableRow" msprop:Generator_UserTableName="Link_elements_table" msprop:Generator_RowEvArgName="Link_elements_tableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="link_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-65530" msprop:Generator_ColumnVarNameInTable="columnlink_id" msprop:Generator_ColumnPropNameInRow="link_id" msprop:Generator_ColumnPropNameInTable="link_idColumn" msprop:Generator_UserColumnName="link_id" type="xs:int" />
+              <xs:element name="element_id_parent" msprop:Generator_ColumnVarNameInTable="columnelement_id_parent" msprop:Generator_ColumnPropNameInRow="element_id_parent" msprop:Generator_ColumnPropNameInTable="element_id_parentColumn" msprop:Generator_UserColumnName="element_id_parent" type="xs:int" minOccurs="0" />
+              <xs:element name="element_id_chield" msprop:Generator_ColumnVarNameInTable="columnelement_id_chield" msprop:Generator_ColumnPropNameInRow="element_id_chield" msprop:Generator_ColumnPropNameInTable="element_id_chieldColumn" msprop:Generator_UserColumnName="element_id_chield" type="xs:int" minOccurs="0" />
+              <xs:element name="link_description" msprop:Generator_ColumnVarNameInTable="columnlink_description" msprop:Generator_ColumnPropNameInRow="link_description" msprop:Generator_ColumnPropNameInTable="link_descriptionColumn" msprop:Generator_UserColumnName="link_description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Level_table" msprop:Generator_TableClassName="Level_tableDataTable" msprop:Generator_TableVarName="tableLevel_table" msprop:Generator_TablePropName="Level_table" msprop:Generator_RowDeletingName="Level_tableRowDeleting" msprop:Generator_RowChangingName="Level_tableRowChanging" msprop:Generator_RowEvHandlerName="Level_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="Level_tableRowDeleted" msprop:Generator_UserTableName="Level_table" msprop:Generator_RowChangedName="Level_tableRowChanged" msprop:Generator_RowEvArgName="Level_tableRowChangeEvent" msprop:Generator_RowClassName="Level_tableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="level_id" msdata:AutoIncrementSeed="-65530" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnlevel_id" msprop:Generator_ColumnPropNameInRow="level_id" msprop:Generator_ColumnPropNameInTable="level_idColumn" msprop:Generator_UserColumnName="level_id" type="xs:int" />
+              <xs:element name="level_name" msprop:Generator_ColumnVarNameInTable="columnlevel_name" msprop:Generator_ColumnPropNameInRow="level_name" msprop:Generator_ColumnPropNameInTable="level_nameColumn" msprop:Generator_UserColumnName="level_name" type="xs:string" minOccurs="0" />
+              <xs:element name="level_importance" msprop:Generator_ColumnVarNameInTable="columnlevel_importance" msprop:Generator_ColumnPropNameInRow="level_importance" msprop:Generator_ColumnPropNameInTable="level_importanceColumn" msprop:Generator_UserColumnName="level_importance" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Phase_table" msprop:Generator_TableClassName="Phase_tableDataTable" msprop:Generator_TableVarName="tablePhase_table" msprop:Generator_TablePropName="Phase_table" msprop:Generator_RowDeletingName="Phase_tableRowDeleting" msprop:Generator_RowChangingName="Phase_tableRowChanging" msprop:Generator_RowEvHandlerName="Phase_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="Phase_tableRowDeleted" msprop:Generator_UserTableName="Phase_table" msprop:Generator_RowChangedName="Phase_tableRowChanged" msprop:Generator_RowEvArgName="Phase_tableRowChangeEvent" msprop:Generator_RowClassName="Phase_tableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="phase_id" msdata:AutoIncrementStep="10" msprop:Generator_ColumnVarNameInTable="columnphase_id" msprop:Generator_ColumnPropNameInRow="phase_id" msprop:Generator_ColumnPropNameInTable="phase_idColumn" msprop:Generator_UserColumnName="phase_id" type="xs:int" minOccurs="0" />
+              <xs:element name="phase_name" msprop:Generator_ColumnVarNameInTable="columnphase_name" msprop:Generator_ColumnPropNameInRow="phase_name" msprop:Generator_ColumnPropNameInTable="phase_nameColumn" msprop:Generator_UserColumnName="phase_name" type="xs:string" minOccurs="0" />
+              <xs:element name="phase_importance" msprop:Generator_ColumnVarNameInTable="columnphase_importance" msprop:Generator_ColumnPropNameInRow="phase_importance" msprop:Generator_ColumnPropNameInTable="phase_importanceColumn" msprop:Generator_UserColumnName="phase_importance" type="xs:int" minOccurs="0" />
+              <xs:element name="phase_percent" msprop:Generator_ColumnVarNameInTable="columnphase_percent" msprop:Generator_ColumnPropNameInRow="phase_percent" msprop:Generator_ColumnPropNameInTable="phase_percentColumn" msprop:Generator_UserColumnName="phase_percent" type="xs:float" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Importance_table" msprop:Generator_TableClassName="Importance_tableDataTable" msprop:Generator_TableVarName="tableImportance_table" msprop:Generator_TablePropName="Importance_table" msprop:Generator_RowDeletingName="Importance_tableRowDeleting" msprop:Generator_RowChangingName="Importance_tableRowChanging" msprop:Generator_RowEvHandlerName="Importance_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="Importance_tableRowDeleted" msprop:Generator_UserTableName="Importance_table" msprop:Generator_RowChangedName="Importance_tableRowChanged" msprop:Generator_RowEvArgName="Importance_tableRowChangeEvent" msprop:Generator_RowClassName="Importance_tableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="importance_id" msprop:Generator_ColumnVarNameInTable="columnimportance_id" msprop:Generator_ColumnPropNameInRow="importance_id" msprop:Generator_ColumnPropNameInTable="importance_idColumn" msprop:Generator_UserColumnName="importance_id" type="xs:int" />
+              <xs:element name="importance_name" msprop:Generator_ColumnVarNameInTable="columnimportance_name" msprop:Generator_ColumnPropNameInRow="importance_name" msprop:Generator_ColumnPropNameInTable="importance_nameColumn" msprop:Generator_UserColumnName="importance_name" type="xs:string" minOccurs="0" />
+              <xs:element name="importance_percent" msprop:Generator_ColumnVarNameInTable="columnimportance_percent" msprop:Generator_ColumnPropNameInRow="importance_percent" msprop:Generator_ColumnPropNameInTable="importance_percentColumn" msprop:Generator_UserColumnName="importance_percent" type="xs:float" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Project_id_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Project_table" />
+      <xs:field xpath="mstns:project_id" />
+    </xs:unique>
+    <xs:unique name="Cell_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Cell_table" />
+      <xs:field xpath="mstns:project_id" />
+      <xs:field xpath="mstns:cell_level" />
+      <xs:field xpath="mstns:cell_phase" />
+    </xs:unique>
+    <xs:unique name="cell">
+      <xs:selector xpath=".//mstns:Element_table" />
+      <xs:field xpath="mstns:project_id" />
+      <xs:field xpath="mstns:cell_level" />
+      <xs:field xpath="mstns:cell_phase" />
+    </xs:unique>
+    <xs:unique name="Element_id_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Element_table" />
+      <xs:field xpath="mstns:element_id" />
+    </xs:unique>
+    <xs:unique name="Link_element_id_parent_Key">
+      <xs:selector xpath=".//mstns:Link_elements_table" />
+      <xs:field xpath="mstns:element_id_parent" />
+    </xs:unique>
+    <xs:unique name="Link_element_id_chield_Key">
+      <xs:selector xpath=".//mstns:Link_elements_table" />
+      <xs:field xpath="mstns:element_id_chield" />
+    </xs:unique>
+    <xs:unique name="Link_id_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Link_elements_table" />
+      <xs:field xpath="mstns:link_id" />
+    </xs:unique>
+    <xs:unique name="Level_id_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Level_table" />
+      <xs:field xpath="mstns:level_id" />
+    </xs:unique>
+    <xs:unique name="Phase_id_Key">
+      <xs:selector xpath=".//mstns:Phase_table" />
+      <xs:field xpath="mstns:phase_id" />
+    </xs:unique>
+    <xs:unique name="Importance_id_Key" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Importance_table" />
+      <xs:field xpath="mstns:importance_id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Project_Cell_Relation" msdata:parent="Project_table" msdata:child="Cell_table" msdata:parentkey="project_id" msdata:childkey="project_id" msprop:Generator_UserChildTable="Cell_table" msprop:Generator_ChildPropName="GetCell_tableRows" msprop:Generator_UserRelationName="Project_Cell_Relation" msprop:Generator_RelationVarName="relationProject_Cell_Relation" msprop:Generator_UserParentTable="Project_table" msprop:Generator_ParentPropName="ProjectRow" />
+      <msdata:Relationship name="Cell_Cell_value_Relation" msdata:parent="Cell_table" msdata:child="Element_table" msdata:parentkey="project_id cell_level cell_phase" msdata:childkey="project_id cell_level cell_phase" msprop:Generator_UserChildTable="Element_table" msprop:Generator_ChildPropName="GetElement_tableRows" msprop:Generator_UserRelationName="Cell_Cell_value_Relation" msprop:Generator_RelationVarName="relationCell_Cell_value_Relation" msprop:Generator_UserParentTable="Cell_table" msprop:Generator_ParentPropName="CellRowParent" />
+      <msdata:Relationship name="Cell_value_link_parent_Relation" msdata:parent="Element_table" msdata:child="Link_elements_table" msdata:parentkey="element_id" msdata:childkey="element_id_parent" msprop:Generator_UserChildTable="Link_elements_table" msprop:Generator_ChildPropName="GetLink_elements_tableRowsByCell_value_link_parent_Relation" msprop:Generator_UserRelationName="Cell_value_link_parent_Relation" msprop:Generator_RelationVarName="relationCell_value_link_parent_Relation" msprop:Generator_UserParentTable="Element_table" msprop:Generator_ParentPropName="Cell_valueRowByCell_value_link_parent_Relation" />
+      <msdata:Relationship name="Cell_value_link_chield_Relation" msdata:parent="Element_table" msdata:child="Link_elements_table" msdata:parentkey="element_id" msdata:childkey="element_id_chield" msprop:Generator_UserChildTable="Link_elements_table" msprop:Generator_ChildPropName="GetLink_elements_tableRowsByCell_value_link_chield_Relation" msprop:Generator_UserRelationName="Cell_value_link_chield_Relation" msprop:Generator_RelationVarName="relationCell_value_link_chield_Relation" msprop:Generator_UserParentTable="Element_table" msprop:Generator_ParentPropName="Cell_valueRowByCell_value_link_chield_Relation" />
+      <msdata:Relationship name="Importance_Level_relation" msdata:parent="Importance_table" msdata:child="Level_table" msdata:parentkey="importance_id" msdata:childkey="level_importance" msprop:Generator_UserChildTable="Level_table" msprop:Generator_ChildPropName="GetLevelRows" msprop:Generator_UserRelationName="Importance_Level_relation" msprop:Generator_RelationVarName="relationImportance_Level_relation" msprop:Generator_UserParentTable="Importance_table" msprop:Generator_ParentPropName="Importance_tableRow" />
+      <msdata:Relationship name="Importance_Phase" msdata:parent="Importance_table" msdata:child="Phase_table" msdata:parentkey="importance_id" msdata:childkey="phase_id" msprop:Generator_UserChildTable="Phase_table" msprop:Generator_ChildPropName="GetPhaseRows" msprop:Generator_UserRelationName="Importance_Phase" msprop:Generator_RelationVarName="relationImportance_Phase" msprop:Generator_UserParentTable="Importance_table" msprop:Generator_ParentPropName="Importance_tableRow" />
+      <msdata:Relationship name="Level_Cell" msdata:parent="Level_table" msdata:child="Cell_table" msdata:parentkey="level_id" msdata:childkey="cell_level" msprop:Generator_UserChildTable="Cell_table" msprop:Generator_ChildPropName="GetCellRows" msprop:Generator_UserRelationName="Level_Cell" msprop:Generator_RelationVarName="relationLevel_Cell" msprop:Generator_UserParentTable="Level_table" msprop:Generator_ParentPropName="Level_tableRow" />
+      <msdata:Relationship name="Phase_Cell" msdata:parent="Phase_table" msdata:child="Cell_table" msdata:parentkey="phase_id" msdata:childkey="cell_phase" msprop:Generator_UserChildTable="Cell_table" msprop:Generator_ChildPropName="GetCellRows" msprop:Generator_UserRelationName="Phase_Cell" msprop:Generator_RelationVarName="relationPhase_Cell" msprop:Generator_UserParentTable="Phase_table" msprop:Generator_ParentPropName="Phase_tableRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

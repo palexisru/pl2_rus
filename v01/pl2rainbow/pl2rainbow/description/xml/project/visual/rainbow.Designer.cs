@@ -1,6 +1,6 @@
 ﻿namespace pl2.rainbow.description.xml.project.visual
 {
-    partial class Rainbow
+    partial class Rainbow_organisation
     {
         /// <summary>
         /// Требуется переменная конструктора.

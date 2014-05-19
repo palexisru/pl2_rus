@@ -10,17 +10,17 @@ using pl2.rainbow.description;
 
 namespace pl2.rainbow.form.gdi.components
 {
-    public partial class Abstraction : UserControl
+    public partial class Abstraction_control : UserControl
     {
-        private Abstraction_level abstraction_level_private;
+        private Abstraction_level_enum abstraction_level_private;
 
-        public Abstraction()
+        public Abstraction_control()
         {
             InitializeComponent();
         }
 
         [Browsable( true ) , Description( "Уровень абстрактности" ) , Category( "Data" )]
-        public pl2.rainbow.description.Abstraction_level level
+        public pl2.rainbow.description.Abstraction_level_enum level
         {
             get { return abstraction_level_private; }
             set
@@ -42,7 +42,7 @@ namespace pl2.rainbow.form.gdi.components
         private void store_button_names()
         {
             switch(abstraction_level_private){
-                case Abstraction_level.Class_infinity:
+                case Abstraction_level_enum.Class_infinity:
                     {
                         cell_act.single_button.Text = "-";
                         cell_plan.single_button.Text = "-";
@@ -50,7 +50,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "-";
                     }
                     break;
-                case Abstraction_level.Class_void:
+                case Abstraction_level_enum.Class_void:
                     {
                         cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
                         cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
@@ -58,7 +58,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
-                case Abstraction_level.Class_domain:
+                case Abstraction_level_enum.Class_domain:
                     {
                         cell_act.single_button.Text = "Существование";
                         cell_plan.single_button.Text = "Связь";
@@ -66,7 +66,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Случайность";
                     }
                     break;
-                case Abstraction_level.Class_tuple:
+                case Abstraction_level_enum.Class_tuple:
                     {
                         cell_act.single_button.Text = "Сущность";
                         cell_plan.single_button.Text = "Объект";
@@ -74,7 +74,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Сигнал";
                     }
                     break;
-                case Abstraction_level.Class_structure:
+                case Abstraction_level_enum.Class_structure:
                     {
                         cell_act.single_button.Text = "Правило";
                         cell_plan.single_button.Text = "Структура";
@@ -82,7 +82,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Ресурс";
                     }
                     break;
-                case Abstraction_level.Class_system:
+                case Abstraction_level_enum.Class_system:
                     {
                         cell_act.single_button.Text = "Знание";
                         cell_plan.single_button.Text = "Система";
@@ -90,7 +90,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Использование";
                     }
                     break;
-                case Abstraction_level.Class_process:
+                case Abstraction_level_enum.Class_process:
                     {
                         cell_act.single_button.Text = "Состав";
                         cell_plan.single_button.Text = "Вход";
@@ -98,7 +98,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Выход";
                     }
                     break;
-                case Abstraction_level.Class_specialist:
+                case Abstraction_level_enum.Class_specialist:
                     {
                         cell_act.single_button.Text = "Требование";
                         cell_plan.single_button.Text = "Поставщик";
@@ -106,7 +106,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Потребитель";
                     }
                     break;
-                case Abstraction_level.Class_parallel:
+                case Abstraction_level_enum.Class_parallel:
                     {
                         cell_act.single_button.Text = "Процедура";
                         cell_plan.single_button.Text = "Взаимодействие";
@@ -114,7 +114,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Завершение";
                     }
                     break;
-                case Abstraction_level.Class_stability:
+                case Abstraction_level_enum.Class_stability:
                     {
                         cell_act.single_button.Text = "Ответственность";
                         cell_plan.single_button.Text = "Регламент";
@@ -122,7 +122,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Устойчивость";
                     }
                     break;
-                case Abstraction_level.Class_responsibility:
+                case Abstraction_level_enum.Class_responsibility:
                     {
                         cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
                         cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
@@ -130,7 +130,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
-                case Abstraction_level.Class_below_reality:
+                case Abstraction_level_enum.Class_below_reality:
                     {
                         cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
                         cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
@@ -138,7 +138,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
-                case Abstraction_level.Class_reality:
+                case Abstraction_level_enum.Class_reality:
                     {
                         cell_act.single_button.Text = "Компетентность";
                         cell_plan.single_button.Text = "Согласование";
@@ -146,7 +146,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Результат";
                     }
                     break;
-                case Abstraction_level.Interface_above_reality:
+                case Abstraction_level_enum.Interface_above_reality:
                     {
                         cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
                         cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
@@ -154,7 +154,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
-                case Abstraction_level.Interface_technology:
+                case Abstraction_level_enum.Interface_technology:
                     {
                         cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
                         cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
@@ -162,7 +162,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
-                case Abstraction_level.Interface_alignment:
+                case Abstraction_level_enum.Interface_alignment:
                     {
                         cell_act.single_button.Text = "Роль";
                         cell_plan.single_button.Text = "Организация";
@@ -170,7 +170,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Контроль";
                     }
                     break;
-                case Abstraction_level.Interface_exchange:
+                case Abstraction_level_enum.Interface_exchange:
                     {
                         cell_act.single_button.Text = "Отношение";
                         cell_plan.single_button.Text = "Помощь";
@@ -178,7 +178,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Учет";
                     }
                     break;
-                case Abstraction_level.Interface_control:
+                case Abstraction_level_enum.Interface_control:
                     {
                         cell_act.single_button.Text = "Сценарий";
                         cell_plan.single_button.Text = "Обеспечение";
@@ -186,7 +186,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Аудит";
                     }
                     break;
-                case Abstraction_level.Interface_politic:
+                case Abstraction_level_enum.Interface_politic:
                     {
                         cell_act.single_button.Text = "Стратегия";
                         cell_plan.single_button.Text = "Планирование";
@@ -194,7 +194,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Познание";
                     }
                     break;
-                case Abstraction_level.Interface_session:
+                case Abstraction_level_enum.Interface_session:
                     {
                         cell_act.single_button.Text = "Критерий";
                         cell_plan.single_button.Text = "Прогноз";
@@ -202,7 +202,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "История";
                     }
                     break;
-                case Abstraction_level.Interface_functional:
+                case Abstraction_level_enum.Interface_functional:
                     {
                         cell_act.single_button.Text = "Точка зрения";
                         cell_plan.single_button.Text = "Обобщение";
@@ -210,7 +210,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Оценка";
                     }
                     break;
-                case Abstraction_level.Interface_target:
+                case Abstraction_level_enum.Interface_target:
                     {
                         cell_act.single_button.Text = "Цель";
                         cell_plan.single_button.Text = "Респондент";
@@ -218,7 +218,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Состояние";
                     }
                     break;
-                case Abstraction_level.Interface_logical:
+                case Abstraction_level_enum.Interface_logical:
                     {
                         cell_act.single_button.Text = "Необходимость";
                         cell_plan.single_button.Text = "Направленность";
@@ -226,7 +226,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "Отрицание";
                     }
                     break;
-                case Abstraction_level.Interface_abstract:
+                case Abstraction_level_enum.Interface_abstract:
                     {
                         cell_act.single_button.Text = "act " + abstraction_level_private.ToString();
                         cell_plan.single_button.Text = "plan " + abstraction_level_private.ToString();
@@ -234,7 +234,7 @@ namespace pl2.rainbow.form.gdi.components
                         cell_check.single_button.Text = "check " + abstraction_level_private.ToString();
                     }
                     break;
-                case Abstraction_level.Interface_infinity:
+                case Abstraction_level_enum.Interface_infinity:
                     {
                         cell_act.single_button.Text = "Идея";
                         cell_plan.single_button.Text = "-";
@@ -280,7 +280,7 @@ namespace pl2.rainbow.form.gdi.components
             int dt = h / 10;
             int hh = h / 2;
             int w = ClientSize.Width;
-            Abstraction_level abstraction_level = this.level;
+            Abstraction_level_enum abstraction_level = this.level;
             int direction_phase = 1;
             Color drawing_color = color_from_level( abstraction_level );
             Color inverce_color = System.Drawing.Color.FromArgb( (255 - drawing_color.R) >> 3 , (255 - drawing_color.G) >> 3 , (255 - drawing_color.B) >> 3 );
@@ -305,145 +305,145 @@ namespace pl2.rainbow.form.gdi.components
 
 
             #region up_left_2_down
-            if (abstraction_level >= Abstraction_level.Interface_abstract && abstraction_level <= Abstraction_level.Interface_infinity)
+            if (abstraction_level >= Abstraction_level_enum.Interface_abstract && abstraction_level <= Abstraction_level_enum.Interface_infinity)
             {
                 pt = new Point[] { 
                     new Point( dt2, 0),
                     new Point( dt2, dt),
                     new Point( dt, dt )};
-                if (abstraction_level == Abstraction_level.Interface_infinity)
+                if (abstraction_level == Abstraction_level_enum.Interface_infinity)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_left_2_up
-            if (abstraction_level >= Abstraction_level.Interface_target && abstraction_level <= Abstraction_level.Interface_infinity)
+            if (abstraction_level >= Abstraction_level_enum.Interface_target && abstraction_level <= Abstraction_level_enum.Interface_infinity)
             {
                 pt = new Point[] { 
                     new Point( dt, 0 ),
                     new Point( dt2, 0 ),
                     new Point( dt, dt )};
-                if (abstraction_level == Abstraction_level.Interface_logical || abstraction_level == Abstraction_level.Interface_abstract)
+                if (abstraction_level == Abstraction_level_enum.Interface_logical || abstraction_level == Abstraction_level_enum.Interface_abstract)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_left_1_up
-            if (abstraction_level >= Abstraction_level.Interface_session && abstraction_level <= Abstraction_level.Interface_logical)
+            if (abstraction_level >= Abstraction_level_enum.Interface_session && abstraction_level <= Abstraction_level_enum.Interface_logical)
             {
                 pt = new Point[] { 
                     new Point( 0, 0 ),
                     new Point( dt, 0 ),
                     new Point( dt, dt )};
-                if (abstraction_level >= Abstraction_level.Interface_functional && abstraction_level <= Abstraction_level.Interface_target)
+                if (abstraction_level >= Abstraction_level_enum.Interface_functional && abstraction_level <= Abstraction_level_enum.Interface_target)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_left_1_down
-            if (abstraction_level >= Abstraction_level.Interface_control && abstraction_level <= Abstraction_level.Interface_functional)
+            if (abstraction_level >= Abstraction_level_enum.Interface_control && abstraction_level <= Abstraction_level_enum.Interface_functional)
             {
                 pt = new Point[] { 
                     new Point( 0, 0 ),
                     new Point( 0, dt ),
                     new Point( dt, dt )};
-                if (abstraction_level >= Abstraction_level.Interface_politic && abstraction_level <= Abstraction_level.Interface_session)
+                if (abstraction_level >= Abstraction_level_enum.Interface_politic && abstraction_level <= Abstraction_level_enum.Interface_session)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_2_up
-            if (abstraction_level >= Abstraction_level.Interface_exchange && abstraction_level <= Abstraction_level.Interface_politic)
+            if (abstraction_level >= Abstraction_level_enum.Interface_exchange && abstraction_level <= Abstraction_level_enum.Interface_politic)
             {
                 pt = new Point[] { 
                     new Point( 0, dt ),
                     new Point( dt, dt),
                     new Point( 0, dt2 )};
-                if (abstraction_level == Abstraction_level.Interface_exchange || abstraction_level == Abstraction_level.Interface_control)
+                if (abstraction_level == Abstraction_level_enum.Interface_exchange || abstraction_level == Abstraction_level_enum.Interface_control)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region up_2_down
-            if (abstraction_level >= Abstraction_level.Interface_exchange && abstraction_level <= Abstraction_level.Interface_exchange)
+            if (abstraction_level >= Abstraction_level_enum.Interface_exchange && abstraction_level <= Abstraction_level_enum.Interface_exchange)
             {
                 pt = new Point[] { 
                     new Point( dt, dt2 ),
                     new Point( dt, dt ),
                     new Point( 0, dt2 )};
-                if (abstraction_level == Abstraction_level.Interface_alignment)
+                if (abstraction_level == Abstraction_level_enum.Interface_alignment)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 #if false
-                if (abstraction_level >= Abstraction_level.Interface_control && abstraction_level <= Abstraction_level.Interface_politic)
+                if (abstraction_level >= Abstraction_level_enum.Interface_control && abstraction_level <= Abstraction_level_enum.Interface_politic)
                 {
                 pt = new Point[] { 
                     new Point( -1, hh - dt*3),
                     new Point( dt - 1, hh - dt *3 ),
                     new Point( dt - 1, hh - dt *3/2)};
-                if (abstraction_level == Abstraction_level.Interface_infinity)
+                if (abstraction_level == Abstraction_level_enum.Interface_infinity)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
                 }
 #endif
 
             #region up_middle
-            if (abstraction_level >= Abstraction_level.Interface_technology && abstraction_level <= Abstraction_level.Interface_alignment)
+            if (abstraction_level >= Abstraction_level_enum.Interface_technology && abstraction_level <= Abstraction_level_enum.Interface_alignment)
             {
                 pt = new Point[] { 
                     new Point( 0, hh - dt*3),
                     new Point( dt, hh - dt*3/2 ),
                     new Point( 0, hh - dt2)};
-                if (abstraction_level == Abstraction_level.Interface_alignment)
+                if (abstraction_level == Abstraction_level_enum.Interface_alignment)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
 
-            if (abstraction_level >= Abstraction_level.Interface_technology && abstraction_level <= Abstraction_level.Interface_alignment)
+            if (abstraction_level >= Abstraction_level_enum.Interface_technology && abstraction_level <= Abstraction_level_enum.Interface_alignment)
             {
                 pt = new Point[] { 
                     new Point( 0, hh - dt2),
                     new Point( dt, hh - dt*3/2),
                     new Point( 0, hh - dt)};
-                if (abstraction_level == Abstraction_level.Interface_technology)
+                if (abstraction_level == Abstraction_level_enum.Interface_technology)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
 #if false
-                if (abstraction_level >= Abstraction_level.Interface_alignment && abstraction_level <= Abstraction_level.Interface_exchange)
+                if (abstraction_level >= Abstraction_level_enum.Interface_alignment && abstraction_level <= Abstraction_level_enum.Interface_exchange)
                 {
                 pt = new Point[] { 
                     new Point( -1, hh - dt),
                     new Point( dt - 1, hh - dt*3/2),
                     new Point( dt * 2 / 3, hh - dt / 3 )};
-                if (abstraction_level == Abstraction_level.Interface_alignment || abstraction_level == Abstraction_level.Interface_alignment)
+                if (abstraction_level == Abstraction_level_enum.Interface_alignment || abstraction_level == Abstraction_level_enum.Interface_alignment)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
                 }
 #endif
 
             #region center
-            if (abstraction_level >= Abstraction_level.Class_below_reality && abstraction_level <= Abstraction_level.Interface_above_reality)
+            if (abstraction_level >= Abstraction_level_enum.Class_below_reality && abstraction_level <= Abstraction_level_enum.Interface_above_reality)
             {
                 pt = new Point[] { 
                     new Point( 0, hh - dt ),
                     new Point( dt*2/3 + 1, hh-dt/3 ),
                     new Point( 0, hh - dt/4 )};
-                if (abstraction_level == Abstraction_level.Interface_above_reality)
+                if (abstraction_level == Abstraction_level_enum.Interface_above_reality)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
 
-            if (abstraction_level >= Abstraction_level.Class_below_reality && abstraction_level <= Abstraction_level.Interface_above_reality)
+            if (abstraction_level >= Abstraction_level_enum.Class_below_reality && abstraction_level <= Abstraction_level_enum.Interface_above_reality)
             {
                 pt = new Point[] { 
                     new Point( 0, hh - dt/4 ),
@@ -451,25 +451,25 @@ namespace pl2.rainbow.form.gdi.components
                     new Point( dt, hh),
                     new Point( dt*2/3 + 1, hh+dt/3 ),
                     new Point( 0, hh + dt/4  )};
-                if (abstraction_level == Abstraction_level.Class_reality)
+                if (abstraction_level == Abstraction_level_enum.Class_reality)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
 
-            if (abstraction_level >= Abstraction_level.Class_below_reality && abstraction_level <= Abstraction_level.Interface_above_reality)
+            if (abstraction_level >= Abstraction_level_enum.Class_below_reality && abstraction_level <= Abstraction_level_enum.Interface_above_reality)
             {
                 pt = new Point[] { 
                     new Point( 0, hh + dt ),
                     new Point( dt*2/3 + 1, hh + dt/3 ),
                     new Point( 0, hh + dt/4 )};
-                if (abstraction_level == Abstraction_level.Class_below_reality)
+                if (abstraction_level == Abstraction_level_enum.Class_below_reality)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
 #if false
-            if (abstraction_level >= Abstraction_level.Class_executive && abstraction_level <= Abstraction_level.Class_executive)
+            if (abstraction_level >= Abstraction_level_enum.Class_executive && abstraction_level <= Abstraction_level_enum.Class_executive)
                 {
                 pt = new Point[] { 
                     new Point( -1, hh + dt),
@@ -482,115 +482,115 @@ namespace pl2.rainbow.form.gdi.components
 #endif
 
             #region down_middle
-            if (abstraction_level >= Abstraction_level.Class_stability && abstraction_level <= Abstraction_level.Class_responsibility)
+            if (abstraction_level >= Abstraction_level_enum.Class_stability && abstraction_level <= Abstraction_level_enum.Class_responsibility)
             {
                 pt = new Point[] { 
                     new Point( 0, hh + dt),
                     new Point( dt, hh + dt*3/2),
                     new Point( 0, hh + dt2)};
-                if (abstraction_level == Abstraction_level.Class_responsibility)
+                if (abstraction_level == Abstraction_level_enum.Class_responsibility)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
 
-            if (abstraction_level >= Abstraction_level.Class_stability && abstraction_level <= Abstraction_level.Class_responsibility)
+            if (abstraction_level >= Abstraction_level_enum.Class_stability && abstraction_level <= Abstraction_level_enum.Class_responsibility)
             {
                 pt = new Point[] { 
                     new Point( 0, hh+dt2 ),
                     new Point( dt, hh+dt*3/2 ),
                     new Point( 0, hh+dt*3 )};
-                if (abstraction_level == Abstraction_level.Class_stability)
+                if (abstraction_level == Abstraction_level_enum.Class_stability)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
 #if false
-            if (abstraction_level >= Abstraction_level.Class_executive && abstraction_level <= Abstraction_level.Class_executive)
+            if (abstraction_level >= Abstraction_level_enum.Class_executive && abstraction_level <= Abstraction_level_enum.Class_executive)
                 {
                 pt = new Point[] { 
                     new Point( -1, hh+dt*3),
                     new Point( dt-1, hh+dt*3/2),
                     new Point( dt-1, hh+dt*3)};
-                if (abstraction_level == Abstraction_level.Class_executive)
+                if (abstraction_level == Abstraction_level_enum.Class_executive)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
                 }
 #endif
 
             #region down_2_up
-            if (abstraction_level >= Abstraction_level.Class_parallel && abstraction_level <= Abstraction_level.Class_parallel)
+            if (abstraction_level >= Abstraction_level_enum.Class_parallel && abstraction_level <= Abstraction_level_enum.Class_parallel)
                 {
                 pt = new Point[] { 
                     new Point( 0, h-dt2-1),
                     new Point( dt, h-dt2-1),
                     new Point( dt, h-dt-1)};
-                if (abstraction_level == Abstraction_level.Class_stability)
+                if (abstraction_level == Abstraction_level_enum.Class_stability)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
                 }
             #endregion
 
             #region down_2_down
-            if (abstraction_level >= Abstraction_level.Class_process && abstraction_level <= Abstraction_level.Class_parallel)
+            if (abstraction_level >= Abstraction_level_enum.Class_process && abstraction_level <= Abstraction_level_enum.Class_parallel)
             {
                 pt = new Point[] { 
                     new Point( 0, h-dt2-1 ),
                     new Point( 0, h-dt-1 ),
                     new Point( dt, h-dt-1 )};
-                if (abstraction_level == Abstraction_level.Class_specialist || abstraction_level == Abstraction_level.Class_parallel)
+                if (abstraction_level == Abstraction_level_enum.Class_specialist || abstraction_level == Abstraction_level_enum.Class_parallel)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region down_1_up
-            if (abstraction_level >= Abstraction_level.Class_structure && abstraction_level <= Abstraction_level.Class_specialist)
+            if (abstraction_level >= Abstraction_level_enum.Class_structure && abstraction_level <= Abstraction_level_enum.Class_specialist)
             {
                 pt = new Point[] { 
                     new Point( 0, h-dt-1 ),
                     new Point( dt, h-dt-1 ),
                     new Point( 0, h-1 )};
-                if (abstraction_level >= Abstraction_level.Class_system && abstraction_level <= Abstraction_level.Class_process)
+                if (abstraction_level >= Abstraction_level_enum.Class_system && abstraction_level <= Abstraction_level_enum.Class_process)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region down_1_down
-            if (abstraction_level >= Abstraction_level.Class_domain && abstraction_level <= Abstraction_level.Class_system)
+            if (abstraction_level >= Abstraction_level_enum.Class_domain && abstraction_level <= Abstraction_level_enum.Class_system)
             {
                 pt = new Point[] { 
                     new Point( 0, h-1 ),
                     new Point( dt, h-dt-1 ),
                     new Point( dt, h-1 )};
-                if (abstraction_level >= Abstraction_level.Class_tuple && abstraction_level <= Abstraction_level.Class_structure)
+                if (abstraction_level >= Abstraction_level_enum.Class_tuple && abstraction_level <= Abstraction_level_enum.Class_structure)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region down_left_2_down
-            if (abstraction_level >= Abstraction_level.Class_infinity && abstraction_level <= Abstraction_level.Class_tuple)
+            if (abstraction_level >= Abstraction_level_enum.Class_infinity && abstraction_level <= Abstraction_level_enum.Class_tuple)
             {
                 pt = new Point[] { 
                     new Point( dt, h-dt-1),
                     new Point( dt, h-1 ),
                     new Point( dt2, h-1 )};
-                if (abstraction_level >= Abstraction_level.Class_void && abstraction_level <= Abstraction_level.Class_domain)
+                if (abstraction_level >= Abstraction_level_enum.Class_void && abstraction_level <= Abstraction_level_enum.Class_domain)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
             #endregion
 
             #region down_left_2_up
-            if (abstraction_level >= Abstraction_level.Class_infinity && abstraction_level <= Abstraction_level.Class_void)
+            if (abstraction_level >= Abstraction_level_enum.Class_infinity && abstraction_level <= Abstraction_level_enum.Class_void)
             {
                 pt = new Point[] { 
                     new Point( dt, h-dt-1),
                     new Point( dt2, h-dt-1),
                     new Point( dt2, h-1)};
-                if (abstraction_level >= Abstraction_level.Class_infinity && abstraction_level <= Abstraction_level.Class_infinity)
+                if (abstraction_level >= Abstraction_level_enum.Class_infinity && abstraction_level <= Abstraction_level_enum.Class_infinity)
                     e.Graphics.FillPolygon( b , pt , System.Drawing.Drawing2D.FillMode.Alternate );
                 e.Graphics.DrawPolygon( p , pt );
             }
@@ -695,7 +695,7 @@ namespace pl2.rainbow.form.gdi.components
             {
                 p = new Pen( inverce_color , 2 );
                 Rainbow parent_rainbow = Parent as Rainbow;
-                if (this.level > Abstraction_level.Class_reality)
+                if (this.level > Abstraction_level_enum.Class_reality)
                 {
                     e.Graphics.DrawRectangle( p , dt + 2 , hh - dt / 2 - 1 , dt + 2 , dt + 2 );
                     if (parent_rainbow.selected_level == this.level)
@@ -717,108 +717,108 @@ namespace pl2.rainbow.form.gdi.components
 
         }
 
-        public static Color color_from_level(Abstraction_level abstraction_level)
+        public static Color color_from_level(Abstraction_level_enum abstraction_level)
         {
             Color return_value = Color.FromArgb( 127 , 127 , 127 , 127 );
             switch (abstraction_level)
             {
-                case Abstraction_level.Class_infinity: // 1 пустой тип - void, empty, nil, null
+                case Abstraction_level_enum.Class_infinity: // 1 пустой тип - void, empty, nil, null
                     return_value = Color.FromArgb( 96 , 0 , 160 ); // (143, 0, 143);
                     break;
 
-                case Abstraction_level.Class_void: // 1 пустой тип - void, empty, nil, null
+                case Abstraction_level_enum.Class_void: // 1 пустой тип - void, empty, nil, null
                     return_value = Color.FromArgb( 80 , 0 , 176 ); // (143, 0, 143);
                     break;
 
-                case Abstraction_level.Class_domain:  // 2 элементарный класс среды исполнения (ValueType)
+                case Abstraction_level_enum.Class_domain:  // 2 элементарный класс среды исполнения (ValueType)
                     return_value = Color.FromArgb( 64 , 0 , 192 ); // ( 103, 0, 151);
                     break;
 
-                case Abstraction_level.Class_tuple: // 3 связь между указанными объектами (аналогично предложениям Prolog, списку параметров функций), методы и свойства отсутствуют, доступ происходит только к открытым членам. По возможностям аналогично набору, возвращаемому из реляционной базы данных
+                case Abstraction_level_enum.Class_tuple: // 3 связь между указанными объектами (аналогично предложениям Prolog, списку параметров функций), методы и свойства отсутствуют, доступ происходит только к открытым членам. По возможностям аналогично набору, возвращаемому из реляционной базы данных
                     return_value = Color.FromArgb( 32 , 32 , 255 ); // ( 55, 0, 143);
                     break;
 
-                case Abstraction_level.Class_structure: // 4 структура с открытыми элементами. Для доступа к элементу текущего объекта используется слово this. Может содержать методы для обработки.
+                case Abstraction_level_enum.Class_structure: // 4 структура с открытыми элементами. Для доступа к элементу текущего объекта используется слово this. Может содержать методы для обработки.
                     return_value = Color.FromArgb( 0 , 96 , 160 ); // ( 0, 55, 135);
                     break;
 
-                case Abstraction_level.Class_system: // 5 система, которая может содержать закрытые и защищенные наследуемые элементы.
+                case Abstraction_level_enum.Class_system: // 5 система, которая может содержать закрытые и защищенные наследуемые элементы.
                     return_value = Color.FromArgb( 0 , 112 , 144 );  // ( 1, 58, 135);
                     break;
 
-                case Abstraction_level.Class_process: // 6 процесс, которому можно передать инициализирующие значения и получить результирующие значения. Соответствует службе. Любой метод получает не только указатель на себя (this), но и указатель на вызвавший класс или объект (sender). Это позволяет проверить авторизацию объекта, осуществляющего доступ к методу. Для предотвращения низкоуровневой подмены sender, параметры обрабатываемого события запрашиваются у вызывающего объекта после получения идентификатора сообщения. Содержит стандартные методы.
+                case Abstraction_level_enum.Class_process: // 6 процесс, которому можно передать инициализирующие значения и получить результирующие значения. Соответствует службе. Любой метод получает не только указатель на себя (this), но и указатель на вызвавший класс или объект (sender). Это позволяет проверить авторизацию объекта, осуществляющего доступ к методу. Для предотвращения низкоуровневой подмены sender, параметры обрабатываемого события запрашиваются у вызывающего объекта после получения идентификатора сообщения. Содержит стандартные методы.
                     return_value = Color.FromArgb( 0 , 128 , 128 ); // ( 1, 88, 116);
                     break;
 
-                case Abstraction_level.Class_specialist: // 7 специализированный класс, который выполняет указанный соглашениями набор функций. Соответствует COM-модели. Поддерживает свойство possibility с интерфейсом control interface
+                case Abstraction_level_enum.Class_specialist: // 7 специализированный класс, который выполняет указанный соглашениями набор функций. Соответствует COM-модели. Поддерживает свойство possibility с интерфейсом control interface
                     return_value = Color.FromArgb( 0 , 144 , 112 ); // ( 0, 96, 84);
                     break;
 
-                case Abstraction_level.Class_parallel: // 8 асинхронно работающий класс, передающий сообщения о выполнении задачи. Поддерживает свойство manager с интерфейсом exchange interface
+                case Abstraction_level_enum.Class_parallel: // 8 асинхронно работающий класс, передающий сообщения о выполнении задачи. Поддерживает свойство manager с интерфейсом exchange interface
                     return_value = Color.FromArgb( 0 , 160 , 96 ); // ( 0, 117, 0);
                     break;
 
-                case Abstraction_level.Class_stability: // 9 таможня, обеспечивающее ответственность за выполнение задачи. Поддерживает свойство environment с интерфейсом concurent interface
+                case Abstraction_level_enum.Class_stability: // 9 таможня, обеспечивающее ответственность за выполнение задачи. Поддерживает свойство environment с интерфейсом concurent interface
                     return_value = Color.FromArgb( 0 , 176 , 80 ); // ( 65, 137, 3);
                     break;
 
-                case Abstraction_level.Class_responsibility: // 10 исполняемый класс
+                case Abstraction_level_enum.Class_responsibility: // 10 исполняемый класс
                     return_value = Color.FromArgb( 0 , 192 , 64 ); // ( 110, 141, 3);
                     break;
 
-                case Abstraction_level.Class_below_reality:    // 11 среда исполнения
+                case Abstraction_level_enum.Class_below_reality:    // 11 среда исполнения
                     return_value = Color.FromArgb( 0 , 208 , 32 ); // ( 138, 157, 3);
                     break;
 
-                case Abstraction_level.Class_reality:    // 11 среда исполнения
+                case Abstraction_level_enum.Class_reality:    // 11 среда исполнения
                     return_value = Color.FromArgb( 32, 255 , 32 ); // ( 138, 157, 3);
                     break;
 
-                case Abstraction_level.Interface_above_reality:    // 11 среда исполнения
+                case Abstraction_level_enum.Interface_above_reality:    // 11 среда исполнения
                     return_value = Color.FromArgb( 32 , 208 , 0 ); // ( 138, 157, 3);
                     break;
 
-                case Abstraction_level.Interface_technology: // 12 технологические элементы
+                case Abstraction_level_enum.Interface_technology: // 12 технологические элементы
                     return_value = Color.FromArgb( 64 , 192 , 0 ); // ( 178, 158, 0);
                     break;
 
-                case Abstraction_level.Interface_alignment: // 13 оценка соответствия с внешними аналогами
+                case Abstraction_level_enum.Interface_alignment: // 13 оценка соответствия с внешними аналогами
                     return_value = Color.FromArgb( 80 , 176 , 0 ); // ( 244, 226, 6);
                     break;
 
-                case Abstraction_level.Interface_exchange: // 14 взаимодействие с окружающей средой
+                case Abstraction_level_enum.Interface_exchange: // 14 взаимодействие с окружающей средой
                     return_value = Color.FromArgb( 96 , 160 , 0 ); // ( 253, 174, 11);
                     break;
 
-                case Abstraction_level.Interface_control: // 15 описание управления
+                case Abstraction_level_enum.Interface_control: // 15 описание управления
                     return_value = Color.FromArgb( 128 , 128 , 0 ); // ( 251, 137, 4);
                     break;
 
-                case Abstraction_level.Interface_politic: // 16 описание стратегии
+                case Abstraction_level_enum.Interface_politic: // 16 описание стратегии
                     return_value = Color.FromArgb( 160 , 96 , 0 ); // ( 230, 90, 15);
                     break;
 
-                case Abstraction_level.Interface_session: // 17 интерфейсы для хранения текущего состояния
+                case Abstraction_level_enum.Interface_session: // 17 интерфейсы для хранения текущего состояния
                     return_value = Color.FromArgb( 176 , 80 , 0 ); // ( 225, 66, 1);
                     break;
 
-                case Abstraction_level.Interface_functional: // 18 функциональные связи, конечные автоматы
+                case Abstraction_level_enum.Interface_functional: // 18 функциональные связи, конечные автоматы
                     return_value = Color.FromArgb( 192 , 64 , 0 ); // ( 226, 38, 1);
                     break;
 
-                case Abstraction_level.Interface_target: // 19 описание целевых функций
+                case Abstraction_level_enum.Interface_target: // 19 описание целевых функций
                     return_value = Color.FromArgb( 255 , 32 , 32 ); // ( 247, 47, 0);
                     break;
 
-                case Abstraction_level.Interface_logical: // 20 логические элементы
+                case Abstraction_level_enum.Interface_logical: // 20 логические элементы
                     return_value = Color.FromArgb( 224 , 0 , 32 ); // ( 248, 26, 3);
                     break;
 
-                case Abstraction_level.Interface_abstract: // 21 универсальный интерфейс
+                case Abstraction_level_enum.Interface_abstract: // 21 универсальный интерфейс
                     return_value = Color.FromArgb( 192 , 0 , 64 ); // ( 255, 0, 0);
                     break;
 
-                case Abstraction_level.Interface_infinity: // 21 универсальный интерфейс
+                case Abstraction_level_enum.Interface_infinity: // 21 универсальный интерфейс
                     return_value = Color.FromArgb( 176 , 0 , 80 ); // ( 255, 0, 0);
                     break;
 
@@ -827,108 +827,108 @@ namespace pl2.rainbow.form.gdi.components
 
         }
 
-        public static string abstraction_name(Abstraction_level abstraction_level)
+        public static string abstraction_name(Abstraction_level_enum abstraction_level)
         {
             string return_value = "не определено";
             switch (abstraction_level)
             {
-                case Abstraction_level.Class_infinity: // 1 пустой тип - void, empty, nil, null
+                case Abstraction_level_enum.Class_infinity: // 1 пустой тип - void, empty, nil, null
                     return_value = "Пустой";
                     break;
 
-                case Abstraction_level.Class_void: // 1 пустой тип - void, empty, nil, null
+                case Abstraction_level_enum.Class_void: // 1 пустой тип - void, empty, nil, null
                     return_value = "Не заполненный";
                     break;
 
-                case Abstraction_level.Class_domain:  // 2 элементарный класс среды исполнения (ValueType)
+                case Abstraction_level_enum.Class_domain:  // 2 элементарный класс среды исполнения (ValueType)
                     return_value = "Хаотический";
                     break;
 
-                case Abstraction_level.Class_tuple: // 3 связь между указанными объектами (аналогично предложениям Prolog, списку параметров функций), методы и свойства отсутствуют, доступ происходит только к открытым членам. По возможностям аналогично набору, возвращаемому из реляционной базы данных
+                case Abstraction_level_enum.Class_tuple: // 3 связь между указанными объектами (аналогично предложениям Prolog, списку параметров функций), методы и свойства отсутствуют, доступ происходит только к открытым членам. По возможностям аналогично набору, возвращаемому из реляционной базы данных
                     return_value = "Физический";
                     break;
 
-                case Abstraction_level.Class_structure: // 4 структура с открытыми элементами. Для доступа к элементу текущего объекта используется слово this. Может содержать методы для обработки.
+                case Abstraction_level_enum.Class_structure: // 4 структура с открытыми элементами. Для доступа к элементу текущего объекта используется слово this. Может содержать методы для обработки.
                     return_value = "Канальный";
                     break;
 
-                case Abstraction_level.Class_system: // 5 система, которая может содержать закрытые и защищенные наследуемые элементы.
+                case Abstraction_level_enum.Class_system: // 5 система, которая может содержать закрытые и защищенные наследуемые элементы.
                     return_value = "Системный";
                     break;
 
-                case Abstraction_level.Class_process: // 6 процесс, которому можно передать инициализирующие значения и получить результирующие значения. Соответствует службе. Любой метод получает не только указатель на себя (this), но и указатель на вызвавший класс или объект (sender). Это позволяет проверить авторизацию объекта, осуществляющего доступ к методу. Для предотвращения низкоуровневой подмены sender, параметры обрабатываемого события запрашиваются у вызывающего объекта после получения идентификатора сообщения. Содержит стандартные методы.
+                case Abstraction_level_enum.Class_process: // 6 процесс, которому можно передать инициализирующие значения и получить результирующие значения. Соответствует службе. Любой метод получает не только указатель на себя (this), но и указатель на вызвавший класс или объект (sender). Это позволяет проверить авторизацию объекта, осуществляющего доступ к методу. Для предотвращения низкоуровневой подмены sender, параметры обрабатываемого события запрашиваются у вызывающего объекта после получения идентификатора сообщения. Содержит стандартные методы.
                     return_value = "Межсетевой";
                     break;
 
-                case Abstraction_level.Class_specialist: // 7 специализированный класс, который выполняет указанный соглашениями набор функций. Соответствует COM-модели. Поддерживает свойство possibility с интерфейсом control interface
+                case Abstraction_level_enum.Class_specialist: // 7 специализированный класс, который выполняет указанный соглашениями набор функций. Соответствует COM-модели. Поддерживает свойство possibility с интерфейсом control interface
                     return_value = "Специальный";
                     break;
 
-                case Abstraction_level.Class_parallel: // 8 асинхронно работающий класс, передающий сообщения о выполнении задачи. Поддерживает свойство manager с интерфейсом exchange interface
+                case Abstraction_level_enum.Class_parallel: // 8 асинхронно работающий класс, передающий сообщения о выполнении задачи. Поддерживает свойство manager с интерфейсом exchange interface
                     return_value = "Параллельный";
                     break;
 
-                case Abstraction_level.Class_stability: // 9 таможня, обеспечивающее ответственность за выполнение задачи. Поддерживает свойство environment с интерфейсом concurent interface
+                case Abstraction_level_enum.Class_stability: // 9 таможня, обеспечивающее ответственность за выполнение задачи. Поддерживает свойство environment с интерфейсом concurent interface
                     return_value = "Устойчивый";
                     break;
 
-                case Abstraction_level.Class_responsibility: // 10 исполняемый класс
+                case Abstraction_level_enum.Class_responsibility: // 10 исполняемый класс
                     return_value = "Ответственный";
                     break;
 
-                case Abstraction_level.Class_below_reality:    // 11 среда исполнения
+                case Abstraction_level_enum.Class_below_reality:    // 11 среда исполнения
                     return_value = "Нижний приреал";
                     break;
 
-                case Abstraction_level.Class_reality:    // 11 среда исполнения
+                case Abstraction_level_enum.Class_reality:    // 11 среда исполнения
                     return_value = "Преобразующий";
                     break;
 
-                case Abstraction_level.Interface_above_reality:    // 11 среда исполнения
+                case Abstraction_level_enum.Interface_above_reality:    // 11 среда исполнения
                     return_value = "Верхний приреал";
                     break;
 
-                case Abstraction_level.Interface_technology: // 12 технологические элементы
+                case Abstraction_level_enum.Interface_technology: // 12 технологические элементы
                     return_value = "Технологический";
                     break;
 
-                case Abstraction_level.Interface_alignment: // 13 оценка соответствия с внешними аналогами
+                case Abstraction_level_enum.Interface_alignment: // 13 оценка соответствия с внешними аналогами
                     return_value = "Выравнивающий";
                     break;
 
-                case Abstraction_level.Interface_exchange: // 14 взаимодействие с окружающей средой
+                case Abstraction_level_enum.Interface_exchange: // 14 взаимодействие с окружающей средой
                     return_value = "Оценивающий";
                     break;
 
-                case Abstraction_level.Interface_control: // 15 описание управления
+                case Abstraction_level_enum.Interface_control: // 15 описание управления
                     return_value = "Управляющий";
                     break;
 
-                case Abstraction_level.Interface_politic: // 16 описание стратегии
+                case Abstraction_level_enum.Interface_politic: // 16 описание стратегии
                     return_value = "Транспортный";
                     break;
 
-                case Abstraction_level.Interface_session: // 17 интерфейсы для хранения текущего состояния
+                case Abstraction_level_enum.Interface_session: // 17 интерфейсы для хранения текущего состояния
                     return_value = "Сеансовый";
                     break;
 
-                case Abstraction_level.Interface_functional: // 18 функциональные связи, конечные автоматы
+                case Abstraction_level_enum.Interface_functional: // 18 функциональные связи, конечные автоматы
                     return_value = "Представительский";
                     break;
 
-                case Abstraction_level.Interface_target: // 19 описание целевых функций
+                case Abstraction_level_enum.Interface_target: // 19 описание целевых функций
                     return_value = "Прикладной";
                     break;
 
-                case Abstraction_level.Interface_logical: // 20 логические элементы
+                case Abstraction_level_enum.Interface_logical: // 20 логические элементы
                     return_value = "Логический";
                     break;
 
-                case Abstraction_level.Interface_abstract: // 21 универсальный интерфейс
+                case Abstraction_level_enum.Interface_abstract: // 21 универсальный интерфейс
                     return_value = "Абстрактный";
                     break;
 
-                case Abstraction_level.Interface_infinity: // 21 универсальный интерфейс
+                case Abstraction_level_enum.Interface_infinity: // 21 универсальный интерфейс
                     return_value = "Идейный";
                     break;
 

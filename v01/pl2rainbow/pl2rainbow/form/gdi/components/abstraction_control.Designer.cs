@@ -1,6 +1,6 @@
 ﻿namespace pl2.rainbow.form.gdi.components
     {
-    partial class Abstraction
+    partial class Abstraction_control
         {
         /// <summary> 
         /// Требуется переменная конструктора.
@@ -54,7 +54,7 @@
             this.cell_check.Dock = System.Windows.Forms.DockStyle.Left;
             this.cell_check.Location = new System.Drawing.Point(441, 0);
             this.cell_check.Name = "cell_check";
-            this.cell_check.phase = pl2.rainbow.description.Phase_direction.after;
+            this.cell_check.phase = pl2.rainbow.description.Phase_direction_enum.after;
             this.cell_check.Size = new System.Drawing.Size(138, 36);
             this.cell_check.TabIndex = 4;
             // 
@@ -67,7 +67,7 @@
             this.cell_do.Dock = System.Windows.Forms.DockStyle.Left;
             this.cell_do.Location = new System.Drawing.Point(303, 0);
             this.cell_do.Name = "cell_do";
-            this.cell_do.phase = pl2.rainbow.description.Phase_direction.action;
+            this.cell_do.phase = pl2.rainbow.description.Phase_direction_enum.action;
             this.cell_do.Size = new System.Drawing.Size(138, 36);
             this.cell_do.TabIndex = 3;
             // 
@@ -80,7 +80,7 @@
             this.cell_plan.Dock = System.Windows.Forms.DockStyle.Left;
             this.cell_plan.Location = new System.Drawing.Point(165, 0);
             this.cell_plan.Name = "cell_plan";
-            this.cell_plan.phase = pl2.rainbow.description.Phase_direction.before;
+            this.cell_plan.phase = pl2.rainbow.description.Phase_direction_enum.before;
             this.cell_plan.Size = new System.Drawing.Size(138, 36);
             this.cell_plan.TabIndex = 2;
             // 
@@ -94,7 +94,7 @@
             this.cell_act.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cell_act.Location = new System.Drawing.Point(27, 0);
             this.cell_act.Name = "cell_act";
-            this.cell_act.phase = pl2.rainbow.description.Phase_direction.invariant;
+            this.cell_act.phase = pl2.rainbow.description.Phase_direction_enum.invariant;
             this.cell_act.Size = new System.Drawing.Size(138, 36);
             this.cell_act.TabIndex = 1;
             // 
