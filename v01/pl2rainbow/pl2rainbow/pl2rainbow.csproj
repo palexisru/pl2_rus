@@ -50,10 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="description\abstraction.cs" />
-    <Compile Include="description\cell.cs" />
-    <Compile Include="description\importance.cs" />
-    <Compile Include="description\phase.cs" />
+    <Compile Include="description\abstraction_system.cs" />
+    <Compile Include="description\cell_system.cs" />
+    <Compile Include="description\importance_enum.cs" />
+    <Compile Include="description\phase_system.cs" />
     <Compile Include="description\xml\list\authors.cs" />
     <Compile Include="description\xml\list\directions.cs" />
     <Compile Include="description\xml\list\hiperlinks.cs" />
@@ -82,11 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rainbow_base.xsd</DependentUpon>
     </Compile>
-    <Compile Include="description\xml\project\visual\rainbow.cs">
+    <Compile Include="description\xml\project\visual\rainbow_organisation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="description\xml\project\visual\rainbow.Designer.cs">
-      <DependentUpon>rainbow.cs</DependentUpon>
+    <Compile Include="description\xml\project\visual\rainbow_organisation.Designer.cs">
+      <DependentUpon>rainbow_organisation.cs</DependentUpon>
     </Compile>
     <Compile Include="form\gdi\components\abstraction_control.cs">
       <SubType>UserControl</SubType>
@@ -94,17 +94,17 @@
     <Compile Include="form\gdi\components\abstraction_control.Designer.cs">
       <DependentUpon>abstraction_control.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\gdi\components\cell_class.cs">
+    <Compile Include="form\gdi\components\cell_control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="form\gdi\components\cell_class.Designer.cs">
-      <DependentUpon>cell_class.cs</DependentUpon>
+    <Compile Include="form\gdi\components\cell_control.Designer.cs">
+      <DependentUpon>cell_control.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\gdi\components\rainbow.cs">
+    <Compile Include="form\gdi\components\rainbow_control.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="form\gdi\components\rainbow.Designer.cs">
-      <DependentUpon>rainbow.cs</DependentUpon>
+    <Compile Include="form\gdi\components\rainbow_control.Designer.cs">
+      <DependentUpon>rainbow_control.cs</DependentUpon>
     </Compile>
     <Compile Include="form\gdi\sdi\chield\node\cell.cs">
       <SubType>Form</SubType>
@@ -112,10 +112,10 @@
     <Compile Include="form\gdi\sdi\chield\node\cell.Designer.cs">
       <DependentUpon>cell.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\gdi\sdi\chield\node\relations\card\item.cs">
+    <Compile Include="form\gdi\sdi\chield\node\relations\link\item.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\gdi\sdi\chield\node\relations\card\item.Designer.cs">
+    <Compile Include="form\gdi\sdi\chield\node\relations\link\item.Designer.cs">
       <DependentUpon>item.cs</DependentUpon>
     </Compile>
     <Compile Include="form\gdi\sdi\main\main.cs">
@@ -152,22 +152,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="description\xml\project\visual\rainbow.resx">
-      <DependentUpon>rainbow.cs</DependentUpon>
+    <EmbeddedResource Include="description\xml\project\visual\rainbow_organisation.resx">
+      <DependentUpon>rainbow_organisation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\gdi\components\abstraction_control.resx">
       <DependentUpon>abstraction_control.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\gdi\components\cell_class.resx">
-      <DependentUpon>cell_class.cs</DependentUpon>
+    <EmbeddedResource Include="form\gdi\components\cell_control.resx">
+      <DependentUpon>cell_control.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\gdi\components\rainbow.resx">
-      <DependentUpon>rainbow.cs</DependentUpon>
+    <EmbeddedResource Include="form\gdi\components\rainbow_control.resx">
+      <DependentUpon>rainbow_control.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\gdi\sdi\chield\node\cell.resx">
       <DependentUpon>cell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\gdi\sdi\chield\node\relations\card\item.resx">
+    <EmbeddedResource Include="form\gdi\sdi\chield\node\relations\link\item.resx">
       <DependentUpon>item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\gdi\sdi\main\main.resx">
@@ -225,6 +225,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="form\gdi\sdi\chield\node\relations\card\" />
     <Folder Include="form\gdi\sdi\chield\node\relations\list\" />
     <Folder Include="form\gdi\sdi\chield\node\rename\" />
   </ItemGroup>

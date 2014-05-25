@@ -18,17 +18,23 @@ namespace pl2.rainbow.description.xml.project.visual
 
         private void Rainbow_Load(object sender , EventArgs e)
         {
+            rainbow_data.create_default_project();
+
         }
 
         private void Rainbow_Shown(object sender , EventArgs e)
         {
-            rainbow_data.create_default_project();
         }
 
         private void debug_save_button_Click(object sender , EventArgs e)
         {
             rainbow_data.WriteXml("C:\\pl2_rus\\test\\empty.xml");
             rainbow_data.WriteXmlSchema( "C:\\pl2_rus\\test\\empty.xsd" );
+        }
+
+        private void create_default_project_button_Click(object sender , EventArgs e)
+        {
+            // rainbow_data.create_default_project();
         }
     }
 }

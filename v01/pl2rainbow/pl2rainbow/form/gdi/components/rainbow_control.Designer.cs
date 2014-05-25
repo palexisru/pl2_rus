@@ -1,6 +1,6 @@
 ﻿namespace pl2.rainbow.form.gdi.components
 {
-    partial class Rainbow
+    partial class Rainbow_control
     {
         /// <summary> 
         /// Требуется переменная конструктора.
@@ -412,7 +412,7 @@
             this.level_pC.Load += new System.EventHandler(this.level_pC_Load);
             this.level_pC.Click += new System.EventHandler(this.level_Click);
             // 
-            // Rainbow
+            // Rainbow_control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -445,8 +445,8 @@
             this.Controls.Add(this.level_pB);
             this.Controls.Add(this.level_pC);
             this.DoubleBuffered = true;
-            this.Name = "Rainbow";
-            this.Size = new System.Drawing.Size(609, 912);
+            this.Name = "Rainbow_control";
+            this.Size = new System.Drawing.Size(592, 895);
             this.Load += new System.EventHandler(this.Rainbow_Load);
             this.Layout += new System.Windows.Forms.LayoutEventHandler(this.Rainbow_Layout);
             this.ResumeLayout(false);

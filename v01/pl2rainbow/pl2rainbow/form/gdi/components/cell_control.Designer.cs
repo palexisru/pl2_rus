@@ -1,6 +1,6 @@
 ﻿namespace pl2.rainbow.form.gdi.components
     {
-    partial class Cell
+    partial class Cell_control
         {
         /// <summary> 
         /// Требуется переменная конструктора.
@@ -68,7 +68,7 @@
             this.rename_menu_item.Text = "Переименовать";
             this.rename_menu_item.Click += new System.EventHandler(this.rename_menu_item_Click);
             // 
-            // Cell
+            // Cell_control
             // 
             this.AccessibleDescription = "Одна клетка радуги";
             this.AccessibleName = "rainbow_cell";
@@ -77,7 +77,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this.single_button);
-            this.Name = "Cell";
+            this.Name = "Cell_control";
             this.Size = new System.Drawing.Size(122, 34);
             this.context_menu.ResumeLayout(false);
             this.ResumeLayout(false);

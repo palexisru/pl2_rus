@@ -88,7 +88,7 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.project_rainbow = new pl2.rainbow.form.gdi.components.Rainbow();
+            this.project_rainbow = new pl2.rainbow.form.gdi.components.Rainbow_control();
             this.источникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_strip.SuspendLayout();
             this.toolStrip.SuspendLayout();
@@ -701,7 +701,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.VScrollBar vScrollBar1;
-        private components.Rainbow project_rainbow;
+        private components.Rainbow_control project_rainbow;
         private System.Windows.Forms.ToolStripMenuItem sphera_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem источникToolStripMenuItem;
         }

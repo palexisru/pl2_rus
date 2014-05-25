@@ -11,10 +11,11 @@ namespace pl2.rainbow.description
     /// </summary>
     public enum Phase_direction_enum
     {
-        invariant = 0 ,
-        before = 1 ,
-        action = 2 ,
-        after = 3
+        wide = 0 ,
+        invariant = 1 ,
+        before = 2 ,
+        action = 3 ,
+        after = 4
     }
 
     /// <summary>

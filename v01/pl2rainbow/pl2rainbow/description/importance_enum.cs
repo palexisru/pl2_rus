@@ -7,9 +7,10 @@ namespace pl2.rainbow.description
 {
     public enum Importance_enum
     {
-        Level_main ,
-        Level_important ,
-        Level_probably ,
-        Level_reserved
+        unknown ,
+        main ,
+        important ,
+        probably ,
+        reserved
     }
 }

@@ -23,9 +23,9 @@ namespace pl2.rainbow.description
         public Cell_system(string tag_new , string default_new , Abstraction_level_enum abstraction_new , Phase_direction_enum phase_new)
         {
             tag = tag_new;
+            default_name = default_new;
             abstraction = abstraction_new;
             phase = phase_new;
-            default_name = default_new;
         }
     }
 }

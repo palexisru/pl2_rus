@@ -9,12 +9,24 @@
     <Shape ID="DesignTable:Project_table" ZOrder="15" X="25" Y="58" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
     <Shape ID="DesignTable:Cell_table" ZOrder="14" X="412" Y="92" Height="105" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
     <Shape ID="DesignTable:Element_table" ZOrder="13" X="616" Y="57" Height="143" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
-    <Shape ID="DesignTable:Link_elements_table" ZOrder="10" X="793" Y="57" Height="105" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
-    <Shape ID="DesignTable:Level_table" ZOrder="1" X="175" Y="149" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
-    <Shape ID="DesignTable:Phase_table" ZOrder="3" X="281" Y="265" Height="105" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
-    <Shape ID="DesignTable:Importance_table" ZOrder="7" X="31" Y="273" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
+    <Shape ID="DesignTable:Link_elements_table" ZOrder="11" X="793" Y="57" Height="105" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
+    <Shape ID="DesignTable:Level_table" ZOrder="2" X="175" Y="149" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
+    <Shape ID="DesignTable:Phase_table" ZOrder="4" X="281" Y="265" Height="105" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="101" />
+    <Shape ID="DesignTable:Importance_table" ZOrder="8" X="31" Y="273" Height="86" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="82" />
   </Shapes>
   <Connectors>
+    <Connector ID="DesignRelation:Cell_Cell_value_Relation" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>562</X>
+          <Y>146</Y>
+        </Point>
+        <Point>
+          <X>616</X>
+          <Y>146</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
     <Connector ID="DesignRelation:Project_Cell_Relation" ZOrder="12" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -27,19 +39,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Cell_Cell_value_Relation" ZOrder="11" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>562</X>
-          <Y>146</Y>
-        </Point>
-        <Point>
-          <X>616</X>
-          <Y>146</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:Cell_value_link_parent_Relation" ZOrder="8" LineWidth="11">
+    <Connector ID="DesignRelation:Cell_value_link_parent_Relation" ZOrder="9" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>766</X>
@@ -51,7 +51,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Cell_value_link_chield_Relation" ZOrder="9" LineWidth="11">
+    <Connector ID="DesignRelation:Cell_value_link_chield_Relation" ZOrder="10" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>766</X>
@@ -63,7 +63,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Importance_Level_relation" ZOrder="6" LineWidth="11">
+    <Connector ID="DesignRelation:Importance_Level_relation" ZOrder="7" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>164</X>
@@ -79,7 +79,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Importance_Phase" ZOrder="5" LineWidth="11">
+    <Connector ID="DesignRelation:Importance_Phase" ZOrder="6" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>181</X>
@@ -91,7 +91,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Level_Cell" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:Level_Cell" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>325</X>
@@ -103,7 +103,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Phase_Cell" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:Phase_Cell" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>421</X>

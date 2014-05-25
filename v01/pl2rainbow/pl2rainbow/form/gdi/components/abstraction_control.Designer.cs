@@ -29,10 +29,10 @@
         private void InitializeComponent()
             {
             this.level_image = new System.Windows.Forms.Panel();
-            this.cell_check = new pl2.rainbow.form.gdi.components.Cell();
-            this.cell_do = new pl2.rainbow.form.gdi.components.Cell();
-            this.cell_plan = new pl2.rainbow.form.gdi.components.Cell();
-            this.cell_act = new pl2.rainbow.form.gdi.components.Cell();
+            this.cell_check = new pl2.rainbow.form.gdi.components.Cell_control();
+            this.cell_do = new pl2.rainbow.form.gdi.components.Cell_control();
+            this.cell_plan = new pl2.rainbow.form.gdi.components.Cell_control();
+            this.cell_act = new pl2.rainbow.form.gdi.components.Cell_control();
             this.SuspendLayout();
             // 
             // level_image
@@ -120,10 +120,10 @@
         #endregion
 
         private System.Windows.Forms.Panel level_image;
-        private Cell cell_act;
-        private Cell cell_plan;
-        private Cell cell_do;
-        private Cell cell_check;
+        private Cell_control cell_act;
+        private Cell_control cell_plan;
+        private Cell_control cell_do;
+        private Cell_control cell_check;
 
         }
     }

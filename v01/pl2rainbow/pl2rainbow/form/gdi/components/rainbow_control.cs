@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace pl2.rainbow.form.gdi.components
 {
-    public partial class Rainbow : UserControl
+    public partial class Rainbow_control : UserControl
     {
         [Browsable( true ) , Description( "Настройки проекта" ) , Category( "Data" )]
         public pl2.rainbow.Project options = new pl2.rainbow.Project();
@@ -56,7 +56,7 @@ namespace pl2.rainbow.form.gdi.components
             }
         }
 
-        public Rainbow()
+        public Rainbow_control()
         {
             InitializeComponent();
         }

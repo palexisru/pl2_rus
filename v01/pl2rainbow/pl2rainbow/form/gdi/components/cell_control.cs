@@ -10,9 +10,9 @@ using pl2.rainbow.description;
 
 namespace pl2.rainbow.form.gdi.components
 {
-    public partial class Cell : UserControl
+    public partial class Cell_control : UserControl
     {
-        public Cell()
+        public Cell_control()
         {
             InitializeComponent();
         }

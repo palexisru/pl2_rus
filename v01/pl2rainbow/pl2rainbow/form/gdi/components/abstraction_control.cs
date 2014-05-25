@@ -691,10 +691,10 @@ namespace pl2.rainbow.form.gdi.components
                 , (w + dt - text_size.Width) / 2
                 , hh - text_size.Height / 2 );
 #endif
-            if (Parent is Rainbow)
+            if (Parent is Rainbow_control)
             {
                 p = new Pen( inverce_color , 2 );
-                Rainbow parent_rainbow = Parent as Rainbow;
+                Rainbow_control parent_rainbow = Parent as Rainbow_control;
                 if (this.level > Abstraction_level_enum.Class_reality)
                 {
                     e.Graphics.DrawRectangle( p , dt + 2 , hh - dt / 2 - 1 , dt + 2 , dt + 2 );
