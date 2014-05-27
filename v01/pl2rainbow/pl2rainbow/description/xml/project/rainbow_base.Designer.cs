@@ -1684,18 +1684,15 @@ namespace pl2.rainbow.description.xml.project {
                 base.Columns.Add(this.columnelement_id_chield);
                 this.columnlink_description = new global::System.Data.DataColumn("link_description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlink_description);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Link_element_id_parent_Key", new global::System.Data.DataColumn[] {
-                                this.columnelement_id_parent}, false));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Link_element_id_chield_Key", new global::System.Data.DataColumn[] {
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Link_element_id_parent_chield_Key", new global::System.Data.DataColumn[] {
+                                this.columnelement_id_parent,
                                 this.columnelement_id_chield}, false));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Link_id_Key", new global::System.Data.DataColumn[] {
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Link_elements_Link_id_Key", new global::System.Data.DataColumn[] {
                                 this.columnlink_id}, true));
                 this.columnlink_id.AutoIncrement = true;
                 this.columnlink_id.AutoIncrementSeed = -65530;
                 this.columnlink_id.AllowDBNull = false;
                 this.columnlink_id.Unique = true;
-                this.columnelement_id_parent.Unique = true;
-                this.columnelement_id_chield.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

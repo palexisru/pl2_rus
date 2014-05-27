@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Linq;
+
 using pl2.rainbow.description;
 
 namespace pl2.rainbow.description.xml.project {
@@ -30,6 +31,83 @@ namespace pl2.rainbow.description.xml.project {
 
         private void create_default_element_links()
         {
+            Link_elements_tableRow row;
+            foreach( Element_tableRow element_row in Element_table.Rows)
+            {
+                var possible_links_next = 
+                    from element in Element_table 
+                        join level in Level_table
+                        on element.element_level equals level.level_id
+                    where ((Int32)level.level_importance) <= 3
+                        && ((Int32) element.element_phase == (Int32) element_row.element_phase + 1)
+                    select element;
+                foreach(Element_tableRow el_row in possible_links_next)
+                {
+                    row = (Link_elements_tableRow)Link_elements_table.NewRow();
+                    row.element_id_parent = element_row.element_id;
+                    row.element_id_chield = el_row.element_id;
+                    row.link_description = element_row.element_name + " -> " + el_row.element_name;
+                    Link_elements_table.AddLink_elements_tableRow(row);
+                }
+
+                var possible_links_prev =
+                    from element in Element_table
+                    where element.element_level == element_row.element_level
+                        && ((Int32)element.element_phase == (Int32)element_row.element_phase - 1)
+                    select element;
+                foreach (Element_tableRow el_row in possible_links_prev)
+                {
+                    row = (Link_elements_tableRow)Link_elements_table.NewRow();
+                    row.element_id_parent = element_row.element_id;
+                    row.element_id_chield = el_row.element_id;
+                    row.link_description = element_row.element_name + " -> " + el_row.element_name;
+                    Link_elements_table.AddLink_elements_tableRow( row );
+                }
+
+                var possible_links_upper =
+                    from element in Element_table
+                    where (Int32)element.element_level == (Int32)element_row.element_level + 1
+                        && (element.element_phase == element_row.element_phase)
+                    select element;
+                foreach (Element_tableRow el_row in possible_links_upper)
+                {
+                    row = (Link_elements_tableRow)Link_elements_table.NewRow();
+                    row.element_id_parent = element_row.element_id;
+                    row.element_id_chield = el_row.element_id;
+                    row.link_description = element_row.element_name + " -> " + el_row.element_name;
+                    Link_elements_table.AddLink_elements_tableRow( row );
+                }
+
+                var possible_links_lower =
+                    from element in Element_table
+                    where (Int32)element.element_level == (Int32)element_row.element_level - 1
+                        && (element.element_phase == element_row.element_phase)
+                    select element;
+                foreach (Element_tableRow el_row in possible_links_lower)
+                {
+                    row = (Link_elements_tableRow)Link_elements_table.NewRow();
+                    row.element_id_parent = element_row.element_id;
+                    row.element_id_chield = el_row.element_id;
+                    row.link_description = element_row.element_name + " -> " + el_row.element_name;
+                    Link_elements_table.AddLink_elements_tableRow( row );
+                }
+
+                var possible_links_symmetric =
+                    from element in Element_table
+                    where Math.Abs((Int32)element.element_level) == Math.Abs((Int32)element_row.element_level)
+                        && element.element_level != element_row.element_level
+                        && (element.element_phase == element_row.element_phase)
+                    select element;
+                foreach (Element_tableRow el_row in possible_links_symmetric)
+                {
+                    row = (Link_elements_tableRow)Link_elements_table.NewRow();
+                    row.element_id_parent = element_row.element_id;
+                    row.element_id_chield = el_row.element_id;
+                    row.link_description = element_row.element_name + " -> " + el_row.element_name;
+                    Link_elements_table.AddLink_elements_tableRow( row );
+                }
+
+            }
             
             //throw new NotImplementedException();
         }

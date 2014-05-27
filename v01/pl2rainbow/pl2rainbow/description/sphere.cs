@@ -172,7 +172,7 @@ namespace pl2.rainbow.description
             new Cell_system("Entity", "Сущность", Abstraction_level_enum.Class_tuple, Phase_direction_enum.invariant),
             new Cell_system("Object", "Объект", Abstraction_level_enum.Class_tuple, Phase_direction_enum.before),
             new Cell_system("Message", "Сообщение", Abstraction_level_enum.Class_tuple, Phase_direction_enum.action),
-            new Cell_system("Signal", "Сигнал", Abstraction_level_enum.Class_tuple, Phase_direction_enum.after),
+            new Cell_system("Event", "Событие", Abstraction_level_enum.Class_tuple, Phase_direction_enum.after),
 
             new Cell_system("Exists", "Существование", Abstraction_level_enum.Class_domain, Phase_direction_enum.invariant),
             new Cell_system("Relation", "Связь", Abstraction_level_enum.Class_domain, Phase_direction_enum.before),

@@ -143,6 +143,11 @@
       <DependentUpon>input_box.cs</DependentUpon>
     </Compile>
     <Compile Include="form\simple\input\string_value\input.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="rainbow\project.cs" />
     <Compile Include="rainbow_window.cs">
       <SubType>Form</SubType>
@@ -184,14 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="rainbow_window.resx">
       <DependentUpon>rainbow_window.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +231,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="description\xml\project\file\empty.xml" />
+    <None Include="Resources\Icon2.ico" />
+    <None Include="Resources\Icon1.ico" />
+    <None Include="Resources\Image1.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
