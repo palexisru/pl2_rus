@@ -24,7 +24,7 @@ namespace pl2.rainbow.form.gdi.sdi.property
         {
             maximal_colors.Value = options.number_of_colors;
             central_visible_check_box.Checked = options.center_allwase_visible;
-            special_check_box.Checked = options.visible_specials;
+            special_check_box.Checked = false; // options.visible_specials == ;
             symmetric_check_box.Checked = options.visible_symmetric;
         }
 
@@ -32,7 +32,7 @@ namespace pl2.rainbow.form.gdi.sdi.property
         {
             options.number_of_colors = (int)maximal_colors.Value;
             options.center_allwase_visible = central_visible_check_box.Checked;
-            options.visible_specials = special_check_box.Checked;
+            // options.visible_specials = special_check_box.Checked;
             options.visible_symmetric = symmetric_check_box.Checked;
             Close();
         }

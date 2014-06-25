@@ -68,11 +68,7 @@
     <Compile Include="description\xml\node\link.cs" />
     <Compile Include="description\xml\node\node.cs" />
     <Compile Include="description\sphere.cs" />
-    <Compile Include="description\xml\project\file\rainbow.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rainbow.dbml</DependentUpon>
-    </Compile>
+    <Compile Include="description\xml\project\file\file.cs" />
     <Compile Include="description\xml\project\rainbow_base.cs">
       <DependentUpon>rainbow_base.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -142,7 +138,7 @@
     <Compile Include="form\simple\input\string_value\gdi\input_box.Designer.cs">
       <DependentUpon>input_box.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\simple\input\string_value\input.cs" />
+    <Compile Include="form\gdi\sdi\main\input.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,14 +191,6 @@
     <EmbeddedResource Include="rainbow_window.resx">
       <DependentUpon>rainbow_window.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="description\xml\project\file\rainbow.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>rainbow.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="description\xml\project\file\rainbow.dbml.layout">
-      <DependentUpon>rainbow.dbml</DependentUpon>
-    </None>
     <None Include="description\xml\project\rainbow_base.xsc">
       <DependentUpon>rainbow_base.xsd</DependentUpon>
     </None>
@@ -230,7 +218,6 @@
     <Folder Include="form\gdi\sdi\chield\node\rename\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="description\xml\project\file\empty.xml" />
     <None Include="Resources\Icon2.ico" />
     <None Include="Resources\Icon1.ico" />
     <None Include="Resources\Image1.png" />

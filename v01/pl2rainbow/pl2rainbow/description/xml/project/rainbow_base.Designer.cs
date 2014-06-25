@@ -388,39 +388,39 @@ namespace pl2.rainbow.description.xml.project {
             base.Tables.Add(this.tableImportance_table);
             global::System.Data.ForeignKeyConstraint fkc;
             fkc = new global::System.Data.ForeignKeyConstraint("Cell_Cell_value_Relation", new global::System.Data.DataColumn[] {
-                        this.tableCell_table.project_idColumn,
-                        this.tableCell_table.cell_levelColumn,
-                        this.tableCell_table.cell_phaseColumn}, new global::System.Data.DataColumn[] {
-                        this.tableElement_table.project_idColumn,
-                        this.tableElement_table.element_levelColumn,
-                        this.tableElement_table.element_phaseColumn});
+                        this.tableCell_table.project_id_for_cellColumn,
+                        this.tableCell_table.level_id_for_cellColumn,
+                        this.tableCell_table.phase_id_for_cellColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElement_table.project_id_for_elementColumn,
+                        this.tableElement_table.level_id_for_elementColumn,
+                        this.tableElement_table.phase_id_for_elementColumn});
             this.tableElement_table.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
             this.relationCell_Cell_value_Relation = new global::System.Data.DataRelation("Cell_Cell_value_Relation", new global::System.Data.DataColumn[] {
-                        this.tableCell_table.project_idColumn,
-                        this.tableCell_table.cell_levelColumn,
-                        this.tableCell_table.cell_phaseColumn}, new global::System.Data.DataColumn[] {
-                        this.tableElement_table.project_idColumn,
-                        this.tableElement_table.element_levelColumn,
-                        this.tableElement_table.element_phaseColumn}, false);
+                        this.tableCell_table.project_id_for_cellColumn,
+                        this.tableCell_table.level_id_for_cellColumn,
+                        this.tableCell_table.phase_id_for_cellColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElement_table.project_id_for_elementColumn,
+                        this.tableElement_table.level_id_for_elementColumn,
+                        this.tableElement_table.phase_id_for_elementColumn}, false);
             this.Relations.Add(this.relationCell_Cell_value_Relation);
             this.relationProject_Cell_Relation = new global::System.Data.DataRelation("Project_Cell_Relation", new global::System.Data.DataColumn[] {
                         this.tableProject_table.project_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCell_table.project_idColumn}, false);
+                        this.tableCell_table.project_id_for_cellColumn}, false);
             this.Relations.Add(this.relationProject_Cell_Relation);
             this.relationCell_value_link_parent_Relation = new global::System.Data.DataRelation("Cell_value_link_parent_Relation", new global::System.Data.DataColumn[] {
                         this.tableElement_table.element_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLink_elements_table.element_id_parentColumn}, false);
+                        this.tableLink_elements_table.parent_element_id_for_linkColumn}, false);
             this.Relations.Add(this.relationCell_value_link_parent_Relation);
             this.relationCell_value_link_chield_Relation = new global::System.Data.DataRelation("Cell_value_link_chield_Relation", new global::System.Data.DataColumn[] {
                         this.tableElement_table.element_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLink_elements_table.element_id_chieldColumn}, false);
+                        this.tableLink_elements_table.chield_element_id_for_linkColumn}, false);
             this.Relations.Add(this.relationCell_value_link_chield_Relation);
             this.relationImportance_Level_relation = new global::System.Data.DataRelation("Importance_Level_relation", new global::System.Data.DataColumn[] {
                         this.tableImportance_table.importance_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLevel_table.level_importanceColumn}, false);
+                        this.tableLevel_table.importance_id_for_levelColumn}, false);
             this.Relations.Add(this.relationImportance_Level_relation);
             this.relationImportance_Phase = new global::System.Data.DataRelation("Importance_Phase", new global::System.Data.DataColumn[] {
                         this.tableImportance_table.importance_idColumn}, new global::System.Data.DataColumn[] {
@@ -428,11 +428,11 @@ namespace pl2.rainbow.description.xml.project {
             this.Relations.Add(this.relationImportance_Phase);
             this.relationLevel_Cell = new global::System.Data.DataRelation("Level_Cell", new global::System.Data.DataColumn[] {
                         this.tableLevel_table.level_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCell_table.cell_levelColumn}, false);
+                        this.tableCell_table.level_id_for_cellColumn}, false);
             this.Relations.Add(this.relationLevel_Cell);
             this.relationPhase_Cell = new global::System.Data.DataRelation("Phase_Cell", new global::System.Data.DataColumn[] {
                         this.tablePhase_table.phase_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCell_table.cell_phaseColumn}, false);
+                        this.tableCell_table.phase_id_for_cellColumn}, false);
             this.Relations.Add(this.relationPhase_Cell);
         }
         
@@ -563,9 +563,9 @@ namespace pl2.rainbow.description.xml.project {
             
             private global::System.Data.DataColumn columnproject_id;
             
-            private global::System.Data.DataColumn columnproject_name;
+            private global::System.Data.DataColumn columnname_of_project;
             
-            private global::System.Data.DataColumn columnproject_description;
+            private global::System.Data.DataColumn columndescription_for_project;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -610,17 +610,17 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn project_nameColumn {
+            public global::System.Data.DataColumn name_of_projectColumn {
                 get {
-                    return this.columnproject_name;
+                    return this.columnname_of_project;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn project_descriptionColumn {
+            public global::System.Data.DataColumn description_for_projectColumn {
                 get {
-                    return this.columnproject_description;
+                    return this.columndescription_for_project;
                 }
             }
             
@@ -661,12 +661,12 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableRow AddProject_tableRow(string project_name, string project_description) {
+            public Project_tableRow AddProject_tableRow(string name_of_project, string description_for_project) {
                 Project_tableRow rowProject_tableRow = ((Project_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        project_name,
-                        project_description};
+                        name_of_project,
+                        description_for_project};
                 rowProject_tableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProject_tableRow);
                 return rowProject_tableRow;
@@ -697,8 +697,8 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnproject_id = base.Columns["project_id"];
-                this.columnproject_name = base.Columns["project_name"];
-                this.columnproject_description = base.Columns["project_description"];
+                this.columnname_of_project = base.Columns["name_of_project"];
+                this.columndescription_for_project = base.Columns["description_for_project"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -706,19 +706,19 @@ namespace pl2.rainbow.description.xml.project {
             private void InitClass() {
                 this.columnproject_id = new global::System.Data.DataColumn("project_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproject_id);
-                this.columnproject_name = new global::System.Data.DataColumn("project_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproject_name);
-                this.columnproject_description = new global::System.Data.DataColumn("project_description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproject_description);
+                this.columnname_of_project = new global::System.Data.DataColumn("name_of_project", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_project);
+                this.columndescription_for_project = new global::System.Data.DataColumn("description_for_project", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription_for_project);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Project_id_Key", new global::System.Data.DataColumn[] {
                                 this.columnproject_id}, true));
                 this.columnproject_id.AutoIncrement = true;
-                this.columnproject_id.AutoIncrementSeed = -65530;
+                this.columnproject_id.AutoIncrementSeed = 1;
                 this.columnproject_id.AllowDBNull = false;
                 this.columnproject_id.Unique = true;
                 this.columnproject_id.Caption = "Проект";
-                this.columnproject_name.Caption = "Название проекта";
-                this.columnproject_description.Caption = "Описание проекта";
+                this.columnname_of_project.Caption = "Название проекта";
+                this.columndescription_for_project.Caption = "Описание проекта";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -852,13 +852,13 @@ namespace pl2.rainbow.description.xml.project {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Cell_tableDataTable : global::System.Data.TypedTableBase<Cell_tableRow> {
             
-            private global::System.Data.DataColumn columnproject_id;
+            private global::System.Data.DataColumn columnproject_id_for_cell;
             
-            private global::System.Data.DataColumn columncell_level;
+            private global::System.Data.DataColumn columnlevel_id_for_cell;
             
-            private global::System.Data.DataColumn columncell_phase;
+            private global::System.Data.DataColumn columnphase_id_for_cell;
             
-            private global::System.Data.DataColumn columncell_common_name;
+            private global::System.Data.DataColumn columnname_of_cell_common;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -895,33 +895,33 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn project_idColumn {
+            public global::System.Data.DataColumn project_id_for_cellColumn {
                 get {
-                    return this.columnproject_id;
+                    return this.columnproject_id_for_cell;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cell_levelColumn {
+            public global::System.Data.DataColumn level_id_for_cellColumn {
                 get {
-                    return this.columncell_level;
+                    return this.columnlevel_id_for_cell;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cell_phaseColumn {
+            public global::System.Data.DataColumn phase_id_for_cellColumn {
                 get {
-                    return this.columncell_phase;
+                    return this.columnphase_id_for_cell;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cell_common_nameColumn {
+            public global::System.Data.DataColumn name_of_cell_commonColumn {
                 get {
-                    return this.columncell_common_name;
+                    return this.columnname_of_cell_common;
                 }
             }
             
@@ -962,13 +962,13 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Cell_tableRow AddCell_tableRow(Project_tableRow parentProject_tableRowByProject_Cell_Relation, Level_tableRow parentLevel_tableRowByLevel_Cell, Phase_tableRow parentPhase_tableRowByPhase_Cell, string cell_common_name) {
+            public Cell_tableRow AddCell_tableRow(Project_tableRow parentProject_tableRowByProject_Cell_Relation, Level_tableRow parentLevel_tableRowByLevel_Cell, Phase_tableRow parentPhase_tableRowByPhase_Cell, string name_of_cell_common) {
                 Cell_tableRow rowCell_tableRow = ((Cell_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
-                        cell_common_name};
+                        name_of_cell_common};
                 if ((parentProject_tableRowByProject_Cell_Relation != null)) {
                     columnValuesArray[0] = parentProject_tableRowByProject_Cell_Relation[0];
                 }
@@ -985,11 +985,11 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Cell_tableRow FindByproject_idcell_levelcell_phase(int project_id, int cell_level, int cell_phase) {
+            public Cell_tableRow FindByproject_id_for_celllevel_id_for_cellphase_id_for_cell(int project_id_for_cell, int level_id_for_cell, int phase_id_for_cell) {
                 return ((Cell_tableRow)(this.Rows.Find(new object[] {
-                            project_id,
-                            cell_level,
-                            cell_phase})));
+                            project_id_for_cell,
+                            level_id_for_cell,
+                            phase_id_for_cell})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1009,36 +1009,36 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnproject_id = base.Columns["project_id"];
-                this.columncell_level = base.Columns["cell_level"];
-                this.columncell_phase = base.Columns["cell_phase"];
-                this.columncell_common_name = base.Columns["cell_common_name"];
+                this.columnproject_id_for_cell = base.Columns["project_id_for_cell"];
+                this.columnlevel_id_for_cell = base.Columns["level_id_for_cell"];
+                this.columnphase_id_for_cell = base.Columns["phase_id_for_cell"];
+                this.columnname_of_cell_common = base.Columns["name_of_cell_common"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnproject_id = new global::System.Data.DataColumn("project_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproject_id);
-                this.columncell_level = new global::System.Data.DataColumn("cell_level", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncell_level);
-                this.columncell_phase = new global::System.Data.DataColumn("cell_phase", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncell_phase);
-                this.columncell_common_name = new global::System.Data.DataColumn("cell_common_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncell_common_name);
+                this.columnproject_id_for_cell = new global::System.Data.DataColumn("project_id_for_cell", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproject_id_for_cell);
+                this.columnlevel_id_for_cell = new global::System.Data.DataColumn("level_id_for_cell", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlevel_id_for_cell);
+                this.columnphase_id_for_cell = new global::System.Data.DataColumn("phase_id_for_cell", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnphase_id_for_cell);
+                this.columnname_of_cell_common = new global::System.Data.DataColumn("name_of_cell_common", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_cell_common);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Cell_Key", new global::System.Data.DataColumn[] {
-                                this.columnproject_id,
-                                this.columncell_level,
-                                this.columncell_phase}, true));
-                this.columnproject_id.AllowDBNull = false;
-                this.columnproject_id.Caption = "Проект";
-                this.columncell_level.AllowDBNull = false;
-                this.columncell_level.Caption = "Уровень";
-                this.columncell_level.DefaultValue = ((int)(0));
-                this.columncell_phase.AllowDBNull = false;
-                this.columncell_phase.Caption = "Фаза";
-                this.columncell_phase.DefaultValue = ((int)(1));
-                this.columncell_common_name.Caption = "Общее наименование ячейки";
+                                this.columnproject_id_for_cell,
+                                this.columnlevel_id_for_cell,
+                                this.columnphase_id_for_cell}, true));
+                this.columnproject_id_for_cell.AllowDBNull = false;
+                this.columnproject_id_for_cell.Caption = "Проект";
+                this.columnlevel_id_for_cell.AllowDBNull = false;
+                this.columnlevel_id_for_cell.Caption = "Уровень";
+                this.columnlevel_id_for_cell.DefaultValue = ((int)(0));
+                this.columnphase_id_for_cell.AllowDBNull = false;
+                this.columnphase_id_for_cell.Caption = "Фаза";
+                this.columnphase_id_for_cell.DefaultValue = ((int)(1));
+                this.columnname_of_cell_common.Caption = "Общее наименование ячейки";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1172,17 +1172,17 @@ namespace pl2.rainbow.description.xml.project {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Element_tableDataTable : global::System.Data.TypedTableBase<Element_tableRow> {
             
-            private global::System.Data.DataColumn columnproject_id;
+            private global::System.Data.DataColumn columnproject_id_for_element;
             
-            private global::System.Data.DataColumn columnelement_level;
+            private global::System.Data.DataColumn columnlevel_id_for_element;
             
-            private global::System.Data.DataColumn columnelement_phase;
+            private global::System.Data.DataColumn columnphase_id_for_element;
             
             private global::System.Data.DataColumn columnelement_id;
             
-            private global::System.Data.DataColumn columnelement_name;
+            private global::System.Data.DataColumn columnname_of_element;
             
-            private global::System.Data.DataColumn columnelement_description;
+            private global::System.Data.DataColumn columndescription_for_element;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1219,25 +1219,25 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn project_idColumn {
+            public global::System.Data.DataColumn project_id_for_elementColumn {
                 get {
-                    return this.columnproject_id;
+                    return this.columnproject_id_for_element;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn element_levelColumn {
+            public global::System.Data.DataColumn level_id_for_elementColumn {
                 get {
-                    return this.columnelement_level;
+                    return this.columnlevel_id_for_element;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn element_phaseColumn {
+            public global::System.Data.DataColumn phase_id_for_elementColumn {
                 get {
-                    return this.columnelement_phase;
+                    return this.columnphase_id_for_element;
                 }
             }
             
@@ -1251,17 +1251,17 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn element_nameColumn {
+            public global::System.Data.DataColumn name_of_elementColumn {
                 get {
-                    return this.columnelement_name;
+                    return this.columnname_of_element;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn element_descriptionColumn {
+            public global::System.Data.DataColumn description_for_elementColumn {
                 get {
-                    return this.columnelement_description;
+                    return this.columndescription_for_element;
                 }
             }
             
@@ -1302,15 +1302,15 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Element_tableRow AddElement_tableRow(int project_id, int element_level, int element_phase, string element_name, string element_description) {
+            public Element_tableRow AddElement_tableRow(int project_id_for_element, int level_id_for_element, int phase_id_for_element, string name_of_element, string description_for_element) {
                 Element_tableRow rowElement_tableRow = ((Element_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        project_id,
-                        element_level,
-                        element_phase,
+                        project_id_for_element,
+                        level_id_for_element,
+                        phase_id_for_element,
                         null,
-                        element_name,
-                        element_description};
+                        name_of_element,
+                        description_for_element};
                 rowElement_tableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowElement_tableRow);
                 return rowElement_tableRow;
@@ -1340,48 +1340,48 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnproject_id = base.Columns["project_id"];
-                this.columnelement_level = base.Columns["element_level"];
-                this.columnelement_phase = base.Columns["element_phase"];
+                this.columnproject_id_for_element = base.Columns["project_id_for_element"];
+                this.columnlevel_id_for_element = base.Columns["level_id_for_element"];
+                this.columnphase_id_for_element = base.Columns["phase_id_for_element"];
                 this.columnelement_id = base.Columns["element_id"];
-                this.columnelement_name = base.Columns["element_name"];
-                this.columnelement_description = base.Columns["element_description"];
+                this.columnname_of_element = base.Columns["name_of_element"];
+                this.columndescription_for_element = base.Columns["description_for_element"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnproject_id = new global::System.Data.DataColumn("project_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproject_id);
-                this.columnelement_level = new global::System.Data.DataColumn("element_level", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnelement_level);
-                this.columnelement_phase = new global::System.Data.DataColumn("element_phase", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnelement_phase);
+                this.columnproject_id_for_element = new global::System.Data.DataColumn("project_id_for_element", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproject_id_for_element);
+                this.columnlevel_id_for_element = new global::System.Data.DataColumn("level_id_for_element", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlevel_id_for_element);
+                this.columnphase_id_for_element = new global::System.Data.DataColumn("phase_id_for_element", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnphase_id_for_element);
                 this.columnelement_id = new global::System.Data.DataColumn("element_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnelement_id);
-                this.columnelement_name = new global::System.Data.DataColumn("element_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnelement_name);
-                this.columnelement_description = new global::System.Data.DataColumn("element_description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnelement_description);
+                this.columnname_of_element = new global::System.Data.DataColumn("name_of_element", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_element);
+                this.columndescription_for_element = new global::System.Data.DataColumn("description_for_element", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription_for_element);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("cell", new global::System.Data.DataColumn[] {
-                                this.columnproject_id,
-                                this.columnelement_level,
-                                this.columnelement_phase}, false));
+                                this.columnproject_id_for_element,
+                                this.columnlevel_id_for_element,
+                                this.columnphase_id_for_element}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Element_id_Key", new global::System.Data.DataColumn[] {
                                 this.columnelement_id}, true));
-                this.columnproject_id.AllowDBNull = false;
-                this.columnproject_id.Caption = "Проект";
-                this.columnelement_level.AllowDBNull = false;
-                this.columnelement_level.Caption = "Уровень";
-                this.columnelement_level.DefaultValue = ((int)(0));
-                this.columnelement_phase.Caption = "Фаза";
-                this.columnelement_phase.DefaultValue = ((int)(1));
+                this.columnproject_id_for_element.AllowDBNull = false;
+                this.columnproject_id_for_element.Caption = "Проект";
+                this.columnlevel_id_for_element.AllowDBNull = false;
+                this.columnlevel_id_for_element.Caption = "Уровень";
+                this.columnlevel_id_for_element.DefaultValue = ((int)(0));
+                this.columnphase_id_for_element.Caption = "Фаза";
+                this.columnphase_id_for_element.DefaultValue = ((int)(1));
                 this.columnelement_id.AutoIncrement = true;
-                this.columnelement_id.AutoIncrementSeed = -65530;
+                this.columnelement_id.AutoIncrementSeed = 1;
                 this.columnelement_id.AllowDBNull = false;
                 this.columnelement_id.Unique = true;
                 this.columnelement_id.Caption = "Идентификатор ячейки";
-                this.columnelement_name.Caption = "Название элемента";
+                this.columnname_of_element.Caption = "Название элемента";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1517,11 +1517,13 @@ namespace pl2.rainbow.description.xml.project {
             
             private global::System.Data.DataColumn columnlink_id;
             
-            private global::System.Data.DataColumn columnelement_id_parent;
+            private global::System.Data.DataColumn columnparent_element_id_for_link;
             
-            private global::System.Data.DataColumn columnelement_id_chield;
+            private global::System.Data.DataColumn columnchield_element_id_for_link;
             
-            private global::System.Data.DataColumn columnlink_description;
+            private global::System.Data.DataColumn columnname_of_link;
+            
+            private global::System.Data.DataColumn columndescription_for_link;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1566,25 +1568,33 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn element_id_parentColumn {
+            public global::System.Data.DataColumn parent_element_id_for_linkColumn {
                 get {
-                    return this.columnelement_id_parent;
+                    return this.columnparent_element_id_for_link;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn element_id_chieldColumn {
+            public global::System.Data.DataColumn chield_element_id_for_linkColumn {
                 get {
-                    return this.columnelement_id_chield;
+                    return this.columnchield_element_id_for_link;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn link_descriptionColumn {
+            public global::System.Data.DataColumn name_of_linkColumn {
                 get {
-                    return this.columnlink_description;
+                    return this.columnname_of_link;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn description_for_linkColumn {
+                get {
+                    return this.columndescription_for_link;
                 }
             }
             
@@ -1625,13 +1635,14 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Link_elements_tableRow AddLink_elements_tableRow(Element_tableRow parentElement_tableRowByCell_value_link_parent_Relation, Element_tableRow parentElement_tableRowByCell_value_link_chield_Relation, string link_description) {
+            public Link_elements_tableRow AddLink_elements_tableRow(Element_tableRow parentElement_tableRowByCell_value_link_parent_Relation, Element_tableRow parentElement_tableRowByCell_value_link_chield_Relation, string name_of_link, string description_for_link) {
                 Link_elements_tableRow rowLink_elements_tableRow = ((Link_elements_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
-                        link_description};
+                        name_of_link,
+                        description_for_link};
                 if ((parentElement_tableRowByCell_value_link_parent_Relation != null)) {
                     columnValuesArray[1] = parentElement_tableRowByCell_value_link_parent_Relation[3];
                 }
@@ -1668,9 +1679,10 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnlink_id = base.Columns["link_id"];
-                this.columnelement_id_parent = base.Columns["element_id_parent"];
-                this.columnelement_id_chield = base.Columns["element_id_chield"];
-                this.columnlink_description = base.Columns["link_description"];
+                this.columnparent_element_id_for_link = base.Columns["parent_element_id_for_link"];
+                this.columnchield_element_id_for_link = base.Columns["chield_element_id_for_link"];
+                this.columnname_of_link = base.Columns["name_of_link"];
+                this.columndescription_for_link = base.Columns["description_for_link"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1678,19 +1690,21 @@ namespace pl2.rainbow.description.xml.project {
             private void InitClass() {
                 this.columnlink_id = new global::System.Data.DataColumn("link_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlink_id);
-                this.columnelement_id_parent = new global::System.Data.DataColumn("element_id_parent", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnelement_id_parent);
-                this.columnelement_id_chield = new global::System.Data.DataColumn("element_id_chield", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnelement_id_chield);
-                this.columnlink_description = new global::System.Data.DataColumn("link_description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlink_description);
+                this.columnparent_element_id_for_link = new global::System.Data.DataColumn("parent_element_id_for_link", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnparent_element_id_for_link);
+                this.columnchield_element_id_for_link = new global::System.Data.DataColumn("chield_element_id_for_link", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnchield_element_id_for_link);
+                this.columnname_of_link = new global::System.Data.DataColumn("name_of_link", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_link);
+                this.columndescription_for_link = new global::System.Data.DataColumn("description_for_link", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription_for_link);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Link_element_id_parent_chield_Key", new global::System.Data.DataColumn[] {
-                                this.columnelement_id_parent,
-                                this.columnelement_id_chield}, false));
+                                this.columnparent_element_id_for_link,
+                                this.columnchield_element_id_for_link}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Link_elements_Link_id_Key", new global::System.Data.DataColumn[] {
                                 this.columnlink_id}, true));
                 this.columnlink_id.AutoIncrement = true;
-                this.columnlink_id.AutoIncrementSeed = -65530;
+                this.columnlink_id.AutoIncrementSeed = 1;
                 this.columnlink_id.AllowDBNull = false;
                 this.columnlink_id.Unique = true;
             }
@@ -1828,9 +1842,9 @@ namespace pl2.rainbow.description.xml.project {
             
             private global::System.Data.DataColumn columnlevel_id;
             
-            private global::System.Data.DataColumn columnlevel_name;
+            private global::System.Data.DataColumn columnname_of_level;
             
-            private global::System.Data.DataColumn columnlevel_importance;
+            private global::System.Data.DataColumn columnimportance_id_for_level;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1875,17 +1889,17 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn level_nameColumn {
+            public global::System.Data.DataColumn name_of_levelColumn {
                 get {
-                    return this.columnlevel_name;
+                    return this.columnname_of_level;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn level_importanceColumn {
+            public global::System.Data.DataColumn importance_id_for_levelColumn {
                 get {
-                    return this.columnlevel_importance;
+                    return this.columnimportance_id_for_level;
                 }
             }
             
@@ -1926,11 +1940,11 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Level_tableRow AddLevel_tableRow(int level_id, string level_name, Importance_tableRow parentImportance_tableRowByImportance_Level_relation) {
+            public Level_tableRow AddLevel_tableRow(int level_id, string name_of_level, Importance_tableRow parentImportance_tableRowByImportance_Level_relation) {
                 Level_tableRow rowLevel_tableRow = ((Level_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         level_id,
-                        level_name,
+                        name_of_level,
                         null};
                 if ((parentImportance_tableRowByImportance_Level_relation != null)) {
                     columnValuesArray[2] = parentImportance_tableRowByImportance_Level_relation[0];
@@ -1965,8 +1979,8 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnlevel_id = base.Columns["level_id"];
-                this.columnlevel_name = base.Columns["level_name"];
-                this.columnlevel_importance = base.Columns["level_importance"];
+                this.columnname_of_level = base.Columns["name_of_level"];
+                this.columnimportance_id_for_level = base.Columns["importance_id_for_level"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1974,14 +1988,13 @@ namespace pl2.rainbow.description.xml.project {
             private void InitClass() {
                 this.columnlevel_id = new global::System.Data.DataColumn("level_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlevel_id);
-                this.columnlevel_name = new global::System.Data.DataColumn("level_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlevel_name);
-                this.columnlevel_importance = new global::System.Data.DataColumn("level_importance", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnlevel_importance);
+                this.columnname_of_level = new global::System.Data.DataColumn("name_of_level", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_level);
+                this.columnimportance_id_for_level = new global::System.Data.DataColumn("importance_id_for_level", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimportance_id_for_level);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Level_id_Key", new global::System.Data.DataColumn[] {
                                 this.columnlevel_id}, true));
-                this.columnlevel_id.AutoIncrementSeed = -65530;
-                this.columnlevel_id.AutoIncrementStep = -1;
+                this.columnlevel_id.AutoIncrementSeed = 1;
                 this.columnlevel_id.AllowDBNull = false;
                 this.columnlevel_id.Unique = true;
             }
@@ -2119,11 +2132,13 @@ namespace pl2.rainbow.description.xml.project {
             
             private global::System.Data.DataColumn columnphase_id;
             
-            private global::System.Data.DataColumn columnphase_name;
+            private global::System.Data.DataColumn columnname_of_phase;
             
-            private global::System.Data.DataColumn columnphase_importance;
+            private global::System.Data.DataColumn columnimportance_id_for_phase;
             
-            private global::System.Data.DataColumn columnphase_percent;
+            private global::System.Data.DataColumn columnpercent_of_phase_middle;
+            
+            private global::System.Data.DataColumn columnwidth_of_phase;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2168,25 +2183,33 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn phase_nameColumn {
+            public global::System.Data.DataColumn name_of_phaseColumn {
                 get {
-                    return this.columnphase_name;
+                    return this.columnname_of_phase;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn phase_importanceColumn {
+            public global::System.Data.DataColumn importance_id_for_phaseColumn {
                 get {
-                    return this.columnphase_importance;
+                    return this.columnimportance_id_for_phase;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn phase_percentColumn {
+            public global::System.Data.DataColumn percent_of_phase_middleColumn {
                 get {
-                    return this.columnphase_percent;
+                    return this.columnpercent_of_phase_middle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn width_of_phaseColumn {
+                get {
+                    return this.columnwidth_of_phase;
                 }
             }
             
@@ -2227,13 +2250,14 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Phase_tableRow AddPhase_tableRow(Importance_tableRow parentImportance_tableRowByImportance_Phase, string phase_name, int phase_importance, float phase_percent) {
+            public Phase_tableRow AddPhase_tableRow(Importance_tableRow parentImportance_tableRowByImportance_Phase, string name_of_phase, int importance_id_for_phase, float percent_of_phase_middle, string width_of_phase) {
                 Phase_tableRow rowPhase_tableRow = ((Phase_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        phase_name,
-                        phase_importance,
-                        phase_percent};
+                        name_of_phase,
+                        importance_id_for_phase,
+                        percent_of_phase_middle,
+                        width_of_phase};
                 if ((parentImportance_tableRowByImportance_Phase != null)) {
                     columnValuesArray[0] = parentImportance_tableRowByImportance_Phase[0];
                 }
@@ -2260,9 +2284,10 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnphase_id = base.Columns["phase_id"];
-                this.columnphase_name = base.Columns["phase_name"];
-                this.columnphase_importance = base.Columns["phase_importance"];
-                this.columnphase_percent = base.Columns["phase_percent"];
+                this.columnname_of_phase = base.Columns["name_of_phase"];
+                this.columnimportance_id_for_phase = base.Columns["importance_id_for_phase"];
+                this.columnpercent_of_phase_middle = base.Columns["percent_of_phase_middle"];
+                this.columnwidth_of_phase = base.Columns["width_of_phase"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2270,15 +2295,17 @@ namespace pl2.rainbow.description.xml.project {
             private void InitClass() {
                 this.columnphase_id = new global::System.Data.DataColumn("phase_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnphase_id);
-                this.columnphase_name = new global::System.Data.DataColumn("phase_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphase_name);
-                this.columnphase_importance = new global::System.Data.DataColumn("phase_importance", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphase_importance);
-                this.columnphase_percent = new global::System.Data.DataColumn("phase_percent", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphase_percent);
+                this.columnname_of_phase = new global::System.Data.DataColumn("name_of_phase", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_phase);
+                this.columnimportance_id_for_phase = new global::System.Data.DataColumn("importance_id_for_phase", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimportance_id_for_phase);
+                this.columnpercent_of_phase_middle = new global::System.Data.DataColumn("percent_of_phase_middle", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpercent_of_phase_middle);
+                this.columnwidth_of_phase = new global::System.Data.DataColumn("width_of_phase", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnwidth_of_phase);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Phase_id_Key", new global::System.Data.DataColumn[] {
                                 this.columnphase_id}, false));
-                this.columnphase_id.AutoIncrementStep = 10;
+                this.columnphase_id.AutoIncrementSeed = 1;
                 this.columnphase_id.Unique = true;
             }
             
@@ -2415,9 +2442,9 @@ namespace pl2.rainbow.description.xml.project {
             
             private global::System.Data.DataColumn columnimportance_id;
             
-            private global::System.Data.DataColumn columnimportance_name;
+            private global::System.Data.DataColumn columnname_of_importance;
             
-            private global::System.Data.DataColumn columnimportance_percent;
+            private global::System.Data.DataColumn columnpercent_of_importance;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2462,17 +2489,17 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn importance_nameColumn {
+            public global::System.Data.DataColumn name_of_importanceColumn {
                 get {
-                    return this.columnimportance_name;
+                    return this.columnname_of_importance;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn importance_percentColumn {
+            public global::System.Data.DataColumn percent_of_importanceColumn {
                 get {
-                    return this.columnimportance_percent;
+                    return this.columnpercent_of_importance;
                 }
             }
             
@@ -2513,12 +2540,12 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Importance_tableRow AddImportance_tableRow(int importance_id, string importance_name, float importance_percent) {
+            public Importance_tableRow AddImportance_tableRow(int importance_id, string name_of_importance, float percent_of_importance) {
                 Importance_tableRow rowImportance_tableRow = ((Importance_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         importance_id,
-                        importance_name,
-                        importance_percent};
+                        name_of_importance,
+                        percent_of_importance};
                 rowImportance_tableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowImportance_tableRow);
                 return rowImportance_tableRow;
@@ -2549,8 +2576,8 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnimportance_id = base.Columns["importance_id"];
-                this.columnimportance_name = base.Columns["importance_name"];
-                this.columnimportance_percent = base.Columns["importance_percent"];
+                this.columnname_of_importance = base.Columns["name_of_importance"];
+                this.columnpercent_of_importance = base.Columns["percent_of_importance"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2558,12 +2585,13 @@ namespace pl2.rainbow.description.xml.project {
             private void InitClass() {
                 this.columnimportance_id = new global::System.Data.DataColumn("importance_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimportance_id);
-                this.columnimportance_name = new global::System.Data.DataColumn("importance_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimportance_name);
-                this.columnimportance_percent = new global::System.Data.DataColumn("importance_percent", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimportance_percent);
+                this.columnname_of_importance = new global::System.Data.DataColumn("name_of_importance", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_importance);
+                this.columnpercent_of_importance = new global::System.Data.DataColumn("percent_of_importance", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpercent_of_importance);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Importance_id_Key", new global::System.Data.DataColumn[] {
                                 this.columnimportance_id}, true));
+                this.columnimportance_id.AutoIncrementSeed = 1;
                 this.columnimportance_id.AllowDBNull = false;
                 this.columnimportance_id.Unique = true;
             }
@@ -2719,59 +2747,59 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string project_name {
+            public string name_of_project {
                 get {
                     try {
-                        return ((string)(this[this.tableProject_table.project_nameColumn]));
+                        return ((string)(this[this.tableProject_table.name_of_projectColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'project_name\' в таблице \'Project_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_project\' в таблице \'Project_table\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableProject_table.project_nameColumn] = value;
+                    this[this.tableProject_table.name_of_projectColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string project_description {
+            public string description_for_project {
                 get {
                     try {
-                        return ((string)(this[this.tableProject_table.project_descriptionColumn]));
+                        return ((string)(this[this.tableProject_table.description_for_projectColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'project_description\' в таблице \'Project_table\' равно DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'description_for_project\' в таблице \'Project_table\' равно DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableProject_table.project_descriptionColumn] = value;
+                    this[this.tableProject_table.description_for_projectColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isproject_nameNull() {
-                return this.IsNull(this.tableProject_table.project_nameColumn);
+            public bool Isname_of_projectNull() {
+                return this.IsNull(this.tableProject_table.name_of_projectColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setproject_nameNull() {
-                this[this.tableProject_table.project_nameColumn] = global::System.Convert.DBNull;
+            public void Setname_of_projectNull() {
+                this[this.tableProject_table.name_of_projectColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isproject_descriptionNull() {
-                return this.IsNull(this.tableProject_table.project_descriptionColumn);
+            public bool Isdescription_for_projectNull() {
+                return this.IsNull(this.tableProject_table.description_for_projectColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setproject_descriptionNull() {
-                this[this.tableProject_table.project_descriptionColumn] = global::System.Convert.DBNull;
+            public void Setdescription_for_projectNull() {
+                this[this.tableProject_table.description_for_projectColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2802,50 +2830,50 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int project_id {
+            public int project_id_for_cell {
                 get {
-                    return ((int)(this[this.tableCell_table.project_idColumn]));
+                    return ((int)(this[this.tableCell_table.project_id_for_cellColumn]));
                 }
                 set {
-                    this[this.tableCell_table.project_idColumn] = value;
+                    this[this.tableCell_table.project_id_for_cellColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int cell_level {
+            public int level_id_for_cell {
                 get {
-                    return ((int)(this[this.tableCell_table.cell_levelColumn]));
+                    return ((int)(this[this.tableCell_table.level_id_for_cellColumn]));
                 }
                 set {
-                    this[this.tableCell_table.cell_levelColumn] = value;
+                    this[this.tableCell_table.level_id_for_cellColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int cell_phase {
+            public int phase_id_for_cell {
                 get {
-                    return ((int)(this[this.tableCell_table.cell_phaseColumn]));
+                    return ((int)(this[this.tableCell_table.phase_id_for_cellColumn]));
                 }
                 set {
-                    this[this.tableCell_table.cell_phaseColumn] = value;
+                    this[this.tableCell_table.phase_id_for_cellColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string cell_common_name {
+            public string name_of_cell_common {
                 get {
                     try {
-                        return ((string)(this[this.tableCell_table.cell_common_nameColumn]));
+                        return ((string)(this[this.tableCell_table.name_of_cell_commonColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'cell_common_name\' в таблице \'Cell_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_cell_common\' в таблице \'Cell_table\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCell_table.cell_common_nameColumn] = value;
+                    this[this.tableCell_table.name_of_cell_commonColumn] = value;
                 }
             }
             
@@ -2884,14 +2912,14 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iscell_common_nameNull() {
-                return this.IsNull(this.tableCell_table.cell_common_nameColumn);
+            public bool Isname_of_cell_commonNull() {
+                return this.IsNull(this.tableCell_table.name_of_cell_commonColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setcell_common_nameNull() {
-                this[this.tableCell_table.cell_common_nameColumn] = global::System.Convert.DBNull;
+            public void Setname_of_cell_commonNull() {
+                this[this.tableCell_table.name_of_cell_commonColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2922,39 +2950,40 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int project_id {
+            public int project_id_for_element {
                 get {
-                    return ((int)(this[this.tableElement_table.project_idColumn]));
+                    return ((int)(this[this.tableElement_table.project_id_for_elementColumn]));
                 }
                 set {
-                    this[this.tableElement_table.project_idColumn] = value;
+                    this[this.tableElement_table.project_id_for_elementColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int element_level {
+            public int level_id_for_element {
                 get {
-                    return ((int)(this[this.tableElement_table.element_levelColumn]));
+                    return ((int)(this[this.tableElement_table.level_id_for_elementColumn]));
                 }
                 set {
-                    this[this.tableElement_table.element_levelColumn] = value;
+                    this[this.tableElement_table.level_id_for_elementColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int element_phase {
+            public int phase_id_for_element {
                 get {
                     try {
-                        return ((int)(this[this.tableElement_table.element_phaseColumn]));
+                        return ((int)(this[this.tableElement_table.phase_id_for_elementColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'element_phase\' в таблице \'Element_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'phase_id_for_element\' в таблице \'Element_table\' равно DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableElement_table.element_phaseColumn] = value;
+                    this[this.tableElement_table.phase_id_for_elementColumn] = value;
                 }
             }
             
@@ -2971,34 +3000,34 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string element_name {
+            public string name_of_element {
                 get {
                     try {
-                        return ((string)(this[this.tableElement_table.element_nameColumn]));
+                        return ((string)(this[this.tableElement_table.name_of_elementColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'element_name\' в таблице \'Element_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_element\' в таблице \'Element_table\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableElement_table.element_nameColumn] = value;
+                    this[this.tableElement_table.name_of_elementColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string element_description {
+            public string description_for_element {
                 get {
                     try {
-                        return ((string)(this[this.tableElement_table.element_descriptionColumn]));
+                        return ((string)(this[this.tableElement_table.description_for_elementColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'element_description\' в таблице \'Element_table\' равно DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'description_for_element\' в таблице \'Element_table\' равно DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableElement_table.element_descriptionColumn] = value;
+                    this[this.tableElement_table.description_for_elementColumn] = value;
                 }
             }
             
@@ -3015,38 +3044,38 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iselement_phaseNull() {
-                return this.IsNull(this.tableElement_table.element_phaseColumn);
+            public bool Isphase_id_for_elementNull() {
+                return this.IsNull(this.tableElement_table.phase_id_for_elementColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setelement_phaseNull() {
-                this[this.tableElement_table.element_phaseColumn] = global::System.Convert.DBNull;
+            public void Setphase_id_for_elementNull() {
+                this[this.tableElement_table.phase_id_for_elementColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iselement_nameNull() {
-                return this.IsNull(this.tableElement_table.element_nameColumn);
+            public bool Isname_of_elementNull() {
+                return this.IsNull(this.tableElement_table.name_of_elementColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setelement_nameNull() {
-                this[this.tableElement_table.element_nameColumn] = global::System.Convert.DBNull;
+            public void Setname_of_elementNull() {
+                this[this.tableElement_table.name_of_elementColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iselement_descriptionNull() {
-                return this.IsNull(this.tableElement_table.element_descriptionColumn);
+            public bool Isdescription_for_elementNull() {
+                return this.IsNull(this.tableElement_table.description_for_elementColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setelement_descriptionNull() {
-                this[this.tableElement_table.element_descriptionColumn] = global::System.Convert.DBNull;
+            public void Setdescription_for_elementNull() {
+                this[this.tableElement_table.description_for_elementColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3099,52 +3128,69 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int element_id_parent {
+            public int parent_element_id_for_link {
                 get {
                     try {
-                        return ((int)(this[this.tableLink_elements_table.element_id_parentColumn]));
+                        return ((int)(this[this.tableLink_elements_table.parent_element_id_for_linkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'element_id_parent\' в таблице \'Link_elements_table\' равно DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'parent_element_id_for_link\' в таблице \'Link_elements_table\'" +
+                                " равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLink_elements_table.element_id_parentColumn] = value;
+                    this[this.tableLink_elements_table.parent_element_id_for_linkColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int element_id_chield {
+            public int chield_element_id_for_link {
                 get {
                     try {
-                        return ((int)(this[this.tableLink_elements_table.element_id_chieldColumn]));
+                        return ((int)(this[this.tableLink_elements_table.chield_element_id_for_linkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'element_id_chield\' в таблице \'Link_elements_table\' равно DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'chield_element_id_for_link\' в таблице \'Link_elements_table\'" +
+                                " равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLink_elements_table.element_id_chieldColumn] = value;
+                    this[this.tableLink_elements_table.chield_element_id_for_linkColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string link_description {
+            public string name_of_link {
                 get {
                     try {
-                        return ((string)(this[this.tableLink_elements_table.link_descriptionColumn]));
+                        return ((string)(this[this.tableLink_elements_table.name_of_linkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'link_description\' в таблице \'Link_elements_table\' равно DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_link\' в таблице \'Link_elements_table\' равно DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableLink_elements_table.link_descriptionColumn] = value;
+                    this[this.tableLink_elements_table.name_of_linkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string description_for_link {
+                get {
+                    try {
+                        return ((string)(this[this.tableLink_elements_table.description_for_linkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'description_for_link\' в таблице \'Link_elements_table\' равно" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLink_elements_table.description_for_linkColumn] = value;
                 }
             }
             
@@ -3172,38 +3218,50 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iselement_id_parentNull() {
-                return this.IsNull(this.tableLink_elements_table.element_id_parentColumn);
+            public bool Isparent_element_id_for_linkNull() {
+                return this.IsNull(this.tableLink_elements_table.parent_element_id_for_linkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setelement_id_parentNull() {
-                this[this.tableLink_elements_table.element_id_parentColumn] = global::System.Convert.DBNull;
+            public void Setparent_element_id_for_linkNull() {
+                this[this.tableLink_elements_table.parent_element_id_for_linkColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Iselement_id_chieldNull() {
-                return this.IsNull(this.tableLink_elements_table.element_id_chieldColumn);
+            public bool Ischield_element_id_for_linkNull() {
+                return this.IsNull(this.tableLink_elements_table.chield_element_id_for_linkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setelement_id_chieldNull() {
-                this[this.tableLink_elements_table.element_id_chieldColumn] = global::System.Convert.DBNull;
+            public void Setchield_element_id_for_linkNull() {
+                this[this.tableLink_elements_table.chield_element_id_for_linkColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Islink_descriptionNull() {
-                return this.IsNull(this.tableLink_elements_table.link_descriptionColumn);
+            public bool Isname_of_linkNull() {
+                return this.IsNull(this.tableLink_elements_table.name_of_linkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setlink_descriptionNull() {
-                this[this.tableLink_elements_table.link_descriptionColumn] = global::System.Convert.DBNull;
+            public void Setname_of_linkNull() {
+                this[this.tableLink_elements_table.name_of_linkColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdescription_for_linkNull() {
+                return this.IsNull(this.tableLink_elements_table.description_for_linkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdescription_for_linkNull() {
+                this[this.tableLink_elements_table.description_for_linkColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3234,33 +3292,34 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string level_name {
+            public string name_of_level {
                 get {
                     try {
-                        return ((string)(this[this.tableLevel_table.level_nameColumn]));
+                        return ((string)(this[this.tableLevel_table.name_of_levelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'level_name\' в таблице \'Level_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_level\' в таблице \'Level_table\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableLevel_table.level_nameColumn] = value;
+                    this[this.tableLevel_table.name_of_levelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int level_importance {
+            public int importance_id_for_level {
                 get {
                     try {
-                        return ((int)(this[this.tableLevel_table.level_importanceColumn]));
+                        return ((int)(this[this.tableLevel_table.importance_id_for_levelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'level_importance\' в таблице \'Level_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'importance_id_for_level\' в таблице \'Level_table\' равно DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableLevel_table.level_importanceColumn] = value;
+                    this[this.tableLevel_table.importance_id_for_levelColumn] = value;
                 }
             }
             
@@ -3277,26 +3336,26 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Islevel_nameNull() {
-                return this.IsNull(this.tableLevel_table.level_nameColumn);
+            public bool Isname_of_levelNull() {
+                return this.IsNull(this.tableLevel_table.name_of_levelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setlevel_nameNull() {
-                this[this.tableLevel_table.level_nameColumn] = global::System.Convert.DBNull;
+            public void Setname_of_levelNull() {
+                this[this.tableLevel_table.name_of_levelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Islevel_importanceNull() {
-                return this.IsNull(this.tableLevel_table.level_importanceColumn);
+            public bool Isimportance_id_for_levelNull() {
+                return this.IsNull(this.tableLevel_table.importance_id_for_levelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setlevel_importanceNull() {
-                this[this.tableLevel_table.level_importanceColumn] = global::System.Convert.DBNull;
+            public void Setimportance_id_for_levelNull() {
+                this[this.tableLevel_table.importance_id_for_levelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3343,49 +3402,67 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string phase_name {
+            public string name_of_phase {
                 get {
                     try {
-                        return ((string)(this[this.tablePhase_table.phase_nameColumn]));
+                        return ((string)(this[this.tablePhase_table.name_of_phaseColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'phase_name\' в таблице \'Phase_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_phase\' в таблице \'Phase_table\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePhase_table.phase_nameColumn] = value;
+                    this[this.tablePhase_table.name_of_phaseColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int phase_importance {
+            public int importance_id_for_phase {
                 get {
                     try {
-                        return ((int)(this[this.tablePhase_table.phase_importanceColumn]));
+                        return ((int)(this[this.tablePhase_table.importance_id_for_phaseColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'phase_importance\' в таблице \'Phase_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'importance_id_for_phase\' в таблице \'Phase_table\' равно DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tablePhase_table.phase_importanceColumn] = value;
+                    this[this.tablePhase_table.importance_id_for_phaseColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float phase_percent {
+            public float percent_of_phase_middle {
                 get {
                     try {
-                        return ((float)(this[this.tablePhase_table.phase_percentColumn]));
+                        return ((float)(this[this.tablePhase_table.percent_of_phase_middleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'phase_percent\' в таблице \'Phase_table\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'percent_of_phase_middle\' в таблице \'Phase_table\' равно DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tablePhase_table.phase_percentColumn] = value;
+                    this[this.tablePhase_table.percent_of_phase_middleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string width_of_phase {
+                get {
+                    try {
+                        return ((string)(this[this.tablePhase_table.width_of_phaseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'width_of_phase\' в таблице \'Phase_table\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePhase_table.width_of_phaseColumn] = value;
                 }
             }
             
@@ -3414,38 +3491,50 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isphase_nameNull() {
-                return this.IsNull(this.tablePhase_table.phase_nameColumn);
+            public bool Isname_of_phaseNull() {
+                return this.IsNull(this.tablePhase_table.name_of_phaseColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setphase_nameNull() {
-                this[this.tablePhase_table.phase_nameColumn] = global::System.Convert.DBNull;
+            public void Setname_of_phaseNull() {
+                this[this.tablePhase_table.name_of_phaseColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isphase_importanceNull() {
-                return this.IsNull(this.tablePhase_table.phase_importanceColumn);
+            public bool Isimportance_id_for_phaseNull() {
+                return this.IsNull(this.tablePhase_table.importance_id_for_phaseColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setphase_importanceNull() {
-                this[this.tablePhase_table.phase_importanceColumn] = global::System.Convert.DBNull;
+            public void Setimportance_id_for_phaseNull() {
+                this[this.tablePhase_table.importance_id_for_phaseColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isphase_percentNull() {
-                return this.IsNull(this.tablePhase_table.phase_percentColumn);
+            public bool Ispercent_of_phase_middleNull() {
+                return this.IsNull(this.tablePhase_table.percent_of_phase_middleColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setphase_percentNull() {
-                this[this.tablePhase_table.phase_percentColumn] = global::System.Convert.DBNull;
+            public void Setpercent_of_phase_middleNull() {
+                this[this.tablePhase_table.percent_of_phase_middleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iswidth_of_phaseNull() {
+                return this.IsNull(this.tablePhase_table.width_of_phaseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setwidth_of_phaseNull() {
+                this[this.tablePhase_table.width_of_phaseColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3487,60 +3576,60 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string importance_name {
+            public string name_of_importance {
                 get {
                     try {
-                        return ((string)(this[this.tableImportance_table.importance_nameColumn]));
+                        return ((string)(this[this.tableImportance_table.name_of_importanceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'importance_name\' в таблице \'Importance_table\' равно DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tableImportance_table.importance_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float importance_percent {
-                get {
-                    try {
-                        return ((float)(this[this.tableImportance_table.importance_percentColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'importance_percent\' в таблице \'Importance_table\' равно DBNu" +
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_importance\' в таблице \'Importance_table\' равно DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableImportance_table.importance_percentColumn] = value;
+                    this[this.tableImportance_table.name_of_importanceColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isimportance_nameNull() {
-                return this.IsNull(this.tableImportance_table.importance_nameColumn);
+            public float percent_of_importance {
+                get {
+                    try {
+                        return ((float)(this[this.tableImportance_table.percent_of_importanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'percent_of_importance\' в таблице \'Importance_table\' равно D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableImportance_table.percent_of_importanceColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setimportance_nameNull() {
-                this[this.tableImportance_table.importance_nameColumn] = global::System.Convert.DBNull;
+            public bool Isname_of_importanceNull() {
+                return this.IsNull(this.tableImportance_table.name_of_importanceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isimportance_percentNull() {
-                return this.IsNull(this.tableImportance_table.importance_percentColumn);
+            public void Setname_of_importanceNull() {
+                this[this.tableImportance_table.name_of_importanceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setimportance_percentNull() {
-                this[this.tableImportance_table.importance_percentColumn] = global::System.Convert.DBNull;
+            public bool Ispercent_of_importanceNull() {
+                return this.IsNull(this.tableImportance_table.percent_of_importanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpercent_of_importanceNull() {
+                this[this.tableImportance_table.percent_of_importanceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

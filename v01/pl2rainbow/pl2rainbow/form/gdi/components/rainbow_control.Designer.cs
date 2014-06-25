@@ -61,7 +61,7 @@
             this.level_nC.AccessibleName = "abstraction_panel";
             this.level_nC.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_nC.extention_level = false;
-            this.level_nC.level = pl2.rainbow.description.Abstraction_level_enum.Class_infinity;
+            this.level_nC.level = pl2.rainbow.description.Abstraction_level_enum.Class_C_infinity;
             this.level_nC.Location = new System.Drawing.Point(0, 864);
             this.level_nC.Margin = new System.Windows.Forms.Padding(0);
             this.level_nC.Name = "level_nC";
@@ -75,7 +75,7 @@
             this.level_nB.AccessibleName = "abstraction_panel";
             this.level_nB.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_nB.extention_level = true;
-            this.level_nB.level = pl2.rainbow.description.Abstraction_level_enum.Class_void;
+            this.level_nB.level = pl2.rainbow.description.Abstraction_level_enum.Class_B_void;
             this.level_nB.Location = new System.Drawing.Point(0, 828);
             this.level_nB.Margin = new System.Windows.Forms.Padding(0);
             this.level_nB.Name = "level_nB";
@@ -90,7 +90,7 @@
             this.level_nA.AccessibleName = "abstraction_panel";
             this.level_nA.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_nA.extention_level = false;
-            this.level_nA.level = pl2.rainbow.description.Abstraction_level_enum.Class_domain;
+            this.level_nA.level = pl2.rainbow.description.Abstraction_level_enum.Class_A_domain;
             this.level_nA.Location = new System.Drawing.Point(0, 792);
             this.level_nA.Margin = new System.Windows.Forms.Padding(0);
             this.level_nA.Name = "level_nA";
@@ -104,7 +104,7 @@
             this.level_n9.AccessibleName = "abstraction_panel";
             this.level_n9.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n9.extention_level = false;
-            this.level_n9.level = pl2.rainbow.description.Abstraction_level_enum.Class_tuple;
+            this.level_n9.level = pl2.rainbow.description.Abstraction_level_enum.Class_9_tuple;
             this.level_n9.Location = new System.Drawing.Point(0, 756);
             this.level_n9.Margin = new System.Windows.Forms.Padding(0);
             this.level_n9.Name = "level_n9";
@@ -118,7 +118,7 @@
             this.level_n8.AccessibleName = "abstraction_panel";
             this.level_n8.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n8.extention_level = false;
-            this.level_n8.level = pl2.rainbow.description.Abstraction_level_enum.Class_structure;
+            this.level_n8.level = pl2.rainbow.description.Abstraction_level_enum.Class_8_structure;
             this.level_n8.Location = new System.Drawing.Point(0, 720);
             this.level_n8.Margin = new System.Windows.Forms.Padding(0);
             this.level_n8.Name = "level_n8";
@@ -132,7 +132,7 @@
             this.level_n7.AccessibleName = "abstraction_panel";
             this.level_n7.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n7.extention_level = false;
-            this.level_n7.level = pl2.rainbow.description.Abstraction_level_enum.Class_system;
+            this.level_n7.level = pl2.rainbow.description.Abstraction_level_enum.Class_7_system;
             this.level_n7.Location = new System.Drawing.Point(0, 684);
             this.level_n7.Margin = new System.Windows.Forms.Padding(0);
             this.level_n7.Name = "level_n7";
@@ -146,7 +146,7 @@
             this.level_n6.AccessibleName = "abstraction_panel";
             this.level_n6.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n6.extention_level = false;
-            this.level_n6.level = pl2.rainbow.description.Abstraction_level_enum.Class_process;
+            this.level_n6.level = pl2.rainbow.description.Abstraction_level_enum.Class_6_process;
             this.level_n6.Location = new System.Drawing.Point(0, 648);
             this.level_n6.Margin = new System.Windows.Forms.Padding(0);
             this.level_n6.Name = "level_n6";
@@ -160,7 +160,7 @@
             this.level_n5.AccessibleName = "abstraction_panel";
             this.level_n5.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n5.extention_level = false;
-            this.level_n5.level = pl2.rainbow.description.Abstraction_level_enum.Class_specialist;
+            this.level_n5.level = pl2.rainbow.description.Abstraction_level_enum.Class_5_specialist;
             this.level_n5.Location = new System.Drawing.Point(0, 612);
             this.level_n5.Margin = new System.Windows.Forms.Padding(0);
             this.level_n5.Name = "level_n5";
@@ -174,7 +174,7 @@
             this.level_n4.AccessibleName = "abstraction_panel";
             this.level_n4.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n4.extention_level = false;
-            this.level_n4.level = pl2.rainbow.description.Abstraction_level_enum.Class_parallel;
+            this.level_n4.level = pl2.rainbow.description.Abstraction_level_enum.Class_4_parallel;
             this.level_n4.Location = new System.Drawing.Point(0, 576);
             this.level_n4.Margin = new System.Windows.Forms.Padding(0);
             this.level_n4.Name = "level_n4";
@@ -188,7 +188,7 @@
             this.level_n3.AccessibleName = "abstraction_panel";
             this.level_n3.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n3.extention_level = false;
-            this.level_n3.level = pl2.rainbow.description.Abstraction_level_enum.Class_stability;
+            this.level_n3.level = pl2.rainbow.description.Abstraction_level_enum.Class_3_stability;
             this.level_n3.Location = new System.Drawing.Point(0, 540);
             this.level_n3.Margin = new System.Windows.Forms.Padding(0);
             this.level_n3.Name = "level_n3";
@@ -202,7 +202,7 @@
             this.level_n2.AccessibleName = "abstraction_panel";
             this.level_n2.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n2.extention_level = true;
-            this.level_n2.level = pl2.rainbow.description.Abstraction_level_enum.Class_responsibility;
+            this.level_n2.level = pl2.rainbow.description.Abstraction_level_enum.Class_2_technology;
             this.level_n2.Location = new System.Drawing.Point(0, 504);
             this.level_n2.Margin = new System.Windows.Forms.Padding(0);
             this.level_n2.Name = "level_n2";
@@ -216,7 +216,7 @@
             this.level_n1.AccessibleName = "abstraction_panel";
             this.level_n1.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_n1.extention_level = true;
-            this.level_n1.level = pl2.rainbow.description.Abstraction_level_enum.Class_below_reality;
+            this.level_n1.level = pl2.rainbow.description.Abstraction_level_enum.Class_1_below_reality;
             this.level_n1.Location = new System.Drawing.Point(0, 468);
             this.level_n1.Margin = new System.Windows.Forms.Padding(0);
             this.level_n1.Name = "level_n1";
@@ -231,7 +231,7 @@
             this.level_0.AccessibleName = "abstraction_panel";
             this.level_0.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_0.extention_level = false;
-            this.level_0.level = pl2.rainbow.description.Abstraction_level_enum.Class_reality;
+            this.level_0.level = pl2.rainbow.description.Abstraction_level_enum.Class_0_reality;
             this.level_0.Location = new System.Drawing.Point(0, 432);
             this.level_0.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.level_0.Name = "level_0";
@@ -245,7 +245,7 @@
             this.level_p1.AccessibleName = "abstraction_panel";
             this.level_p1.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p1.extention_level = true;
-            this.level_p1.level = pl2.rainbow.description.Abstraction_level_enum.Interface_above_reality;
+            this.level_p1.level = pl2.rainbow.description.Abstraction_level_enum.Interface_1_above_reality;
             this.level_p1.Location = new System.Drawing.Point(0, 396);
             this.level_p1.Margin = new System.Windows.Forms.Padding(0);
             this.level_p1.Name = "level_p1";
@@ -260,7 +260,7 @@
             this.level_p2.AccessibleName = "abstraction_panel";
             this.level_p2.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p2.extention_level = true;
-            this.level_p2.level = pl2.rainbow.description.Abstraction_level_enum.Interface_technology;
+            this.level_p2.level = pl2.rainbow.description.Abstraction_level_enum.Interface_2_responsibility;
             this.level_p2.Location = new System.Drawing.Point(0, 360);
             this.level_p2.Margin = new System.Windows.Forms.Padding(0);
             this.level_p2.Name = "level_p2";
@@ -274,7 +274,7 @@
             this.level_p3.AccessibleName = "abstraction_panel";
             this.level_p3.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p3.extention_level = false;
-            this.level_p3.level = pl2.rainbow.description.Abstraction_level_enum.Interface_alignment;
+            this.level_p3.level = pl2.rainbow.description.Abstraction_level_enum.Interface_3_exchange;
             this.level_p3.Location = new System.Drawing.Point(0, 324);
             this.level_p3.Margin = new System.Windows.Forms.Padding(0);
             this.level_p3.Name = "level_p3";
@@ -288,7 +288,7 @@
             this.level_p4.AccessibleName = "abstraction_panel";
             this.level_p4.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p4.extention_level = false;
-            this.level_p4.level = pl2.rainbow.description.Abstraction_level_enum.Interface_exchange;
+            this.level_p4.level = pl2.rainbow.description.Abstraction_level_enum.Interface_4_control;
             this.level_p4.Location = new System.Drawing.Point(0, 288);
             this.level_p4.Margin = new System.Windows.Forms.Padding(0);
             this.level_p4.Name = "level_p4";
@@ -302,7 +302,7 @@
             this.level_p5.AccessibleName = "abstraction_panel";
             this.level_p5.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p5.extention_level = false;
-            this.level_p5.level = pl2.rainbow.description.Abstraction_level_enum.Interface_control;
+            this.level_p5.level = pl2.rainbow.description.Abstraction_level_enum.Interface_5_algorithm;
             this.level_p5.Location = new System.Drawing.Point(0, 252);
             this.level_p5.Margin = new System.Windows.Forms.Padding(0);
             this.level_p5.Name = "level_p5";
@@ -316,7 +316,7 @@
             this.level_p6.AccessibleName = "abstraction_panel";
             this.level_p6.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p6.extention_level = false;
-            this.level_p6.level = pl2.rainbow.description.Abstraction_level_enum.Interface_politic;
+            this.level_p6.level = pl2.rainbow.description.Abstraction_level_enum.Interface_6_politic;
             this.level_p6.Location = new System.Drawing.Point(0, 216);
             this.level_p6.Margin = new System.Windows.Forms.Padding(0);
             this.level_p6.Name = "level_p6";
@@ -331,7 +331,7 @@
             this.level_p7.AccessibleName = "abstraction_panel";
             this.level_p7.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p7.extention_level = false;
-            this.level_p7.level = pl2.rainbow.description.Abstraction_level_enum.Interface_session;
+            this.level_p7.level = pl2.rainbow.description.Abstraction_level_enum.Interface_7_session;
             this.level_p7.Location = new System.Drawing.Point(0, 180);
             this.level_p7.Margin = new System.Windows.Forms.Padding(0);
             this.level_p7.Name = "level_p7";
@@ -345,7 +345,7 @@
             this.level_p8.AccessibleName = "abstraction_panel";
             this.level_p8.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p8.extention_level = false;
-            this.level_p8.level = pl2.rainbow.description.Abstraction_level_enum.Interface_functional;
+            this.level_p8.level = pl2.rainbow.description.Abstraction_level_enum.Interface_8_functional;
             this.level_p8.Location = new System.Drawing.Point(0, 144);
             this.level_p8.Margin = new System.Windows.Forms.Padding(0);
             this.level_p8.Name = "level_p8";
@@ -359,8 +359,8 @@
             this.level_p9.AccessibleName = "abstraction_panel";
             this.level_p9.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_p9.extention_level = false;
-            this.level_p9.level = pl2.rainbow.description.Abstraction_level_enum.Interface_target;
-            this.level_p9.Location = new System.Drawing.Point(0, 108);
+            this.level_p9.level = pl2.rainbow.description.Abstraction_level_enum.Interface_9_target;
+            this.level_p9.Location = new System.Drawing.Point(0, 107);
             this.level_p9.Margin = new System.Windows.Forms.Padding(0);
             this.level_p9.Name = "level_p9";
             this.level_p9.Size = new System.Drawing.Size(604, 36);
@@ -373,8 +373,8 @@
             this.level_pA.AccessibleName = "abstraction_panel";
             this.level_pA.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_pA.extention_level = false;
-            this.level_pA.level = pl2.rainbow.description.Abstraction_level_enum.Interface_logical;
-            this.level_pA.Location = new System.Drawing.Point(0, 72);
+            this.level_pA.level = pl2.rainbow.description.Abstraction_level_enum.Interface_A_logical;
+            this.level_pA.Location = new System.Drawing.Point(0, 71);
             this.level_pA.Margin = new System.Windows.Forms.Padding(0);
             this.level_pA.Name = "level_pA";
             this.level_pA.Size = new System.Drawing.Size(604, 36);
@@ -388,7 +388,7 @@
             this.level_pB.AccessibleName = "abstraction_panel";
             this.level_pB.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_pB.extention_level = true;
-            this.level_pB.level = pl2.rainbow.description.Abstraction_level_enum.Interface_abstract;
+            this.level_pB.level = pl2.rainbow.description.Abstraction_level_enum.Interface_B_abstract;
             this.level_pB.Location = new System.Drawing.Point(0, 36);
             this.level_pB.Margin = new System.Windows.Forms.Padding(0);
             this.level_pB.Name = "level_pB";
@@ -403,7 +403,7 @@
             this.level_pC.AccessibleName = "abstraction_panel";
             this.level_pC.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.level_pC.extention_level = false;
-            this.level_pC.level = pl2.rainbow.description.Abstraction_level_enum.Interface_infinity;
+            this.level_pC.level = pl2.rainbow.description.Abstraction_level_enum.Interface_C_infinity;
             this.level_pC.Location = new System.Drawing.Point(0, 0);
             this.level_pC.Margin = new System.Windows.Forms.Padding(0);
             this.level_pC.Name = "level_pC";
@@ -446,7 +446,7 @@
             this.Controls.Add(this.level_pC);
             this.DoubleBuffered = true;
             this.Name = "Rainbow_control";
-            this.Size = new System.Drawing.Size(592, 895);
+            this.Size = new System.Drawing.Size(587, 883);
             this.Load += new System.EventHandler(this.Rainbow_Load);
             this.Layout += new System.Windows.Forms.LayoutEventHandler(this.Rainbow_Layout);
             this.ResumeLayout(false);

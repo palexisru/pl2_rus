@@ -6,6 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using pl2.rainbow.description;
+using pl2.rainbow.description.xml.project;
+
 
 namespace pl2.rainbow.form.gdi.components
 {
@@ -21,7 +24,7 @@ namespace pl2.rainbow.form.gdi.components
         public pl2.rainbow.description.Phase_direction_enum selected_phase_previous { get; set; }
 
         [Browsable( true ) , Description( "Видимость неопознанных уровней абстрактности" ) , Category( "Behavior" )]
-        public bool extended_visible { get { return options.visible_specials; } }
+        public Importance_enum importance { get { return options.visible_importance; } }
 
         [Browsable( true ) , Description( "Выбранный уровень абстрактности" ) , Category( "Data" )]
         public pl2.rainbow.description.Abstraction_level_enum selected_level
@@ -93,7 +96,7 @@ namespace pl2.rainbow.form.gdi.components
                 if (c is pl2.rainbow.form.gdi.components.Abstraction_control)
                 {
                     pl2.rainbow.form.gdi.components.Abstraction_control a = c as pl2.rainbow.form.gdi.components.Abstraction_control;
-                    if (options.visible_specials || ! a.extention_level)
+                    if (options.visible_reserved || ! a.extention_level)
                     {
                         if (options.visible_symmetric)
                         {
@@ -119,7 +122,7 @@ namespace pl2.rainbow.form.gdi.components
             if (current_active_level <= options.number_of_colors)
                 level_0.Visible = true;
 
-            if (!options.visible_specials)
+            if (!options.visible_reserved)
             {
                 if (level_n1.Visible || level_n2.Visible)
                     level_n3.Visible = true;

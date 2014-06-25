@@ -33,71 +33,73 @@
             this.tab_page_utility = new System.Windows.Forms.TabPage();
             this.create_default_project_button = new System.Windows.Forms.Button();
             this.debug_save_button = new System.Windows.Forms.Button();
-            this.tab_page_etalon = new System.Windows.Forms.TabPage();
-            this.data_grid_view_cell_defaults = new System.Windows.Forms.DataGridView();
             this.tab_page_cells = new System.Windows.Forms.TabPage();
+            this.element_data_grid_view = new System.Windows.Forms.DataGridView();
             this.tab_page_links = new System.Windows.Forms.TabPage();
             this.data_grid_view_links = new System.Windows.Forms.DataGridView();
             this.tab_page_cells_project = new System.Windows.Forms.TabPage();
             this.element_data_grid_view_extended = new System.Windows.Forms.DataGridView();
             this.tab_page_links_parent = new System.Windows.Forms.TabPage();
             this.data_grid_view_links_parent = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_page_normative = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.project_tab_page = new System.Windows.Forms.TabPage();
             this.projrct_data_grid_view = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.impotence_tab_page = new System.Windows.Forms.TabPage();
             this.importence_data_grid_view = new System.Windows.Forms.DataGridView();
-            this.importanceidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importancenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importancepercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.level_tab_page = new System.Windows.Forms.TabPage();
             this.level_data_grid_view = new System.Windows.Forms.DataGridView();
-            this.levelidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.levelnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.levelimportanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phase_tab_page = new System.Windows.Forms.TabPage();
             this.phase_data_grid_view = new System.Windows.Forms.DataGridView();
-            this.phaseidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phasenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phaseimportanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phasepercentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cell_tab_page = new System.Windows.Forms.TabPage();
             this.cells_data_grid_view = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.element_data_grid_view = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elementlevelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elementphaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elementlevelDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elementphaseDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectidforcellDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelidforcellDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phaseidforcellDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameofcellcommonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tab_page_etalon = new System.Windows.Forms.TabPage();
+            this.data_grid_view_cell_defaults = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_of_project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description_for_project = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importanceidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_of_importance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.percent_of_importance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_of_level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importance_id_for_level = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phaseidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_of_phase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importance_id_for_phase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.percent_of_phase_middle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.width_of_phase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parent_element_id_for_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chield_element_id_for_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_of_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description_for_link = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_of_element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description_for_element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.level_id_for_element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phase_id_for_element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.project_id_for_element = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.rainbow_data)).BeginInit();
             this.tab_control_data_view.SuspendLayout();
             this.tab_page_utility.SuspendLayout();
-            this.tab_page_etalon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.data_grid_view_cell_defaults)).BeginInit();
             this.tab_page_cells.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.element_data_grid_view)).BeginInit();
             this.tab_page_links.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_view_links)).BeginInit();
             this.tab_page_cells_project.SuspendLayout();
@@ -116,7 +118,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.phase_data_grid_view)).BeginInit();
             this.cell_tab_page.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cells_data_grid_view)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.element_data_grid_view)).BeginInit();
+            this.tab_page_etalon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid_view_cell_defaults)).BeginInit();
             this.SuspendLayout();
             // 
             // rainbow_data
@@ -173,29 +176,6 @@
             this.debug_save_button.UseVisualStyleBackColor = true;
             this.debug_save_button.Click += new System.EventHandler(this.debug_save_button_Click);
             // 
-            // tab_page_etalon
-            // 
-            this.tab_page_etalon.Controls.Add(this.data_grid_view_cell_defaults);
-            this.tab_page_etalon.Location = new System.Drawing.Point(4, 22);
-            this.tab_page_etalon.Name = "tab_page_etalon";
-            this.tab_page_etalon.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_page_etalon.Size = new System.Drawing.Size(691, 269);
-            this.tab_page_etalon.TabIndex = 1;
-            this.tab_page_etalon.Text = "Эталон";
-            this.tab_page_etalon.UseVisualStyleBackColor = true;
-            // 
-            // data_grid_view_cell_defaults
-            // 
-            this.data_grid_view_cell_defaults.AllowUserToDeleteRows = false;
-            this.data_grid_view_cell_defaults.AutoGenerateColumns = false;
-            this.data_grid_view_cell_defaults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_grid_view_cell_defaults.DataSource = this.rainbow_data;
-            this.data_grid_view_cell_defaults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_grid_view_cell_defaults.Location = new System.Drawing.Point(3, 3);
-            this.data_grid_view_cell_defaults.Name = "data_grid_view_cell_defaults";
-            this.data_grid_view_cell_defaults.Size = new System.Drawing.Size(685, 263);
-            this.data_grid_view_cell_defaults.TabIndex = 0;
-            // 
             // tab_page_cells
             // 
             this.tab_page_cells.Controls.Add(this.element_data_grid_view);
@@ -205,6 +185,26 @@
             this.tab_page_cells.TabIndex = 2;
             this.tab_page_cells.Text = "Наполнение";
             this.tab_page_cells.UseVisualStyleBackColor = true;
+            // 
+            // element_data_grid_view
+            // 
+            this.element_data_grid_view.AllowUserToOrderColumns = true;
+            this.element_data_grid_view.AutoGenerateColumns = false;
+            this.element_data_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.element_data_grid_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32});
+            this.element_data_grid_view.DataMember = "Element_table";
+            this.element_data_grid_view.DataSource = this.rainbow_data;
+            this.element_data_grid_view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.element_data_grid_view.Location = new System.Drawing.Point(0, 0);
+            this.element_data_grid_view.Name = "element_data_grid_view";
+            this.element_data_grid_view.Size = new System.Drawing.Size(691, 269);
+            this.element_data_grid_view.TabIndex = 0;
             // 
             // tab_page_links
             // 
@@ -222,9 +222,10 @@
             this.data_grid_view_links.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid_view_links.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19});
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27});
             this.data_grid_view_links.DataMember = "Link_elements_table";
             this.data_grid_view_links.DataSource = this.rainbow_data;
             this.data_grid_view_links.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -249,12 +250,12 @@
             this.element_data_grid_view_extended.AutoGenerateColumns = false;
             this.element_data_grid_view_extended.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.element_data_grid_view_extended.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn20,
-            this.elementlevelDataGridViewTextBoxColumn1,
-            this.elementphaseDataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23});
+            this.name_of_element,
+            this.description_for_element,
+            this.level_id_for_element,
+            this.phase_id_for_element,
+            this.project_id_for_element});
             this.element_data_grid_view_extended.DataMember = "Element_table";
             this.element_data_grid_view_extended.DataSource = this.rainbow_data;
             this.element_data_grid_view_extended.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -280,9 +281,10 @@
             this.data_grid_view_links_parent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_grid_view_links_parent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.parent_element_id_for_link,
+            this.chield_element_id_for_link,
+            this.name_of_link,
+            this.description_for_link});
             this.data_grid_view_links_parent.DataMember = "Link_elements_table";
             this.data_grid_view_links_parent.DataSource = this.rainbow_data;
             this.data_grid_view_links_parent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -290,30 +292,6 @@
             this.data_grid_view_links_parent.Name = "data_grid_view_links_parent";
             this.data_grid_view_links_parent.Size = new System.Drawing.Size(685, 263);
             this.data_grid_view_links_parent.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "link_id";
-            this.dataGridViewTextBoxColumn4.HeaderText = "link_id";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "element_id_parent";
-            this.dataGridViewTextBoxColumn5.HeaderText = "element_id_parent";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "element_id_chield";
-            this.dataGridViewTextBoxColumn6.HeaderText = "element_id_chield";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "link_description";
-            this.dataGridViewTextBoxColumn7.HeaderText = "link_description";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // tab_page_normative
             // 
@@ -357,8 +335,8 @@
             this.projrct_data_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.projrct_data_grid_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
+            this.name_of_project,
+            this.description_for_project});
             this.projrct_data_grid_view.DataMember = "Project_table";
             this.projrct_data_grid_view.DataSource = this.rainbow_data;
             this.projrct_data_grid_view.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -366,24 +344,6 @@
             this.projrct_data_grid_view.Name = "projrct_data_grid_view";
             this.projrct_data_grid_view.Size = new System.Drawing.Size(671, 231);
             this.projrct_data_grid_view.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "project_id";
-            this.dataGridViewTextBoxColumn9.HeaderText = "project_id";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "project_name";
-            this.dataGridViewTextBoxColumn10.HeaderText = "project_name";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "project_description";
-            this.dataGridViewTextBoxColumn11.HeaderText = "project_description";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
             // impotence_tab_page
             // 
@@ -403,8 +363,8 @@
             this.importence_data_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.importence_data_grid_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.importanceidDataGridViewTextBoxColumn,
-            this.importancenameDataGridViewTextBoxColumn,
-            this.importancepercentDataGridViewTextBoxColumn});
+            this.name_of_importance,
+            this.percent_of_importance});
             this.importence_data_grid_view.DataMember = "Importance_table";
             this.importence_data_grid_view.DataSource = this.rainbow_data;
             this.importence_data_grid_view.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -412,24 +372,6 @@
             this.importence_data_grid_view.Name = "importence_data_grid_view";
             this.importence_data_grid_view.Size = new System.Drawing.Size(671, 231);
             this.importence_data_grid_view.TabIndex = 1;
-            // 
-            // importanceidDataGridViewTextBoxColumn
-            // 
-            this.importanceidDataGridViewTextBoxColumn.DataPropertyName = "importance_id";
-            this.importanceidDataGridViewTextBoxColumn.HeaderText = "importance_id";
-            this.importanceidDataGridViewTextBoxColumn.Name = "importanceidDataGridViewTextBoxColumn";
-            // 
-            // importancenameDataGridViewTextBoxColumn
-            // 
-            this.importancenameDataGridViewTextBoxColumn.DataPropertyName = "importance_name";
-            this.importancenameDataGridViewTextBoxColumn.HeaderText = "importance_name";
-            this.importancenameDataGridViewTextBoxColumn.Name = "importancenameDataGridViewTextBoxColumn";
-            // 
-            // importancepercentDataGridViewTextBoxColumn
-            // 
-            this.importancepercentDataGridViewTextBoxColumn.DataPropertyName = "importance_percent";
-            this.importancepercentDataGridViewTextBoxColumn.HeaderText = "importance_percent";
-            this.importancepercentDataGridViewTextBoxColumn.Name = "importancepercentDataGridViewTextBoxColumn";
             // 
             // level_tab_page
             // 
@@ -448,8 +390,8 @@
             this.level_data_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.level_data_grid_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.levelidDataGridViewTextBoxColumn,
-            this.levelnameDataGridViewTextBoxColumn,
-            this.levelimportanceDataGridViewTextBoxColumn});
+            this.name_of_level,
+            this.importance_id_for_level});
             this.level_data_grid_view.DataMember = "Level_table";
             this.level_data_grid_view.DataSource = this.rainbow_data;
             this.level_data_grid_view.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -457,24 +399,6 @@
             this.level_data_grid_view.Name = "level_data_grid_view";
             this.level_data_grid_view.Size = new System.Drawing.Size(677, 237);
             this.level_data_grid_view.TabIndex = 1;
-            // 
-            // levelidDataGridViewTextBoxColumn
-            // 
-            this.levelidDataGridViewTextBoxColumn.DataPropertyName = "level_id";
-            this.levelidDataGridViewTextBoxColumn.HeaderText = "level_id";
-            this.levelidDataGridViewTextBoxColumn.Name = "levelidDataGridViewTextBoxColumn";
-            // 
-            // levelnameDataGridViewTextBoxColumn
-            // 
-            this.levelnameDataGridViewTextBoxColumn.DataPropertyName = "level_name";
-            this.levelnameDataGridViewTextBoxColumn.HeaderText = "level_name";
-            this.levelnameDataGridViewTextBoxColumn.Name = "levelnameDataGridViewTextBoxColumn";
-            // 
-            // levelimportanceDataGridViewTextBoxColumn
-            // 
-            this.levelimportanceDataGridViewTextBoxColumn.DataPropertyName = "level_importance";
-            this.levelimportanceDataGridViewTextBoxColumn.HeaderText = "level_importance";
-            this.levelimportanceDataGridViewTextBoxColumn.Name = "levelimportanceDataGridViewTextBoxColumn";
             // 
             // phase_tab_page
             // 
@@ -493,9 +417,10 @@
             this.phase_data_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.phase_data_grid_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.phaseidDataGridViewTextBoxColumn,
-            this.phasenameDataGridViewTextBoxColumn,
-            this.phaseimportanceDataGridViewTextBoxColumn,
-            this.phasepercentDataGridViewTextBoxColumn});
+            this.name_of_phase,
+            this.importance_id_for_phase,
+            this.percent_of_phase_middle,
+            this.width_of_phase});
             this.phase_data_grid_view.DataMember = "Phase_table";
             this.phase_data_grid_view.DataSource = this.rainbow_data;
             this.phase_data_grid_view.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -503,30 +428,6 @@
             this.phase_data_grid_view.Name = "phase_data_grid_view";
             this.phase_data_grid_view.Size = new System.Drawing.Size(677, 237);
             this.phase_data_grid_view.TabIndex = 1;
-            // 
-            // phaseidDataGridViewTextBoxColumn
-            // 
-            this.phaseidDataGridViewTextBoxColumn.DataPropertyName = "phase_id";
-            this.phaseidDataGridViewTextBoxColumn.HeaderText = "phase_id";
-            this.phaseidDataGridViewTextBoxColumn.Name = "phaseidDataGridViewTextBoxColumn";
-            // 
-            // phasenameDataGridViewTextBoxColumn
-            // 
-            this.phasenameDataGridViewTextBoxColumn.DataPropertyName = "phase_name";
-            this.phasenameDataGridViewTextBoxColumn.HeaderText = "phase_name";
-            this.phasenameDataGridViewTextBoxColumn.Name = "phasenameDataGridViewTextBoxColumn";
-            // 
-            // phaseimportanceDataGridViewTextBoxColumn
-            // 
-            this.phaseimportanceDataGridViewTextBoxColumn.DataPropertyName = "phase_importance";
-            this.phaseimportanceDataGridViewTextBoxColumn.HeaderText = "phase_importance";
-            this.phaseimportanceDataGridViewTextBoxColumn.Name = "phaseimportanceDataGridViewTextBoxColumn";
-            // 
-            // phasepercentDataGridViewTextBoxColumn
-            // 
-            this.phasepercentDataGridViewTextBoxColumn.DataPropertyName = "phase_percent";
-            this.phasepercentDataGridViewTextBoxColumn.HeaderText = "phase_percent";
-            this.phasepercentDataGridViewTextBoxColumn.Name = "phasepercentDataGridViewTextBoxColumn";
             // 
             // cell_tab_page
             // 
@@ -544,10 +445,10 @@
             this.cells_data_grid_view.AutoGenerateColumns = false;
             this.cells_data_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cells_data_grid_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn8});
+            this.projectidforcellDataGridViewTextBoxColumn,
+            this.levelidforcellDataGridViewTextBoxColumn,
+            this.phaseidforcellDataGridViewTextBoxColumn,
+            this.nameofcellcommonDataGridViewTextBoxColumn});
             this.cells_data_grid_view.DataMember = "Cell_table";
             this.cells_data_grid_view.DataSource = this.rainbow_data;
             this.cells_data_grid_view.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -556,127 +457,167 @@
             this.cells_data_grid_view.Size = new System.Drawing.Size(677, 237);
             this.cells_data_grid_view.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
+            // projectidforcellDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "project_id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "project_id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.projectidforcellDataGridViewTextBoxColumn.DataPropertyName = "project_id_for_cell";
+            this.projectidforcellDataGridViewTextBoxColumn.HeaderText = "project_id_for_cell";
+            this.projectidforcellDataGridViewTextBoxColumn.Name = "projectidforcellDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn2
+            // levelidforcellDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "cell_level";
-            this.dataGridViewTextBoxColumn2.HeaderText = "cell_level";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.levelidforcellDataGridViewTextBoxColumn.DataPropertyName = "level_id_for_cell";
+            this.levelidforcellDataGridViewTextBoxColumn.HeaderText = "level_id_for_cell";
+            this.levelidforcellDataGridViewTextBoxColumn.Name = "levelidforcellDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn3
+            // phaseidforcellDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "cell_phase";
-            this.dataGridViewTextBoxColumn3.HeaderText = "cell_phase";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.phaseidforcellDataGridViewTextBoxColumn.DataPropertyName = "phase_id_for_cell";
+            this.phaseidforcellDataGridViewTextBoxColumn.HeaderText = "phase_id_for_cell";
+            this.phaseidforcellDataGridViewTextBoxColumn.Name = "phaseidforcellDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn8
+            // nameofcellcommonDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "cell_common_name";
-            this.dataGridViewTextBoxColumn8.HeaderText = "cell_common_name";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.nameofcellcommonDataGridViewTextBoxColumn.DataPropertyName = "name_of_cell_common";
+            this.nameofcellcommonDataGridViewTextBoxColumn.HeaderText = "name_of_cell_common";
+            this.nameofcellcommonDataGridViewTextBoxColumn.Name = "nameofcellcommonDataGridViewTextBoxColumn";
             // 
-            // element_data_grid_view
+            // tab_page_etalon
             // 
-            this.element_data_grid_view.AllowUserToOrderColumns = true;
-            this.element_data_grid_view.AutoGenerateColumns = false;
-            this.element_data_grid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.element_data_grid_view.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn12,
-            this.elementlevelDataGridViewTextBoxColumn,
-            this.elementphaseDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15});
-            this.element_data_grid_view.DataMember = "Element_table";
-            this.element_data_grid_view.DataSource = this.rainbow_data;
-            this.element_data_grid_view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.element_data_grid_view.Location = new System.Drawing.Point(0, 0);
-            this.element_data_grid_view.Name = "element_data_grid_view";
-            this.element_data_grid_view.Size = new System.Drawing.Size(691, 269);
-            this.element_data_grid_view.TabIndex = 0;
+            this.tab_page_etalon.Controls.Add(this.data_grid_view_cell_defaults);
+            this.tab_page_etalon.Location = new System.Drawing.Point(4, 22);
+            this.tab_page_etalon.Name = "tab_page_etalon";
+            this.tab_page_etalon.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_page_etalon.Size = new System.Drawing.Size(691, 269);
+            this.tab_page_etalon.TabIndex = 1;
+            this.tab_page_etalon.Text = "Эталон";
+            this.tab_page_etalon.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewTextBoxColumn12
+            // data_grid_view_cell_defaults
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "project_id";
-            this.dataGridViewTextBoxColumn12.HeaderText = "project_id";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.data_grid_view_cell_defaults.AllowUserToDeleteRows = false;
+            this.data_grid_view_cell_defaults.AutoGenerateColumns = false;
+            this.data_grid_view_cell_defaults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_grid_view_cell_defaults.DataSource = this.rainbow_data;
+            this.data_grid_view_cell_defaults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.data_grid_view_cell_defaults.Location = new System.Drawing.Point(3, 3);
+            this.data_grid_view_cell_defaults.Name = "data_grid_view_cell_defaults";
+            this.data_grid_view_cell_defaults.Size = new System.Drawing.Size(685, 263);
+            this.data_grid_view_cell_defaults.TabIndex = 0;
             // 
-            // elementlevelDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn9
             // 
-            this.elementlevelDataGridViewTextBoxColumn.DataPropertyName = "element_level";
-            this.elementlevelDataGridViewTextBoxColumn.HeaderText = "element_level";
-            this.elementlevelDataGridViewTextBoxColumn.Name = "elementlevelDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "project_id";
+            this.dataGridViewTextBoxColumn9.HeaderText = "project_id";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // elementphaseDataGridViewTextBoxColumn
+            // name_of_project
             // 
-            this.elementphaseDataGridViewTextBoxColumn.DataPropertyName = "element_phase";
-            this.elementphaseDataGridViewTextBoxColumn.HeaderText = "element_phase";
-            this.elementphaseDataGridViewTextBoxColumn.Name = "elementphaseDataGridViewTextBoxColumn";
+            this.name_of_project.DataPropertyName = "name_of_project";
+            this.name_of_project.HeaderText = "name_of_project";
+            this.name_of_project.Name = "name_of_project";
             // 
-            // dataGridViewTextBoxColumn13
+            // description_for_project
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "element_id";
-            this.dataGridViewTextBoxColumn13.HeaderText = "element_id";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.description_for_project.DataPropertyName = "description_for_project";
+            this.description_for_project.HeaderText = "description_for_project";
+            this.description_for_project.Name = "description_for_project";
+            this.description_for_project.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // dataGridViewTextBoxColumn14
+            // importanceidDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "element_name";
-            this.dataGridViewTextBoxColumn14.HeaderText = "element_name";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.importanceidDataGridViewTextBoxColumn.DataPropertyName = "importance_id";
+            this.importanceidDataGridViewTextBoxColumn.HeaderText = "importance_id";
+            this.importanceidDataGridViewTextBoxColumn.Name = "importanceidDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn15
+            // name_of_importance
             // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "element_description";
-            this.dataGridViewTextBoxColumn15.HeaderText = "element_description";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.name_of_importance.DataPropertyName = "name_of_importance";
+            this.name_of_importance.HeaderText = "name_of_importance";
+            this.name_of_importance.Name = "name_of_importance";
             // 
-            // dataGridViewTextBoxColumn16
+            // percent_of_importance
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "link_id";
-            this.dataGridViewTextBoxColumn16.HeaderText = "link_id";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.percent_of_importance.DataPropertyName = "percent_of_importance";
+            this.percent_of_importance.HeaderText = "percent_of_importance";
+            this.percent_of_importance.Name = "percent_of_importance";
             // 
-            // dataGridViewTextBoxColumn17
+            // levelidDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "element_id_parent";
-            this.dataGridViewTextBoxColumn17.HeaderText = "element_id_parent";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.levelidDataGridViewTextBoxColumn.DataPropertyName = "level_id";
+            this.levelidDataGridViewTextBoxColumn.HeaderText = "level_id";
+            this.levelidDataGridViewTextBoxColumn.Name = "levelidDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn18
+            // name_of_level
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "element_id_chield";
-            this.dataGridViewTextBoxColumn18.HeaderText = "element_id_chield";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.name_of_level.DataPropertyName = "name_of_level";
+            this.name_of_level.HeaderText = "name_of_level";
+            this.name_of_level.Name = "name_of_level";
             // 
-            // dataGridViewTextBoxColumn19
+            // importance_id_for_level
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "link_description";
-            this.dataGridViewTextBoxColumn19.HeaderText = "link_description";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.importance_id_for_level.DataPropertyName = "importance_id_for_level";
+            this.importance_id_for_level.HeaderText = "importance_id_for_level";
+            this.importance_id_for_level.Name = "importance_id_for_level";
             // 
-            // dataGridViewTextBoxColumn20
+            // phaseidDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "project_id";
-            this.dataGridViewTextBoxColumn20.HeaderText = "project_id";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.phaseidDataGridViewTextBoxColumn.DataPropertyName = "phase_id";
+            this.phaseidDataGridViewTextBoxColumn.HeaderText = "phase_id";
+            this.phaseidDataGridViewTextBoxColumn.Name = "phaseidDataGridViewTextBoxColumn";
             // 
-            // elementlevelDataGridViewTextBoxColumn1
+            // name_of_phase
             // 
-            this.elementlevelDataGridViewTextBoxColumn1.DataPropertyName = "element_level";
-            this.elementlevelDataGridViewTextBoxColumn1.HeaderText = "element_level";
-            this.elementlevelDataGridViewTextBoxColumn1.Name = "elementlevelDataGridViewTextBoxColumn1";
+            this.name_of_phase.DataPropertyName = "name_of_phase";
+            this.name_of_phase.HeaderText = "name_of_phase";
+            this.name_of_phase.Name = "name_of_phase";
             // 
-            // elementphaseDataGridViewTextBoxColumn1
+            // importance_id_for_phase
             // 
-            this.elementphaseDataGridViewTextBoxColumn1.DataPropertyName = "element_phase";
-            this.elementphaseDataGridViewTextBoxColumn1.HeaderText = "element_phase";
-            this.elementphaseDataGridViewTextBoxColumn1.Name = "elementphaseDataGridViewTextBoxColumn1";
+            this.importance_id_for_phase.DataPropertyName = "importance_id_for_phase";
+            this.importance_id_for_phase.HeaderText = "importance_id_for_phase";
+            this.importance_id_for_phase.Name = "importance_id_for_phase";
+            // 
+            // percent_of_phase_middle
+            // 
+            this.percent_of_phase_middle.DataPropertyName = "percent_of_phase_middle";
+            this.percent_of_phase_middle.HeaderText = "percent_of_phase_middle";
+            this.percent_of_phase_middle.Name = "percent_of_phase_middle";
+            // 
+            // width_of_phase
+            // 
+            this.width_of_phase.DataPropertyName = "width_of_phase";
+            this.width_of_phase.HeaderText = "width_of_phase";
+            this.width_of_phase.Name = "width_of_phase";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "link_id";
+            this.dataGridViewTextBoxColumn4.HeaderText = "link_id";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // parent_element_id_for_link
+            // 
+            this.parent_element_id_for_link.DataPropertyName = "parent_element_id_for_link";
+            this.parent_element_id_for_link.HeaderText = "parent_element_id_for_link";
+            this.parent_element_id_for_link.Name = "parent_element_id_for_link";
+            // 
+            // chield_element_id_for_link
+            // 
+            this.chield_element_id_for_link.DataPropertyName = "chield_element_id_for_link";
+            this.chield_element_id_for_link.HeaderText = "chield_element_id_for_link";
+            this.chield_element_id_for_link.Name = "chield_element_id_for_link";
+            // 
+            // name_of_link
+            // 
+            this.name_of_link.DataPropertyName = "name_of_link";
+            this.name_of_link.HeaderText = "name_of_link";
+            this.name_of_link.Name = "name_of_link";
+            // 
+            // description_for_link
+            // 
+            this.description_for_link.DataPropertyName = "description_for_link";
+            this.description_for_link.HeaderText = "description_for_link";
+            this.description_for_link.Name = "description_for_link";
             // 
             // dataGridViewTextBoxColumn21
             // 
@@ -684,17 +625,101 @@
             this.dataGridViewTextBoxColumn21.HeaderText = "element_id";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             // 
-            // dataGridViewTextBoxColumn22
+            // name_of_element
             // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "element_name";
-            this.dataGridViewTextBoxColumn22.HeaderText = "element_name";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.name_of_element.DataPropertyName = "name_of_element";
+            this.name_of_element.HeaderText = "name_of_element";
+            this.name_of_element.Name = "name_of_element";
             // 
-            // dataGridViewTextBoxColumn23
+            // description_for_element
             // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "element_description";
-            this.dataGridViewTextBoxColumn23.HeaderText = "element_description";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.description_for_element.DataPropertyName = "description_for_element";
+            this.description_for_element.HeaderText = "description_for_element";
+            this.description_for_element.Name = "description_for_element";
+            // 
+            // level_id_for_element
+            // 
+            this.level_id_for_element.DataPropertyName = "level_id_for_element";
+            this.level_id_for_element.HeaderText = "level_id_for_element";
+            this.level_id_for_element.Name = "level_id_for_element";
+            // 
+            // phase_id_for_element
+            // 
+            this.phase_id_for_element.DataPropertyName = "phase_id_for_element";
+            this.phase_id_for_element.HeaderText = "phase_id_for_element";
+            this.phase_id_for_element.Name = "phase_id_for_element";
+            // 
+            // project_id_for_element
+            // 
+            this.project_id_for_element.DataPropertyName = "project_id_for_element";
+            this.project_id_for_element.HeaderText = "project_id_for_element";
+            this.project_id_for_element.Name = "project_id_for_element";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "link_id";
+            this.dataGridViewTextBoxColumn16.HeaderText = "link_id";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "name_of_link";
+            this.dataGridViewTextBoxColumn24.HeaderText = "name_of_link";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "parent_element_id_for_link";
+            this.dataGridViewTextBoxColumn25.HeaderText = "parent_element_id_for_link";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "chield_element_id_for_link";
+            this.dataGridViewTextBoxColumn26.HeaderText = "chield_element_id_for_link";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "description_for_link";
+            this.dataGridViewTextBoxColumn27.HeaderText = "description_for_link";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "element_id";
+            this.dataGridViewTextBoxColumn13.HeaderText = "element_id";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "name_of_element";
+            this.dataGridViewTextBoxColumn28.HeaderText = "name_of_element";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "level_id_for_element";
+            this.dataGridViewTextBoxColumn29.HeaderText = "level_id_for_element";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "phase_id_for_element";
+            this.dataGridViewTextBoxColumn30.HeaderText = "phase_id_for_element";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "project_id_for_element";
+            this.dataGridViewTextBoxColumn31.HeaderText = "project_id_for_element";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "description_for_element";
+            this.dataGridViewTextBoxColumn32.HeaderText = "description_for_element";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
             // 
             // Rainbow_organisation
             // 
@@ -709,9 +734,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rainbow_data)).EndInit();
             this.tab_control_data_view.ResumeLayout(false);
             this.tab_page_utility.ResumeLayout(false);
-            this.tab_page_etalon.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.data_grid_view_cell_defaults)).EndInit();
             this.tab_page_cells.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.element_data_grid_view)).EndInit();
             this.tab_page_links.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_view_links)).EndInit();
             this.tab_page_cells_project.ResumeLayout(false);
@@ -730,14 +754,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.phase_data_grid_view)).EndInit();
             this.cell_tab_page.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cells_data_grid_view)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.element_data_grid_view)).EndInit();
+            this.tab_page_etalon.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.data_grid_view_cell_defaults)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private project.Rainbow rainbow_data;
         private System.Windows.Forms.TabControl tab_control_data_view;
         private System.Windows.Forms.TabPage tab_page_normative;
         private System.Windows.Forms.TabPage tab_page_etalon;
@@ -789,29 +813,24 @@
         private System.Windows.Forms.TabPage tab_page_utility;
         private System.Windows.Forms.Button debug_save_button;
         private System.Windows.Forms.Button create_default_project_button;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage project_tab_page;
         private System.Windows.Forms.DataGridView projrct_data_grid_view;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.TabPage impotence_tab_page;
         private System.Windows.Forms.DataGridView importence_data_grid_view;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importanceidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn importancenameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn importancepercentDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage level_tab_page;
         private System.Windows.Forms.DataGridView level_data_grid_view;
-        private System.Windows.Forms.DataGridViewTextBoxColumn levelidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn levelnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn levelimportanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage phase_tab_page;
         private System.Windows.Forms.DataGridView phase_data_grid_view;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phaseidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phasenameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phaseimportanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phasepercentDataGridViewTextBoxColumn;
@@ -825,18 +844,56 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn elementlevelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn elementphaseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn elementlevelDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn elementphaseDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projectidforcellDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn levelidforcellDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phaseidforcellDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameofcellcommonDataGridViewTextBoxColumn;
+        public Rainbow rainbow_data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_of_element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description_for_element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn level_id_for_element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phase_id_for_element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn project_id_for_element;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn parent_element_id_for_link;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chield_element_id_for_link;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_of_link;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description_for_link;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_of_project;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description_for_project;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importanceidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_of_importance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn percent_of_importance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn levelidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_of_level;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importance_id_for_level;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phaseidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_of_phase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importance_id_for_phase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn percent_of_phase_middle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn width_of_phase;
     }
 }

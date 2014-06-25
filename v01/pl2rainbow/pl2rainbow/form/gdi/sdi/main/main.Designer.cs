@@ -602,8 +602,8 @@
             this.project_rainbow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.project_rainbow.Location = new System.Drawing.Point(0, 49);
             this.project_rainbow.Name = "project_rainbow";
-            this.project_rainbow.selected_level = pl2.rainbow.description.Abstraction_level_enum.Interface_target;
-            this.project_rainbow.selected_level_previous = pl2.rainbow.description.Abstraction_level_enum.Interface_target;
+            this.project_rainbow.selected_level = pl2.rainbow.description.Abstraction_level_enum.Interface_9_target;
+            this.project_rainbow.selected_level_previous = pl2.rainbow.description.Abstraction_level_enum.Interface_9_target;
             this.project_rainbow.selected_phase = pl2.rainbow.description.Phase_direction_enum.action;
             this.project_rainbow.selected_phase_previous = pl2.rainbow.description.Phase_direction_enum.invariant;
             this.project_rainbow.Size = new System.Drawing.Size(619, 382);
