@@ -731,6 +731,7 @@
             // 
             this.phase_tool_strip_combo_box.Name = "phase_tool_strip_combo_box";
             this.phase_tool_strip_combo_box.Size = new System.Drawing.Size(121, 25);
+            this.phase_tool_strip_combo_box.Click += new System.EventHandler(this.phase_tool_strip_combo_box_Click);
             // 
             // tag_tool_strip_combo_box
             // 

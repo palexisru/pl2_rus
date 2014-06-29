@@ -9,13 +9,17 @@ namespace pl2.rainbow.description.xml.project {
 
     public partial class Rainbow
     {
+        partial class Level_tableDataTable
+        {
+        }
+    
         partial class Element_tableDataTable
         {
         }
         /// <summary>
-        /// идентификатор текущего проекта
+        /// идентификатор текущей модели
         /// </summary>
-        Int32 project_id;
+        Int32 model_id;
 
         partial class Phase_tableDataTable
         {
@@ -23,8 +27,8 @@ namespace pl2.rainbow.description.xml.project {
 
         public void create_default_project()
         {
-            create_default_empty_project();
-            create_default_elements();
+            model_id = create_default_empty_model();
+            create_default_elements(model_id);
             create_default_element_links();
 
         }
@@ -112,13 +116,13 @@ namespace pl2.rainbow.description.xml.project {
             //throw new NotImplementedException();
         }
 
-        private void create_default_elements()
+        private void create_default_elements(Int32 model_id)
         {
             Element_tableRow row;
             foreach( Cell_tableRow cell_row in Cell_table.Rows)
             {
                 row = (Element_tableRow) Element_table.NewRow();
-                row.project_id_for_element = cell_row.project_id_for_cell;
+                row.model_id_for_element = model_id;
                 row.level_id_for_element = cell_row.level_id_for_cell;
                 row.phase_id_for_element = cell_row.phase_id_for_cell;
                 row.name_of_element = "element " + cell_row.name_of_cell_common;
@@ -126,32 +130,31 @@ namespace pl2.rainbow.description.xml.project {
             }
         }
     
-        public void create_default_empty_project()
+        public Int32 create_default_empty_model()
         {
-            Project_tableRow row;
+            Model_tableRow row;
 
-            row = (Project_tableRow) Project_table.NewRow();
-            row.name_of_project = "Проект 1";
-            row.description_for_project = "Описание проекта 1";
-            Project_table.Rows.Add(row);
+            row = (Model_tableRow) Model_table.NewRow();
+            row.name_of_model = "Основная модель1";
+            row.description_for_model = "Описание модели 1";
+            Model_table.Rows.Add(row);
             AcceptChanges();
-            row = (Project_tableRow)Project_table.Rows[0];
-            project_id = row.project_id;
+            row = (Model_tableRow)Model_table.Rows[0];
+            model_id = row.model_id;
 
-            create_default_cells_for_project(project_id);
+            create_default_cells_for_model(model_id);
             AcceptChanges();
-
+            return model_id;
 
         }
 
-        private void create_default_cells_for_project(int project_id)
+        private void create_default_cells_for_model(int model_id)
         {
             Cell_tableRow row;
             create_default_meagure();
             foreach (Cell_system cell in Sphere.cell_collection)
             {
                 row = (Cell_tableRow) Cell_table.NewRow();
-                row.project_id_for_cell = project_id;
                 row.level_id_for_cell = (Int32)cell.abstraction;
                 row.phase_id_for_cell = (Int32)cell.phase;
                 row.name_of_cell_common = cell.default_name;
@@ -246,7 +249,7 @@ namespace pl2.rainbow.description.xml.project {
         {
         }
 
-        partial class Project_tableDataTable
+         partial class Model_tableDataTable
         {
         }
 

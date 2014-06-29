@@ -102,5 +102,10 @@ namespace pl2.rainbow.form.gdi.sdi.chield.node.relations.card
                 childForm.Close();
             }
         }
+
+        private void phase_tool_strip_combo_box_Click(object sender , EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,7 +8,7 @@ using pl2.rainbow.description.xml.project;
 
 namespace pl2.rainbow
 {
-    public class Project
+    public class Options
     {
         [Browsable( true ) , Description( "URL проекта для считывания" ) , Category( "Data" )]
         public string URL { get; set; }
@@ -17,13 +17,13 @@ namespace pl2.rainbow
         public string filename { get; set; }
 
         [Browsable( true ) , Description( "Количество одновременно видимых строк" ) , Category( "Data" )]
-        public int number_of_colors { get; set; }
+        public int number_of_levels { get; set; }
 
         [Browsable( true ) , Description( "Количество одновременно видимых направлений, 4" ) , Category( "Data" )]
         public int number_of_directions { get; set; }
 
         [Browsable( true ) , Description( "Всегда выводить центральный элемент модели" ) , Category( "Data" )]
-        public bool center_allwase_visible { get; set; }
+        public bool center_allways_visible { get; set; }
 
         [Browsable( true ) , Description( "Текущий центральный выводимый уровень" ) , Category( "Data" )]
         public pl2.rainbow.description.Abstraction_level_enum current_abstraction_center { get; set; }
@@ -40,14 +40,14 @@ namespace pl2.rainbow
         [Browsable( true ) , Description( "Отражать уровни симметрично" ) , Category( "Data" )]
         public bool visible_symmetric { get; set; }
 
-        public Project()
+        public Options()
         {
             current_abstraction_center = Abstraction_level_enum.Interface_9_target;
             current_phase_center = Phase_direction_enum.action;
-            center_allwase_visible = true;
+            center_allways_visible = true;
             visible_importance = Importance_enum.probably;
             visible_symmetric = true;
-            number_of_colors = 3;
+            number_of_levels = 3;
             number_of_directions = 4;
             // назначаем имя файла по умолчанию
             filename = "project_default.xml";

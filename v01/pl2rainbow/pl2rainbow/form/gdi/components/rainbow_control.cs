@@ -15,7 +15,7 @@ namespace pl2.rainbow.form.gdi.components
     public partial class Rainbow_control : UserControl
     {
         [Browsable( true ) , Description( "Настройки проекта" ) , Category( "Data" )]
-        public pl2.rainbow.Project options = new pl2.rainbow.Project();
+        public pl2.rainbow.Options options = new pl2.rainbow.Options();
 
         [Browsable( true ) , Description( "Предыдущий уровень абстрактности" ) , Category( "Data" )]
         public pl2.rainbow.description.Abstraction_level_enum selected_level_previous { get; set; }
@@ -100,11 +100,11 @@ namespace pl2.rainbow.form.gdi.components
                     {
                         if (options.visible_symmetric)
                         {
-                            a.Visible = Math.Abs( Math.Abs( a.level_number ) - current_active_level ) < options.number_of_colors;
+                            a.Visible = Math.Abs( Math.Abs( a.level_number ) - current_active_level ) < options.number_of_levels;
                         }
                         else
                         {
-                            a.Visible = Math.Abs( a.level_number - current_active_level ) < options.number_of_colors;
+                            a.Visible = Math.Abs( a.level_number - current_active_level ) < options.number_of_levels;
                         }
                     }
                 }
@@ -116,10 +116,10 @@ namespace pl2.rainbow.form.gdi.components
                 level_n1.Visible = true;
                 level_n2.Visible = true;
             }
-            if (options.center_allwase_visible)
+            if (options.center_allways_visible)
                 level_0.Visible = true;
 
-            if (current_active_level <= options.number_of_colors)
+            if (current_active_level <= options.number_of_levels)
                 level_0.Visible = true;
 
             if (!options.visible_reserved)

@@ -337,7 +337,7 @@
             this.dataGridViewTextBoxColumn9,
             this.name_of_project,
             this.description_for_project});
-            this.projrct_data_grid_view.DataMember = "Project_table";
+            this.projrct_data_grid_view.DataMember = "Model_table";
             this.projrct_data_grid_view.DataSource = this.rainbow_data;
             this.projrct_data_grid_view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.projrct_data_grid_view.Location = new System.Drawing.Point(3, 3);

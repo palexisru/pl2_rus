@@ -24,7 +24,7 @@ namespace pl2.rainbow.description.xml.project {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class Rainbow : global::System.Data.DataSet {
         
-        private Project_tableDataTable tableProject_table;
+        private Model_tableDataTable tableModel_table;
         
         private Cell_tableDataTable tableCell_table;
         
@@ -38,21 +38,23 @@ namespace pl2.rainbow.description.xml.project {
         
         private Importance_tableDataTable tableImportance_table;
         
-        private global::System.Data.DataRelation relationCell_Cell_value_Relation;
+        private Options_tableDataTable tableOptions_table;
         
-        private global::System.Data.DataRelation relationProject_Cell_Relation;
+        private global::System.Data.DataRelation relationPhase_Cell_FK_relation;
         
-        private global::System.Data.DataRelation relationCell_value_link_parent_Relation;
+        private global::System.Data.DataRelation relationLevel_Cell_FK_relation;
         
-        private global::System.Data.DataRelation relationCell_value_link_chield_Relation;
+        private global::System.Data.DataRelation relationCell_Element_FK_relation;
         
-        private global::System.Data.DataRelation relationImportance_Level_relation;
+        private global::System.Data.DataRelation relationModel_Element_FK_relation;
         
-        private global::System.Data.DataRelation relationImportance_Phase;
+        private global::System.Data.DataRelation relationElement_Link_chield_FK_relation;
         
-        private global::System.Data.DataRelation relationLevel_Cell;
+        private global::System.Data.DataRelation relationElement_Link_parent_FK_relation;
         
-        private global::System.Data.DataRelation relationPhase_Cell;
+        private global::System.Data.DataRelation relationImportance_Level_FK_relation;
+        
+        private global::System.Data.DataRelation relationImportance_Phase_FK_relation;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -82,8 +84,8 @@ namespace pl2.rainbow.description.xml.project {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Project_table"] != null)) {
-                    base.Tables.Add(new Project_tableDataTable(ds.Tables["Project_table"]));
+                if ((ds.Tables["Model_table"] != null)) {
+                    base.Tables.Add(new Model_tableDataTable(ds.Tables["Model_table"]));
                 }
                 if ((ds.Tables["Cell_table"] != null)) {
                     base.Tables.Add(new Cell_tableDataTable(ds.Tables["Cell_table"]));
@@ -102,6 +104,9 @@ namespace pl2.rainbow.description.xml.project {
                 }
                 if ((ds.Tables["Importance_table"] != null)) {
                     base.Tables.Add(new Importance_tableDataTable(ds.Tables["Importance_table"]));
+                }
+                if ((ds.Tables["Options_table"] != null)) {
+                    base.Tables.Add(new Options_tableDataTable(ds.Tables["Options_table"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -125,9 +130,9 @@ namespace pl2.rainbow.description.xml.project {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Project_tableDataTable Project_table {
+        public Model_tableDataTable Model_table {
             get {
-                return this.tableProject_table;
+                return this.tableModel_table;
             }
         }
         
@@ -188,6 +193,16 @@ namespace pl2.rainbow.description.xml.project {
         public Importance_tableDataTable Importance_table {
             get {
                 return this.tableImportance_table;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Options_tableDataTable Options_table {
+            get {
+                return this.tableOptions_table;
             }
         }
         
@@ -258,8 +273,8 @@ namespace pl2.rainbow.description.xml.project {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Project_table"] != null)) {
-                    base.Tables.Add(new Project_tableDataTable(ds.Tables["Project_table"]));
+                if ((ds.Tables["Model_table"] != null)) {
+                    base.Tables.Add(new Model_tableDataTable(ds.Tables["Model_table"]));
                 }
                 if ((ds.Tables["Cell_table"] != null)) {
                     base.Tables.Add(new Cell_tableDataTable(ds.Tables["Cell_table"]));
@@ -278,6 +293,9 @@ namespace pl2.rainbow.description.xml.project {
                 }
                 if ((ds.Tables["Importance_table"] != null)) {
                     base.Tables.Add(new Importance_tableDataTable(ds.Tables["Importance_table"]));
+                }
+                if ((ds.Tables["Options_table"] != null)) {
+                    base.Tables.Add(new Options_tableDataTable(ds.Tables["Options_table"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -312,10 +330,10 @@ namespace pl2.rainbow.description.xml.project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableProject_table = ((Project_tableDataTable)(base.Tables["Project_table"]));
+            this.tableModel_table = ((Model_tableDataTable)(base.Tables["Model_table"]));
             if ((initTable == true)) {
-                if ((this.tableProject_table != null)) {
-                    this.tableProject_table.InitVars();
+                if ((this.tableModel_table != null)) {
+                    this.tableModel_table.InitVars();
                 }
             }
             this.tableCell_table = ((Cell_tableDataTable)(base.Tables["Cell_table"]));
@@ -354,14 +372,20 @@ namespace pl2.rainbow.description.xml.project {
                     this.tableImportance_table.InitVars();
                 }
             }
-            this.relationCell_Cell_value_Relation = this.Relations["Cell_Cell_value_Relation"];
-            this.relationProject_Cell_Relation = this.Relations["Project_Cell_Relation"];
-            this.relationCell_value_link_parent_Relation = this.Relations["Cell_value_link_parent_Relation"];
-            this.relationCell_value_link_chield_Relation = this.Relations["Cell_value_link_chield_Relation"];
-            this.relationImportance_Level_relation = this.Relations["Importance_Level_relation"];
-            this.relationImportance_Phase = this.Relations["Importance_Phase"];
-            this.relationLevel_Cell = this.Relations["Level_Cell"];
-            this.relationPhase_Cell = this.Relations["Phase_Cell"];
+            this.tableOptions_table = ((Options_tableDataTable)(base.Tables["Options_table"]));
+            if ((initTable == true)) {
+                if ((this.tableOptions_table != null)) {
+                    this.tableOptions_table.InitVars();
+                }
+            }
+            this.relationPhase_Cell_FK_relation = this.Relations["Phase_Cell_FK_relation"];
+            this.relationLevel_Cell_FK_relation = this.Relations["Level_Cell_FK_relation"];
+            this.relationCell_Element_FK_relation = this.Relations["Cell_Element_FK_relation"];
+            this.relationModel_Element_FK_relation = this.Relations["Model_Element_FK_relation"];
+            this.relationElement_Link_chield_FK_relation = this.Relations["Element_Link_chield_FK_relation"];
+            this.relationElement_Link_parent_FK_relation = this.Relations["Element_Link_parent_FK_relation"];
+            this.relationImportance_Level_FK_relation = this.Relations["Importance_Level_FK_relation"];
+            this.relationImportance_Phase_FK_relation = this.Relations["Importance_Phase_FK_relation"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -372,8 +396,8 @@ namespace pl2.rainbow.description.xml.project {
             this.Namespace = "rainbow.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableProject_table = new Project_tableDataTable();
-            base.Tables.Add(this.tableProject_table);
+            this.tableModel_table = new Model_tableDataTable();
+            base.Tables.Add(this.tableModel_table);
             this.tableCell_table = new Cell_tableDataTable();
             base.Tables.Add(this.tableCell_table);
             this.tableElement_table = new Element_tableDataTable();
@@ -386,59 +410,106 @@ namespace pl2.rainbow.description.xml.project {
             base.Tables.Add(this.tablePhase_table);
             this.tableImportance_table = new Importance_tableDataTable();
             base.Tables.Add(this.tableImportance_table);
+            this.tableOptions_table = new Options_tableDataTable();
+            base.Tables.Add(this.tableOptions_table);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("Cell_Cell_value_Relation", new global::System.Data.DataColumn[] {
-                        this.tableCell_table.project_id_for_cellColumn,
+            fkc = new global::System.Data.ForeignKeyConstraint("Phase_Cell_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tablePhase_table.phase_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCell_table.phase_id_for_cellColumn});
+            this.tableCell_table.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("Level_Cell_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableLevel_table.level_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCell_table.level_id_for_cellColumn});
+            this.tableCell_table.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("Cell_Element_FK_relation", new global::System.Data.DataColumn[] {
                         this.tableCell_table.level_id_for_cellColumn,
                         this.tableCell_table.phase_id_for_cellColumn}, new global::System.Data.DataColumn[] {
-                        this.tableElement_table.project_id_for_elementColumn,
                         this.tableElement_table.level_id_for_elementColumn,
                         this.tableElement_table.phase_id_for_elementColumn});
             this.tableElement_table.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("Model_Element_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableModel_table.model_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElement_table.model_id_for_elementColumn});
+            this.tableElement_table.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("Element_Link_chield_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableElement_table.element_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLink_elements_table.chield_element_id_for_linkColumn});
+            this.tableLink_elements_table.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
-            this.relationCell_Cell_value_Relation = new global::System.Data.DataRelation("Cell_Cell_value_Relation", new global::System.Data.DataColumn[] {
-                        this.tableCell_table.project_id_for_cellColumn,
-                        this.tableCell_table.level_id_for_cellColumn,
-                        this.tableCell_table.phase_id_for_cellColumn}, new global::System.Data.DataColumn[] {
-                        this.tableElement_table.project_id_for_elementColumn,
-                        this.tableElement_table.level_id_for_elementColumn,
-                        this.tableElement_table.phase_id_for_elementColumn}, false);
-            this.Relations.Add(this.relationCell_Cell_value_Relation);
-            this.relationProject_Cell_Relation = new global::System.Data.DataRelation("Project_Cell_Relation", new global::System.Data.DataColumn[] {
-                        this.tableProject_table.project_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCell_table.project_id_for_cellColumn}, false);
-            this.Relations.Add(this.relationProject_Cell_Relation);
-            this.relationCell_value_link_parent_Relation = new global::System.Data.DataRelation("Cell_value_link_parent_Relation", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("Element_Link_parent_FK_relation", new global::System.Data.DataColumn[] {
                         this.tableElement_table.element_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLink_elements_table.parent_element_id_for_linkColumn}, false);
-            this.Relations.Add(this.relationCell_value_link_parent_Relation);
-            this.relationCell_value_link_chield_Relation = new global::System.Data.DataRelation("Cell_value_link_chield_Relation", new global::System.Data.DataColumn[] {
-                        this.tableElement_table.element_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLink_elements_table.chield_element_id_for_linkColumn}, false);
-            this.Relations.Add(this.relationCell_value_link_chield_Relation);
-            this.relationImportance_Level_relation = new global::System.Data.DataRelation("Importance_Level_relation", new global::System.Data.DataColumn[] {
+                        this.tableLink_elements_table.parent_element_id_for_linkColumn});
+            this.tableLink_elements_table.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("Importance_Level_FK_relation", new global::System.Data.DataColumn[] {
                         this.tableImportance_table.importance_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLevel_table.importance_id_for_levelColumn}, false);
-            this.Relations.Add(this.relationImportance_Level_relation);
-            this.relationImportance_Phase = new global::System.Data.DataRelation("Importance_Phase", new global::System.Data.DataColumn[] {
+                        this.tableLevel_table.importance_id_for_levelColumn});
+            this.tableLevel_table.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("Importance_Phase_FK_relation", new global::System.Data.DataColumn[] {
                         this.tableImportance_table.importance_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePhase_table.phase_idColumn}, false);
-            this.Relations.Add(this.relationImportance_Phase);
-            this.relationLevel_Cell = new global::System.Data.DataRelation("Level_Cell", new global::System.Data.DataColumn[] {
-                        this.tableLevel_table.level_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCell_table.level_id_for_cellColumn}, false);
-            this.Relations.Add(this.relationLevel_Cell);
-            this.relationPhase_Cell = new global::System.Data.DataRelation("Phase_Cell", new global::System.Data.DataColumn[] {
+                        this.tablePhase_table.phase_idColumn});
+            this.tablePhase_table.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            this.relationPhase_Cell_FK_relation = new global::System.Data.DataRelation("Phase_Cell_FK_relation", new global::System.Data.DataColumn[] {
                         this.tablePhase_table.phase_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableCell_table.phase_id_for_cellColumn}, false);
-            this.Relations.Add(this.relationPhase_Cell);
+            this.Relations.Add(this.relationPhase_Cell_FK_relation);
+            this.relationLevel_Cell_FK_relation = new global::System.Data.DataRelation("Level_Cell_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableLevel_table.level_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCell_table.level_id_for_cellColumn}, false);
+            this.Relations.Add(this.relationLevel_Cell_FK_relation);
+            this.relationCell_Element_FK_relation = new global::System.Data.DataRelation("Cell_Element_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableCell_table.level_id_for_cellColumn,
+                        this.tableCell_table.phase_id_for_cellColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElement_table.level_id_for_elementColumn,
+                        this.tableElement_table.phase_id_for_elementColumn}, false);
+            this.Relations.Add(this.relationCell_Element_FK_relation);
+            this.relationModel_Element_FK_relation = new global::System.Data.DataRelation("Model_Element_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableModel_table.model_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableElement_table.model_id_for_elementColumn}, false);
+            this.Relations.Add(this.relationModel_Element_FK_relation);
+            this.relationElement_Link_chield_FK_relation = new global::System.Data.DataRelation("Element_Link_chield_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableElement_table.element_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLink_elements_table.chield_element_id_for_linkColumn}, false);
+            this.Relations.Add(this.relationElement_Link_chield_FK_relation);
+            this.relationElement_Link_parent_FK_relation = new global::System.Data.DataRelation("Element_Link_parent_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableElement_table.element_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLink_elements_table.parent_element_id_for_linkColumn}, false);
+            this.Relations.Add(this.relationElement_Link_parent_FK_relation);
+            this.relationImportance_Level_FK_relation = new global::System.Data.DataRelation("Importance_Level_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableImportance_table.importance_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLevel_table.importance_id_for_levelColumn}, false);
+            this.Relations.Add(this.relationImportance_Level_FK_relation);
+            this.relationImportance_Phase_FK_relation = new global::System.Data.DataRelation("Importance_Phase_FK_relation", new global::System.Data.DataColumn[] {
+                        this.tableImportance_table.importance_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePhase_table.phase_idColumn}, false);
+            this.Relations.Add(this.relationImportance_Phase_FK_relation);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeProject_table() {
+        private bool ShouldSerializeModel_table() {
             return false;
         }
         
@@ -475,6 +546,12 @@ namespace pl2.rainbow.description.xml.project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeImportance_table() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeOptions_table() {
             return false;
         }
         
@@ -534,7 +611,7 @@ namespace pl2.rainbow.description.xml.project {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void Project_tableRowChangeEventHandler(object sender, Project_tableRowChangeEvent e);
+        public delegate void Model_tableRowChangeEventHandler(object sender, Model_tableRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Cell_tableRowChangeEventHandler(object sender, Cell_tableRowChangeEvent e);
@@ -554,23 +631,28 @@ namespace pl2.rainbow.description.xml.project {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void Importance_tableRowChangeEventHandler(object sender, Importance_tableRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void Options_tableRowChangeEventHandler(object sender, Options_tableRowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Project_tableDataTable : global::System.Data.TypedTableBase<Project_tableRow> {
+        public partial class Model_tableDataTable : global::System.Data.TypedTableBase<Model_tableRow> {
             
-            private global::System.Data.DataColumn columnproject_id;
+            private global::System.Data.DataColumn columnmodel_id;
             
-            private global::System.Data.DataColumn columnname_of_project;
+            private global::System.Data.DataColumn columnname_of_model;
             
-            private global::System.Data.DataColumn columndescription_for_project;
+            private global::System.Data.DataColumn columndescription_for_model;
+            
+            private global::System.Data.DataColumn columncontext_of_model;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableDataTable() {
-                this.TableName = "Project_table";
+            public Model_tableDataTable() {
+                this.TableName = "Model_table";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -578,7 +660,7 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Project_tableDataTable(global::System.Data.DataTable table) {
+            internal Model_tableDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -595,32 +677,40 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected Project_tableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Model_tableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn project_idColumn {
+            public global::System.Data.DataColumn model_idColumn {
                 get {
-                    return this.columnproject_id;
+                    return this.columnmodel_id;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn name_of_projectColumn {
+            public global::System.Data.DataColumn name_of_modelColumn {
                 get {
-                    return this.columnname_of_project;
+                    return this.columnname_of_model;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn description_for_projectColumn {
+            public global::System.Data.DataColumn description_for_modelColumn {
                 get {
-                    return this.columndescription_for_project;
+                    return this.columndescription_for_model;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn context_of_modelColumn {
+                get {
+                    return this.columncontext_of_model;
                 }
             }
             
@@ -635,54 +725,55 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableRow this[int index] {
+            public Model_tableRow this[int index] {
                 get {
-                    return ((Project_tableRow)(this.Rows[index]));
+                    return ((Model_tableRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Project_tableRowChangeEventHandler Project_tableRowChanging;
+            public event Model_tableRowChangeEventHandler Model_tableRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Project_tableRowChangeEventHandler Project_tableRowChanged;
+            public event Model_tableRowChangeEventHandler Model_tableRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Project_tableRowChangeEventHandler Project_tableRowDeleting;
+            public event Model_tableRowChangeEventHandler Model_tableRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Project_tableRowChangeEventHandler Project_tableRowDeleted;
+            public event Model_tableRowChangeEventHandler Model_tableRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddProject_tableRow(Project_tableRow row) {
+            public void AddModel_tableRow(Model_tableRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableRow AddProject_tableRow(string name_of_project, string description_for_project) {
-                Project_tableRow rowProject_tableRow = ((Project_tableRow)(this.NewRow()));
+            public Model_tableRow AddModel_tableRow(string name_of_model, string description_for_model, string context_of_model) {
+                Model_tableRow rowModel_tableRow = ((Model_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        name_of_project,
-                        description_for_project};
-                rowProject_tableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowProject_tableRow);
-                return rowProject_tableRow;
+                        name_of_model,
+                        description_for_model,
+                        context_of_model};
+                rowModel_tableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowModel_tableRow);
+                return rowModel_tableRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableRow FindByproject_id(int project_id) {
-                return ((Project_tableRow)(this.Rows.Find(new object[] {
-                            project_id})));
+            public Model_tableRow FindBymodel_id(int model_id) {
+                return ((Model_tableRow)(this.Rows.Find(new object[] {
+                            model_id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Project_tableDataTable cln = ((Project_tableDataTable)(base.Clone()));
+                Model_tableDataTable cln = ((Model_tableDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -690,61 +781,64 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Project_tableDataTable();
+                return new Model_tableDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnproject_id = base.Columns["project_id"];
-                this.columnname_of_project = base.Columns["name_of_project"];
-                this.columndescription_for_project = base.Columns["description_for_project"];
+                this.columnmodel_id = base.Columns["model_id"];
+                this.columnname_of_model = base.Columns["name_of_model"];
+                this.columndescription_for_model = base.Columns["description_for_model"];
+                this.columncontext_of_model = base.Columns["context_of_model"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnproject_id = new global::System.Data.DataColumn("project_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproject_id);
-                this.columnname_of_project = new global::System.Data.DataColumn("name_of_project", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnname_of_project);
-                this.columndescription_for_project = new global::System.Data.DataColumn("description_for_project", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescription_for_project);
+                this.columnmodel_id = new global::System.Data.DataColumn("model_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmodel_id);
+                this.columnname_of_model = new global::System.Data.DataColumn("name_of_model", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_model);
+                this.columndescription_for_model = new global::System.Data.DataColumn("description_for_model", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription_for_model);
+                this.columncontext_of_model = new global::System.Data.DataColumn("context_of_model", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncontext_of_model);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Project_id_Key", new global::System.Data.DataColumn[] {
-                                this.columnproject_id}, true));
-                this.columnproject_id.AutoIncrement = true;
-                this.columnproject_id.AutoIncrementSeed = 1;
-                this.columnproject_id.AllowDBNull = false;
-                this.columnproject_id.Unique = true;
-                this.columnproject_id.Caption = "Проект";
-                this.columnname_of_project.Caption = "Название проекта";
-                this.columndescription_for_project.Caption = "Описание проекта";
+                                this.columnmodel_id}, true));
+                this.columnmodel_id.AutoIncrement = true;
+                this.columnmodel_id.AutoIncrementSeed = 1;
+                this.columnmodel_id.AllowDBNull = false;
+                this.columnmodel_id.Unique = true;
+                this.columnmodel_id.Caption = "Проект";
+                this.columnname_of_model.Caption = "Название проекта";
+                this.columndescription_for_model.Caption = "Описание проекта";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableRow NewProject_tableRow() {
-                return ((Project_tableRow)(this.NewRow()));
+            public Model_tableRow NewModel_tableRow() {
+                return ((Model_tableRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Project_tableRow(builder);
+                return new Model_tableRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Project_tableRow);
+                return typeof(Model_tableRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Project_tableRowChanged != null)) {
-                    this.Project_tableRowChanged(this, new Project_tableRowChangeEvent(((Project_tableRow)(e.Row)), e.Action));
+                if ((this.Model_tableRowChanged != null)) {
+                    this.Model_tableRowChanged(this, new Model_tableRowChangeEvent(((Model_tableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -752,8 +846,8 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Project_tableRowChanging != null)) {
-                    this.Project_tableRowChanging(this, new Project_tableRowChangeEvent(((Project_tableRow)(e.Row)), e.Action));
+                if ((this.Model_tableRowChanging != null)) {
+                    this.Model_tableRowChanging(this, new Model_tableRowChangeEvent(((Model_tableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -761,8 +855,8 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Project_tableRowDeleted != null)) {
-                    this.Project_tableRowDeleted(this, new Project_tableRowChangeEvent(((Project_tableRow)(e.Row)), e.Action));
+                if ((this.Model_tableRowDeleted != null)) {
+                    this.Model_tableRowDeleted(this, new Model_tableRowChangeEvent(((Model_tableRow)(e.Row)), e.Action));
                 }
             }
             
@@ -770,14 +864,14 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Project_tableRowDeleting != null)) {
-                    this.Project_tableRowDeleting(this, new Project_tableRowChangeEvent(((Project_tableRow)(e.Row)), e.Action));
+                if ((this.Model_tableRowDeleting != null)) {
+                    this.Model_tableRowDeleting(this, new Model_tableRowChangeEvent(((Model_tableRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveProject_tableRow(Project_tableRow row) {
+            public void RemoveModel_tableRow(Model_tableRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -804,7 +898,7 @@ namespace pl2.rainbow.description.xml.project {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Project_tableDataTable";
+                attribute2.FixedValue = "Model_tableDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -852,8 +946,6 @@ namespace pl2.rainbow.description.xml.project {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Cell_tableDataTable : global::System.Data.TypedTableBase<Cell_tableRow> {
             
-            private global::System.Data.DataColumn columnproject_id_for_cell;
-            
             private global::System.Data.DataColumn columnlevel_id_for_cell;
             
             private global::System.Data.DataColumn columnphase_id_for_cell;
@@ -891,14 +983,6 @@ namespace pl2.rainbow.description.xml.project {
             protected Cell_tableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn project_id_for_cellColumn {
-                get {
-                    return this.columnproject_id_for_cell;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -962,21 +1046,17 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Cell_tableRow AddCell_tableRow(Project_tableRow parentProject_tableRowByProject_Cell_Relation, Level_tableRow parentLevel_tableRowByLevel_Cell, Phase_tableRow parentPhase_tableRowByPhase_Cell, string name_of_cell_common) {
+            public Cell_tableRow AddCell_tableRow(Level_tableRow parentLevel_tableRowByLevel_Cell_FK_relation, Phase_tableRow parentPhase_tableRowByPhase_Cell_FK_relation, string name_of_cell_common) {
                 Cell_tableRow rowCell_tableRow = ((Cell_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        null,
                         name_of_cell_common};
-                if ((parentProject_tableRowByProject_Cell_Relation != null)) {
-                    columnValuesArray[0] = parentProject_tableRowByProject_Cell_Relation[0];
+                if ((parentLevel_tableRowByLevel_Cell_FK_relation != null)) {
+                    columnValuesArray[0] = parentLevel_tableRowByLevel_Cell_FK_relation[0];
                 }
-                if ((parentLevel_tableRowByLevel_Cell != null)) {
-                    columnValuesArray[1] = parentLevel_tableRowByLevel_Cell[0];
-                }
-                if ((parentPhase_tableRowByPhase_Cell != null)) {
-                    columnValuesArray[2] = parentPhase_tableRowByPhase_Cell[0];
+                if ((parentPhase_tableRowByPhase_Cell_FK_relation != null)) {
+                    columnValuesArray[1] = parentPhase_tableRowByPhase_Cell_FK_relation[0];
                 }
                 rowCell_tableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCell_tableRow);
@@ -985,9 +1065,8 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Cell_tableRow FindByproject_id_for_celllevel_id_for_cellphase_id_for_cell(int project_id_for_cell, int level_id_for_cell, int phase_id_for_cell) {
+            public Cell_tableRow FindBylevel_id_for_cellphase_id_for_cell(int level_id_for_cell, int phase_id_for_cell) {
                 return ((Cell_tableRow)(this.Rows.Find(new object[] {
-                            project_id_for_cell,
                             level_id_for_cell,
                             phase_id_for_cell})));
             }
@@ -1009,7 +1088,6 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnproject_id_for_cell = base.Columns["project_id_for_cell"];
                 this.columnlevel_id_for_cell = base.Columns["level_id_for_cell"];
                 this.columnphase_id_for_cell = base.Columns["phase_id_for_cell"];
                 this.columnname_of_cell_common = base.Columns["name_of_cell_common"];
@@ -1018,20 +1096,15 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnproject_id_for_cell = new global::System.Data.DataColumn("project_id_for_cell", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproject_id_for_cell);
                 this.columnlevel_id_for_cell = new global::System.Data.DataColumn("level_id_for_cell", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlevel_id_for_cell);
                 this.columnphase_id_for_cell = new global::System.Data.DataColumn("phase_id_for_cell", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnphase_id_for_cell);
                 this.columnname_of_cell_common = new global::System.Data.DataColumn("name_of_cell_common", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname_of_cell_common);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Cell_Key", new global::System.Data.DataColumn[] {
-                                this.columnproject_id_for_cell,
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnlevel_id_for_cell,
                                 this.columnphase_id_for_cell}, true));
-                this.columnproject_id_for_cell.AllowDBNull = false;
-                this.columnproject_id_for_cell.Caption = "Проект";
                 this.columnlevel_id_for_cell.AllowDBNull = false;
                 this.columnlevel_id_for_cell.Caption = "Уровень";
                 this.columnlevel_id_for_cell.DefaultValue = ((int)(0));
@@ -1172,7 +1245,7 @@ namespace pl2.rainbow.description.xml.project {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Element_tableDataTable : global::System.Data.TypedTableBase<Element_tableRow> {
             
-            private global::System.Data.DataColumn columnproject_id_for_element;
+            private global::System.Data.DataColumn columnmodel_id_for_element;
             
             private global::System.Data.DataColumn columnlevel_id_for_element;
             
@@ -1219,9 +1292,9 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn project_id_for_elementColumn {
+            public global::System.Data.DataColumn model_id_for_elementColumn {
                 get {
-                    return this.columnproject_id_for_element;
+                    return this.columnmodel_id_for_element;
                 }
             }
             
@@ -1302,15 +1375,18 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Element_tableRow AddElement_tableRow(int project_id_for_element, int level_id_for_element, int phase_id_for_element, string name_of_element, string description_for_element) {
+            public Element_tableRow AddElement_tableRow(Model_tableRow parentModel_tableRowByModel_Element_FK_relation, int level_id_for_element, int phase_id_for_element, string name_of_element, string description_for_element) {
                 Element_tableRow rowElement_tableRow = ((Element_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        project_id_for_element,
+                        null,
                         level_id_for_element,
                         phase_id_for_element,
                         null,
                         name_of_element,
                         description_for_element};
+                if ((parentModel_tableRowByModel_Element_FK_relation != null)) {
+                    columnValuesArray[0] = parentModel_tableRowByModel_Element_FK_relation[0];
+                }
                 rowElement_tableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowElement_tableRow);
                 return rowElement_tableRow;
@@ -1340,7 +1416,7 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnproject_id_for_element = base.Columns["project_id_for_element"];
+                this.columnmodel_id_for_element = base.Columns["model_id_for_element"];
                 this.columnlevel_id_for_element = base.Columns["level_id_for_element"];
                 this.columnphase_id_for_element = base.Columns["phase_id_for_element"];
                 this.columnelement_id = base.Columns["element_id"];
@@ -1351,8 +1427,8 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnproject_id_for_element = new global::System.Data.DataColumn("project_id_for_element", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnproject_id_for_element);
+                this.columnmodel_id_for_element = new global::System.Data.DataColumn("model_id_for_element", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmodel_id_for_element);
                 this.columnlevel_id_for_element = new global::System.Data.DataColumn("level_id_for_element", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlevel_id_for_element);
                 this.columnphase_id_for_element = new global::System.Data.DataColumn("phase_id_for_element", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1364,13 +1440,16 @@ namespace pl2.rainbow.description.xml.project {
                 this.columndescription_for_element = new global::System.Data.DataColumn("description_for_element", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescription_for_element);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("cell", new global::System.Data.DataColumn[] {
-                                this.columnproject_id_for_element,
+                                this.columnmodel_id_for_element,
                                 this.columnlevel_id_for_element,
                                 this.columnphase_id_for_element}, false));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Element_id_Key", new global::System.Data.DataColumn[] {
                                 this.columnelement_id}, true));
-                this.columnproject_id_for_element.AllowDBNull = false;
-                this.columnproject_id_for_element.Caption = "Проект";
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnmodel_id_for_element}, false));
+                this.columnmodel_id_for_element.AllowDBNull = false;
+                this.columnmodel_id_for_element.Unique = true;
+                this.columnmodel_id_for_element.Caption = "Проект";
                 this.columnlevel_id_for_element.AllowDBNull = false;
                 this.columnlevel_id_for_element.Caption = "Уровень";
                 this.columnlevel_id_for_element.DefaultValue = ((int)(0));
@@ -1635,7 +1714,7 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Link_elements_tableRow AddLink_elements_tableRow(Element_tableRow parentElement_tableRowByCell_value_link_parent_Relation, Element_tableRow parentElement_tableRowByCell_value_link_chield_Relation, string name_of_link, string description_for_link) {
+            public Link_elements_tableRow AddLink_elements_tableRow(Element_tableRow parentElement_tableRowByElement_Link_parent_FK_relation, Element_tableRow parentElement_tableRowByElement_Link_chield_FK_relation, string name_of_link, string description_for_link) {
                 Link_elements_tableRow rowLink_elements_tableRow = ((Link_elements_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1643,11 +1722,11 @@ namespace pl2.rainbow.description.xml.project {
                         null,
                         name_of_link,
                         description_for_link};
-                if ((parentElement_tableRowByCell_value_link_parent_Relation != null)) {
-                    columnValuesArray[1] = parentElement_tableRowByCell_value_link_parent_Relation[3];
+                if ((parentElement_tableRowByElement_Link_parent_FK_relation != null)) {
+                    columnValuesArray[1] = parentElement_tableRowByElement_Link_parent_FK_relation[3];
                 }
-                if ((parentElement_tableRowByCell_value_link_chield_Relation != null)) {
-                    columnValuesArray[2] = parentElement_tableRowByCell_value_link_chield_Relation[3];
+                if ((parentElement_tableRowByElement_Link_chield_FK_relation != null)) {
+                    columnValuesArray[2] = parentElement_tableRowByElement_Link_chield_FK_relation[3];
                 }
                 rowLink_elements_tableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLink_elements_tableRow);
@@ -1940,14 +2019,14 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Level_tableRow AddLevel_tableRow(int level_id, string name_of_level, Importance_tableRow parentImportance_tableRowByImportance_Level_relation) {
+            public Level_tableRow AddLevel_tableRow(int level_id, string name_of_level, Importance_tableRow parentImportance_tableRowByImportance_Level_FK_relation) {
                 Level_tableRow rowLevel_tableRow = ((Level_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         level_id,
                         name_of_level,
                         null};
-                if ((parentImportance_tableRowByImportance_Level_relation != null)) {
-                    columnValuesArray[2] = parentImportance_tableRowByImportance_Level_relation[0];
+                if ((parentImportance_tableRowByImportance_Level_FK_relation != null)) {
+                    columnValuesArray[2] = parentImportance_tableRowByImportance_Level_FK_relation[0];
                 }
                 rowLevel_tableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLevel_tableRow);
@@ -2250,7 +2329,7 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Phase_tableRow AddPhase_tableRow(Importance_tableRow parentImportance_tableRowByImportance_Phase, string name_of_phase, int importance_id_for_phase, float percent_of_phase_middle, string width_of_phase) {
+            public Phase_tableRow AddPhase_tableRow(Importance_tableRow parentImportance_tableRowByImportance_Phase_FK_relation, string name_of_phase, int importance_id_for_phase, float percent_of_phase_middle, string width_of_phase) {
                 Phase_tableRow rowPhase_tableRow = ((Phase_tableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2258,8 +2337,8 @@ namespace pl2.rainbow.description.xml.project {
                         importance_id_for_phase,
                         percent_of_phase_middle,
                         width_of_phase};
-                if ((parentImportance_tableRowByImportance_Phase != null)) {
-                    columnValuesArray[0] = parentImportance_tableRowByImportance_Phase[0];
+                if ((parentImportance_tableRowByImportance_Phase_FK_relation != null)) {
+                    columnValuesArray[0] = parentImportance_tableRowByImportance_Phase_FK_relation[0];
                 }
                 rowPhase_tableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPhase_tableRow);
@@ -2721,95 +2800,490 @@ namespace pl2.rainbow.description.xml.project {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Options_tableDataTable : global::System.Data.TypedTableBase<Options_tableRow> {
+            
+            private global::System.Data.DataColumn columnnumber_of_levels;
+            
+            private global::System.Data.DataColumn columnnumber_of_directions;
+            
+            private global::System.Data.DataColumn columncenter_allways_visible;
+            
+            private global::System.Data.DataColumn columnvisible_importance;
+            
+            private global::System.Data.DataColumn columnvisible_reserved;
+            
+            private global::System.Data.DataColumn columnvisible_symmetric;
+            
+            private global::System.Data.DataColumn columnname_of_projrct;
+            
+            private global::System.Data.DataColumn columndescription_for_project;
+            
+            private global::System.Data.DataColumn columnmain_context;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Options_tableDataTable() {
+                this.TableName = "Options_table";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Options_tableDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected Options_tableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn number_of_levelsColumn {
+                get {
+                    return this.columnnumber_of_levels;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn number_of_directionsColumn {
+                get {
+                    return this.columnnumber_of_directions;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn center_allways_visibleColumn {
+                get {
+                    return this.columncenter_allways_visible;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn visible_importanceColumn {
+                get {
+                    return this.columnvisible_importance;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn visible_reservedColumn {
+                get {
+                    return this.columnvisible_reserved;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn visible_symmetricColumn {
+                get {
+                    return this.columnvisible_symmetric;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn name_of_projrctColumn {
+                get {
+                    return this.columnname_of_projrct;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn description_for_projectColumn {
+                get {
+                    return this.columndescription_for_project;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn main_contextColumn {
+                get {
+                    return this.columnmain_context;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Options_tableRow this[int index] {
+                get {
+                    return ((Options_tableRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Options_tableRowChangeEventHandler Options_tableRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Options_tableRowChangeEventHandler Options_tableRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Options_tableRowChangeEventHandler Options_tableRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event Options_tableRowChangeEventHandler Options_tableRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddOptions_tableRow(Options_tableRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Options_tableRow AddOptions_tableRow(int number_of_levels, int number_of_directions, bool center_allways_visible, int visible_importance, bool visible_reserved, bool visible_symmetric, string name_of_projrct, string description_for_project, string main_context) {
+                Options_tableRow rowOptions_tableRow = ((Options_tableRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        number_of_levels,
+                        number_of_directions,
+                        center_allways_visible,
+                        visible_importance,
+                        visible_reserved,
+                        visible_symmetric,
+                        name_of_projrct,
+                        description_for_project,
+                        main_context};
+                rowOptions_tableRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOptions_tableRow);
+                return rowOptions_tableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Options_tableDataTable cln = ((Options_tableDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Options_tableDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnnumber_of_levels = base.Columns["number_of_levels"];
+                this.columnnumber_of_directions = base.Columns["number_of_directions"];
+                this.columncenter_allways_visible = base.Columns["center_allways_visible"];
+                this.columnvisible_importance = base.Columns["visible_importance"];
+                this.columnvisible_reserved = base.Columns["visible_reserved"];
+                this.columnvisible_symmetric = base.Columns["visible_symmetric"];
+                this.columnname_of_projrct = base.Columns["name_of_projrct"];
+                this.columndescription_for_project = base.Columns["description_for_project"];
+                this.columnmain_context = base.Columns["main_context"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnnumber_of_levels = new global::System.Data.DataColumn("number_of_levels", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumber_of_levels);
+                this.columnnumber_of_directions = new global::System.Data.DataColumn("number_of_directions", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumber_of_directions);
+                this.columncenter_allways_visible = new global::System.Data.DataColumn("center_allways_visible", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncenter_allways_visible);
+                this.columnvisible_importance = new global::System.Data.DataColumn("visible_importance", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvisible_importance);
+                this.columnvisible_reserved = new global::System.Data.DataColumn("visible_reserved", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvisible_reserved);
+                this.columnvisible_symmetric = new global::System.Data.DataColumn("visible_symmetric", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvisible_symmetric);
+                this.columnname_of_projrct = new global::System.Data.DataColumn("name_of_projrct", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname_of_projrct);
+                this.columndescription_for_project = new global::System.Data.DataColumn("description_for_project", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndescription_for_project);
+                this.columnmain_context = new global::System.Data.DataColumn("main_context", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmain_context);
+                this.columnnumber_of_levels.AllowDBNull = false;
+                this.columnnumber_of_levels.DefaultValue = ((int)(4));
+                this.columnnumber_of_directions.AllowDBNull = false;
+                this.columnnumber_of_directions.DefaultValue = ((int)(4));
+                this.columncenter_allways_visible.DefaultValue = ((bool)(true));
+                this.columnvisible_importance.DefaultValue = ((int)(3));
+                this.columnvisible_reserved.DefaultValue = ((bool)(false));
+                this.columnvisible_symmetric.DefaultValue = ((bool)(true));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Options_tableRow NewOptions_tableRow() {
+                return ((Options_tableRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Options_tableRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Options_tableRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Options_tableRowChanged != null)) {
+                    this.Options_tableRowChanged(this, new Options_tableRowChangeEvent(((Options_tableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Options_tableRowChanging != null)) {
+                    this.Options_tableRowChanging(this, new Options_tableRowChangeEvent(((Options_tableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Options_tableRowDeleted != null)) {
+                    this.Options_tableRowDeleted(this, new Options_tableRowChangeEvent(((Options_tableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Options_tableRowDeleting != null)) {
+                    this.Options_tableRowDeleting(this, new Options_tableRowChangeEvent(((Options_tableRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveOptions_tableRow(Options_tableRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Rainbow ds = new Rainbow();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Options_tableDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Project_tableRow : global::System.Data.DataRow {
+        public partial class Model_tableRow : global::System.Data.DataRow {
             
-            private Project_tableDataTable tableProject_table;
+            private Model_tableDataTable tableModel_table;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Project_tableRow(global::System.Data.DataRowBuilder rb) : 
+            internal Model_tableRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableProject_table = ((Project_tableDataTable)(this.Table));
+                this.tableModel_table = ((Model_tableDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int project_id {
+            public int model_id {
                 get {
-                    return ((int)(this[this.tableProject_table.project_idColumn]));
+                    return ((int)(this[this.tableModel_table.model_idColumn]));
                 }
                 set {
-                    this[this.tableProject_table.project_idColumn] = value;
+                    this[this.tableModel_table.model_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string name_of_project {
-                get {
-                    try {
-                        return ((string)(this[this.tableProject_table.name_of_projectColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_project\' в таблице \'Project_table\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableProject_table.name_of_projectColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string description_for_project {
+            public string name_of_model {
                 get {
                     try {
-                        return ((string)(this[this.tableProject_table.description_for_projectColumn]));
+                        return ((string)(this[this.tableModel_table.name_of_modelColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'description_for_project\' в таблице \'Project_table\' равно DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_model\' в таблице \'Model_table\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableProject_table.description_for_projectColumn] = value;
+                    this[this.tableModel_table.name_of_modelColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isname_of_projectNull() {
-                return this.IsNull(this.tableProject_table.name_of_projectColumn);
+            public string description_for_model {
+                get {
+                    try {
+                        return ((string)(this[this.tableModel_table.description_for_modelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'description_for_model\' в таблице \'Model_table\' равно DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableModel_table.description_for_modelColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setname_of_projectNull() {
-                this[this.tableProject_table.name_of_projectColumn] = global::System.Convert.DBNull;
+            public string context_of_model {
+                get {
+                    try {
+                        return ((string)(this[this.tableModel_table.context_of_modelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'context_of_model\' в таблице \'Model_table\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableModel_table.context_of_modelColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdescription_for_projectNull() {
-                return this.IsNull(this.tableProject_table.description_for_projectColumn);
+            public bool Isname_of_modelNull() {
+                return this.IsNull(this.tableModel_table.name_of_modelColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdescription_for_projectNull() {
-                this[this.tableProject_table.description_for_projectColumn] = global::System.Convert.DBNull;
+            public void Setname_of_modelNull() {
+                this[this.tableModel_table.name_of_modelColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Cell_tableRow[] GetCell_tableRows() {
-                if ((this.Table.ChildRelations["Project_Cell_Relation"] == null)) {
-                    return new Cell_tableRow[0];
+            public bool Isdescription_for_modelNull() {
+                return this.IsNull(this.tableModel_table.description_for_modelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdescription_for_modelNull() {
+                this[this.tableModel_table.description_for_modelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscontext_of_modelNull() {
+                return this.IsNull(this.tableModel_table.context_of_modelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcontext_of_modelNull() {
+                this[this.tableModel_table.context_of_modelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Element_tableRow[] GetElement_tableRows() {
+                if ((this.Table.ChildRelations["Model_Element_FK_relation"] == null)) {
+                    return new Element_tableRow[0];
                 }
                 else {
-                    return ((Cell_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Project_Cell_Relation"])));
+                    return ((Element_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Model_Element_FK_relation"])));
                 }
             }
         }
@@ -2826,17 +3300,6 @@ namespace pl2.rainbow.description.xml.project {
             internal Cell_tableRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableCell_table = ((Cell_tableDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int project_id_for_cell {
-                get {
-                    return ((int)(this[this.tableCell_table.project_id_for_cellColumn]));
-                }
-                set {
-                    this[this.tableCell_table.project_id_for_cellColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2879,12 +3342,12 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableRow ProjectRow {
+            public Phase_tableRow Phase_tableRow {
                 get {
-                    return ((Project_tableRow)(this.GetParentRow(this.Table.ParentRelations["Project_Cell_Relation"])));
+                    return ((Phase_tableRow)(this.GetParentRow(this.Table.ParentRelations["Phase_Cell_FK_relation"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Project_Cell_Relation"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Phase_Cell_FK_relation"]);
                 }
             }
             
@@ -2892,21 +3355,10 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Level_tableRow Level_tableRow {
                 get {
-                    return ((Level_tableRow)(this.GetParentRow(this.Table.ParentRelations["Level_Cell"])));
+                    return ((Level_tableRow)(this.GetParentRow(this.Table.ParentRelations["Level_Cell_FK_relation"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Level_Cell"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Phase_tableRow Phase_tableRow {
-                get {
-                    return ((Phase_tableRow)(this.GetParentRow(this.Table.ParentRelations["Phase_Cell"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Phase_Cell"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Level_Cell_FK_relation"]);
                 }
             }
             
@@ -2925,11 +3377,11 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Element_tableRow[] GetElement_tableRows() {
-                if ((this.Table.ChildRelations["Cell_Cell_value_Relation"] == null)) {
+                if ((this.Table.ChildRelations["Cell_Element_FK_relation"] == null)) {
                     return new Element_tableRow[0];
                 }
                 else {
-                    return ((Element_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Cell_Cell_value_Relation"])));
+                    return ((Element_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Cell_Element_FK_relation"])));
                 }
             }
         }
@@ -2950,12 +3402,12 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int project_id_for_element {
+            public int model_id_for_element {
                 get {
-                    return ((int)(this[this.tableElement_table.project_id_for_elementColumn]));
+                    return ((int)(this[this.tableElement_table.model_id_for_elementColumn]));
                 }
                 set {
-                    this[this.tableElement_table.project_id_for_elementColumn] = value;
+                    this[this.tableElement_table.model_id_for_elementColumn] = value;
                 }
             }
             
@@ -3035,10 +3487,21 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Cell_tableRow Cell_tableRowParent {
                 get {
-                    return ((Cell_tableRow)(this.GetParentRow(this.Table.ParentRelations["Cell_Cell_value_Relation"])));
+                    return ((Cell_tableRow)(this.GetParentRow(this.Table.ParentRelations["Cell_Element_FK_relation"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Cell_Cell_value_Relation"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Cell_Element_FK_relation"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Model_tableRow Model_tableRow {
+                get {
+                    return ((Model_tableRow)(this.GetParentRow(this.Table.ParentRelations["Model_Element_FK_relation"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Model_Element_FK_relation"]);
                 }
             }
             
@@ -3080,23 +3543,23 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Link_elements_tableRow[] GetLink_elements_tableRowsByCell_value_link_parent_Relation() {
-                if ((this.Table.ChildRelations["Cell_value_link_parent_Relation"] == null)) {
+            public Link_elements_tableRow[] GetLink_elements_tableRowsByElement_Link_chield_FK_relation() {
+                if ((this.Table.ChildRelations["Element_Link_chield_FK_relation"] == null)) {
                     return new Link_elements_tableRow[0];
                 }
                 else {
-                    return ((Link_elements_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Cell_value_link_parent_Relation"])));
+                    return ((Link_elements_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Element_Link_chield_FK_relation"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Link_elements_tableRow[] GetLink_elements_tableRowsByCell_value_link_chield_Relation() {
-                if ((this.Table.ChildRelations["Cell_value_link_chield_Relation"] == null)) {
+            public Link_elements_tableRow[] GetLink_elements_tableRowsByElement_Link_parent_FK_relation() {
+                if ((this.Table.ChildRelations["Element_Link_parent_FK_relation"] == null)) {
                     return new Link_elements_tableRow[0];
                 }
                 else {
-                    return ((Link_elements_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Cell_value_link_chield_Relation"])));
+                    return ((Link_elements_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Element_Link_parent_FK_relation"])));
                 }
             }
         }
@@ -3196,23 +3659,23 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Element_tableRow Cell_valueRowByCell_value_link_parent_Relation {
+            public Element_tableRow Element_tableRowByElement_Link_chield_FK_relation {
                 get {
-                    return ((Element_tableRow)(this.GetParentRow(this.Table.ParentRelations["Cell_value_link_parent_Relation"])));
+                    return ((Element_tableRow)(this.GetParentRow(this.Table.ParentRelations["Element_Link_chield_FK_relation"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Cell_value_link_parent_Relation"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Element_Link_chield_FK_relation"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Element_tableRow Cell_valueRowByCell_value_link_chield_Relation {
+            public Element_tableRow Element_tableRowByElement_Link_parent_FK_relation {
                 get {
-                    return ((Element_tableRow)(this.GetParentRow(this.Table.ParentRelations["Cell_value_link_chield_Relation"])));
+                    return ((Element_tableRow)(this.GetParentRow(this.Table.ParentRelations["Element_Link_parent_FK_relation"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Cell_value_link_chield_Relation"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Element_Link_parent_FK_relation"]);
                 }
             }
             
@@ -3327,10 +3790,10 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Importance_tableRow Importance_tableRow {
                 get {
-                    return ((Importance_tableRow)(this.GetParentRow(this.Table.ParentRelations["Importance_Level_relation"])));
+                    return ((Importance_tableRow)(this.GetParentRow(this.Table.ParentRelations["Importance_Level_FK_relation"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Importance_Level_relation"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Importance_Level_FK_relation"]);
                 }
             }
             
@@ -3360,12 +3823,12 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Cell_tableRow[] GetCellRows() {
-                if ((this.Table.ChildRelations["Level_Cell"] == null)) {
+            public Cell_tableRow[] GetCell_tableRows() {
+                if ((this.Table.ChildRelations["Level_Cell_FK_relation"] == null)) {
                     return new Cell_tableRow[0];
                 }
                 else {
-                    return ((Cell_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Level_Cell"])));
+                    return ((Cell_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Level_Cell_FK_relation"])));
                 }
             }
         }
@@ -3470,10 +3933,10 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Importance_tableRow Importance_tableRow {
                 get {
-                    return ((Importance_tableRow)(this.GetParentRow(this.Table.ParentRelations["Importance_Phase"])));
+                    return ((Importance_tableRow)(this.GetParentRow(this.Table.ParentRelations["Importance_Phase_FK_relation"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Importance_Phase"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Importance_Phase_FK_relation"]);
                 }
             }
             
@@ -3539,12 +4002,12 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Cell_tableRow[] GetCellRows() {
-                if ((this.Table.ChildRelations["Phase_Cell"] == null)) {
+            public Cell_tableRow[] GetCell_tableRows() {
+                if ((this.Table.ChildRelations["Phase_Cell_FK_relation"] == null)) {
                     return new Cell_tableRow[0];
                 }
                 else {
-                    return ((Cell_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Phase_Cell"])));
+                    return ((Cell_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Phase_Cell_FK_relation"])));
                 }
             }
         }
@@ -3634,24 +4097,260 @@ namespace pl2.rainbow.description.xml.project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Level_tableRow[] GetLevelRows() {
-                if ((this.Table.ChildRelations["Importance_Level_relation"] == null)) {
-                    return new Level_tableRow[0];
+            public Phase_tableRow[] GetPhase_tableRows() {
+                if ((this.Table.ChildRelations["Importance_Phase_FK_relation"] == null)) {
+                    return new Phase_tableRow[0];
                 }
                 else {
-                    return ((Level_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Importance_Level_relation"])));
+                    return ((Phase_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Importance_Phase_FK_relation"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Phase_tableRow[] GetPhaseRows() {
-                if ((this.Table.ChildRelations["Importance_Phase"] == null)) {
-                    return new Phase_tableRow[0];
+            public Level_tableRow[] GetLevel_tableRows() {
+                if ((this.Table.ChildRelations["Importance_Level_FK_relation"] == null)) {
+                    return new Level_tableRow[0];
                 }
                 else {
-                    return ((Phase_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Importance_Phase"])));
+                    return ((Level_tableRow[])(base.GetChildRows(this.Table.ChildRelations["Importance_Level_FK_relation"])));
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Options_tableRow : global::System.Data.DataRow {
+            
+            private Options_tableDataTable tableOptions_table;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal Options_tableRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableOptions_table = ((Options_tableDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int number_of_levels {
+                get {
+                    return ((int)(this[this.tableOptions_table.number_of_levelsColumn]));
+                }
+                set {
+                    this[this.tableOptions_table.number_of_levelsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int number_of_directions {
+                get {
+                    return ((int)(this[this.tableOptions_table.number_of_directionsColumn]));
+                }
+                set {
+                    this[this.tableOptions_table.number_of_directionsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool center_allways_visible {
+                get {
+                    try {
+                        return ((bool)(this[this.tableOptions_table.center_allways_visibleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'center_allways_visible\' в таблице \'Options_table\' равно DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOptions_table.center_allways_visibleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int visible_importance {
+                get {
+                    try {
+                        return ((int)(this[this.tableOptions_table.visible_importanceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'visible_importance\' в таблице \'Options_table\' равно DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableOptions_table.visible_importanceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool visible_reserved {
+                get {
+                    try {
+                        return ((bool)(this[this.tableOptions_table.visible_reservedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'visible_reserved\' в таблице \'Options_table\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOptions_table.visible_reservedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool visible_symmetric {
+                get {
+                    try {
+                        return ((bool)(this[this.tableOptions_table.visible_symmetricColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'visible_symmetric\' в таблице \'Options_table\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOptions_table.visible_symmetricColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string name_of_projrct {
+                get {
+                    try {
+                        return ((string)(this[this.tableOptions_table.name_of_projrctColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'name_of_projrct\' в таблице \'Options_table\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOptions_table.name_of_projrctColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string description_for_project {
+                get {
+                    try {
+                        return ((string)(this[this.tableOptions_table.description_for_projectColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'description_for_project\' в таблице \'Options_table\' равно DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableOptions_table.description_for_projectColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string main_context {
+                get {
+                    try {
+                        return ((string)(this[this.tableOptions_table.main_contextColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'main_context\' в таблице \'Options_table\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOptions_table.main_contextColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscenter_allways_visibleNull() {
+                return this.IsNull(this.tableOptions_table.center_allways_visibleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcenter_allways_visibleNull() {
+                this[this.tableOptions_table.center_allways_visibleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isvisible_importanceNull() {
+                return this.IsNull(this.tableOptions_table.visible_importanceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setvisible_importanceNull() {
+                this[this.tableOptions_table.visible_importanceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isvisible_reservedNull() {
+                return this.IsNull(this.tableOptions_table.visible_reservedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setvisible_reservedNull() {
+                this[this.tableOptions_table.visible_reservedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isvisible_symmetricNull() {
+                return this.IsNull(this.tableOptions_table.visible_symmetricColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setvisible_symmetricNull() {
+                this[this.tableOptions_table.visible_symmetricColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isname_of_projrctNull() {
+                return this.IsNull(this.tableOptions_table.name_of_projrctColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setname_of_projrctNull() {
+                this[this.tableOptions_table.name_of_projrctColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdescription_for_projectNull() {
+                return this.IsNull(this.tableOptions_table.description_for_projectColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdescription_for_projectNull() {
+                this[this.tableOptions_table.description_for_projectColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ismain_contextNull() {
+                return this.IsNull(this.tableOptions_table.main_contextColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setmain_contextNull() {
+                this[this.tableOptions_table.main_contextColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3659,22 +4358,22 @@ namespace pl2.rainbow.description.xml.project {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class Project_tableRowChangeEvent : global::System.EventArgs {
+        public class Model_tableRowChangeEvent : global::System.EventArgs {
             
-            private Project_tableRow eventRow;
+            private Model_tableRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableRowChangeEvent(Project_tableRow row, global::System.Data.DataRowAction action) {
+            public Model_tableRowChangeEvent(Model_tableRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Project_tableRow Row {
+            public Model_tableRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3879,6 +4578,40 @@ namespace pl2.rainbow.description.xml.project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Importance_tableRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class Options_tableRowChangeEvent : global::System.EventArgs {
+            
+            private Options_tableRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Options_tableRowChangeEvent(Options_tableRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Options_tableRow Row {
                 get {
                     return this.eventRow;
                 }

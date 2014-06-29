@@ -144,7 +144,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="rainbow\project.cs" />
+    <Compile Include="rainbow\model.cs" />
+    <Compile Include="rainbow\options.cs" />
     <Compile Include="rainbow_window.cs">
       <SubType>Form</SubType>
     </Compile>
