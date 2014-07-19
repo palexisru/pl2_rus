@@ -40,13 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="concept\level01\idia\act\idea.cs" />
+    <Compile Include="concept\level01\idia\check\Check.cs" />
+    <Compile Include="concept\level01\idia\plan\plan.cs" />
+    <Compile Include="concept\level01\idia\run\run.cs" />
+    <Compile Include="concept\level01\nature\act\act.cs" />
+    <Compile Include="concept\level01\nature\check\check.cs" />
+    <Compile Include="concept\level01\nature\plan\plan.cs" />
+    <Compile Include="concept\level01\nature\run\empty.cs" />
+    <Compile Include="concept\level02\idea\act\absctract\need.cs" />
+    <Compile Include="concept\level02\nature\run\link\link.cs" />
+    <Compile Include="concept\level03\casual_material\object.cs" />
+    <Compile Include="concept\level03\checker_ideal\application.cs" />
+    <Compile Include="concept\level04\presentation_ideal\position.cs" />
+    <Compile Include="concept\level04\structure_material\resource.cs" />
     <Compile Include="data\context\context.cs" />
     <Compile Include="data\environment\environment.cs" />
     <Compile Include="data\identifier\context\context.cs" />
-    <Compile Include="data\identifier\description\local\ascii\draft\draft.cs" />
-    <Compile Include="data\identifier\format\integer\integer.cs" />
-    <Compile Include="data\identifier\format\logical\logical.cs" />
-    <Compile Include="data\identifier\format\real\real.cs" />
+    <Compile Include="data\identifier\comment\description\local\ascii\draft\draft.cs" />
+    <Compile Include="data\format\integer\integer.cs" />
+    <Compile Include="data\format\logical\logical.cs" />
+    <Compile Include="data\format\real\real.cs" />
     <Compile Include="data\identifier\list\list.cs" />
     <Compile Include="data\identifier\simbol\simbol.cs" />
     <Compile Include="data\keyword\keyword.cs" />
@@ -90,12 +104,45 @@
     <Compile Include="test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="concept\level02\idea\check\" />
+    <Folder Include="concept\level02\idea\need\" />
+    <Folder Include="concept\level02\idea\plan\" />
+    <Folder Include="concept\level02\idea\run\" />
+    <Folder Include="concept\level02\nature\act\" />
+    <Folder Include="concept\level02\nature\check\" />
+    <Folder Include="concept\level02\nature\plan\" />
+    <Folder Include="concept\level02\nature\stochastic\" />
+    <Folder Include="concept\level05\session_ideal\" />
+    <Folder Include="concept\level05\system_material\" />
+    <Folder Include="concept\level06\session_ideal\" />
+    <Folder Include="concept\level06\system_material\" />
+    <Folder Include="concept\level07\process_material\" />
+    <Folder Include="concept\level07\transport_ideal\" />
+    <Folder Include="concept\level08\product_material\" />
+    <Folder Include="concept\level08\project_ideal\" />
+    <Folder Include="concept\level09\common_material\" />
+    <Folder Include="concept\level09\help_ideal\" />
+    <Folder Include="concept\level10\reglament_material\" />
+    <Folder Include="concept\level10\role_ideal\" />
+    <Folder Include="concept\level11\responce_material\" />
+    <Folder Include="concept\level11\technologe_ideal\" />
+    <Folder Include="concept\level12\result_material\" />
+    <Folder Include="concept\level13\" />
     <Folder Include="data\algorithm\" />
     <Folder Include="data\diagnostics\error\" />
+    <Folder Include="data\diagnostics\fatal\" />
+    <Folder Include="data\diagnostics\message\" />
+    <Folder Include="data\diagnostics\result\" />
     <Folder Include="data\diagnostics\warning\" />
+    <Folder Include="data\identifier\comment\image\" />
+    <Folder Include="data\identifier\comment\meagure\local\" />
+    <Folder Include="data\identifier\comment\meagure\si\" />
+    <Folder Include="data\identifier\format\" />
+    <Folder Include="data\identifier\name\" />
     <Folder Include="data\message\error\" />
     <Folder Include="data\message\runtime\" />
     <Folder Include="data\message\warning\" />
+    <Folder Include="data\source\file\" />
     <Folder Include="data\source\form\button\" />
     <Folder Include="data\source\form\input\check\" />
     <Folder Include="data\source\form\input\complex\" />
@@ -117,6 +164,7 @@
     <Folder Include="data\source\tree\" />
     <Folder Include="locomotive\front\semantics\" />
     <Folder Include="locomotive\middle\optimization\" />
+    <Folder Include="locomotive\target\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\keyword\key_words.xml" />

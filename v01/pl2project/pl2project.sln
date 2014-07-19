@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pl2project", "pl2project\pl2project.csproj", "{3AB995FD-49FC-40EA-9F50-F825DA26D270}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pl2rainbow", "..\pl2rainbow\pl2rainbow\pl2rainbow.csproj", "{8DEDFCF2-19AD-4699-8664-151BF143D84B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pl2rainbow", "..\..\..\pl2_modeler\v01\pl2rainbow\pl2rainbow\pl2rainbow.csproj", "{8DEDFCF2-19AD-4699-8664-151BF143D84B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

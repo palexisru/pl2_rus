@@ -83,6 +83,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\pl2_modeler\v01\pl2rainbow\pl2rainbow\pl2rainbow.csproj">
+      <Project>{8DEDFCF2-19AD-4699-8664-151BF143D84B}</Project>
+      <Name>pl2rainbow</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
