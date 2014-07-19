@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2.concept.l_03.casual_material
+namespace pl2.concept.level_04.idea.check.compare
 {
-    class Casual
+    class Compare
     {
     }
 }

@@ -52,9 +52,14 @@
     <Compile Include="concept\level_03\idea\check\direction\direction.cs" />
     <Compile Include="concept\level_03\idea\plan\nonexists\nonexists.cs" />
     <Compile Include="concept\level_03\idea\run\negation\negation.cs" />
-    <Compile Include="concept\level_03\nature\run\ability\ability.cs" />
-    <Compile Include="concept\level_04\casual_material\object.cs" />
+    <Compile Include="concept\level_03\nature\act\existence\existence.cs" />
+    <Compile Include="concept\level_03\nature\check\relation\relation.cs" />
+    <Compile Include="concept\level_03\nature\plan\ability\ability.cs" />
+    <Compile Include="concept\level_03\nature\run\accident\accident.cs" />
+    <Compile Include="concept\level_04\idea\act\target\target.cs" />
+    <Compile Include="concept\level_04\idea\check\compare\compare.cs" />
     <Compile Include="concept\level_04\idea\plan\application\application.cs" />
+    <Compile Include="concept\level_04\idea\run\function\function.cs" />
     <Compile Include="concept\level_04\nature\act\entity\entity.cs" />
     <Compile Include="concept\level_04\nature\check\consequence\consequence.cs" />
     <Compile Include="concept\level_04\nature\plan\facility\facility.cs" />
@@ -113,12 +118,6 @@
   <ItemGroup>
     <Folder Include="concept\level10\reglament_material\" />
     <Folder Include="concept\level10\role_ideal\" />
-    <Folder Include="concept\level_03\nature\act\" />
-    <Folder Include="concept\level_03\nature\check\" />
-    <Folder Include="concept\level_03\nature\plan\" />
-    <Folder Include="concept\level_04\idea\act\" />
-    <Folder Include="concept\level_04\idea\check\" />
-    <Folder Include="concept\level_04\idea\run\" />
     <Folder Include="concept\level_06\session_ideal\" />
     <Folder Include="concept\level_06\system_material\" />
     <Folder Include="concept\level_07\session_ideal\" />
