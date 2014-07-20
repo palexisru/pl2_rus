@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2.concept.l_04.application_ideal
+namespace pl2.concept.level_06.idea.plan.forecast
 {
-    class Application
+    class Forecast
     {
     }
 }
