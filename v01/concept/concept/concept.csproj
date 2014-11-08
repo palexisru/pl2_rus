@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6D01686-EDF6-402E-9520-592E41ECF7BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pl2.concept</RootNamespace>
+    <AssemblyName>concept</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="level_01\idea\word.cs" />
+    <Compile Include="level_01\nature\empty.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="level_02\extra\plan\idea\" />
+    <Folder Include="level_02\extra\plan\nature\" />
+    <Folder Include="level_02\extra\run\idea\" />
+    <Folder Include="level_02\extra\run\nature\" />
+    <Folder Include="level_02\intro\act\idea\" />
+    <Folder Include="level_02\intro\act\nature\" />
+    <Folder Include="level_02\intro\check\idea\" />
+    <Folder Include="level_02\intro\check\nature\" />
+    <Folder Include="level_03\extra\plan\idea\" />
+    <Folder Include="level_03\extra\plan\nature\" />
+    <Folder Include="level_03\extra\run\idea\" />
+    <Folder Include="level_03\extra\run\nature\" />
+    <Folder Include="level_03\intro\act\idea\" />
+    <Folder Include="level_03\intro\act\nature\" />
+    <Folder Include="level_03\intro\check\idea\" />
+    <Folder Include="level_03\intro\check\nature\" />
+    <Folder Include="level_04\extra\plan\idea\" />
+    <Folder Include="level_04\extra\plan\nature\" />
+    <Folder Include="level_04\extra\run\idea\" />
+    <Folder Include="level_04\extra\run\nature\" />
+    <Folder Include="level_04\intro\act\idea\" />
+    <Folder Include="level_04\intro\act\nature\" />
+    <Folder Include="level_04\intro\check\idea\" />
+    <Folder Include="level_04\intro\check\nature\" />
+    <Folder Include="level_05\extra\plan\idea\" />
+    <Folder Include="level_05\extra\plan\nature\" />
+    <Folder Include="level_05\extra\run\idea\" />
+    <Folder Include="level_05\extra\run\nature\" />
+    <Folder Include="level_05\intro\act\idea\" />
+    <Folder Include="level_05\intro\act\nature\" />
+    <Folder Include="level_05\intro\check\idea\" />
+    <Folder Include="level_05\intro\check\nature\" />
+    <Folder Include="level_06\extra\plan\idea\" />
+    <Folder Include="level_06\extra\plan\nature\" />
+    <Folder Include="level_06\extra\run\idea\" />
+    <Folder Include="level_06\extra\run\nature\" />
+    <Folder Include="level_06\intro\act\idea\" />
+    <Folder Include="level_06\intro\act\nature\" />
+    <Folder Include="level_06\intro\check\idea\" />
+    <Folder Include="level_06\intro\check\nature\" />
+    <Folder Include="level_07\extra\plan\idea\" />
+    <Folder Include="level_07\extra\plan\nature\" />
+    <Folder Include="level_07\extra\run\idea\" />
+    <Folder Include="level_07\extra\run\nature\" />
+    <Folder Include="level_07\intro\act\idea\" />
+    <Folder Include="level_07\intro\act\nature\" />
+    <Folder Include="level_07\intro\check\idea\" />
+    <Folder Include="level_07\intro\check\nature\" />
+    <Folder Include="level_08\extra\plan\idea\" />
+    <Folder Include="level_08\extra\plan\nature\" />
+    <Folder Include="level_08\extra\run\idea\" />
+    <Folder Include="level_08\extra\run\nature\" />
+    <Folder Include="level_08\intro\act\idea\" />
+    <Folder Include="level_08\intro\act\nature\" />
+    <Folder Include="level_08\intro\check\idea\" />
+    <Folder Include="level_08\intro\check\nature\" />
+    <Folder Include="level_09\extra\plan\idea\" />
+    <Folder Include="level_09\extra\plan\nature\" />
+    <Folder Include="level_09\extra\run\idea\" />
+    <Folder Include="level_09\extra\run\nature\" />
+    <Folder Include="level_09\intro\act\idea\" />
+    <Folder Include="level_09\intro\act\nature\" />
+    <Folder Include="level_09\intro\check\idea\" />
+    <Folder Include="level_09\intro\check\nature\" />
+    <Folder Include="level_0A\extra\plan\idea\" />
+    <Folder Include="level_0A\extra\plan\nature\" />
+    <Folder Include="level_0A\extra\run\idea\" />
+    <Folder Include="level_0A\extra\run\nature\" />
+    <Folder Include="level_0A\intro\act\idea\" />
+    <Folder Include="level_0A\intro\act\nature\" />
+    <Folder Include="level_0A\intro\check\idea\" />
+    <Folder Include="level_0A\intro\check\nature\" />
+    <Folder Include="level_0B\extra\plan\idea\" />
+    <Folder Include="level_0B\extra\plan\nature\" />
+    <Folder Include="level_0B\extra\run\idea\" />
+    <Folder Include="level_0B\extra\run\nature\" />
+    <Folder Include="level_0B\intro\act\idea\" />
+    <Folder Include="level_0B\intro\act\nature\" />
+    <Folder Include="level_0B\intro\check\idea\" />
+    <Folder Include="level_0B\intro\check\nature\" />
+    <Folder Include="level_0C\extra\plan\idea\" />
+    <Folder Include="level_0C\extra\plan\nature\" />
+    <Folder Include="level_0C\extra\run\idea\" />
+    <Folder Include="level_0C\extra\run\nature\" />
+    <Folder Include="level_0C\intro\act\idea\" />
+    <Folder Include="level_0C\intro\act\nature\" />
+    <Folder Include="level_0C\intro\check\idea\" />
+    <Folder Include="level_0C\intro\check\nature\" />
+    <Folder Include="level_0D\extra\plan\idea\" />
+    <Folder Include="level_0D\extra\plan\nature\" />
+    <Folder Include="level_0D\extra\run\idea\" />
+    <Folder Include="level_0D\extra\run\nature\" />
+    <Folder Include="level_0D\intro\act\idea\" />
+    <Folder Include="level_0D\intro\act\nature\" />
+    <Folder Include="level_0D\intro\check\idea\" />
+    <Folder Include="level_0D\intro\check\nature\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

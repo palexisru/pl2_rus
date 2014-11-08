@@ -1,0 +1,7 @@
+?math_2.system(x, y)
+(
+{
+     ?math.equal(a1, b1, c1)
+     ?math.equal(a2, b2, c2, x)
+}
+)

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<culture>
+    <Culture> 
+        <culture_folder> ea\rus\ru-ascii </culture_folder>
+        <application_name> Компилятор PL/2 </application_name>
+        <culture_path> C:\pl2_rus\culture\ea\rus\ru-ascii\ </culture_path>
+        <codepage_number> 1251 </codepage_number>
+    </Culture> 
+</culture>

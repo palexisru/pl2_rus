@@ -1,0 +1,2 @@
+?math.add(left, right)
+?math.mul(left, right)

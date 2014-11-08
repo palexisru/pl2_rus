@@ -1,0 +1,4 @@
+дельта малая с нижним индексом a - относительная погрешность числа
+= (дельта a) / a
+= ?size.delta_small_relative(a)
+= ?size.delta_absolute(a)/a

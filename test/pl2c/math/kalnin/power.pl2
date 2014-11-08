@@ -1,0 +1,4 @@
+?math.power_2(x)
+?math.power_3(x)
+?math.power_4(x)
+?math.power_n(x, n)

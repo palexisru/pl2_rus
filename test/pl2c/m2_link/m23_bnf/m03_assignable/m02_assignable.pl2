@@ -1,0 +1,9 @@
+meta source="bnf"
+    namespace pl2.expression.value
+    {@
+         assignable_value ::= identifier;
+         assignable ::= assignable_value := expression;
+
+    @}
+    
+/meta

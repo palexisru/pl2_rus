@@ -1,0 +1,9 @@
+lambda_x ::= ?math.equal(left_side, right_side, var_list) - уравнение
+левая часть
+правая часть
+список переменных
+lambda_x ::= ?math.equal(x+2, 3*x, x)
+lambda_x.normalize()
+lambda_x.roots.find()
+
+

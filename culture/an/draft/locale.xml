@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<international>
+    <Culture>
+       <name="an/ascii"/>
+       <parent="an\draft"/>
+    </Culture>
+    <Dictionary>
+       <current="logical_xor"/>
+    </Dictionary>
+    <Dictionary>
+       <current="logical_or"/>
+    </Dictionary>
+    <Dictionary>
+       <current="logical_and"/>
+    </Dictionary>
+    <Dictionary>
+       <current=""/>
+    </Dictionary>
+    <Dictionary>
+       <current=""/>
+    </Dictionary>
+    <Dictionary>
+       <current=""/>
+    </Dictionary>
+    <Dictionary>
+       <current=""/>
+    </Dictionary>
+</international>
