@@ -38,9 +38,9 @@ namespace pl2.data.predicate.records {
         
         private IdealityDataTable tableIdeality;
         
-        private global::System.Data.DataRelation relationAbstraction_Ideality_relation;
-        
         private global::System.Data.DataRelation relationFK_Complexity_Abstraction;
+        
+        private global::System.Data.DataRelation relationAbstraction_Ideality_relation;
         
         private global::System.Data.DataRelation relationComplexity_Phase_relation;
         
@@ -48,17 +48,19 @@ namespace pl2.data.predicate.records {
         
         private global::System.Data.DataRelation relationsegment_abstraction_relation;
         
-        private global::System.Data.DataRelation relationpredicate_segment_1_relation;
-        
-        private global::System.Data.DataRelation relationpredicate_segment_2_relation;
-        
-        private global::System.Data.DataRelation relationpredicate_phase_relation;
-        
         private global::System.Data.DataRelation relationpredicate_predicate_1_relation;
         
         private global::System.Data.DataRelation relationpredicate_predicate_2_relation;
         
         private global::System.Data.DataRelation relationComplexity_Level_relation;
+        
+        private global::System.Data.DataRelation relationPredicate_Abstraction_1_relation;
+        
+        private global::System.Data.DataRelation relationPredicate_Abstraction_2_relation;
+        
+        private global::System.Data.DataRelation relationPredicate_Phase_1_relation;
+        
+        private global::System.Data.DataRelation relationPredicate_Phase_2_relation;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -360,17 +362,18 @@ namespace pl2.data.predicate.records {
                     this.tableIdeality.InitVars();
                 }
             }
-            this.relationAbstraction_Ideality_relation = this.Relations["Abstraction_Ideality_relation"];
             this.relationFK_Complexity_Abstraction = this.Relations["FK_Complexity_Abstraction"];
+            this.relationAbstraction_Ideality_relation = this.Relations["Abstraction_Ideality_relation"];
             this.relationComplexity_Phase_relation = this.Relations["Complexity_Phase_relation"];
             this.relationsegment_phase_relation = this.Relations["segment_phase_relation"];
             this.relationsegment_abstraction_relation = this.Relations["segment_abstraction_relation"];
-            this.relationpredicate_segment_1_relation = this.Relations["predicate_segment_1_relation"];
-            this.relationpredicate_segment_2_relation = this.Relations["predicate_segment_2_relation"];
-            this.relationpredicate_phase_relation = this.Relations["predicate_phase_relation"];
             this.relationpredicate_predicate_1_relation = this.Relations["predicate_predicate_1_relation"];
             this.relationpredicate_predicate_2_relation = this.Relations["predicate_predicate_2_relation"];
             this.relationComplexity_Level_relation = this.Relations["Complexity_Level_relation"];
+            this.relationPredicate_Abstraction_1_relation = this.Relations["Predicate_Abstraction_1_relation"];
+            this.relationPredicate_Abstraction_2_relation = this.Relations["Predicate_Abstraction_2_relation"];
+            this.relationPredicate_Phase_1_relation = this.Relations["Predicate_Phase_1_relation"];
+            this.relationPredicate_Phase_2_relation = this.Relations["Predicate_Phase_2_relation"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -396,16 +399,16 @@ namespace pl2.data.predicate.records {
             this.tableIdeality = new IdealityDataTable();
             base.Tables.Add(this.tableIdeality);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("Abstraction_Ideality_relation", new global::System.Data.DataColumn[] {
-                        this.tableIdeality.ideality_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAbstraction.ideality_fkColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Complexity_Abstraction", new global::System.Data.DataColumn[] {
+                        this.tableComplexity.complexity_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAbstraction.complexity_fkColumn});
             this.tableAbstraction.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Complexity_Abstraction", new global::System.Data.DataColumn[] {
-                        this.tableComplexity.complexity_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAbstraction.complexity_fkColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("Abstraction_Ideality_relation", new global::System.Data.DataColumn[] {
+                        this.tableIdeality.ideality_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAbstraction.ideality_fkColumn});
             this.tableAbstraction.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -417,14 +420,14 @@ namespace pl2.data.predicate.records {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationAbstraction_Ideality_relation = new global::System.Data.DataRelation("Abstraction_Ideality_relation", new global::System.Data.DataColumn[] {
-                        this.tableIdeality.ideality_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAbstraction.ideality_fkColumn}, false);
-            this.Relations.Add(this.relationAbstraction_Ideality_relation);
             this.relationFK_Complexity_Abstraction = new global::System.Data.DataRelation("FK_Complexity_Abstraction", new global::System.Data.DataColumn[] {
                         this.tableComplexity.complexity_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAbstraction.complexity_fkColumn}, false);
             this.Relations.Add(this.relationFK_Complexity_Abstraction);
+            this.relationAbstraction_Ideality_relation = new global::System.Data.DataRelation("Abstraction_Ideality_relation", new global::System.Data.DataColumn[] {
+                        this.tableIdeality.ideality_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAbstraction.ideality_fkColumn}, false);
+            this.Relations.Add(this.relationAbstraction_Ideality_relation);
             this.relationComplexity_Phase_relation = new global::System.Data.DataRelation("Complexity_Phase_relation", new global::System.Data.DataColumn[] {
                         this.tablePhase.phase_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableComplexity.phase_fkColumn}, false);
@@ -437,18 +440,6 @@ namespace pl2.data.predicate.records {
                         this.tableAbstraction.abstraction_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableSegment.abstraction_fkColumn}, false);
             this.Relations.Add(this.relationsegment_abstraction_relation);
-            this.relationpredicate_segment_1_relation = new global::System.Data.DataRelation("predicate_segment_1_relation", new global::System.Data.DataColumn[] {
-                        this.tableSegment.segment_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePredicate.segment_fk_1Column}, false);
-            this.Relations.Add(this.relationpredicate_segment_1_relation);
-            this.relationpredicate_segment_2_relation = new global::System.Data.DataRelation("predicate_segment_2_relation", new global::System.Data.DataColumn[] {
-                        this.tableSegment.segment_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePredicate.secment_fk_2Column}, false);
-            this.Relations.Add(this.relationpredicate_segment_2_relation);
-            this.relationpredicate_phase_relation = new global::System.Data.DataRelation("predicate_phase_relation", new global::System.Data.DataColumn[] {
-                        this.tablePhase.phase_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePredicate.phase_fkColumn}, false);
-            this.Relations.Add(this.relationpredicate_phase_relation);
             this.relationpredicate_predicate_1_relation = new global::System.Data.DataRelation("predicate_predicate_1_relation", new global::System.Data.DataColumn[] {
                         this.tablePredicate.predicate_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablePredicate.value_1Column}, false);
@@ -461,6 +452,22 @@ namespace pl2.data.predicate.records {
                         this.tableLevel.level_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableComplexity.level_fkColumn}, false);
             this.Relations.Add(this.relationComplexity_Level_relation);
+            this.relationPredicate_Abstraction_1_relation = new global::System.Data.DataRelation("Predicate_Abstraction_1_relation", new global::System.Data.DataColumn[] {
+                        this.tableAbstraction.abstraction_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePredicate.abstraction_fk_1Column}, false);
+            this.Relations.Add(this.relationPredicate_Abstraction_1_relation);
+            this.relationPredicate_Abstraction_2_relation = new global::System.Data.DataRelation("Predicate_Abstraction_2_relation", new global::System.Data.DataColumn[] {
+                        this.tableAbstraction.abstraction_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePredicate.abstraction_fk_2Column}, false);
+            this.Relations.Add(this.relationPredicate_Abstraction_2_relation);
+            this.relationPredicate_Phase_1_relation = new global::System.Data.DataRelation("Predicate_Phase_1_relation", new global::System.Data.DataColumn[] {
+                        this.tablePhase.PDCAColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePredicate.PDCA_fk_1Column}, false);
+            this.Relations.Add(this.relationPredicate_Phase_1_relation);
+            this.relationPredicate_Phase_2_relation = new global::System.Data.DataRelation("Predicate_Phase_2_relation", new global::System.Data.DataColumn[] {
+                        this.tablePhase.PDCAColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePredicate.PDCA_fk_2Column}, false);
+            this.Relations.Add(this.relationPredicate_Phase_2_relation);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1449,13 +1456,15 @@ namespace pl2.data.predicate.records {
             
             private global::System.Data.DataColumn columnpredicate_name;
             
-            private global::System.Data.DataColumn columnphase_fk;
+            private global::System.Data.DataColumn columnabstraction_fk_1;
             
-            private global::System.Data.DataColumn columnsegment_fk_1;
+            private global::System.Data.DataColumn columnPDCA_fk_1;
             
             private global::System.Data.DataColumn columnvalue_1;
             
-            private global::System.Data.DataColumn columnsecment_fk_2;
+            private global::System.Data.DataColumn columnabstraction_fk_2;
+            
+            private global::System.Data.DataColumn columnPDCA_fk_2;
             
             private global::System.Data.DataColumn columnvalue_2;
             
@@ -1512,17 +1521,17 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn phase_fkColumn {
+            public global::System.Data.DataColumn abstraction_fk_1Column {
                 get {
-                    return this.columnphase_fk;
+                    return this.columnabstraction_fk_1;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn segment_fk_1Column {
+            public global::System.Data.DataColumn PDCA_fk_1Column {
                 get {
-                    return this.columnsegment_fk_1;
+                    return this.columnPDCA_fk_1;
                 }
             }
             
@@ -1536,9 +1545,17 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn secment_fk_2Column {
+            public global::System.Data.DataColumn abstraction_fk_2Column {
                 get {
-                    return this.columnsecment_fk_2;
+                    return this.columnabstraction_fk_2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PDCA_fk_2Column {
+                get {
+                    return this.columnPDCA_fk_2;
                 }
             }
             
@@ -1595,7 +1612,7 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PredicateRow AddPredicateRow(long predicate_id, string predicate_name, PhaseRow parentPhaseRowBypredicate_phase_relation, SegmentRow parentSegmentRowBypredicate_segment_1_relation, PredicateRow parentPredicateRowBypredicate_predicate_1_relation, SegmentRow parentSegmentRowBypredicate_segment_2_relation, PredicateRow parentPredicateRowBypredicate_predicate_2_relation, System.DateTime updated) {
+            public PredicateRow AddPredicateRow(long predicate_id, string predicate_name, AbstractionRow parentAbstractionRowByPredicate_Abstraction_1_relation, PhaseRow parentPhaseRowByPredicate_Phase_1_relation, PredicateRow parentPredicateRowBypredicate_predicate_1_relation, AbstractionRow parentAbstractionRowByPredicate_Abstraction_2_relation, PhaseRow parentPhaseRowByPredicate_Phase_2_relation, PredicateRow parentPredicateRowBypredicate_predicate_2_relation, System.DateTime updated) {
                 PredicateRow rowPredicateRow = ((PredicateRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         predicate_id,
@@ -1605,21 +1622,25 @@ namespace pl2.data.predicate.records {
                         null,
                         null,
                         null,
+                        null,
                         updated};
-                if ((parentPhaseRowBypredicate_phase_relation != null)) {
-                    columnValuesArray[2] = parentPhaseRowBypredicate_phase_relation[0];
+                if ((parentAbstractionRowByPredicate_Abstraction_1_relation != null)) {
+                    columnValuesArray[2] = parentAbstractionRowByPredicate_Abstraction_1_relation[0];
                 }
-                if ((parentSegmentRowBypredicate_segment_1_relation != null)) {
-                    columnValuesArray[3] = parentSegmentRowBypredicate_segment_1_relation[0];
+                if ((parentPhaseRowByPredicate_Phase_1_relation != null)) {
+                    columnValuesArray[3] = parentPhaseRowByPredicate_Phase_1_relation[2];
                 }
                 if ((parentPredicateRowBypredicate_predicate_1_relation != null)) {
                     columnValuesArray[4] = parentPredicateRowBypredicate_predicate_1_relation[0];
                 }
-                if ((parentSegmentRowBypredicate_segment_2_relation != null)) {
-                    columnValuesArray[5] = parentSegmentRowBypredicate_segment_2_relation[0];
+                if ((parentAbstractionRowByPredicate_Abstraction_2_relation != null)) {
+                    columnValuesArray[5] = parentAbstractionRowByPredicate_Abstraction_2_relation[0];
+                }
+                if ((parentPhaseRowByPredicate_Phase_2_relation != null)) {
+                    columnValuesArray[6] = parentPhaseRowByPredicate_Phase_2_relation[2];
                 }
                 if ((parentPredicateRowBypredicate_predicate_2_relation != null)) {
-                    columnValuesArray[6] = parentPredicateRowBypredicate_predicate_2_relation[0];
+                    columnValuesArray[7] = parentPredicateRowBypredicate_predicate_2_relation[0];
                 }
                 rowPredicateRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPredicateRow);
@@ -1652,10 +1673,11 @@ namespace pl2.data.predicate.records {
             internal void InitVars() {
                 this.columnpredicate_id = base.Columns["predicate_id"];
                 this.columnpredicate_name = base.Columns["predicate_name"];
-                this.columnphase_fk = base.Columns["phase_fk"];
-                this.columnsegment_fk_1 = base.Columns["segment_fk_1"];
+                this.columnabstraction_fk_1 = base.Columns["abstraction_fk_1"];
+                this.columnPDCA_fk_1 = base.Columns["PDCA_fk_1"];
                 this.columnvalue_1 = base.Columns["value_1"];
-                this.columnsecment_fk_2 = base.Columns["secment_fk_2"];
+                this.columnabstraction_fk_2 = base.Columns["abstraction_fk_2"];
+                this.columnPDCA_fk_2 = base.Columns["PDCA_fk_2"];
                 this.columnvalue_2 = base.Columns["value_2"];
                 this.columnupdated = base.Columns["updated"];
             }
@@ -1667,14 +1689,16 @@ namespace pl2.data.predicate.records {
                 base.Columns.Add(this.columnpredicate_id);
                 this.columnpredicate_name = new global::System.Data.DataColumn("predicate_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpredicate_name);
-                this.columnphase_fk = new global::System.Data.DataColumn("phase_fk", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphase_fk);
-                this.columnsegment_fk_1 = new global::System.Data.DataColumn("segment_fk_1", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsegment_fk_1);
+                this.columnabstraction_fk_1 = new global::System.Data.DataColumn("abstraction_fk_1", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnabstraction_fk_1);
+                this.columnPDCA_fk_1 = new global::System.Data.DataColumn("PDCA_fk_1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPDCA_fk_1);
                 this.columnvalue_1 = new global::System.Data.DataColumn("value_1", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvalue_1);
-                this.columnsecment_fk_2 = new global::System.Data.DataColumn("secment_fk_2", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsecment_fk_2);
+                this.columnabstraction_fk_2 = new global::System.Data.DataColumn("abstraction_fk_2", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnabstraction_fk_2);
+                this.columnPDCA_fk_2 = new global::System.Data.DataColumn("PDCA_fk_2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPDCA_fk_2);
                 this.columnvalue_2 = new global::System.Data.DataColumn("value_2", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnvalue_2);
                 this.columnupdated = new global::System.Data.DataColumn("updated", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -2793,12 +2817,23 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PredicateRow[] GetPredicateRows() {
-                if ((this.Table.ChildRelations["predicate_phase_relation"] == null)) {
+            public PredicateRow[] GetPredicateRowsByPredicate_Phase_1_relation() {
+                if ((this.Table.ChildRelations["Predicate_Phase_1_relation"] == null)) {
                     return new PredicateRow[0];
                 }
                 else {
-                    return ((PredicateRow[])(base.GetChildRows(this.Table.ChildRelations["predicate_phase_relation"])));
+                    return ((PredicateRow[])(base.GetChildRows(this.Table.ChildRelations["Predicate_Phase_1_relation"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PredicateRow[] GetPredicateRowsByPredicate_Phase_2_relation() {
+                if ((this.Table.ChildRelations["Predicate_Phase_2_relation"] == null)) {
+                    return new PredicateRow[0];
+                }
+                else {
+                    return ((PredicateRow[])(base.GetChildRows(this.Table.ChildRelations["Predicate_Phase_2_relation"])));
                 }
             }
         }
@@ -2998,28 +3033,6 @@ namespace pl2.data.predicate.records {
             public void Setabstraction_fkNull() {
                 this[this.tableSegment.abstraction_fkColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PredicateRow[] GetPredicateRowsBypredicate_segment_1_relation() {
-                if ((this.Table.ChildRelations["predicate_segment_1_relation"] == null)) {
-                    return new PredicateRow[0];
-                }
-                else {
-                    return ((PredicateRow[])(base.GetChildRows(this.Table.ChildRelations["predicate_segment_1_relation"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PredicateRow[] GetPredicateRowsBypredicate_segment_2_relation() {
-                if ((this.Table.ChildRelations["predicate_segment_2_relation"] == null)) {
-                    return new PredicateRow[0];
-                }
-                else {
-                    return ((PredicateRow[])(base.GetChildRows(this.Table.ChildRelations["predicate_segment_2_relation"])));
-                }
-            }
         }
         
         /// <summary>
@@ -3065,33 +3078,33 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short phase_fk {
+            public short abstraction_fk_1 {
                 get {
                     try {
-                        return ((short)(this[this.tablePredicate.phase_fkColumn]));
+                        return ((short)(this[this.tablePredicate.abstraction_fk_1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'phase_fk\' в таблице \'Predicate\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'abstraction_fk_1\' в таблице \'Predicate\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredicate.phase_fkColumn] = value;
+                    this[this.tablePredicate.abstraction_fk_1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short segment_fk_1 {
+            public string PDCA_fk_1 {
                 get {
                     try {
-                        return ((short)(this[this.tablePredicate.segment_fk_1Column]));
+                        return ((string)(this[this.tablePredicate.PDCA_fk_1Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'segment_fk_1\' в таблице \'Predicate\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'PDCA_fk_1\' в таблице \'Predicate\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredicate.segment_fk_1Column] = value;
+                    this[this.tablePredicate.PDCA_fk_1Column] = value;
                 }
             }
             
@@ -3113,17 +3126,33 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short secment_fk_2 {
+            public short abstraction_fk_2 {
                 get {
                     try {
-                        return ((short)(this[this.tablePredicate.secment_fk_2Column]));
+                        return ((short)(this[this.tablePredicate.abstraction_fk_2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'secment_fk_2\' в таблице \'Predicate\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'abstraction_fk_2\' в таблице \'Predicate\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePredicate.secment_fk_2Column] = value;
+                    this[this.tablePredicate.abstraction_fk_2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PDCA_fk_2 {
+                get {
+                    try {
+                        return ((string)(this[this.tablePredicate.PDCA_fk_2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'PDCA_fk_2\' в таблице \'Predicate\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePredicate.PDCA_fk_2Column] = value;
                 }
             }
             
@@ -3161,39 +3190,6 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SegmentRow SegmentRowBypredicate_segment_1_relation {
-                get {
-                    return ((SegmentRow)(this.GetParentRow(this.Table.ParentRelations["predicate_segment_1_relation"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["predicate_segment_1_relation"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SegmentRow SegmentRowBypredicate_segment_2_relation {
-                get {
-                    return ((SegmentRow)(this.GetParentRow(this.Table.ParentRelations["predicate_segment_2_relation"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["predicate_segment_2_relation"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PhaseRow PhaseRow {
-                get {
-                    return ((PhaseRow)(this.GetParentRow(this.Table.ParentRelations["predicate_phase_relation"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["predicate_phase_relation"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PredicateRow PredicateRowParentBypredicate_predicate_1_relation {
                 get {
                     return ((PredicateRow)(this.GetParentRow(this.Table.ParentRelations["predicate_predicate_1_relation"])));
@@ -3216,6 +3212,50 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbstractionRow AbstractionRowByPredicate_Abstraction_1_relation {
+                get {
+                    return ((AbstractionRow)(this.GetParentRow(this.Table.ParentRelations["Predicate_Abstraction_1_relation"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Predicate_Abstraction_1_relation"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbstractionRow AbstractionRowByPredicate_Abstraction_2_relation {
+                get {
+                    return ((AbstractionRow)(this.GetParentRow(this.Table.ParentRelations["Predicate_Abstraction_2_relation"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Predicate_Abstraction_2_relation"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PhaseRow PhaseRowByPredicate_Phase_1_relation {
+                get {
+                    return ((PhaseRow)(this.GetParentRow(this.Table.ParentRelations["Predicate_Phase_1_relation"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Predicate_Phase_1_relation"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PhaseRow PhaseRowByPredicate_Phase_2_relation {
+                get {
+                    return ((PhaseRow)(this.GetParentRow(this.Table.ParentRelations["Predicate_Phase_2_relation"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Predicate_Phase_2_relation"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ispredicate_nameNull() {
                 return this.IsNull(this.tablePredicate.predicate_nameColumn);
             }
@@ -3228,26 +3268,26 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isphase_fkNull() {
-                return this.IsNull(this.tablePredicate.phase_fkColumn);
+            public bool Isabstraction_fk_1Null() {
+                return this.IsNull(this.tablePredicate.abstraction_fk_1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setphase_fkNull() {
-                this[this.tablePredicate.phase_fkColumn] = global::System.Convert.DBNull;
+            public void Setabstraction_fk_1Null() {
+                this[this.tablePredicate.abstraction_fk_1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Issegment_fk_1Null() {
-                return this.IsNull(this.tablePredicate.segment_fk_1Column);
+            public bool IsPDCA_fk_1Null() {
+                return this.IsNull(this.tablePredicate.PDCA_fk_1Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setsegment_fk_1Null() {
-                this[this.tablePredicate.segment_fk_1Column] = global::System.Convert.DBNull;
+            public void SetPDCA_fk_1Null() {
+                this[this.tablePredicate.PDCA_fk_1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3264,14 +3304,26 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Issecment_fk_2Null() {
-                return this.IsNull(this.tablePredicate.secment_fk_2Column);
+            public bool Isabstraction_fk_2Null() {
+                return this.IsNull(this.tablePredicate.abstraction_fk_2Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setsecment_fk_2Null() {
-                this[this.tablePredicate.secment_fk_2Column] = global::System.Convert.DBNull;
+            public void Setabstraction_fk_2Null() {
+                this[this.tablePredicate.abstraction_fk_2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPDCA_fk_2Null() {
+                return this.IsNull(this.tablePredicate.PDCA_fk_2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPDCA_fk_2Null() {
+                this[this.tablePredicate.PDCA_fk_2Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3396,23 +3448,23 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public IdealityRow IdealityRow {
-                get {
-                    return ((IdealityRow)(this.GetParentRow(this.Table.ParentRelations["Abstraction_Ideality_relation"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Abstraction_Ideality_relation"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ComplexityRow ComplexityRow {
                 get {
                     return ((ComplexityRow)(this.GetParentRow(this.Table.ParentRelations["FK_Complexity_Abstraction"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Complexity_Abstraction"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public IdealityRow IdealityRow {
+                get {
+                    return ((IdealityRow)(this.GetParentRow(this.Table.ParentRelations["Abstraction_Ideality_relation"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Abstraction_Ideality_relation"]);
                 }
             }
             
@@ -3460,6 +3512,28 @@ namespace pl2.data.predicate.records {
                 }
                 else {
                     return ((SegmentRow[])(base.GetChildRows(this.Table.ChildRelations["segment_abstraction_relation"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PredicateRow[] GetPredicateRowsByPredicate_Abstraction_1_relation() {
+                if ((this.Table.ChildRelations["Predicate_Abstraction_1_relation"] == null)) {
+                    return new PredicateRow[0];
+                }
+                else {
+                    return ((PredicateRow[])(base.GetChildRows(this.Table.ChildRelations["Predicate_Abstraction_1_relation"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PredicateRow[] GetPredicateRowsByPredicate_Abstraction_2_relation() {
+                if ((this.Table.ChildRelations["Predicate_Abstraction_2_relation"] == null)) {
+                    return new PredicateRow[0];
+                }
+                else {
+                    return ((PredicateRow[])(base.GetChildRows(this.Table.ChildRelations["Predicate_Abstraction_2_relation"])));
                 }
             }
         }

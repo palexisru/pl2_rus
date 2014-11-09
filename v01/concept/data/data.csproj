@@ -64,6 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>records.xsd</DependentUpon>
     </Compile>
+    <Compile Include="predicate\records\standart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
