@@ -38,13 +38,11 @@ namespace pl2.data.predicate.records {
         
         private IdealityDataTable tableIdeality;
         
-        private global::System.Data.DataRelation relationFK_Complexity_Abstraction;
+        private PeriodDataTable tablePeriod;
         
         private global::System.Data.DataRelation relationAbstraction_Ideality_relation;
         
-        private global::System.Data.DataRelation relationComplexity_Phase_relation;
-        
-        private global::System.Data.DataRelation relationsegment_phase_relation;
+        private global::System.Data.DataRelation relationFK_Complexity_Abstraction;
         
         private global::System.Data.DataRelation relationsegment_abstraction_relation;
         
@@ -61,6 +59,12 @@ namespace pl2.data.predicate.records {
         private global::System.Data.DataRelation relationPredicate_Phase_1_relation;
         
         private global::System.Data.DataRelation relationPredicate_Phase_2_relation;
+        
+        private global::System.Data.DataRelation relationComplexity_Period_relation;
+        
+        private global::System.Data.DataRelation relationPeriod_Phase;
+        
+        private global::System.Data.DataRelation relationPeriod_Segment;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -110,6 +114,9 @@ namespace pl2.data.predicate.records {
                 }
                 if ((ds.Tables["Ideality"] != null)) {
                     base.Tables.Add(new IdealityDataTable(ds.Tables["Ideality"]));
+                }
+                if ((ds.Tables["Period"] != null)) {
+                    base.Tables.Add(new PeriodDataTable(ds.Tables["Period"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -201,6 +208,16 @@ namespace pl2.data.predicate.records {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PeriodDataTable Period {
+            get {
+                return this.tablePeriod;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -287,6 +304,9 @@ namespace pl2.data.predicate.records {
                 if ((ds.Tables["Ideality"] != null)) {
                     base.Tables.Add(new IdealityDataTable(ds.Tables["Ideality"]));
                 }
+                if ((ds.Tables["Period"] != null)) {
+                    base.Tables.Add(new PeriodDataTable(ds.Tables["Period"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -362,10 +382,14 @@ namespace pl2.data.predicate.records {
                     this.tableIdeality.InitVars();
                 }
             }
-            this.relationFK_Complexity_Abstraction = this.Relations["FK_Complexity_Abstraction"];
+            this.tablePeriod = ((PeriodDataTable)(base.Tables["Period"]));
+            if ((initTable == true)) {
+                if ((this.tablePeriod != null)) {
+                    this.tablePeriod.InitVars();
+                }
+            }
             this.relationAbstraction_Ideality_relation = this.Relations["Abstraction_Ideality_relation"];
-            this.relationComplexity_Phase_relation = this.Relations["Complexity_Phase_relation"];
-            this.relationsegment_phase_relation = this.Relations["segment_phase_relation"];
+            this.relationFK_Complexity_Abstraction = this.Relations["FK_Complexity_Abstraction"];
             this.relationsegment_abstraction_relation = this.Relations["segment_abstraction_relation"];
             this.relationpredicate_predicate_1_relation = this.Relations["predicate_predicate_1_relation"];
             this.relationpredicate_predicate_2_relation = this.Relations["predicate_predicate_2_relation"];
@@ -374,6 +398,9 @@ namespace pl2.data.predicate.records {
             this.relationPredicate_Abstraction_2_relation = this.Relations["Predicate_Abstraction_2_relation"];
             this.relationPredicate_Phase_1_relation = this.Relations["Predicate_Phase_1_relation"];
             this.relationPredicate_Phase_2_relation = this.Relations["Predicate_Phase_2_relation"];
+            this.relationComplexity_Period_relation = this.Relations["Complexity_Period_relation"];
+            this.relationPeriod_Phase = this.Relations["Period_Phase"];
+            this.relationPeriod_Segment = this.Relations["Period_Segment"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -398,14 +425,9 @@ namespace pl2.data.predicate.records {
             base.Tables.Add(this.tableComplexity);
             this.tableIdeality = new IdealityDataTable();
             base.Tables.Add(this.tableIdeality);
+            this.tablePeriod = new PeriodDataTable();
+            base.Tables.Add(this.tablePeriod);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Complexity_Abstraction", new global::System.Data.DataColumn[] {
-                        this.tableComplexity.complexity_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAbstraction.complexity_fkColumn});
-            this.tableAbstraction.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("Abstraction_Ideality_relation", new global::System.Data.DataColumn[] {
                         this.tableIdeality.ideality_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAbstraction.ideality_fkColumn});
@@ -413,29 +435,21 @@ namespace pl2.data.predicate.records {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("Complexity_Phase_relation", new global::System.Data.DataColumn[] {
-                        this.tablePhase.phase_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableComplexity.phase_fkColumn});
-            this.tableComplexity.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Complexity_Abstraction", new global::System.Data.DataColumn[] {
+                        this.tableComplexity.complexity_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAbstraction.complexity_fkColumn});
+            this.tableAbstraction.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_Complexity_Abstraction = new global::System.Data.DataRelation("FK_Complexity_Abstraction", new global::System.Data.DataColumn[] {
-                        this.tableComplexity.complexity_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAbstraction.complexity_fkColumn}, false);
-            this.Relations.Add(this.relationFK_Complexity_Abstraction);
             this.relationAbstraction_Ideality_relation = new global::System.Data.DataRelation("Abstraction_Ideality_relation", new global::System.Data.DataColumn[] {
                         this.tableIdeality.ideality_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableAbstraction.ideality_fkColumn}, false);
             this.Relations.Add(this.relationAbstraction_Ideality_relation);
-            this.relationComplexity_Phase_relation = new global::System.Data.DataRelation("Complexity_Phase_relation", new global::System.Data.DataColumn[] {
-                        this.tablePhase.phase_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableComplexity.phase_fkColumn}, false);
-            this.Relations.Add(this.relationComplexity_Phase_relation);
-            this.relationsegment_phase_relation = new global::System.Data.DataRelation("segment_phase_relation", new global::System.Data.DataColumn[] {
-                        this.tablePhase.phase_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSegment.segment_idColumn}, false);
-            this.Relations.Add(this.relationsegment_phase_relation);
+            this.relationFK_Complexity_Abstraction = new global::System.Data.DataRelation("FK_Complexity_Abstraction", new global::System.Data.DataColumn[] {
+                        this.tableComplexity.complexity_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAbstraction.complexity_fkColumn}, false);
+            this.Relations.Add(this.relationFK_Complexity_Abstraction);
             this.relationsegment_abstraction_relation = new global::System.Data.DataRelation("segment_abstraction_relation", new global::System.Data.DataColumn[] {
                         this.tableAbstraction.abstraction_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableSegment.abstraction_fkColumn}, false);
@@ -468,6 +482,18 @@ namespace pl2.data.predicate.records {
                         this.tablePhase.PDCAColumn}, new global::System.Data.DataColumn[] {
                         this.tablePredicate.PDCA_fk_2Column}, false);
             this.Relations.Add(this.relationPredicate_Phase_2_relation);
+            this.relationComplexity_Period_relation = new global::System.Data.DataRelation("Complexity_Period_relation", new global::System.Data.DataColumn[] {
+                        this.tablePeriod.period_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableComplexity.period_fkColumn}, false);
+            this.Relations.Add(this.relationComplexity_Period_relation);
+            this.relationPeriod_Phase = new global::System.Data.DataRelation("Period_Phase", new global::System.Data.DataColumn[] {
+                        this.tablePeriod.period_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePhase.period_fkColumn}, false);
+            this.Relations.Add(this.relationPeriod_Phase);
+            this.relationPeriod_Segment = new global::System.Data.DataRelation("Period_Segment", new global::System.Data.DataColumn[] {
+                        this.tablePeriod.period_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSegment.period_fkColumn}, false);
+            this.Relations.Add(this.relationPeriod_Segment);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -509,6 +535,12 @@ namespace pl2.data.predicate.records {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeIdeality() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePeriod() {
             return false;
         }
         
@@ -588,6 +620,9 @@ namespace pl2.data.predicate.records {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void IdealityRowChangeEventHandler(object sender, IdealityRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PeriodRowChangeEventHandler(object sender, PeriodRowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -600,6 +635,8 @@ namespace pl2.data.predicate.records {
             private global::System.Data.DataColumn columnphase_name;
             
             private global::System.Data.DataColumn columnPDCA;
+            
+            private global::System.Data.DataColumn columnperiod_fk;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -660,6 +697,14 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn period_fkColumn {
+                get {
+                    return this.columnperiod_fk;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -695,12 +740,16 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PhaseRow AddPhaseRow(short phase_id, string phase_name, string PDCA) {
+            public PhaseRow AddPhaseRow(short phase_id, string phase_name, string PDCA, PeriodRow parentPeriodRowByPeriod_Phase) {
                 PhaseRow rowPhaseRow = ((PhaseRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         phase_id,
                         phase_name,
-                        PDCA};
+                        PDCA,
+                        null};
+                if ((parentPeriodRowByPeriod_Phase != null)) {
+                    columnValuesArray[3] = parentPeriodRowByPeriod_Phase[0];
+                }
                 rowPhaseRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPhaseRow);
                 return rowPhaseRow;
@@ -726,6 +775,7 @@ namespace pl2.data.predicate.records {
                 this.columnphase_id = base.Columns["phase_id"];
                 this.columnphase_name = base.Columns["phase_name"];
                 this.columnPDCA = base.Columns["PDCA"];
+                this.columnperiod_fk = base.Columns["period_fk"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -737,10 +787,15 @@ namespace pl2.data.predicate.records {
                 base.Columns.Add(this.columnphase_name);
                 this.columnPDCA = new global::System.Data.DataColumn("PDCA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPDCA);
+                this.columnperiod_fk = new global::System.Data.DataColumn("period_fk", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnperiod_fk);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("phase_index_primary", new global::System.Data.DataColumn[] {
                                 this.columnphase_id}, false));
                 this.columnphase_id.AllowDBNull = false;
                 this.columnphase_id.Unique = true;
+                this.columnperiod_fk.AutoIncrementSeed = -1;
+                this.columnperiod_fk.AutoIncrementStep = -1;
+                this.columnperiod_fk.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1150,7 +1205,7 @@ namespace pl2.data.predicate.records {
             
             private global::System.Data.DataColumn columnsegment_name;
             
-            private global::System.Data.DataColumn columnphase_fk;
+            private global::System.Data.DataColumn columnperiod_fk;
             
             private global::System.Data.DataColumn columnabstraction_fk;
             
@@ -1205,9 +1260,9 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn phase_fkColumn {
+            public global::System.Data.DataColumn period_fkColumn {
                 get {
-                    return this.columnphase_fk;
+                    return this.columnperiod_fk;
                 }
             }
             
@@ -1256,15 +1311,15 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SegmentRow AddSegmentRow(PhaseRow parentPhaseRowBysegment_phase_relation, string segment_name, short phase_fk, AbstractionRow parentAbstractionRowBysegment_abstraction_relation) {
+            public SegmentRow AddSegmentRow(short segment_id, string segment_name, PeriodRow parentPeriodRowByPeriod_Segment, AbstractionRow parentAbstractionRowBysegment_abstraction_relation) {
                 SegmentRow rowSegmentRow = ((SegmentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        segment_id,
                         segment_name,
-                        phase_fk,
+                        null,
                         null};
-                if ((parentPhaseRowBysegment_phase_relation != null)) {
-                    columnValuesArray[0] = parentPhaseRowBysegment_phase_relation[0];
+                if ((parentPeriodRowByPeriod_Segment != null)) {
+                    columnValuesArray[2] = parentPeriodRowByPeriod_Segment[0];
                 }
                 if ((parentAbstractionRowBysegment_abstraction_relation != null)) {
                     columnValuesArray[3] = parentAbstractionRowBysegment_abstraction_relation[0];
@@ -1300,7 +1355,7 @@ namespace pl2.data.predicate.records {
             internal void InitVars() {
                 this.columnsegment_id = base.Columns["segment_id"];
                 this.columnsegment_name = base.Columns["segment_name"];
-                this.columnphase_fk = base.Columns["phase_fk"];
+                this.columnperiod_fk = base.Columns["period_fk"];
                 this.columnabstraction_fk = base.Columns["abstraction_fk"];
             }
             
@@ -1311,8 +1366,8 @@ namespace pl2.data.predicate.records {
                 base.Columns.Add(this.columnsegment_id);
                 this.columnsegment_name = new global::System.Data.DataColumn("segment_name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsegment_name);
-                this.columnphase_fk = new global::System.Data.DataColumn("phase_fk", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphase_fk);
+                this.columnperiod_fk = new global::System.Data.DataColumn("period_fk", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnperiod_fk);
                 this.columnabstraction_fk = new global::System.Data.DataColumn("abstraction_fk", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnabstraction_fk);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("segment_index_primary", new global::System.Data.DataColumn[] {
@@ -2153,7 +2208,7 @@ namespace pl2.data.predicate.records {
             
             private global::System.Data.DataColumn columnlevel_fk;
             
-            private global::System.Data.DataColumn columnphase_fk;
+            private global::System.Data.DataColumn columnperiod_fk;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2214,9 +2269,9 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn phase_fkColumn {
+            public global::System.Data.DataColumn period_fkColumn {
                 get {
-                    return this.columnphase_fk;
+                    return this.columnperiod_fk;
                 }
             }
             
@@ -2257,7 +2312,7 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ComplexityRow AddComplexityRow(string complexity_name, LevelRow parentLevelRowByComplexity_Level_relation, PhaseRow parentPhaseRowByComplexity_Phase_relation) {
+            public ComplexityRow AddComplexityRow(string complexity_name, LevelRow parentLevelRowByComplexity_Level_relation, PeriodRow parentPeriodRowByComplexity_Period_relation) {
                 ComplexityRow rowComplexityRow = ((ComplexityRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2267,8 +2322,8 @@ namespace pl2.data.predicate.records {
                 if ((parentLevelRowByComplexity_Level_relation != null)) {
                     columnValuesArray[2] = parentLevelRowByComplexity_Level_relation[0];
                 }
-                if ((parentPhaseRowByComplexity_Phase_relation != null)) {
-                    columnValuesArray[3] = parentPhaseRowByComplexity_Phase_relation[0];
+                if ((parentPeriodRowByComplexity_Period_relation != null)) {
+                    columnValuesArray[3] = parentPeriodRowByComplexity_Period_relation[0];
                 }
                 rowComplexityRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowComplexityRow);
@@ -2302,7 +2357,7 @@ namespace pl2.data.predicate.records {
                 this.columncomplexity_id = base.Columns["complexity_id"];
                 this.columncomplexity_name = base.Columns["complexity_name"];
                 this.columnlevel_fk = base.Columns["level_fk"];
-                this.columnphase_fk = base.Columns["phase_fk"];
+                this.columnperiod_fk = base.Columns["period_fk"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2314,8 +2369,8 @@ namespace pl2.data.predicate.records {
                 base.Columns.Add(this.columncomplexity_name);
                 this.columnlevel_fk = new global::System.Data.DataColumn("level_fk", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlevel_fk);
-                this.columnphase_fk = new global::System.Data.DataColumn("phase_fk", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnphase_fk);
+                this.columnperiod_fk = new global::System.Data.DataColumn("period_fk", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnperiod_fk);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncomplexity_id}, true));
                 this.columncomplexity_id.AutoIncrement = true;
@@ -2713,6 +2768,280 @@ namespace pl2.data.predicate.records {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PeriodDataTable : global::System.Data.TypedTableBase<PeriodRow> {
+            
+            private global::System.Data.DataColumn columnperiod_id;
+            
+            private global::System.Data.DataColumn columnperiod_name;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodDataTable() {
+                this.TableName = "Period";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PeriodDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PeriodDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn period_idColumn {
+                get {
+                    return this.columnperiod_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn period_nameColumn {
+                get {
+                    return this.columnperiod_name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRow this[int index] {
+                get {
+                    return ((PeriodRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PeriodRowChangeEventHandler PeriodRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PeriodRowChangeEventHandler PeriodRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PeriodRowChangeEventHandler PeriodRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PeriodRowChangeEventHandler PeriodRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPeriodRow(PeriodRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRow AddPeriodRow(string period_name) {
+                PeriodRow rowPeriodRow = ((PeriodRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        period_name};
+                rowPeriodRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPeriodRow);
+                return rowPeriodRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRow FindByperiod_id(short period_id) {
+                return ((PeriodRow)(this.Rows.Find(new object[] {
+                            period_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PeriodDataTable cln = ((PeriodDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PeriodDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnperiod_id = base.Columns["period_id"];
+                this.columnperiod_name = base.Columns["period_name"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnperiod_id = new global::System.Data.DataColumn("period_id", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnperiod_id);
+                this.columnperiod_name = new global::System.Data.DataColumn("period_name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnperiod_name);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnperiod_id}, true));
+                this.columnperiod_id.AutoIncrement = true;
+                this.columnperiod_id.AutoIncrementSeed = 1;
+                this.columnperiod_id.AllowDBNull = false;
+                this.columnperiod_id.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRow NewPeriodRow() {
+                return ((PeriodRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PeriodRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PeriodRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PeriodRowChanged != null)) {
+                    this.PeriodRowChanged(this, new PeriodRowChangeEvent(((PeriodRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PeriodRowChanging != null)) {
+                    this.PeriodRowChanging(this, new PeriodRowChangeEvent(((PeriodRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PeriodRowDeleted != null)) {
+                    this.PeriodRowDeleted(this, new PeriodRowChangeEvent(((PeriodRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PeriodRowDeleting != null)) {
+                    this.PeriodRowDeleting(this, new PeriodRowChangeEvent(((PeriodRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePeriodRow(PeriodRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                records ds = new records();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PeriodDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class PhaseRow : global::System.Data.DataRow {
@@ -2771,6 +3100,28 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short period_fk {
+                get {
+                    return ((short)(this[this.tablePhase.period_fkColumn]));
+                }
+                set {
+                    this[this.tablePhase.period_fkColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRow PeriodRow {
+                get {
+                    return ((PeriodRow)(this.GetParentRow(this.Table.ParentRelations["Period_Phase"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Period_Phase"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isphase_nameNull() {
                 return this.IsNull(this.tablePhase.phase_nameColumn);
             }
@@ -2791,28 +3142,6 @@ namespace pl2.data.predicate.records {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPDCANull() {
                 this[this.tablePhase.PDCAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ComplexityRow[] GetComplexityRows() {
-                if ((this.Table.ChildRelations["Complexity_Phase_relation"] == null)) {
-                    return new ComplexityRow[0];
-                }
-                else {
-                    return ((ComplexityRow[])(base.GetChildRows(this.Table.ChildRelations["Complexity_Phase_relation"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SegmentRow[] GetSegmentRows() {
-                if ((this.Table.ChildRelations["segment_phase_relation"] == null)) {
-                    return new SegmentRow[0];
-                }
-                else {
-                    return ((SegmentRow[])(base.GetChildRows(this.Table.ChildRelations["segment_phase_relation"])));
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2946,17 +3275,17 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short phase_fk {
+            public short period_fk {
                 get {
                     try {
-                        return ((short)(this[this.tableSegment.phase_fkColumn]));
+                        return ((short)(this[this.tableSegment.period_fkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'phase_fk\' в таблице \'Segment\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'period_fk\' в таблице \'Segment\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSegment.phase_fkColumn] = value;
+                    this[this.tableSegment.period_fkColumn] = value;
                 }
             }
             
@@ -2978,23 +3307,23 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PhaseRow PhaseRow {
-                get {
-                    return ((PhaseRow)(this.GetParentRow(this.Table.ParentRelations["segment_phase_relation"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["segment_phase_relation"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AbstractionRow AbstractionRow {
                 get {
                     return ((AbstractionRow)(this.GetParentRow(this.Table.ParentRelations["segment_abstraction_relation"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["segment_abstraction_relation"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRow PeriodRow {
+                get {
+                    return ((PeriodRow)(this.GetParentRow(this.Table.ParentRelations["Period_Segment"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Period_Segment"]);
                 }
             }
             
@@ -3012,14 +3341,14 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isphase_fkNull() {
-                return this.IsNull(this.tableSegment.phase_fkColumn);
+            public bool Isperiod_fkNull() {
+                return this.IsNull(this.tableSegment.period_fkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setphase_fkNull() {
-                this[this.tableSegment.phase_fkColumn] = global::System.Convert.DBNull;
+            public void Setperiod_fkNull() {
+                this[this.tableSegment.period_fkColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3448,23 +3777,23 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ComplexityRow ComplexityRow {
-                get {
-                    return ((ComplexityRow)(this.GetParentRow(this.Table.ParentRelations["FK_Complexity_Abstraction"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Complexity_Abstraction"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public IdealityRow IdealityRow {
                 get {
                     return ((IdealityRow)(this.GetParentRow(this.Table.ParentRelations["Abstraction_Ideality_relation"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Abstraction_Ideality_relation"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ComplexityRow ComplexityRow {
+                get {
+                    return ((ComplexityRow)(this.GetParentRow(this.Table.ParentRelations["FK_Complexity_Abstraction"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Complexity_Abstraction"]);
                 }
             }
             
@@ -3597,28 +3926,17 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public short phase_fk {
+            public short period_fk {
                 get {
                     try {
-                        return ((short)(this[this.tableComplexity.phase_fkColumn]));
+                        return ((short)(this[this.tableComplexity.period_fkColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'phase_fk\' в таблице \'Complexity\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'period_fk\' в таблице \'Complexity\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableComplexity.phase_fkColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PhaseRow PhaseRow {
-                get {
-                    return ((PhaseRow)(this.GetParentRow(this.Table.ParentRelations["Complexity_Phase_relation"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Complexity_Phase_relation"]);
+                    this[this.tableComplexity.period_fkColumn] = value;
                 }
             }
             
@@ -3630,6 +3948,17 @@ namespace pl2.data.predicate.records {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Complexity_Level_relation"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRow PeriodRow {
+                get {
+                    return ((PeriodRow)(this.GetParentRow(this.Table.ParentRelations["Complexity_Period_relation"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Complexity_Period_relation"]);
                 }
             }
             
@@ -3659,14 +3988,14 @@ namespace pl2.data.predicate.records {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isphase_fkNull() {
-                return this.IsNull(this.tableComplexity.phase_fkColumn);
+            public bool Isperiod_fkNull() {
+                return this.IsNull(this.tableComplexity.period_fkColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setphase_fkNull() {
-                this[this.tableComplexity.phase_fkColumn] = global::System.Convert.DBNull;
+            public void Setperiod_fkNull() {
+                this[this.tableComplexity.period_fkColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3759,6 +4088,93 @@ namespace pl2.data.predicate.records {
                 }
                 else {
                     return ((AbstractionRow[])(base.GetChildRows(this.Table.ChildRelations["Abstraction_Ideality_relation"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PeriodRow : global::System.Data.DataRow {
+            
+            private PeriodDataTable tablePeriod;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PeriodRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePeriod = ((PeriodDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short period_id {
+                get {
+                    return ((short)(this[this.tablePeriod.period_idColumn]));
+                }
+                set {
+                    this[this.tablePeriod.period_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string period_name {
+                get {
+                    try {
+                        return ((string)(this[this.tablePeriod.period_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'period_name\' в таблице \'Period\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePeriod.period_nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isperiod_nameNull() {
+                return this.IsNull(this.tablePeriod.period_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setperiod_nameNull() {
+                this[this.tablePeriod.period_nameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ComplexityRow[] GetComplexityRows() {
+                if ((this.Table.ChildRelations["Complexity_Period_relation"] == null)) {
+                    return new ComplexityRow[0];
+                }
+                else {
+                    return ((ComplexityRow[])(base.GetChildRows(this.Table.ChildRelations["Complexity_Period_relation"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PhaseRow[] GetPhaseRows() {
+                if ((this.Table.ChildRelations["Period_Phase"] == null)) {
+                    return new PhaseRow[0];
+                }
+                else {
+                    return ((PhaseRow[])(base.GetChildRows(this.Table.ChildRelations["Period_Phase"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SegmentRow[] GetSegmentRows() {
+                if ((this.Table.ChildRelations["Period_Segment"] == null)) {
+                    return new SegmentRow[0];
+                }
+                else {
+                    return ((SegmentRow[])(base.GetChildRows(this.Table.ChildRelations["Period_Segment"])));
                 }
             }
         }
@@ -3987,6 +4403,40 @@ namespace pl2.data.predicate.records {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public IdealityRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PeriodRowChangeEvent : global::System.EventArgs {
+            
+            private PeriodRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRowChangeEvent(PeriodRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PeriodRow Row {
                 get {
                     return this.eventRow;
                 }

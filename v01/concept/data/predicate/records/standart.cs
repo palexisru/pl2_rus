@@ -15,36 +15,36 @@ namespace pl2.data.predicate.records
         public Standart()
         {
             r = new records();
-            add_phase();
+            add_period();
         }
 
         /// <summary>
-        /// добавление фаз
+        /// добавление периодов развития
         /// </summary>
-        private void add_phase()
+        private void add_period()
         {
-            records.PhaseRow pr = r.Phase.NewPhaseRow();
-            pr.phase_name = "Prepare";
-            pr.PDCA = "Act";
+            records.PeriodRow pr = r.Period.NewPeriodRow();
+            pr.period_name = "Prepare";
+            // pr.PDCA = "Act";
             pr.Table.Rows.Add(pr);
-            pr = r.Phase.NewPhaseRow();
-            pr.phase_name = "Progress";
-            pr.PDCA = "Plan";
+            pr = r.Period.NewPeriodRow();
+            pr.period_name = "Elaboration";
+            // pr.PDCA = "Plan";
             pr.Table.Rows.Add( pr );
-            pr = r.Phase.NewPhaseRow();
-            pr.phase_name = "Restriction";
-            pr.PDCA = "Do";
+            pr = r.Period.NewPeriodRow();
+            pr.period_name = "Stabilisation";
+            // pr.PDCA = "Do";
             pr.Table.Rows.Add( pr );
-            pr = r.Phase.NewPhaseRow();
-            pr.phase_name = "Preservation";
-            pr.PDCA = "Check";
+            pr = r.Period.NewPeriodRow();
+            pr.period_name = "Conservation";
+            // pr.PDCA = "Check";
             pr.Table.Rows.Add( pr );
         }
 
         /// <summary>
-        /// добавление уровней абстрактности
+        /// добавление фаз познания
         /// </summary>
-        private void add_abstractions()
+        private void add_phases()
         {
         }
 
@@ -60,6 +60,13 @@ namespace pl2.data.predicate.records
         /// добавление уровней  идеальности
         /// </summary>
         private void add_ideality()
+        {
+        }
+
+        /// <summary>
+        /// добавление уровней абстрактности
+        /// </summary>
+        private void add_abstractions()
         {
         }
 
