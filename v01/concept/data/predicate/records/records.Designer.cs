@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace pl2.data.predicate.records {
+namespace pl2.concept.data.predicate.records {
     
     
     /// <summary>

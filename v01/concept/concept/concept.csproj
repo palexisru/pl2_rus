@@ -40,9 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chaos\conservation\nature\read_me.cs" />
+    <Compile Include="chaos\conservation\read_me.cs" />
+    <Compile Include="chaos\elaboration\read_me.cs" />
     <Compile Include="chaos\prepare\idea\word.cs" />
     <Compile Include="chaos\prepare\nature\empty.cs" />
+    <Compile Include="chaos\prepare\read_me.cs" />
+    <Compile Include="chaos\read_me.cs" />
+    <Compile Include="chaos\stabilisation\read_me.cs" />
+    <Compile Include="element\conservation\read_me.cs" />
+    <Compile Include="element\elaboration\read_me.cs" />
+    <Compile Include="element\prepare\read_me.cs" />
+    <Compile Include="element\read_me.cs" />
+    <Compile Include="element\stabilisation\read_me.cs" />
+    <Compile Include="global\read_me.cs" />
+    <Compile Include="process\elaboration\read_me.cs" />
+    <Compile Include="process\prepare\read_me.cs" />
+    <Compile Include="process\read_me.cs" />
+    <Compile Include="process\stabilisation\read_me.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="read_me.cs" />
+    <Compile Include="synergy\read_me.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="chaos\conservation\idea\act\" />
