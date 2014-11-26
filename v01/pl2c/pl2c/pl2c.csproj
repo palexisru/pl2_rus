@@ -8,7 +8,7 @@
     <ProjectGuid>{ADB9E4D5-7E27-4069-9E05-B805379897DD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>pl2c</RootNamespace>
+    <RootNamespace>pl2.compiler</RootNamespace>
     <AssemblyName>pl2c</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="pl2cmain.cs" />
+    <Compile Include="pl2c.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\manager.cs" />
   </ItemGroup>
@@ -52,6 +52,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\concept\concept\concept.csproj">
+      <Project>{F6D01686-EDF6-402E-9520-592E41ECF7BB}</Project>
+      <Name>concept</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\pl2test\pl2test\pl2test.csproj">
+      <Project>{523B71AB-3CA0-448D-B1BB-E00A44B8D7BF}</Project>
+      <Name>pl2test</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

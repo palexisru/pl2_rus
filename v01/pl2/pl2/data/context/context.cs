@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2c.data.context
+    namespace pl2.data.context
     {
-    class Context
+        public class Context
         {
         }
     }

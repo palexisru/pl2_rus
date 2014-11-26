@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2.data.identifier.simbol
+namespace pl2.data.inner.meagure.si.o
+{
+    class Temperature
     {
-    class Simbol
-        {
-        }
     }
+}

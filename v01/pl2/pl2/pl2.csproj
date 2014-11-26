@@ -40,20 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\context\block\read_me.cs" />
     <Compile Include="data\context\context.cs" />
+    <Compile Include="data\context\unit\read_me.cs" />
     <Compile Include="data\identifier\attribute\context\context.cs" />
     <Compile Include="data\identifier\attribute\comment\description\local\ascii\draft\draft.cs" />
     <Compile Include="data\identifier\list\list.cs" />
-    <Compile Include="data\identifier\simbol\simbol.cs" />
+    <Compile Include="data\identifier\qmark\math\read_me.cs" />
+    <Compile Include="data\identifier\qmark\read_me.cs" />
     <Compile Include="data\inner\meagure\local\ascii\draft\draft.cs" />
     <Compile Include="data\inner\meagure\local\culture\check\check.cs" />
     <Compile Include="data\inner\meagure\si\compare\compare.cs" />
     <Compile Include="data\inner\meagure\si\environment\environment.cs" />
-    <Compile Include="data\inner\meagure\si\m\m.cs" />
-    <Compile Include="data\inner\meagure\si\t\t.cs" />
+    <Compile Include="data\inner\meagure\si\i\currence.cs" />
+    <Compile Include="data\inner\meagure\si\j\light.cs" />
+    <Compile Include="data\inner\meagure\si\m\mass.cs" />
+    <Compile Include="data\inner\meagure\si\n\number.cs" />
+    <Compile Include="data\inner\meagure\si\o\temperature.cs" />
+    <Compile Include="data\inner\meagure\si\t\time.cs" />
+    <Compile Include="data\inner\source\program\pl2\technology\active\functional\state\machine\machine.cs" />
+    <Compile Include="data\inner\source\program\pl2\technology\active\relation\recursion\recursion.cs" />
     <Compile Include="data\inner\source\program\pl2\technology\exception\block\environment\environment.cs" />
-    <Compile Include="data\inner\source\program\pl2\technology\functional\state\machine\machine.cs" />
-    <Compile Include="data\inner\source\program\pl2\technology\relation\recursion\recursion.cs" />
     <Compile Include="data\inner\source\program\pl2\technology\active\review\review.cs" />
     <Compile Include="data\inner\source\program\pl2\technology\structural\block\break_word\break_word.cs" />
     <Compile Include="data\inner\source\program\pl2\technology\structural\block\continue_word\continue_word.cs" />
@@ -80,9 +87,13 @@
     <Compile Include="locomotive\prepocess\translate\draft\draft.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="proxy\environment\environment.cs" />
-    <Compile Include="test.cs" />
+    <Compile Include="read_me.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="data\context\file\" />
+    <Folder Include="data\context\method\" />
+    <Folder Include="data\context\space\" />
+    <Folder Include="data\context\type\" />
     <Folder Include="data\diagnostics\environment\trace\level\" />
     <Folder Include="data\diagnostics\state\error\" />
     <Folder Include="data\diagnostics\state\fatal\" />
@@ -90,19 +101,37 @@
     <Folder Include="data\diagnostics\state\result\" />
     <Folder Include="data\diagnostics\state\warning\" />
     <Folder Include="data\identifier\attribute\comment\image\" />
-    <Folder Include="data\identifier\attribute\format\" />
-    <Folder Include="data\identifier\attribute\meagure\local\" />
-    <Folder Include="data\identifier\attribute\meagure\si\" />
+    <Folder Include="data\identifier\attribute\format\datetime\" />
+    <Folder Include="data\identifier\attribute\format\number\" />
+    <Folder Include="data\identifier\attribute\image\" />
+    <Folder Include="data\identifier\attribute\measure\local\" />
+    <Folder Include="data\identifier\attribute\measure\si\" />
     <Folder Include="data\identifier\attribute\name\" />
-    <Folder Include="data\inner\project\file\section\options\" />
-    <Folder Include="data\inner\project\file\section\option\" />
+    <Folder Include="data\identifier\qmark\logical\list\" />
+    <Folder Include="data\identifier\qmark\math\constant\" />
+    <Folder Include="data\identifier\qmark\math\function\" />
+    <Folder Include="data\identifier\qmark\math\list\" />
+    <Folder Include="data\identifier\qmark\math\operator\" />
+    <Folder Include="data\identifier\qmark\tex\image\" />
+    <Folder Include="data\identifier\qmark\tex\list\" />
+    <Folder Include="data\identifier\qmark\tex\position\" />
+    <Folder Include="data\identifier\qmark\trace\" />
+    <Folder Include="data\inner\keyword\keywords\" />
+    <Folder Include="data\inner\project\file\files\" />
+    <Folder Include="data\inner\project\file\section\option\options\" />
+    <Folder Include="data\inner\project\file\section\sections\" />
     <Folder Include="data\inner\source\data\table\keyword\" />
     <Folder Include="data\inner\source\data\text\" />
     <Folder Include="data\inner\source\data\tree\keyword\" />
-    <Folder Include="data\inner\source\meta\option\keyword\" />
+    <Folder Include="data\inner\source\identifier\" />
+    <Folder Include="data\inner\source\meta\mode\keyword\" />
+    <Folder Include="data\inner\source\meta\option\options\" />
     <Folder Include="data\inner\source\program\pl2\keyword\" />
+    <Folder Include="data\inner\source\program\pl2\technology\active\relation\rule\" />
     <Folder Include="data\inner\source\program\pl2\technology\process\" />
-    <Folder Include="data\inner\source\program\pl2\technology\relation\rule\" />
+    <Folder Include="data\inner\source\program\project\option\options\" />
+    <Folder Include="data\inner\source\program\project\option\require\requres\" />
+    <Folder Include="data\inner\source\program\project\usage\" />
     <Folder Include="data\inner\source\program\sql\syntax\keyword\" />
     <Folder Include="data\inner\source\scenario\game\syntax\keyword\" />
     <Folder Include="data\inner\source\scenario\html\syntax\keyword\" />
@@ -127,12 +156,17 @@
     <Folder Include="data\inner\source\user\form\output\complex\miltifont\syntax\keyword\" />
     <Folder Include="data\inner\source\user\form\output\simple\label\syntax\keyword\" />
     <Folder Include="data\inner\source\user\form\output\simple\section\syntax\keyword\" />
+    <Folder Include="data\inner\source\user\form\section\" />
     <Folder Include="data\inner\source\user\parameter\syntax\keyword\" />
+    <Folder Include="data\inner\source\user\report\output\" />
+    <Folder Include="data\inner\source\user\report\section\" />
     <Folder Include="data\type\format\domain\integer\" />
     <Folder Include="data\type\format\domain\logical\" />
     <Folder Include="data\type\format\domain\real\" />
     <Folder Include="data\type\format\domain\text\" />
     <Folder Include="library\runtime\error\" />
+    <Folder Include="library\runtime\fatal\" />
+    <Folder Include="library\runtime\message\" />
     <Folder Include="library\runtime\warning\" />
     <Folder Include="locomotive\front\semantics\" />
     <Folder Include="locomotive\middle\optimization\" />
@@ -145,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="program\algorithm\construct\keyword\key_words.xml" />
-    <Content Include="data\inner\keyword\key_words.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
