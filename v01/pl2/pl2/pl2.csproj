@@ -160,6 +160,7 @@
     <Folder Include="data\inner\source\user\parameter\syntax\keyword\" />
     <Folder Include="data\inner\source\user\report\output\" />
     <Folder Include="data\inner\source\user\report\section\" />
+    <Folder Include="data\parser\mode\" />
     <Folder Include="data\type\format\domain\integer\" />
     <Folder Include="data\type\format\domain\logical\" />
     <Folder Include="data\type\format\domain\real\" />
@@ -170,6 +171,7 @@
     <Folder Include="library\runtime\warning\" />
     <Folder Include="locomotive\front\semantics\" />
     <Folder Include="locomotive\middle\optimization\" />
+    <Folder Include="locomotive\prepocess\mode\" />
     <Folder Include="locomotive\target\" />
     <Folder Include="proxy\file\" />
     <Folder Include="proxy\project\" />
