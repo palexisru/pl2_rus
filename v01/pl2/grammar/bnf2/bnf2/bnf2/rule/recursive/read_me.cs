@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace grammar.bnf2.rule_or
+namespace grammar.bnf2.rule.recursive
 {
     /// <summary>
-    /// выбор из двух правил
+    /// рекурсивное правило
     /// </summary>
     class read_me
     {

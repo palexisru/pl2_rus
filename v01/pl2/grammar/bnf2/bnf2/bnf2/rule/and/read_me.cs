@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace grammar.bnf2.rule_empty
+namespace grammar.bnf2.rule.and
 {
     /// <summary>
-    /// пустое альтернативное правило
+    /// последовательность из двух правил
     /// </summary>
     class read_me
     {
