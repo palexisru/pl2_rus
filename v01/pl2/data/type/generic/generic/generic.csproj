@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="quick\interfaces\compare.cs" />
+    <Compile Include="quick\array.cs" />
+    <Compile Include="quick\interfaces\sortable.cs" />
+    <Compile Include="quick\interfaces\read_me.cs" />
+    <Compile Include="quick\read_me.cs" />
     <Compile Include="read_me.cs" />
   </ItemGroup>
   <ItemGroup />

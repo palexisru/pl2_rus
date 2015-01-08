@@ -9,8 +9,9 @@ namespace pl2.data.generic.quick.interfaces
     /// интерфейс сравнения в алгоритмах быстрой сортировки и поиска
     /// </summary>
     /// <typeparam name="Type_for_compare">тип данных для сравнения</typeparam>
-    interface I_less_or_equal<Type_for_compare>
+    public interface I_Sortable<Type_for_compare> where Type_for_compare : struct
     {
+
         /// <summary>
         /// возвращает истину, если первый аргумент раньше второго в порядке сортировки 
         /// </summary>
@@ -18,8 +19,9 @@ namespace pl2.data.generic.quick.interfaces
         /// <param name="after">значение, которое должно быть позже</param>
         /// <returns></returns>
         bool sorted(
-            Type_for_compare before,
-            Type_for_compare after);
+            ref Type_for_compare before,
+            ref Type_for_compare after);
+
 
         /// <summary>
         /// возвращает истину, если аргументы одинаковы 
@@ -28,7 +30,8 @@ namespace pl2.data.generic.quick.interfaces
         /// <param name="arg2">второе сравниваемое значение</param>
         /// <returns></returns>
         bool equal(
-            Type_for_compare arg1,
-            Type_for_compare arg2);
+            ref Type_for_compare arg1,
+            ref Type_for_compare arg2);
+
     }
 }
