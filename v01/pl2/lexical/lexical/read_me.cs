@@ -6,7 +6,7 @@ using System.Text;
 namespace lexical
 {
     /// <summary>
-    /// лексический анализ программных файлов
+/// лексический анализ программных файлов
     /// </summary>
     public class read_me
     {
