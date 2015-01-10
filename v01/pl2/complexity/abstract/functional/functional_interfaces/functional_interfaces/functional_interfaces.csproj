@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6BABC914-1D8D-45F9-96B4-1AA35E80E534}</ProjectGuid>
+    <ProjectGuid>{CA8BF8F3-24D1-4D7E-975E-2D8E3E29570F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>interfaces</RootNamespace>
-    <AssemblyName>interfaces</AssemblyName>
+    <RootNamespace>abstraction.functional.interfaces</RootNamespace>
+    <AssemblyName>functional_interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
