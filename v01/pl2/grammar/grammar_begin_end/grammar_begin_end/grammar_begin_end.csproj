@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{03E4C936-1577-42F1-9261-799C2348A5CF}</ProjectGuid>
+    <ProjectGuid>{6D71D882-E364-4F0B-9F2F-2765637BA3F8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>grammar.begin</RootNamespace>
-    <AssemblyName>begin</AssemblyName>
+    <RootNamespace>grammar_begin_end</RootNamespace>
+    <AssemblyName>grammar_begin_end</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

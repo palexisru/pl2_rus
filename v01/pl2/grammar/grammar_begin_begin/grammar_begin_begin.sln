@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "grammar_begin_begin", "grammar_begin_begin\grammar_begin_begin.csproj", "{6AC857E7-53A1-4B21-922C-23E5B84D2A00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AC857E7-53A1-4B21-922C-23E5B84D2A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC857E7-53A1-4B21-922C-23E5B84D2A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC857E7-53A1-4B21-922C-23E5B84D2A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC857E7-53A1-4B21-922C-23E5B84D2A00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
