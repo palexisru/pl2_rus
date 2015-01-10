@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{06E1E779-A750-4F74-8214-871FB79CC073}</ProjectGuid>
+    <ProjectGuid>{DA5BFC4C-D2E3-4729-852D-7D6DCAB1F609}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>syntax.end</RootNamespace>
-    <AssemblyName>syntax_end</AssemblyName>
+    <RootNamespace>syntax.begin.end</RootNamespace>
+    <AssemblyName>syntax_begin_end</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
