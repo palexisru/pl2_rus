@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{65000871-4C0E-4CFC-B5A9-64445711EF49}</ProjectGuid>
+    <ProjectGuid>{82E293C5-649A-4A9E-B5F9-17DF8F8F1096}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>process</RootNamespace>
-    <AssemblyName>process</AssemblyName>
+    <RootNamespace>complexity.noo</RootNamespace>
+    <AssemblyName>noo</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

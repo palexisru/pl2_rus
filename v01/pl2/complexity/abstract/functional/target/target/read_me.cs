@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace process
+namespace functional.target
 {
     /// <summary>
-    /// базовые классы для процессов
+    /// целевая функция
     /// </summary>
     public class read_me
     {
