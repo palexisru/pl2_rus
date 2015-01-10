@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace logical_library
+namespace logical.library
 {
-    public class Class1
+    public class read_me
     {
     }
 }

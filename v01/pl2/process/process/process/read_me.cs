@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace grammar.begin
+namespace process
 {
     /// <summary>
-    /// грамматики, которые разбираются с начала текста
+    /// базовые классы для процессов
     /// </summary>
     public class read_me
     {

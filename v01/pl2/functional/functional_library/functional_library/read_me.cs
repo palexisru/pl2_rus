@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace logical_library
+namespace functional.library
 {
-    public class Test
+    public class read_me
     {
     }
 }
