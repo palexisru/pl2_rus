@@ -8,7 +8,7 @@
     <ProjectGuid>{FEB692E3-1657-4D12-BD72-A352415905C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>mode</RootNamespace>
+    <RootNamespace>pl2.mode</RootNamespace>
     <AssemblyName>mode</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

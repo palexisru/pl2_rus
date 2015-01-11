@@ -41,15 +41,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="context\read_me.cs" />
-    <Compile Include="pattern.cs" />
+    <Compile Include="nodes\node_0.cs" />
+    <Compile Include="nodes\node_2.cs" />
+    <Compile Include="nodes\read_me.cs" />
+    <Compile Include="nodes\node_1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="read_me.cs" />
     <Compile Include="rule\and\read_me.cs" />
+    <Compile Include="rule\and\rule_and.cs" />
     <Compile Include="rule\empty\read_me.cs" />
     <Compile Include="rule\or\read_me.cs" />
+    <Compile Include="rule\or\rule_or.cs" />
     <Compile Include="rule\read_me.cs" />
     <Compile Include="rule\recursive\read_me.cs" />
-    <Compile Include="rule_or\rule_or.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

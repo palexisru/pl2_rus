@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace syntax
+namespace grammar.bnf2.nodes
 {
     /// <summary>
-    /// синтаксический разбор
+    /// узлы для правил от начала к концу
     /// </summary>
-    public class read_me
+    class read_me
     {
     }
 }

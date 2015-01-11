@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace syntax
+namespace lexical.begin
 {
-    /// <summary>
-    /// синтаксический разбор
-    /// </summary>
     public class read_me
     {
     }

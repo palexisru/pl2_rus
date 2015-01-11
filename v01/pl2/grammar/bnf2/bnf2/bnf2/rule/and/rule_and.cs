@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace syntax
+namespace grammar.bnf2.rule.and
 {
     /// <summary>
-    /// синтаксический разбор
+    /// правило из двух последовательных правил
     /// </summary>
-    public class read_me
+    class Rule_and
     {
     }
 }

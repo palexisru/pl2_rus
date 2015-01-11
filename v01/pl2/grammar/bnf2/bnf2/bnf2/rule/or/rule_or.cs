@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace lexical.begin
+namespace grammar.bnf2.rule.or
 {
     /// <summary>
-    /// лексический анализ способом от начала строки
+    /// выбор из двух альтернативных правил
     /// </summary>
-    public class read_me
+    class Rule_or
     {
     }
 }
