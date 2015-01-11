@@ -8,7 +8,7 @@
     <ProjectGuid>{AFEE9CF4-0D59-40D7-B99B-72FCE6267018}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>data</RootNamespace>
+    <RootNamespace>pl2.data</RootNamespace>
     <AssemblyName>data</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -40,8 +40,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="context\block\read_me.cs" />
+    <Compile Include="context\context.cs" />
+    <Compile Include="context\unit\read_me.cs" />
+    <Compile Include="identifier\attribute\comment\description\local\ascii\draft\draft.cs" />
+    <Compile Include="identifier\attribute\context\context.cs" />
+    <Compile Include="identifier\list\list.cs" />
+    <Compile Include="identifier\qmark\math\read_me.cs" />
+    <Compile Include="identifier\qmark\read_me.cs" />
+    <Compile Include="inner\meagure\local\ascii\draft\draft.cs" />
+    <Compile Include="inner\meagure\local\culture\check\check.cs" />
+    <Compile Include="inner\meagure\si\compare\compare.cs" />
+    <Compile Include="inner\meagure\si\environment\environment.cs" />
+    <Compile Include="inner\meagure\si\i\currence.cs" />
+    <Compile Include="inner\meagure\si\j\light.cs" />
+    <Compile Include="inner\meagure\si\m\mass.cs" />
+    <Compile Include="inner\meagure\si\n\number.cs" />
+    <Compile Include="inner\meagure\si\o\temperature.cs" />
+    <Compile Include="inner\meagure\si\t\time.cs" />
+    <Compile Include="read_me.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="context\file\" />
+    <Folder Include="context\method\" />
+    <Folder Include="context\space\" />
+    <Folder Include="context\type\" />
+    <Folder Include="diagnostics\environment\trace\level\" />
+    <Folder Include="diagnostics\state\error\" />
+    <Folder Include="diagnostics\state\fatal\" />
+    <Folder Include="diagnostics\state\message\" />
+    <Folder Include="diagnostics\state\result\" />
+    <Folder Include="diagnostics\state\warning\" />
+    <Folder Include="identifier\attribute\comment\image\" />
+    <Folder Include="identifier\attribute\format\datetime\" />
+    <Folder Include="identifier\attribute\format\number\" />
+    <Folder Include="identifier\attribute\image\" />
+    <Folder Include="identifier\attribute\measure\local\" />
+    <Folder Include="identifier\attribute\measure\si\" />
+    <Folder Include="identifier\attribute\name\" />
+    <Folder Include="identifier\qmark\logical\list\" />
+    <Folder Include="identifier\qmark\math\constant\" />
+    <Folder Include="identifier\qmark\math\function\" />
+    <Folder Include="identifier\qmark\math\list\" />
+    <Folder Include="identifier\qmark\math\operator\" />
+    <Folder Include="identifier\qmark\tex\image\" />
+    <Folder Include="identifier\qmark\tex\list\" />
+    <Folder Include="identifier\qmark\tex\position\" />
+    <Folder Include="identifier\qmark\trace\" />
+    <Folder Include="inner\keyword\keywords\" />
+    <Folder Include="inner\project\file\files\" />
+    <Folder Include="inner\project\file\section\option\options\" />
+    <Folder Include="inner\project\file\section\sections\" />
+    <Folder Include="inner\source\data\table\keyword\" />
+    <Folder Include="inner\source\data\text\" />
+    <Folder Include="inner\source\data\tree\keyword\" />
+    <Folder Include="inner\source\identifier\" />
+    <Folder Include="inner\source\scenario\game\syntax\keyword\" />
+    <Folder Include="inner\source\scenario\html\syntax\keyword\" />
+    <Folder Include="inner\source\user\device\D1\syntax\keyword\" />
+    <Folder Include="inner\source\user\device\D2\syntax\keyword\" />
+    <Folder Include="inner\source\user\device\D3\syntax\keyword\" />
+    <Folder Include="inner\source\user\device\D4\syntax\keyword\" />
+    <Folder Include="inner\source\user\environment\" />
+    <Folder Include="inner\source\user\parameter\syntax\keyword\" />
+    <Folder Include="inner\source\user\report\output\" />
+    <Folder Include="inner\source\user\report\section\" />
+    <Folder Include="parser\mode\" />
+    <Folder Include="type\format\domain\integer\" />
+    <Folder Include="type\format\domain\logical\" />
+    <Folder Include="type\format\domain\real\" />
+    <Folder Include="type\format\domain\text\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

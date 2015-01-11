@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace data
+namespace pl2.source.text
 {
-    public class Class1
+    public class read_me
     {
     }
 }

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0E8FB457-B52D-4CCA-89BE-F6D7650F6CD5}</ProjectGuid>
+    <ProjectGuid>{FF7EEC20-0C5F-4588-A86F-99B3725F2BD0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>pl2</RootNamespace>
-    <AssemblyName>pl2</AssemblyName>
+    <RootNamespace>pl2.source.text</RootNamespace>
+    <AssemblyName>text</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,41 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="locomotive\back\debug\point\point.cs" />
-    <Compile Include="locomotive\back\debug\profile\profile.cs" />
-    <Compile Include="locomotive\back\debug\value\value.cs" />
-    <Compile Include="locomotive\back\generation\clr\clr.cs" />
-    <Compile Include="locomotive\back\generation\jvm\jvm.cs" />
-    <Compile Include="locomotive\back\trace\expression\expression.cs" />
-    <Compile Include="locomotive\back\trace\expression\format\format.cs" />
-    <Compile Include="locomotive\front\front\syntax\analiser\LL\left_left.cs" />
-    <Compile Include="locomotive\front\lexical\parser\sequence\sequence.cs" />
-    <Compile Include="locomotive\link\external\specific\environment\environment.cs" />
-    <Compile Include="locomotive\link\reflection\tree\tree.cs" />
-    <Compile Include="locomotive\prepocess\translate\culture\environment\environment.cs" />
-    <Compile Include="locomotive\prepocess\translate\culture\list\list.cs" />
-    <Compile Include="locomotive\prepocess\translate\draft\draft.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="proxy\environment\environment.cs" />
     <Compile Include="read_me.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="library\runtime\error\" />
-    <Folder Include="library\runtime\fatal\" />
-    <Folder Include="library\runtime\message\" />
-    <Folder Include="library\runtime\warning\" />
-    <Folder Include="locomotive\front\semantics\" />
-    <Folder Include="locomotive\middle\optimization\" />
-    <Folder Include="locomotive\prepocess\mode\" />
-    <Folder Include="locomotive\target\" />
-    <Folder Include="proxy\file\" />
-    <Folder Include="proxy\project\" />
-    <Folder Include="proxy\resource\" />
-    <Folder Include="proxy\solution\" />
-    <Folder Include="translation\compilation\options\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="program\algorithm\construct\keyword\key_words.xml" />
+    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
