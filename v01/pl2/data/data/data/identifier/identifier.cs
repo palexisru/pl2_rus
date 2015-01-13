@@ -10,13 +10,28 @@ namespace pl2.data.identifier
     /// </summary>
     public class Identifier
     {
-        public pl2.data.identifier.attribute.name.Name name;
+        /// <summary>
+        /// имя идентификатора
+        /// </summary>
+        public pl2.data.identifier.name.Name name;
+
+        /// <summary>
+        /// контекст иденификатора
+        /// </summary>
         public pl2.data.identifier.context.Context context;
+
+        /// <summary>
+        /// конструктор идентификатора
+        /// </summary>
+        /// <param name="new_context">контекст идентификатора</param>
+        /// <param name="new_name">имя идентификатора</param>
         public Identifier(
             pl2.data.identifier.context.Context new_context,
-            pl2.data.identifier.attribute.name.Name new_name            
+            pl2.data.identifier.name.Name new_name            
             ) 
         {
+            name = new_name;
+            context = new_context;
         }    
     }
 }

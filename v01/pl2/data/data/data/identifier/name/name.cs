@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2.data.identifier.attribute.name
+namespace pl2.data.identifier.name
 {
     /// <summary>
     /// атрибут - имя идентификатора

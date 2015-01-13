@@ -47,7 +47,7 @@
     <Compile Include="context\unit\read_me.cs" />
     <Compile Include="identifier\attribute\comment\description\local\ascii\draft\draft.cs" />
     <Compile Include="identifier\attribute\context\context.cs" />
-    <Compile Include="identifier\attribute\name\name.cs" />
+    <Compile Include="identifier\name\name.cs" />
     <Compile Include="identifier\identifier.cs" />
     <Compile Include="identifier\list\list.cs" />
     <Compile Include="identifier\qmark\math\read_me.cs" />

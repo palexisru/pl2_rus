@@ -6,9 +6,9 @@ using System.Text;
 namespace pl2
 {
     /// <summary>
-    /// пространство имен для разбора программ
+    /// пространство имен для разбора программ на языке программирования PL2
     /// </summary>
-    public class read_me
+    public static class read_me
     {
     }
 }
