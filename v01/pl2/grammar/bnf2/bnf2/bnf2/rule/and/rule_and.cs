@@ -8,7 +8,7 @@ namespace grammar.bnf2.rule.and
     /// <summary>
     /// правило из двух последовательных правил
     /// </summary>
-    class Rule_and
+    class Rule_and : grammar.bnf2.rule.Rule
     {
     }
 }

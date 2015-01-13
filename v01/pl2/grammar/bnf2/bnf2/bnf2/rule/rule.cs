@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace grammar.bnf2.rule.or
+namespace grammar.bnf2.rule
 {
     /// <summary>
-    /// выбор из двух альтернативных правил
+    /// правило
     /// </summary>
-    class Rule_or : grammar.bnf2.rule.Rule
+    class Rule
     {
+        string name;
     }
 }

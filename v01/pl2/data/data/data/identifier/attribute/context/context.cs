@@ -7,5 +7,6 @@ using System.Text;
     {
         public class Context
         {
+            public readonly string name;
         }
     }

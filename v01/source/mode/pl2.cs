@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace grammar.bnf2.rule.or
+namespace pl2
 {
     /// <summary>
-    /// выбор из двух альтернативных правил
+    /// пространство имен для разбора программ
     /// </summary>
-    class Rule_or : grammar.bnf2.rule.Rule
+    public class read_me
     {
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace grammar.bnf2.nodes
+namespace grammar.bnf2.data.nodes
 {
     /// <summary>
     /// узел с двумя подчиненными узлами

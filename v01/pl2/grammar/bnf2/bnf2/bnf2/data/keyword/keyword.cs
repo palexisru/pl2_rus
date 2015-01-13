@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace grammar.bnf2.rule.or
+namespace grammar.bnf2.data.keyword
 {
     /// <summary>
-    /// выбор из двух альтернативных правил
+    /// ключевое слово, используемое в синтаксисе
     /// </summary>
-    class Rule_or : grammar.bnf2.rule.Rule
+    public class Keyword
     {
     }
 }

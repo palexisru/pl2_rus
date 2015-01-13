@@ -21,14 +21,16 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>2008</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\..\..\..\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <NoWarn>2008</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -45,6 +47,8 @@
     <Compile Include="context\unit\read_me.cs" />
     <Compile Include="identifier\attribute\comment\description\local\ascii\draft\draft.cs" />
     <Compile Include="identifier\attribute\context\context.cs" />
+    <Compile Include="identifier\attribute\name\name.cs" />
+    <Compile Include="identifier\identifier.cs" />
     <Compile Include="identifier\list\list.cs" />
     <Compile Include="identifier\qmark\math\read_me.cs" />
     <Compile Include="identifier\qmark\read_me.cs" />
@@ -78,7 +82,6 @@
     <Folder Include="identifier\attribute\image\" />
     <Folder Include="identifier\attribute\measure\local\" />
     <Folder Include="identifier\attribute\measure\si\" />
-    <Folder Include="identifier\attribute\name\" />
     <Folder Include="identifier\qmark\logical\list\" />
     <Folder Include="identifier\qmark\math\constant\" />
     <Folder Include="identifier\qmark\math\function\" />
@@ -92,10 +95,6 @@
     <Folder Include="inner\project\file\files\" />
     <Folder Include="inner\project\file\section\option\options\" />
     <Folder Include="inner\project\file\section\sections\" />
-    <Folder Include="inner\source\data\table\keyword\" />
-    <Folder Include="inner\source\data\text\" />
-    <Folder Include="inner\source\data\tree\keyword\" />
-    <Folder Include="inner\source\identifier\" />
     <Folder Include="inner\source\scenario\game\syntax\keyword\" />
     <Folder Include="inner\source\scenario\html\syntax\keyword\" />
     <Folder Include="inner\source\user\device\D1\syntax\keyword\" />
@@ -111,6 +110,9 @@
     <Folder Include="type\format\domain\logical\" />
     <Folder Include="type\format\domain\real\" />
     <Folder Include="type\format\domain\text\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

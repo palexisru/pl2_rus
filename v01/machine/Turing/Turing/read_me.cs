@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace grammar.bnf2.rule.or
+namespace Turing
 {
     /// <summary>
-    /// выбор из двух альтернативных правил
+    /// элементы машины Тьюринга
     /// </summary>
-    class Rule_or : grammar.bnf2.rule.Rule
+    public class read_me
     {
     }
 }
