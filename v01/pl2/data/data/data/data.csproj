@@ -62,6 +62,9 @@
     <Compile Include="inner\meagure\si\n\number.cs" />
     <Compile Include="inner\meagure\si\o\temperature.cs" />
     <Compile Include="inner\meagure\si\t\time.cs" />
+    <Compile Include="parser\begin_begin\read_me.cs" />
+    <Compile Include="parser\begin_end\read_me.cs" />
+    <Compile Include="parser\read_me.cs" />
     <Compile Include="read_me.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

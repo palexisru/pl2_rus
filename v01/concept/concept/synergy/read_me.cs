@@ -6,7 +6,7 @@ using System.Text;
     namespace pl2.concept.synergy
     {
         /// <summary>
-        /// группа сложности 4 из 5 - синергетическое и соревновательное
+        /// группа сложности 4 из 6 - синергетическое и соревновательное обозначение ?8??
         /// </summary>
         static class read_me
         {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2.source.stream
+namespace pl2.concept.ecology.stabilisation
 {
     /// <summary>
-    /// поток текста для исходного текста
+    /// стабилизирующий период экологической группа сложности
     /// </summary>
     public static class read_me
     {

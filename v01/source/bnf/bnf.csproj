@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="data\key_word\key_word.cs" />
     <Compile Include="data\key_word\key_words.cs" />
+    <Compile Include="data\key_word\read_me.cs" />
     <Compile Include="data\read_me.cs" />
     <Compile Include="read_me.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

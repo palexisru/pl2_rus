@@ -10,8 +10,8 @@ namespace pl2.source.bnf.data.key_word
     /// </summary>
     public struct key_word
     {
-        public string sequence;
-        public key_value value;
+        public readonly string sequence;
+        public readonly key_value value;
         public key_word(string sequence_p, key_value value_p)
         {
             sequence = sequence_p;

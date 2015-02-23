@@ -6,9 +6,9 @@ using System.Text;
     namespace pl2.concept.element
     {
         /// <summary>
-        /// группа сложности 2 из 5 - элементы, структуры, системы
+        /// группа сложности 2 из 6 - элементы, структуры, системы (обозначение ?6??)
         /// </summary>
-        static class read_me
+        public static class read_me
         {
         }
     }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace source
+namespace pl2.source.bnf.data.key_word
 {
-    public static class read_me
+    class read_me
     {
     }
 }

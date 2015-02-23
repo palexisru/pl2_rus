@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace source
+namespace grammar.bnf2.data.key.word
 {
-    public static class read_me
+    class word
     {
     }
 }

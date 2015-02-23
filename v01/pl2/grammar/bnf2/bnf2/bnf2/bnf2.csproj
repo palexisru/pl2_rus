@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="context\read_me.cs" />
-    <Compile Include="data\keyword\keyword.cs" />
+    <Compile Include="data\key\key.cs" />
+    <Compile Include="data\key\word\word.cs" />
+    <Compile Include="data\key\word\read_me.cs" />
     <Compile Include="data\nodes\node_0.cs" />
     <Compile Include="data\nodes\node_2.cs" />
     <Compile Include="data\nodes\read_me.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="rule\recursive\read_me.cs" />
     <Compile Include="rule\recursive\rule_recursive.cs" />
     <Compile Include="rule\rule.cs" />
+    <Compile Include="start.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

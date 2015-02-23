@@ -5,10 +5,8 @@ using System.Text;
 
 namespace grammar.bnf2.data.keyword
 {
-    /// <summary>
-    /// ключевое слово, используемое в синтаксисе
-    /// </summary>
-    public class Keyword
+    class read_me
     {
+        string[] keywort
     }
 }
