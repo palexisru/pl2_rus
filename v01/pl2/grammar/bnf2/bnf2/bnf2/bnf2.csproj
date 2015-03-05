@@ -57,12 +57,14 @@
     <Compile Include="rule\and\rule_and.cs" />
     <Compile Include="rule\empty\rule_empty.cs" />
     <Compile Include="rule\empty\read_me.cs" />
+    <Compile Include="rule\common.cs" />
     <Compile Include="rule\or\read_me.cs" />
     <Compile Include="rule\or\rule_or.cs" />
     <Compile Include="rule\read_me.cs" />
     <Compile Include="rule\recursive\read_me.cs" />
-    <Compile Include="rule\recursive\rule_recursive.cs" />
+    <Compile Include="rule\recursive\rule_recursively.cs" />
     <Compile Include="rule\rule.cs" />
+    <Compile Include="rule\rules.cs" />
     <Compile Include="start.cs" />
   </ItemGroup>
   <ItemGroup />

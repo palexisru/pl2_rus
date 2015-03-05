@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\context\name.cs" />
     <Compile Include="data\key_word\key_word.cs" />
     <Compile Include="data\key_word\key_words.cs" />
     <Compile Include="data\key_word\read_me.cs" />
