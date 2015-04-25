@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace pl2.source.mode
+namespace pl2.source.mode.parsers
 {
     /// <summary>
-    /// Parser_listiner - список зарегистрированных анализаторов
+    /// Collection - список зарегистрированных анализаторов
     /// </summary>
-    class Parsers
+    class Collection
     {
         public Parser[] parser_list = new Parser[0];
 
-        public Boolean add_parser(Parser parser_parameter)
+        public Boolean add(Parser parser_parameter)
         {
             Boolean parser_not_registered = true;
 

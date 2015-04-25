@@ -11,8 +11,9 @@ namespace pl2.source.mode
     /// </summary>
     class Segment
     {
-        public readonly Mode_parser source;
-        public Segment(Mode_parser source_parameter)
+        public readonly source.mode.parsers.Source source;
+
+        public Segment(source.mode.parsers.Source source_parameter)
         {
             source = source_parameter;
         }
@@ -22,7 +23,7 @@ namespace pl2.source.mode
             String s;
             s = source.read_line();
             if (s != null){
-                if (s.PadRight(Mode_parser.mode_end_constant.Length) == Mode_parser.mode_end_constant)
+                if (s.PadRight(parsers.Source.mode_end_constant.Length) == parsers.Source.mode_end_constant)
                 {
                     s = null;
                 }

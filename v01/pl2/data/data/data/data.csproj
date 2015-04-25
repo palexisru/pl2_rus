@@ -62,9 +62,18 @@
     <Compile Include="inner\meagure\si\n\number.cs" />
     <Compile Include="inner\meagure\si\o\temperature.cs" />
     <Compile Include="inner\meagure\si\t\time.cs" />
+    <Compile Include="parser\expression\expression.cs" />
+    <Compile Include="parser\group\group.cs" />
+    <Compile Include="parser\literal\literal.cs" />
+    <Compile Include="parser\repetition\repetition.cs" />
+    <Compile Include="parser\sequence\sequence.cs" />
     <Compile Include="parser\begin_begin\read_me.cs" />
     <Compile Include="parser\begin_end\read_me.cs" />
+    <Compile Include="parser\empty\empty.cs" />
+    <Compile Include="parser\alternation\alternation.cs" />
+    <Compile Include="parser\parser.cs" />
     <Compile Include="parser\read_me.cs" />
+    <Compile Include="parser\rule\rule.cs" />
     <Compile Include="read_me.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

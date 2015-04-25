@@ -3,4 +3,10 @@
   <PropertyGroup>
     <ReferencePath>C:\pl2\Release\</ReferencePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartWorkingDirectory>C:\pl2\Release\</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartWorkingDirectory>C:\pl2\Release\</StartWorkingDirectory>
+  </PropertyGroup>
 </Project>

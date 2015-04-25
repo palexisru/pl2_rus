@@ -2,107 +2,111 @@
 используются обработчики событий классов статических типов
 
 mode source="bnf" name="bnf_syntax_example"
-    namespace default \пространство имен компилятора компиляторов\
+    context default \пространство имен компилятора компиляторов\
     {@
-        unit default \объединение для синтаксиса компиляторов \
+        unit Default \объединение для синтаксиса компиляторов \
         (*
-            main\ основной метод синтаксического анализатора \
-                ::= context_area_list | empty
-                {& 
-                    grammar.bnf.parser.section.parse.end( $0 );
-                &}
-            
-            context_area_list ::= context_area recursive
-                {&
-                    grammar.bnf.parser.section.sections.end( $0 );
-                &}
+            predicate main\ основной метод синтаксического анализатора \
+               ::= context_area_list | empty
+            {& 
+                grammar.bnf.parser.section.parse.end( $0 );
+            &}
+          
+            predicate context_area_list ::= context_area recursive
+            {&
+                grammar.bnf.parser.section.sections.end( $0 );
+            &}
 
-            unit_area_list
+            predicate unit_area_list
             {&
             &}
             
-            context_area ::= namespace_definition namespace_body
-                {&
-                    grammar.bnf.parser.namespace.closed( $0 );
-                &}
+            context_area ::= context_definition context_body
+            {&
+                grammar.bnf.parser.namespace.closed( $0 );
+            &}
 
-            namespace_definition ::= namespace namespace_name
-                {&
-                    grammar.bnf.parser.namespace.definition.end( $0 );
-                &}
+            context_definition ::= context namespace_name
+            {&
+                grammar.bnf.parser.namespace.definition.end( $0 );
+            &}
 
             namespace_body ::= namespace_body_start namespace_right_brecket
-                {&
-                    grammar.bnf.parser.namespace.body.end( $0 );
-                &}
+            {&
+                grammar.bnf.parser.namespace.body.end( $0 );
+            &}
 
+        *}
+    @}
+
+    context unit_definition
+    {@
+         unit definition_list
+         {* 
+             context_body_start ::= namespace_left_brecket predicate_list
+             {&
+                 grammar.bnf.parser.namespace.body.no_errors( $0 );
+             &}
+
+             predicate_list ::= one_predicate recursive
+             {&
+                 grammar.bnf.parser.predicate.list.no_errors( $0 );
+             &}
+
+                 one_predicate :: predicates.predicate_definition
+                 {&
+                     grammar.bnf.parser.predicate.no_errors( $0 );
+                 &}
+             *}
+         @}
+
+         context predicates
+         {@
+             unit definition_list
+             {* 
+                 predicate_definition ::= predicate_rule predicate_body
+                 {&
+                     grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
+                 &}
+
+                 predicate_body ::= rule_event_start right_brecket
+                 {&
+                     grammar.bnf.parser.predicate.body.no_errors( $0 );
+                 &}
+
+                 rule_event_start ::= left_brecket events.rule_event_body
+                 {&
+                 &} 
+
+                 predicate_rule ::= predicate_start predicate_pattern
+                 {&
+                 &}
+
+                 predicate_start ::= identifier predicate_separator
+                 {&
+                 &}
+
+                 predicate_separator ::= "::="
+                 {&
+                 &}
+                  
+                 predicate_pattern ::= rules.rule_definition
+                {&
+                &}
             *}
         @}
 
-        namespace unit
-        {@
-            unit definition_list
-            {* 
-                namespace_body_start ::= namespace_left_brecket predicate_list
-                    {&
-                        grammar.bnf.parser.namespace.body.no_errors( $0 );
-                    &}
-
-                predicate_list ::= one_predicate recursive
-                    {&
-                        grammar.bnf.parser.predicate.list.no_errors( $0 );
-                    &}
-
-                one_predicate :: predicates.predicate_definition
-                    {&
-                        grammar.bnf.parser.predicate.no_errors( $0 );
-                    &}
-                *}
-            @}
-
-        namespace predicates
-        {@
-            predicate_definition ::= predicate_rule predicate_body
-                {&
-                    grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
-                &}
-
-            predicate_body ::= rule_event_start right_brecket
-                {&
-                    grammar.bnf.parser.predicate.body.no_errors( $0 );
-                &}
-
-            rule_event_start ::= left_brecket events.rule_event_body
-                {&
-                &} 
-
-            predicate_rule ::= predicate_start predicate_pattern
-                {&
-                &}
-
-            predicate_start ::= identifier predicate_separator
-                {&
-                &}
-
-            predicate_separator ::= "::="
-                {&
-                &}
-             
-            predicate_pattern ::= rules.rule_definition
-                {&
-                &}
-        @}
-
-        namespace events
-        {@
+        context events
+        {@  unit rule_events{*
             rule_event_body ::= rule_event_commands_list
-                {&
-                &}
+            {&
+            &}
         @}
 
-        namespace rules
+        context rules
         {@
             rule_definition ::=
         @}
-    *}
+      *}
+@}
 /mode
