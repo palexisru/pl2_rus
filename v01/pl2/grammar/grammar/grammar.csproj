@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="grammar.cs" />
+    <Compile Include="nonterminal\group\delimiter.cs" />
+    <Compile Include="nonterminal\group\end.cs" />
+    <Compile Include="nonterminal\group\member.cs" />
+    <Compile Include="nonterminal\group\start.cs" />
     <Compile Include="nonterminal\list.cs" />
     <Compile Include="nonterminal\nonterminal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,7 +55,13 @@
     <Compile Include="rule\rule.cs" />
     <Compile Include="rule\sequence\sequence.cs" />
     <Compile Include="start.cs" />
+    <Compile Include="terminal\close\close.cs" />
+    <Compile Include="terminal\close\wrong\error.cs" />
+    <Compile Include="terminal\close\wrong\fatal.cs" />
+    <Compile Include="terminal\close\wrong\message.cs" />
+    <Compile Include="terminal\close\wrong\warining.cs" />
     <Compile Include="terminal\list.cs" />
+    <Compile Include="terminal\message\message.cs" />
     <Compile Include="terminal\terminal.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
