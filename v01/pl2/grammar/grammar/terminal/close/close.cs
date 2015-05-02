@@ -8,6 +8,8 @@ namespace source.library.computer.science.grammar.terminal.close
     class Close
     {
         message.Message message;
+
+
         public Close()
         {
             message.level = "0";

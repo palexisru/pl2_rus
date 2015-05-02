@@ -1,0 +1,57 @@
+unit.pl2
+описание синтаксиса грамматики компилятора компиляторов
+раздел описания совокупности правил Unit
+
+mode source="bnf" name="bnf_unit_example"
+    context grammar.bnf2 \ пространство имен компилятора компиляторов \
+    {@
+        unit Unit
+        {*
+            predicate unit_area_list \ последовательность объединений правил в контексте \
+               ::= unit_area RECURSIVE
+            {&
+                grammar.bnf.parser.context.cotexts.add( context_area_list,  );
+            &}
+
+            predicate unit_area\закрытый контекст с обработанными ошибками\
+               ::= unit_area_fine | unit_area_error
+            {&
+                decision
+                {
+                    case ( unit_area_fine =/= NULL):
+                        grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
+                    else:
+                        grammar.bnf.parser.section.sections.end( context_area_fine, context_area_error);
+                }
+            &}
+
+            predicate unit_area_fine\закрытый раздел правил без ошибок\
+               ::= unit_area_start & unit_area_closed
+            {&
+                grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
+                grammar.bnf.parser.section.sections.end( context_area_fine, context_area_error);
+            &}
+
+            predicate unit_area_closed\совокупность правил с правильными закрывающими скобками\
+               ::= unit_body & unit_area_closure
+            {&
+                grammar.bnf.parser.section.sections.end( context_area_closed, context_body);
+            &}
+
+            predicate unit_area_start\ открывающие скобки интерфейса \
+               ::= "{@"
+            
+            predicate unit_area_closure\ закрывающие скобки интерфейса \
+               ::= "@}"
+            
+
+            predicate unit_body\тело контекста\
+               ::=  grammar.bnf2.Predicate.predicate_area_list
+            {&
+                grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
+            &}
+
+       *}
+   @}
+
+/mode

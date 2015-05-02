@@ -1,0 +1,52 @@
+описание синтаксиса грамматики компилятора компиляторов
+раздел описания контекстов
+
+mode source="bnf" name="bnf_context_example"
+    context grammar.bnf2 \пространство имен компилятора компиляторов\
+    {@
+        unit Context \объединение для синтаксиса компиляторов \
+        (*  
+            predicate context_area_list \последовательность контекстов в одном блоке кода\
+               ::= context_area RECURSIVE
+            {&
+                grammar.bnf.parser.context.cotexts.add( context_area_list,  );
+            &}
+
+            predicate context_area\закрытый контекст с обработанными ошибками\
+               ::= context_area_fine | context_area_error
+            {&
+                decision
+                {
+                    case ( context_area_fine =/= NULL):
+                        grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
+                    else:
+                        grammar.bnf.parser.section.sections.end( context_area_fine, context_area_error);
+                }
+            &};
+
+            predicate context_area_fine\закрытый контекст без ошибок\
+               ::= context_area_start & context_area_closed
+            {&
+                grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
+                grammar.bnf.parser.section.sections.end( context_area_fine, context_area_error);
+            &};
+
+            predicate context_area_closed\контекст с правильными закрывающими скобками\
+               ::= context_body & context_area_closure
+            {&
+                grammar.bnf.parser.section.sections.end( context_area_closed, context_body);
+            &};
+
+            predicate context_area_closure\закрывающие скобки контекста\
+               ::= "@}"
+            
+
+            predicate context_body\тело контекста\
+               ::=  grammar.bnf2.Unit.unit_area_list
+            {&
+                grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
+            &}
+            ;
+        *}
+    @}
+/mode

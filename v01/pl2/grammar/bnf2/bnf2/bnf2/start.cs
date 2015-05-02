@@ -6,7 +6,7 @@ using System.Text;
 
 namespace grammar.bnf2
 {
-    class start
+    class Start
     {
     }
 }
