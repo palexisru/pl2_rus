@@ -8,19 +8,19 @@ mode source="bnf" name="bnf_predicate_example"
         unit Predicate \ описание предикатов \
         {*  
             predicate predicate_area_list \ список предикатов определений \ 
-               ::= predicate_rule_definition_list | predicate_rule_list_error
+               ::= predicate_rule_definition_list ^ predicate_rule_list_error
             {&
                 grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
             &}
 
             predicate_rule_definition_list \ правильный список предикатов \
-               ::= predicate_rule_definition RECURSIVE 
+               ::= predicate_rule_definition RECURSIVELY 
             {&
                 grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
             &}
 
             predicate_rule_definition \ отдельный предикат \
-               ::= predicate_rule predicate_body
+               ::= predicate_rule & predicate_body
             {&
                 grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
             &}
@@ -34,7 +34,7 @@ mode source="bnf" name="bnf_predicate_example"
             predicate predicate_rule ::= grammar.bnf2.predicate.Rule.predicate_rule;
 
             predicate predicate_body
-               ::= predicate_body_inner | ";"
+               ::= predicate_body_inner ^ ";"
             {&
                 if ( predicate_body_inner != NULL )
                 {

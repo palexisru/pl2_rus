@@ -1,0 +1,57 @@
+математические начала
+
+meta sourse="pl2"
+    context logical
+    {@
+        unit Language
+        {*
+                 
+            identifier;
+            simbol_item;
+            simbol_item_list ::= simbol_item RECURSIVE;
+
+            simbol_list_accepted ::= simbol_item_list;
+            simbol_list_wrong ::= simbol_item_list;
+            simbol_list ::= simbol_list_accepted ^ simbol_list_wrong;
+
+            expression_item ::= identifier ^ simbol_list;
+            expression_list ::= expression_item RECURSIVE;
+
+            expression ::= expression_list ^ EMPTY;
+
+            formula ::= true_formula ^ wrong_expression;
+
+            true_formula ::= expression;
+            axioma ::= true_formula;
+
+            complex_true_item ::= true_rule & axioma;
+
+            true_expression ::= axioma ^ complex_true_item;
+
+            complex_true_expression ::= true_expression; 
+
+            complex_true_rule_or ::= complex_true_expression ^ complex_true_rule_or_list;
+            complex_true_rule_or_list ::= complex_true_rule_or_list_item & complex_true_rule_or_list_end_seq;
+
+            complex_true_rule_or_list_end_seq ::= complex_true_rule_or_list_end ^ EMPTY;
+            complex_true_rule_or_list_end ::= "||" & complex_true_rule_and_list_item ; 
+
+            complex_true_rule_and_list_item ::= complex_true_rule_and_list_item & complex_true_rule_and_list_end_seq;
+            complex_true_rule_and_list_end_seq ::= complex_true_rule_and_list_end ^ EMPTY;
+            complex_true_rule_and_list_end ::= "&&" & complex_true_rule_and_list_item ; 
+
+            complex_true_rule_and ::= 
+            complex_true_rule_and ::= 
+            complex_true_expression_list ::= complex_true_expression RECURSIVELY;
+
+
+            wrong_expression ::= expression;
+
+            relation ::= expression_list;
+            rule ::= true_rule ^ wrong_rule;
+            true_rule ::= relation;
+            wrong_rule ::= relation;
+
+        *}
+    @}
+/meta

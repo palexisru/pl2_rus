@@ -3,16 +3,16 @@ predicate.pl2
 раздел описания одного правила Predicate
 
 mode source="bnf" name="bnf_predicate_example"
-    context grammar.bnf2.predicate \пространство имен компилятора компиляторов\
+    context grammar.bnf2.rules \пространство имен компилятора компиляторов\
     {@
        unit Body \ описание тела предикатов \
        {*  
-            predicate_body ::= predicate_body_fine | predicate_body_error
+            predicate_body ::= predicate_body_fine ^ predicate_body_error
             {&
                 grammar.bnf.parser.predicate.body.no_errors( $0 );
             &}
 
-            predicate_body_fine ::= predicate_body_exists | predicate_body_empty
+            predicate_body_fine ::= predicate_body_exists ^ predicate_body_empty
             {&
                 grammar.bnf.parser.predicate.body.no_errors( $0 );
             &}
@@ -22,7 +22,7 @@ mode source="bnf" name="bnf_predicate_example"
                 grammar.bnf.parser.predicate.body.no_errors( $0 );
             &}
 
-            predicate_body_exists ::= predicate_body_starts predicate_body_tail
+            predicate_body_exists ::= predicate_body_starts & predicate_body_tail
             {&
                 grammar.bnf.parser.predicate.body.no_errors( $0 );
             &}
@@ -34,7 +34,7 @@ mode source="bnf" name="bnf_predicate_example"
 
             predicate_body_starts ::= "{&";
 
-            predicate_body_tail ::=  predicate_body_inner predicate_body_ends_bracket
+            predicate_body_tail ::=  predicate_body_inner & predicate_body_ends_bracket
             {&
                 grammar.bnf.parser.predicate.body.no_errors( $0 );
             &}
@@ -43,20 +43,20 @@ mode source="bnf" name="bnf_predicate_example"
 
             predicate_body_ends_bracket ::= "&}";
 
-            predicate_body_inner ::= rule_event_start right_brecket
+            predicate_body_inner ::= rule_event_start & right_brecket
             {&
                 grammar.bnf.parser.predicate.body.no_errors( $0 );
             &}
 
-            rule_event_start ::= left_brecket events.rule_event_body
+            rule_event_start ::= left_brecket & events.rule_event_body
             {&
             &} 
 
-            predicate_rule ::= predicate_start predicate_pattern
+            predicate_rule ::= predicate_start & predicate_pattern
             {&
             &}
 
-            predicate_start ::= identifier predicate_separator
+            predicate_start ::= IDENTIFIER & predicate_separator
             {&
             &}
 

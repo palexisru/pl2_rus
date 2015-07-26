@@ -7,12 +7,12 @@ mode source="bnf" name="bnf_syntax_example"
     {@
          unit definition_list
          {* 
-             context_body_start ::= namespace_left_brecket predicate_list
+             context_body_start ::= namespace_left_brecket & predicate_list
              {&
                  grammar.bnf.parser.namespace.body.no_errors( $0 );
              &}
 
-             predicate_list ::= one_predicate recursive
+             predicate_list ::= one_predicate RECURSIVELY
              {&
                  grammar.bnf.parser.predicate.list.no_errors( $0 );
              &}
@@ -28,25 +28,25 @@ mode source="bnf" name="bnf_syntax_example"
          {@
              unit definition_list
              {* 
-                 predicate_definition ::= predicate_rule predicate_body
+                 predicate_definition ::= predicate_rule & predicate_body
                  {&
                      grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
                  &}
 
-                 predicate_body ::= rule_event_start right_brecket
+                 predicate_body ::= rule_event_start & right_brecket
                  {&
                      grammar.bnf.parser.predicate.body.no_errors( $0 );
                  &}
 
-                 rule_event_start ::= left_brecket events.rule_event_body
+                 rule_event_start ::= left_brecket & events.rule_event_body
                  {&
                  &} 
 
-                 predicate_rule ::= predicate_start predicate_pattern
+                 predicate_rule ::= predicate_start & predicate_pattern
                  {&
                  &}
 
-                 predicate_start ::= identifier predicate_separator
+                 predicate_start ::= identifier & predicate_separator
                  {&
                  &}
 

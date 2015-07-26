@@ -2,35 +2,34 @@
 используются обработчики событий классов статических типов
 
 mode source="bnf" name="bnf_syntax_example"
-    context default \пространство имен компилятора компиляторов\
+
+    context grammar.bnf \пространство имен компилятора компиляторов\
     {@
         unit Default \объединение для синтаксиса компиляторов \
         (*  
-            predicate main \ основной метод синтаксического анализатора \
-               ::= context_area_list | EMPTY 
+            rule main \ основной метод синтаксического анализатора \
+               ::= context_area_list ^ empty_context_area 
             {&
-                decision
-                {
-                    case (context_area_list <> null):
-                        grammar.bnf.parser.section.parse.end( main, context_area_list );
-                    else:
-                        grammar.bnf.parser.section.parse.end( main, empty );
-                }
             &}
 
-            predicate context_area_list \ синоним для анализатора контекста \
+            rule context_area_list \ синоним для анализатора контекста \
                ::= grammar.bnf2.Context.context_area_list 
             {&
+                grammar.bnf.parser.section.parse.end( main, context_area_list );
             &}
 
-            before \ настройка перед обработкой блока \
+            rule empty_context_area ::= EMPTY
+            {&
+                grammar.bnf.parser.section.parse.end( main, empty );
+            &}
+
+            before() \ настройка перед обработкой блока \
             {&
             &}
 
-            after \ завершение после исполнения блока \
+            after() \ завершение после исполнения блока \
             {&
             &}
-
         *}
     @}
 /mode

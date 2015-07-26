@@ -1,13 +1,14 @@
-predicate.pl2
+rule.pl2
 описание синтаксиса грамматики компилятора компиляторов
-раздел описания одного правила Predicate
+раздел описания одного правила RULE
 
 mode source="bnf" name="bnf_predicate_example"
-    context grammar.bnf2.predicate \пространство имен компилятора компиляторов\
+    context grammar.bnf.rules \ пространство имен компилятора компиляторов \
     {@
-        unit Rule \ описание предикатов \
+        unit Rules \ описание предикатов \
         {*  
-             predicate_rule ::= header & extention
+             list \ правило для  \
+                ::= header & extention
              {&
                  grammar.bnf.parser.predicate.body.no_errors( predicate_rule );
              &}
@@ -17,7 +18,7 @@ mode source="bnf" name="bnf_predicate_example"
                  grammar.bnf.parser.predicate.body.no_errors( predicate_rule_name_definition );
              &}
 
-             predicate_rule_name_definition ::= "predicate" predicate_rule_name
+             predicate_rule_name_definition ::= "predicate" & predicate_rule_name
              {&
                  grammar.bnf.parser.predicate.body.no_errors( predicate_rule_name );
              &}
@@ -27,62 +28,62 @@ mode source="bnf" name="bnf_predicate_example"
                  grammar.bnf.parser.predicate.body.no_errors( predicate_rule_name );
              &}
 
-             extention ::= extention_fine | ERROR
+             extention ::= extention_fine ^ ERROR
              {&
                  grammar.bnf.parser.predicate.body.no_errors( extention );
              &}
 
-             extention_fine ::= non_empty | EMPTY
+             extention_fine ::= non_empty ^ EMPTY
              {&
                  grammar.bnf.parser.predicate.body.no_errors( extention_fine );
              &}
 
-             non_empty ::= synonim | non_synonim
+             non_empty ::= synonim ^ non_synonim
              {&
                  grammar.bnf.parser.predicate.body.no_errors( non_empty );
              &}
 
-             non_synonim ::= sequence | decision 
+             non_synonim ::= sequence ^ decision 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( non_synonim );
              &}
 
-             sequence ::= sequence_head_definition sequence_tail 
+             sequence ::= sequence_head_definition & sequence_tail 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( sequence );
              &}
 
-             sequence_head_definition ::= sequence_head "&" 
+             sequence_head_definition ::= sequence_head & "&" 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( sequence_head );
              &}
 
-             sequence_tail ::= INDETIFIER 
+             sequence_tail ::= IDETIFIER 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( sequence_tail );
              &}
 
-             sequence_head ::= INDETIFIER 
+             sequence_head ::= IDETIFIER 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( sequence_head );
              &}
 
-             decision ::= decision_head_definition decision_tail 
+             decision ::= decision_head_definition & decision_tail 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( decision );
              &}
 
-             decision_head_definition ::= decision_head "|" 
+             decision_head_definition ::= decision_head & "^" 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( decision_head );
              &}
 
-             decision_tail ::= INDETIFIER 
+             decision_tail ::= IDETIFIER 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( decision_tail );
              &}
 
-             decision_head ::= INDETIFIER 
+             decision_head ::= IDETIFIER 
              {&
                  grammar.bnf.parser.predicate.body.no_errors( decision_head );
              &}

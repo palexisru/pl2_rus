@@ -1,0 +1,17 @@
+математические начала
+
+meta sourse="pl2"
+    context logical
+    {@
+        class Logical
+        {*  
+            explicit operator Logical  (bool arg1)
+            {&
+            &}
+
+            explicit operator bool  (Logical arg1)
+            {&
+            &}
+        *}
+    @}
+/meta

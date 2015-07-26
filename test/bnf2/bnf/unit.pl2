@@ -7,48 +7,57 @@ mode source="bnf" name="bnf_unit_example"
     {@
         unit Unit
         {*
-            predicate unit_area_list \ последовательность объединений правил в контексте \
-               ::= unit_area RECURSIVE
+            rule list \ последовательность объединений правил в контексте \
+               ::= list_fine ^ list_bad
             {&
                 grammar.bnf.parser.context.cotexts.add( context_area_list,  );
             &}
 
-            predicate unit_area\закрытый контекст с обработанными ошибками\
-               ::= unit_area_fine | unit_area_error
+            rule list_fine \ последовательность объединений правил в контексте \
+               ::= unit_area RECURSIVELY
             {&
-                decision
-                {
-                    case ( unit_area_fine =/= NULL):
-                        grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
-                    else:
-                        grammar.bnf.parser.section.sections.end( context_area_fine, context_area_error);
-                }
+                grammar.bnf.parser.context.cotexts.add( list_fine );
             &}
 
-            predicate unit_area_fine\закрытый раздел правил без ошибок\
+            rule list_bad \ последовательность объединений правил в контексте \
+            {&
+                grammar.bnf.parser.context.contexts.add( list_bad );
+            &}
+
+            rule unit_area \ закрытый контекст с обработанными ошибками \
+               ::= unit_area_fine ^ unit_area_error
+            {&
+            &}
+
+            rule unit_area_fine\закрытый раздел правил без ошибок\
                ::= unit_area_start & unit_area_closed
             {&
-                grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
-                grammar.bnf.parser.section.sections.end( context_area_fine, context_area_error);
+                grammar.bnf.parser.section.sections.end( unit_area_fine );
             &}
 
-            predicate unit_area_closed\совокупность правил с правильными закрывающими скобками\
+            rule unit_area_error \ закрытый раздел правил с ошибками \
+            {&
+                grammar.bnf.parser.section.sections.end( unit_area_error );
+            &}
+
+            rule unit_area_closed \совокупность правил с правильными закрывающими скобками\
                ::= unit_body & unit_area_closure
             {&
                 grammar.bnf.parser.section.sections.end( context_area_closed, context_body);
             &}
 
-            predicate unit_area_start\ открывающие скобки интерфейса \
-               ::= "{@"
+            predicate unit_area_start \ открывающие скобки интерфейса \
+               ::= "{@" & grammal.lexical.Spaces.indent ;
+
             
             predicate unit_area_closure\ закрывающие скобки интерфейса \
-               ::= "@}"
+               ::= grammal.lexical.Spaces.unindent "@}" ;
             
 
-            predicate unit_body\тело контекста\
-               ::=  grammar.bnf2.Predicate.predicate_area_list
+            predicate unit_body \ тело контекста \
+               ::=  grammar.bnf2.Rules.list
             {&
-                grammar.bnf.parser.section.sections.end( context_area_fine, context_area);
+                parser.section.Sections.end( context_area_fine, context_area);
             &}
 
        *}

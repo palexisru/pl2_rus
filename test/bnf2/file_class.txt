@@ -1,0 +1,215 @@
+Option Compare Database
+
+Option Explicit
+
+ 
+
+Private input_stream As TextStream
+
+Private input_string As String
+
+ 
+
+Private indent_value As Long
+
+Private current_string As Long
+
+Private current_column As Long
+
+ 
+
+ 
+
+Public Sub open_file(file_name As String)
+
+    Set input_stream = common.fso.OpenTextFile(file_name)
+
+    current_string = 0
+
+    current_column = 0
+
+    indent_value = 0
+
+    input_string = ""
+
+End Sub
+
+ 
+
+Public Property Get indent() As Long
+
+    indent = indent_value
+
+End Property
+
+ 
+
+Public Function get_next_lexeme()
+
+    Dim current_string_value As String
+
+    Dim current_indent_value As Long
+
+    Dim escape_mode As Boolean
+
+   
+
+    If input_string = "" Then
+
+        Do While Not input_stream.AtEndOfStream And Trim(input_string) = ""
+
+            current_string = input_stream.Line
+
+            input_string = input_stream.ReadLine()
+
+        Loop
+
+        current_indent_value = 0
+
+        Do While Left(input_string, 1) = " " Or Left(input_string, 1) = Chr(9)
+
+            If Left(input_string, 1) = Chr(9) Then
+
+                current_indent_value = current_indent_value + 4
+
+            Else
+
+                current_indent_value = current_indent_value + 1
+
+            End If
+
+            input_string = Mid(input_string, 2)
+
+        Loop
+
+    End If
+
+    current_string_value = Lexical_keywords_bnf.kw_space
+
+    If current_indent_value <> indent_value Then
+
+        If indent_value = current_indent_value + 4 Then
+
+            current_string_value = Lexical_keywords_bnf.kw_unindent_4
+
+            indent_value = current_indent_value
+
+        ElseIf indent_value = current_indent_value - 4 Then
+
+            current_string_value = Lexical_keywords_bnf.kw_indent_4
+
+            indent_value = current_indent_value
+
+        ElseIf current_indent_value <> indent_value + 3 Then
+
+            current_string_value = Lexical_keywords_bnf.kw_indent_error
+
+        Else
+
+            current_string_value = Lexical_keywords_bnf.kw_space
+
+        End If
+
+    Else
+
+        current_string_value = ""
+
+        Select Case Left(input_string, 1)
+
+        Case """"
+
+            Do While Len(input_string) > 0
+
+                current_string_value = current_string_value & Left(input_string, 1)
+
+                input_string = Mid(input_string, 2)
+
+                Select Case Left(input_string, 1)
+
+                Case "\"
+
+                    If Not escape_mode Then
+
+                        escape_mode = True
+
+                    Else
+
+                        escape_mode = False
+
+                    End If
+
+                Case """"
+
+                    current_string_value = current_string_value & Left(input_string, 1)
+
+                    input_string = Mid(input_string, 2)
+
+                    If Not escape_mode Then Exit Do
+
+                    escape_mode = False
+
+                Case Else
+
+                    current_string_value = current_string_value & Left(input_string, 1)
+
+                    input_string = Mid(input_string, 2)
+
+                    escape_mode = False
+
+                End Select
+
+            Loop
+
+        Case "a" To "z", "A" To "Z", "_"
+
+            Do While Len(input_string) > 0
+
+                current_string_value = current_string_value & Left(input_string, 1)
+
+                input_string = Mid(input_string, 2)
+
+                Select Case Left(input_string, 1)
+
+                Case "a" To "z", "A" To "Z", "_", "0" To "9"
+
+                Case Else
+
+                    Exit Do
+
+                End Select
+
+            Loop
+
+        Case "0" To "9"
+
+            Do While Len(input_string) > 0
+
+                current_string_value = current_string_value & Left(input_string, 1)
+
+                input_string = Mid(input_string, 2)
+
+                Select Case Left(input_string, 1)
+
+                Case ".", "0" To "9"
+
+                Case Else
+
+                    Exit Do
+
+                End Select
+
+            Loop
+
+        Case Else
+
+            current_string_value = Left(input_string, 1)
+
+            input_string = Mid(input_string, 2)
+
+        End Select
+
+    End If
+
+    get_next_lexeme = current_string_value
+
+End Function
