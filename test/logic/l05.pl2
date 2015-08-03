@@ -1,0 +1,12 @@
+теоремы
+
+meta sourse="pl2"
+    context logical
+    {@
+        unit Theorem
+        {*  
+
+
+        *}
+    @}
+/meta

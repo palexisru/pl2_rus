@@ -1,0 +1,12 @@
+вывод формул
+
+meta sourse="pl2"
+    context logical
+    {@
+        unit Conclusion
+        {*  
+
+
+        *}
+    @}
+/meta
