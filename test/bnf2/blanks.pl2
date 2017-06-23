@@ -1,0 +1,47 @@
+source mode="bnf"
+    namespace Default
+    {@
+        unit Blanks /% пробельные символы программы %/
+        {*
+            public rule blank ::= blank_or_empty;
+
+            public rule blank_or_empty /% необязательный пробельный символ %/ 
+             ::= blank_list ^^ EMPTY;
+
+            rule blank_list ::= blank_item RECURSIVELY
+            {&
+            &}
+
+            blank_item ::= blank_characters ^^ comments;
+
+            comments ::= block_comment ^^ to_end_of_line_comment;
+
+            block_comment ::= block_comment_start .. block_comment_tail;
+
+            block_comment_start ::= "/*";
+
+            block_comment_tail ::= block_comment_body .. block_comment_end;
+
+            block_comment_end ::= "*/";
+
+            to_end_of_line_comment ::= to_end_of_line_comment_start .. to_end_of_line_comment_tail;
+
+            to_end_of_line_comment_start ::= "//";
+
+            to_end_of_line_comment_tail ::= block_comment_body .. to_end_of_line_comment_end;
+
+            to_end_of_line_comment_end ::= "\n";
+
+            blank_characters ::= space_char ^^ not_space_char;
+
+            space_char ::= " " ^^ "\t";
+
+            not_space_char ::= "\r";
+
+            block_comment_body ::= STRING_VALUE
+            {&
+            &}
+        *}
+    @}
+
+/source

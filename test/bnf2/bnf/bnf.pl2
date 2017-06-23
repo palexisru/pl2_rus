@@ -1,35 +1,13 @@
-описание синтаксиса грамматики компилятора компиляторов
-используются обработчики событий классов статических типов
-
-mode source="bnf" name="bnf_syntax_example"
-
-    context grammar.bnf \пространство имен компилятора компиляторов\
-    {@
-        unit Default \объединение для синтаксиса компиляторов \
-        (*  
-            rule main \ основной метод синтаксического анализатора \
-               ::= context_area_list ^ empty_context_area 
-            {&
-            &}
-
-            rule context_area_list \ синоним для анализатора контекста \
-               ::= grammar.bnf2.Context.context_area_list 
-            {&
-                grammar.bnf.parser.section.parse.end( main, context_area_list );
-            &}
-
-            rule empty_context_area ::= EMPTY
-            {&
-                grammar.bnf.parser.section.parse.end( main, empty );
-            &}
-
-            before() \ настройка перед обработкой блока \
-            {&
-            &}
-
-            after() \ завершение после исполнения блока \
-            {&
-            &}
-        *}
-    @}
-/mode
+source mode="project"
+    output bnf
+    {*
+        module start.pl2;
+        module spaces.pl2;
+        module units.pl2;
+        module rules.pl2;
+        module definition.pl2;
+        module identifier.pl2 
+        module words.pl2
+        module blanks.pl2;
+    *}
+/source

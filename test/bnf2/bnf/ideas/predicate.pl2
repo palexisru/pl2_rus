@@ -1,0 +1,49 @@
+predicate.pl2
+описание синтаксиса грамматики компилятора компиляторов
+раздел описания одного правила Predicate
+
+mode source="bnf" name="bnf_predicate_example"
+    context grammar.bnf2 \пространство имен компилятора компиляторов\
+    {@
+        unit Predicate \ описание предикатов \
+        {*  
+            predicate predicate_area_list \ список предикатов определений \ 
+               ::= predicate_rule_definition_list ^ predicate_rule_list_error
+            {&
+                grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
+            &}
+
+            predicate_rule_definition_list \ правильный список предикатов \
+               ::= predicate_rule_definition RECURSIVELY 
+            {&
+                grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
+            &}
+
+            predicate_rule_definition \ отдельный предикат \
+               ::= predicate_rule & predicate_body
+            {&
+                grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
+            &}
+
+            predicate predicate_rule_list_error \ ошибка приразборе предиката \
+               ::= ERROR
+            {&
+                grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
+            &}
+
+            predicate predicate_rule ::= grammar.bnf2.predicate.Rule.predicate_rule;
+
+            predicate predicate_body
+               ::= predicate_body_inner ^ ";"
+            {&
+                if ( predicate_body_inner != NULL )
+                {
+                    grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
+                }
+            &}
+
+            predicate predicate_body_inner
+               ::= grammar.bnf2.predicate.Body.predicate_body;
+       *}
+   @}
+/mode

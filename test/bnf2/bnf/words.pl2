@@ -1,0 +1,10 @@
+source mode="bnf"
+    namespace Default
+    {@
+        unit Words /% слова %/
+        {*
+
+        *}
+    @}
+
+/source

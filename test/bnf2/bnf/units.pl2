@@ -1,0 +1,30 @@
+source mode="bnf"
+    namespace Default
+    {@
+        unit Units
+        {*
+            rule units_list ::= units_list_item RECURSIVELY
+
+            rule units_list_item ::= unit_head .. unit_body;
+
+            rule units_head ::= unit_kw .. Words.identifier
+            {&
+            &}
+
+            unit_kw ::= "unit" BLANK;
+
+            rule unit_body ::= unit_start_brace .. unit_body_tail
+            {&
+            &}
+
+            rule unit_start_brace ::= "{*" .. INDENT;
+
+            rule unit_body_tail ::= unit_body .. unit_end_brace;
+
+            rule unit_end_brace ::= UNINDENT .. "*}";
+
+            rule unit_body ::= Rules.rules_list ^^ EMPTY;
+        *}
+
+    @}
+/source

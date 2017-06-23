@@ -1,0 +1,46 @@
+source mode="bnf"
+    namespace Default
+    {@
+        unit Words /% идентификаторы %/
+        {*
+            public rule complex_identifier /% сложный идентификатор с пространством имен %/ 
+             ::= complex_identifier_items complex_identifier_tail
+            {&
+
+            &}
+
+            public rule identifier /% одиночный идентификатор %/ 
+             ::= identifier_name .. possible_identifier_comment;
+
+            public rule identifier_name ::= IDENTIFIER
+            {&
+
+            &}
+
+            rule complex_identifier_tail /% продолжение записи идентификатора %/ 
+             ::= complex_identifier_tail_items ^^ EMPTY;
+
+            rule complex_identifier_tail_items ::= complex_identifier_with_dot RECURSIVELY
+            {&
+
+            &}
+
+            rule complex_identifier_with_dot ::= "." .. identifier
+            {&
+
+            &}
+
+            rule possible_identifier_comment ::= Defalut.Blanks.blank identifier_comment
+            {&
+
+            &}
+
+            identifier_comment ::= identifier_comment_start identifier_comment_tail;
+
+            identifier_comment_start ::= "/%";
+
+            identifier_comment_tail ::= STRING_VALUE "%/";
+        *}
+    @}
+
+/source

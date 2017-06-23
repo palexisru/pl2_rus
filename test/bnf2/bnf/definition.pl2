@@ -1,0 +1,48 @@
+source mode="bnf"
+    namespace Default.BNF.Rule
+    {@
+        unit Definition /% описание области определения правила %/
+        {*
+            public rule cases /% виды правой части правила %/ 
+             ::= empty ^^ not_empty;
+
+            rule empty ::= empty_string;
+
+            rule empty_string ::= "EMPTY";
+
+            rule not_empty ::= constant_start ^^ identifier_start;
+
+            rule string_constant ::= STRING
+            {&
+                parser.push($string_constant);
+            &}
+
+            rule constant_start ::= constant_start_string ^^ constant_start_unindent;
+
+            rule constant_start_unindent :: "UNINDENT" .. string_constant;
+
+            rule constant_start_string ::= constant_start_string_indent ^^ string_constant;
+
+            rule constant_start_string_indent ::= string_constant .. "INDENT";
+
+            rule identifier_start ::= Words.complex_identifier .. tail;
+
+            rule tail ::= recursively_string ^^ non_recursively;
+
+            rule recursively_string ::= "RECURSIVELY";
+
+            rule non_recursively ::= complex_tail;
+
+            rule complex_tail ::= concatenation_tail ^^ xor_tail;
+
+            rule concatenation_tail ::= ".." simple_tail;
+
+            rule xor_tail ::= "^^" simple_tail;
+
+            simple_tail ::= non_empty_tail ^^ empty;
+
+            non_empty_tail ::= string_constant ^^ Words.complex_identifier;
+        *}
+    @}
+
+/source

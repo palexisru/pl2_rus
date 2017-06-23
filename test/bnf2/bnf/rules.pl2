@@ -1,0 +1,42 @@
+source mode="bnf"
+    namespace Default
+    {@
+        unit Rules
+        {*
+            rule rules_list ::= rules_list_item RECURSIVELY;
+
+            rule rules_item ::= rule_head .. rule_body;
+
+            rule rule_head ::= rule_name .. rule_definition;
+
+            rule rule_name ::= rule_kw .. identifier
+            {&
+            &}
+
+            rule rule_kw ::= "rule" Defalult.Blanks.blank;
+
+            rule rule_definition ::= "::=" .. rule_definition_cases;
+
+            rule rule_definition_cases ::= Default.Rule.Definition.cases;
+
+            rule rule_body ::= rule_commands ^^ rule_empty_body
+            {&
+            &}
+
+            rule_empty_body ::= ";";
+
+            rule rule_commands ::= rule_start_brace .. rule_body_tail
+            {&
+            &}
+
+            rule rule_start_brace ::= "{&" .. INDENT;
+
+            rule rule_body_tail ::= rule_body rule_end_brace;
+
+            rule rule_end_brace ::= UNINDENT .. "&}";
+
+            rule rule_body ::= pl2_text ^^ EMPTY;
+        *}
+    @}
+
+/source

@@ -1,0 +1,10 @@
+source mode="bnf"
+    namespace Default
+    {@
+        unit Main
+        {*
+            public rule main ::= Spaces.name_space_list ^^ EMPTY;
+        *}
+    @}
+
+/source

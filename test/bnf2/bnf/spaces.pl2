@@ -1,0 +1,30 @@
+source mode="bnf"
+    namespace Default
+    {@
+        unit Spaces
+        {*
+            public rule name_space_list ::= name_space_list_item RECURSIVELY
+
+            rule name_space_list_item ::= name_space_head .. name_space_body;
+
+            rule name_space_head ::= namespace_kw .. Words.complex_identifier
+            {&
+            &}
+
+            rule namespace_kw ::= "namespace" BLANK;
+
+            rule name_space_body ::= name_space_start_brace .. name_space_body_tail
+            {&
+            &}
+
+            rule name_space_start_brace ::= "{@" .. INDENT;
+
+            rule name_space_body_tail ::= name_space_body .. name_space_end_brace;
+
+            rule name_space_end_brace ::= UNINDENT .. "@}";
+
+            rule name_space_body ::= Units.units_list ^^ EMPTY;
+        *}
+    @}
+
+/source

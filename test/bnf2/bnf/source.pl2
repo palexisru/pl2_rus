@@ -1,0 +1,52 @@
+source mode="bnf"
+    namespace Default
+    {@
+        unit Source
+        {*
+            public rule source_list ::= source_list_item RECURSIVELY;
+
+            rule source_list_item /% список фрагментов исходного кода %/ 
+             ::= source_head .. source_body;
+
+            rule source_head /% заголовок фрагмента исходного кода %/ 
+             ::= source_kw .. mode_name
+            {&
+            &}
+
+            mode_name ::= mode_id .. optional_name;
+
+            rule source_kw ::= "source" BLANK;
+
+            rule mode_id ::= mode_kw .. mode_name_string;
+
+            optional_name ::= source_name ^^ EMPTY;
+
+            mode_name_string ::= "=" .. mode_name_value;
+
+            mode_name_value ::= QUOTED_STRING
+            {&
+            &}
+
+            source_name ::= name_kw .. source_name_string;
+
+            name_kw ::= "name" BLANK;
+
+            source_name_string ::= "=" .. source_name_value;
+
+            source_name_value ::= QUOTED_STRING;
+
+            rule name_space_body ::= name_space_start_brace .. name_space_body_tail
+            {&
+            &}
+
+            rule name_space_start_brace ::=  INDENT;
+
+            rule name_space_body_tail ::= name_space_body .. name_space_end_brace;
+
+            rule name_space_end_brace ::= UNINDENT .. "/source";
+
+            rule name_space_body ::= name_space.name_space_list ^^ EMPTY;
+        *}
+    @}
+
+/source
