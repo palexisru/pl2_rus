@@ -10,9 +10,10 @@ namespace pl2.source.bnf.data.key_word
     /// </summary>
     public enum key_value
     {
-        key_predicate, // отделение имение правила от тела правила
+        key_predicate, // отделение имени правила от тела правила
         key_or, // выбор первого или второго правила тела
         key_and, // совокупность из первого и второго правила
+        key_concatenate, // последовательность из сообщений
 
         key_context_begin_brecket, // скобка, открывающая тело пространства имен
         key_context_end_brecket, // скобка, закрываюшая тело пространства имен
@@ -52,6 +53,7 @@ namespace pl2.source.bnf.data.key_word
 
             new key_word( "||", key_value.key_or ),
             new key_word( "&&", key_value.key_and ),
+            new key_word( "..", key_value.key_concatenate),
 
             new key_word( "{@", key_value.key_context_begin_brecket ),
             new key_word( "@}", key_value.key_context_end_brecket ),
@@ -64,12 +66,11 @@ namespace pl2.source.bnf.data.key_word
 
             new key_word( "context", key_value.key_context ),
             new key_word( "class", key_value.key_class ),
-            new key_word( "interfase", key_value.key_interface ),
+            new key_word( "interface", key_value.key_interface ),
             new key_word( "unit", key_value.key_unit ),
-            new key_word( "empty", key_value.key_empty ),
-            new key_word( "recursively", key_value.key_recursively ),
-            new key_word( "identifier", key_value.key_identifier )
+            new key_word( "EMPTY", key_value.key_empty ),
+            new key_word( "RECURSIVELY", key_value.key_recursively ),
+            new key_word( "IDENTIFIER", key_value.key_identifier )
         };
- 
     }
 }
