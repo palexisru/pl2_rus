@@ -1,17 +1,17 @@
 source mode="bnf"
-    namespace Default
+    context Grammar
     {@
         unit Spaces
         {*
-            public rule name_space_list ::= name_space_list_item RECURSIVELY
+            public rule name_space_list ::= name_space_list_item RECURSIVELY;
 
             rule name_space_list_item ::= name_space_head .. name_space_body;
 
-            rule name_space_head ::= namespace_kw .. Words.complex_identifier
+            rule name_space_head ::= context_kw .. Words.complex_identifier
             {&
             &}
 
-            rule namespace_kw ::= "namespace" BLANK;
+            rule context_kw ::= "context" .. BLANK;
 
             rule name_space_body ::= name_space_start_brace .. name_space_body_tail
             {&

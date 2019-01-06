@@ -25,7 +25,7 @@ mode source="bnf" name="bnf_predicate_example"
                 grammar.bnf.parser.predicate.definition.no_errors( $0 ); 
             &}
 
-            predicate predicate_rule_list_error \ ошибка приразборе предиката \
+            predicate predicate_rule_list_error \ ошибка при разборе предиката \
                ::= ERROR
             {&
                 grammar.bnf.parser.predicate.definition.no_errors( $0 ); 

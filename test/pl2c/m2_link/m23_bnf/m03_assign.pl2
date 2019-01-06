@@ -1,7 +1,7 @@
-meta source="bnf"
-    namespace pl2.value.assign
+source meta="bnf"
+    context pl2.value.assign
     {@
 
     @}
     
-/meta
+/source

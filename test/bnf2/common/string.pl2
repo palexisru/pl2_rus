@@ -1,0 +1,7 @@
+Описание строк
+
+source mode="pl2"
+    context Grammar.Strings
+    {@
+    @}
+/source

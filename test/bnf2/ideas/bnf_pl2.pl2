@@ -7,9 +7,9 @@ mode source="bnf" name="bnf_syntax_example"
     {@
          unit definition_list
          {* 
-             context_body_start ::= namespace_left_brecket & predicate_list
+             context_body_start ::= context_left_brecket & predicate_list
              {&
-                 grammar.bnf.parser.namespace.body.no_errors( $0 );
+                 grammar.bnf.parser.context.body.no_errors( $0 );
              &}
 
              predicate_list ::= one_predicate RECURSIVELY

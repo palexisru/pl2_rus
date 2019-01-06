@@ -1,0 +1,14 @@
+source mode="project"
+    output parser
+    {*
+        library bnf\bnf.pl2
+        module start.pl2;
+        module spaces.pl2;
+        module units.pl2;
+        module rules.pl2;
+        module definition.pl2;
+        module identifier.pl2 
+        module words.pl2
+        module blanks.pl2;
+    *}
+/source

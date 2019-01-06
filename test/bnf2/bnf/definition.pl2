@@ -1,5 +1,5 @@
 source mode="bnf"
-    namespace Default.BNF.Rule
+    context Default.BNF.Rule
     {@
         unit Definition /% описание области определения правила %/
         {*

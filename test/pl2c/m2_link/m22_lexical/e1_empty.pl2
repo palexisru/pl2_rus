@@ -1,6 +1,6 @@
-meta source="lex"
-    namespace pl2.lexical.pl2
+source meta="lex"
+    context pl2.lexical.pl2
     {@
 
     @}
-/meta
+/source

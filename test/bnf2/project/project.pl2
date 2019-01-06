@@ -1,0 +1,60 @@
+source mode="pl2"
+    source mode="bnf"
+        context Default
+        {@
+            unit Projects
+            {*
+                rule project_list ::= projects_list_item RECURSIVELY;
+
+                rule projects_list_item ::= project_head .. project_body;
+
+                rule projects_head ::= output_kw .. Words.identifier
+                {&
+                &}
+
+                output_kw ::= "output" .. Defalult.Blanks.blank;
+
+                rule project_body ::= project_start_brace .. project_body_tail
+                {&
+                &}
+
+                rule project_start_brace ::= "{*" .. INDENT;
+
+                rule project_body_tail ::= project_body .. project_end_brace;
+
+                rule project_end_brace ::= UNINDENT .. "*}";
+
+                rule project_body ::= project_items_list ^^ EMPTY;
+
+                rule project_items_list ::= project_item RECURSIVELY;
+ 
+                rule project_item ::= project_item_library ^^ project_item_module;
+
+                rule project_item_library ::= library_kw .. file_name;
+
+                rule library_kw ::= "library";
+
+                rule project_item_module ::= module_kw .. file_name;
+
+                rule module_kw ::= "module";
+
+                rule file_name ::= 
+            *}
+
+        @}
+    /source    
+    output parser
+    {*
+        library bnf\bnf.pl2
+        library common\common.pl2
+
+        module start.pl2;
+        module spaces.pl2;
+        module units.pl2;
+        module rules.pl2;
+        module definition.pl2;
+        module identifier.pl2 
+        module words.pl2
+        module blanks.pl2;
+    *}
+/source

@@ -1,9 +1,9 @@
 source mode="bnf"
-    namespace Default
+    context Default
     {@
         unit Units
         {*
-            rule units_list ::= units_list_item RECURSIVELY
+            rule units_list ::= units_list_item RECURSIVELY;
 
             rule units_list_item ::= unit_head .. unit_body;
 
@@ -11,7 +11,7 @@ source mode="bnf"
             {&
             &}
 
-            unit_kw ::= "unit" BLANK;
+            unit_kw ::= "unit" .. Defalult.Blanks.blank;
 
             rule unit_body ::= unit_start_brace .. unit_body_tail
             {&

@@ -5,10 +5,10 @@ e1_empty.pl2
 Исходный код программы на pl2 начинается с новой строки.
 Началом кода является строка, содержащая с первой позиции ключевые слова 
 
-   meta source="pl2"
+   source meta="pl2"
 
 Заканчивается код строкой 
-   /meta.
+   /source.
 Текст, предшествующий строке meta является комментарием
 
 Для тега meta возможны следующие аттрибуты:
@@ -30,8 +30,8 @@ e1_empty.pl2
 - продолжение сохраняет уровень первой строки контекста 
 
 
-meta source="pl2" name="example_0_6"
-    namespace example
+source meta="pl2" name="example_0_6"
+    context example
     {@
         class example
         {*
@@ -40,6 +40,6 @@ meta source="pl2" name="example_0_6"
             &}
         *}
     @}
-/meta
+/source
 
  *** e6_empty.pl2 ***

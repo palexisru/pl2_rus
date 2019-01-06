@@ -1,0 +1,9 @@
+source mode="project"
+    library common
+    {*
+        module source.pl2
+        module blanks.pl2
+        module string.pl2
+        module identifier.pl2
+    *}
+/source

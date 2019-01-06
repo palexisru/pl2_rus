@@ -1,8 +1,8 @@
 
 
-meta source="scene" name="example"
+source meta="scene" name="example"
     User.Scene test_scene
-    {
+    {*
         Universal.Way to_options
         {
             
@@ -11,5 +11,5 @@ meta source="scene" name="example"
         {
             menu 
         }
-    } 
-/meta
+    *} 
+/source

@@ -1,70 +1,72 @@
 
 
-meta source="form" name="example"
-namespace pl2.test.options
-    User.Window examle_window
-    {*
-        .tytle := "Новое окно";
-        .tag := "window.example";
-        environment := Environment.Dialog;
-  
-        Region.Menu menu
-        {   
-           dock := Dock.Top;
-           
-        }
- 
-        Region.Tool tools
-        {   
-           dock := Dock.Top;
-        }
+source meta="form" name="example"
+    common pl2.test.options
+    {@
+        User.Window examle_window
+        {*
+            .tytle := "Новое окно";
+            .tag := "window.example";
+            environment := Environment.Dialog;
+      
+            Region.Menu menu
+            {   
+               dock := Dock.Top;
+               
+            }
+     
+            Region.Tool tools
+            {   
+               dock := Dock.Top;
+            }
 
-        Region.Book setup
-        {   
-            dock := Dock.Top;
-            Book.Page options
-            {
-                .tytle := "Настройки";
-                .tag := "setup.options";
-                Controls.Group main
+            Region.Book setup
+            {   
+                dock := Dock.Top;
+                Book.Page options
                 {
-                    tytle := "Основные настройки";
-                    Controls.Label "";
-                    Contols.Check is_
- 
+                    .tytle := "Настройки";
+                    .tag := "setup.options";
+                    Controls.Group main
+                    {
+                        tytle := "Основные настройки";
+                        Controls.Label "";
+                        Contols.Check is_
+     
+                    }
+                }
+
+                Book.Page debug
+                {
+                    .tytle := "Отладчик";
+                    .tag := "setup.debug"
                 }
             }
 
-            Book.Page debug
+            Region.Status state
             {
-                .tytle := "Отладчик";
-                .tag := "setup.debug"
+                .dock := Dock.Bottom;
+                .default := "Готово";
             }
-        }
 
-        Region.Status state
-        {
-            .dock := Dock.Bottom;
-            .default := "Готово";
-        }
-
-        Region.Table table;
-        {
-            dock := Dock.Bottom;
-            rows := 5;
-            columns := 3;
-            columns.span(4,5)
-            cells(4,1).
+            Region.Table table;
             {
-                colspan
+                dock := Dock.Bottom;
+                rows := 5;
+                columns := 3;
+                columns.span(4,5)
+                cells(4,1).
+                {
+                    colspan
+                }
             }
-        }
 
-        Region.Flow flow
-        {
-            dock := Fill;
-            
-        }
+            Region.Flow flow
+            {
+                dock := Fill;
+                
+            }
 
-    *}
-/meta
+        *}
+    @}
+/source

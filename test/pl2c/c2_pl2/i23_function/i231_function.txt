@@ -1,6 +1,0 @@
-meta source="pl2" name="function"
-    namespace=pl2.syntax.function.
-    {@
-        d
-    @}
-/meta

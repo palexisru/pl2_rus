@@ -1,0 +1,11 @@
+source mode="bnf"
+    import Grammar;
+    context Default
+    {@
+        unit Main
+        {*
+            public rule main ::= Grammar.Contexts.context_list ^^ EMPTY;
+        *}
+    @}
+
+/source

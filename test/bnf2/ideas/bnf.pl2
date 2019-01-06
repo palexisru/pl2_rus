@@ -3,16 +3,16 @@
 
 mode source="bnf" name="bnf_syntax_example"
 
-    context grammar.bnf \пространство имен компилятора компиляторов\
+    context grammar.bnf /% пространство имен компилятора компиляторов %/
     {@
-        unit Default \объединение для синтаксиса компиляторов \
+        unit Default /% объединение для синтаксиса компиляторов %/
         (*  
-            rule main \ основной метод синтаксического анализатора \
+            rule main /% основной метод синтаксического анализатора %/
                ::= context_area_list ^ empty_context_area 
             {&
             &}
 
-            rule context_area_list \ синоним для анализатора контекста \
+            rule context_area_list /% синоним для анализатора контекста %/
                ::= grammar.bnf2.Context.context_area_list 
             {&
                 grammar.bnf.parser.section.parse.end( main, context_area_list );
@@ -23,11 +23,11 @@ mode source="bnf" name="bnf_syntax_example"
                 grammar.bnf.parser.section.parse.end( main, empty );
             &}
 
-            before() \ настройка перед обработкой блока \
+            before() /% настройка перед обработкой блока %/
             {&
             &}
 
-            after() \ завершение после исполнения блока \
+            after() /% завершение после исполнения блока %/
             {&
             &}
         *}

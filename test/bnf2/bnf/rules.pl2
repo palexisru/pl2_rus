@@ -1,5 +1,5 @@
 source mode="bnf"
-    namespace Default
+    context Default
     {@
         unit Rules
         {*
@@ -13,7 +13,7 @@ source mode="bnf"
             {&
             &}
 
-            rule rule_kw ::= "rule" Defalult.Blanks.blank;
+            rule rule_kw ::= "rule" .. Defalult.Blanks.blank;
 
             rule rule_definition ::= "::=" .. rule_definition_cases;
 

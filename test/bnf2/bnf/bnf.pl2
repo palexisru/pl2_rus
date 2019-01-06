@@ -1,5 +1,5 @@
 source mode="project"
-    output bnf
+    library bnf
     {*
         module start.pl2;
         module spaces.pl2;

@@ -1,7 +1,7 @@
 
 
-meta source="form" name="example"
-    namespace pl2.test.options
+source meta="form" name="example"
+    context pl2.test.options
     {@
         User.Form.Controls.Group test_level
         {*
@@ -15,4 +15,4 @@ meta source="form" name="example"
             } 
         *}
     @}
-/meta
+/source

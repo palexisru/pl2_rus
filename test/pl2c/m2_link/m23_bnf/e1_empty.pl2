@@ -1,6 +1,6 @@
-meta source="bnf"
-    namespace pl2.value.assinable
+source meta="bnf"
+    context pl2.value.assinable
     {@
     @}
     
-/meta
+/source

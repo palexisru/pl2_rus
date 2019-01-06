@@ -13,29 +13,29 @@ e5_hallo.pl2
 им€ класса исходного файла отличаетс€ от типичных имен классов тем, 
 что имена классов PL2 начинаютс€ с прописной буквы
 
-meta source="text" name="example_5_text"
+source meta="text" name="example_5_text"
 ѕример выводимого текста:
 «дравствуй, мир!
-/meta
+/source
  
 текст программы:
 
-meta source="pl2" name="example5"
-    using numbers;
-    using user.OS.IO;
-    namespace start
+source meta="pl2" name="example5"
+    import numbers;
+    import user.OS.IO;
+    context start
     {@
-        class Example5 \ п€тый пример начального уровн€ \
+        class Example5 /% п€тый пример начального уровн€ %/
         {*
             String example_text := source["example_5_text"].text; // получаем строку исходников в переменную
 
-            static void main \ основна€ функци€ исполнени€ третьего примера начального уровн€ \
-               ( String aruments \ одномерный массив строк после имени исполн€емого файла при запуске программы \
+            static void main /% основна€ функци€ исполнени€ третьего примера начального уровн€ %/
+               ( String aruments /% одномерный массив строк после имени исполн€емого файла при запуске программы %/
                            []
                )
             {&
-                local numbers.Integer counter \ индексатор дл€ перечислени€ параметров \;
-                local numbers.Integer parameters_count \ количество переданных параметров при вызове исполн€емого файла \;
+                local numbers.Integer counter /% индексатор дл€ перечислени€ параметров %/;
+                local numbers.Integer parameters_count /% количество переданных параметров при вызове исполн€емого файла %/;
                 parameters_count := arguments.lenght();
                 Console.write_line(example_text);
                 if (parameters_count > 0)
@@ -51,6 +51,6 @@ meta source="pl2" name="example5"
         *}
     @}
 
-/meta
+/source
 
  *** e5_hallo.pl2 ***

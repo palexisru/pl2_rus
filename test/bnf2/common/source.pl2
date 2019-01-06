@@ -1,5 +1,5 @@
 source mode="bnf"
-    namespace Default
+    context Default
     {@
         unit Source
         {*
