@@ -1,0 +1,85 @@
+source mode="bnf"
+    context Default
+    {@
+        unit Words /% èäåíòèôèêàòîðû %/
+        {*
+            public rule complex_identifier /% ñëîæíûé èäåíòèôèêàòîð ñ ïðîñòðàíñòâîì èìåí %/ 
+             ::= complex_identifier_items complex_identifier_tail
+            {&
+
+            &}
+
+            public rule identifier /% îäèíî÷íûé èäåíòèôèêàòîð %/ 
+             ::= identifier_name .. possible_identifier_comment;
+
+            public rule identifier_name ::= IDENTIFIER
+            {&
+
+            &}
+
+            rule complex_identifier_tail /% ïðîäîëæåíèå çàïèñè èäåíòèôèêàòîðà %/ 
+             ::= complex_identifier_tail_items ^^ EMPTY;
+
+            rule complex_identifier_tail_items ::= complex_identifier_with_dot RECURSIVELY
+            {&
+
+            &}
+
+            rule complex_identifier_with_dot ::= "." .. identifier
+            {&
+
+            &}
+
+            rule possible_identifier_comment ::= Defalut.Blanks.blank identifier_comment
+            {&
+
+            &}
+
+            identifier_comment ::= identifier_comment_start identifier_comment_tail;
+
+            identifier_comment_start ::= "/%";
+
+            identifier_comment_tail ::= STRING_VALUE "%/";
+            identifier_comment ::= identifier_comment_start identifier_comment_tail;
+
+            identifier_comment_start ::= "/%";
+
+            identifier_comment_tail ::= identifier_comment_body .."%/";
+
+            identifier_comment_body ::= identifier_image identifier_meagure_and_description;
+
+            identifier_image ::= STRING_VALUE ^^ EMPTY;
+
+            identifier_meagure_and_description ::= identifier_meagure .. identifier_description;
+
+            identifier_description ::= STRING_VALUE ^^ EMPTY;
+
+            identifier_meagure ::= identifier_meagure_start identifier_meagure_tail;
+
+            identifier_meagure_start ::= "[";
+
+            identifier_meagure_tail ::= identifier_meagure_body .. "]";
+
+            identifier_meagure_body ::= identifier_meagure_si_clause .. identifier_meagure_local;
+
+            identifier_meagure_si_clause ::= identifier_meagure_si_not_empty ^^ EMPTY;
+
+            identifier_meagure_si_not_empty ::= identifier_meagure_si .. ":";
+
+            identifier_meagure_si ::= identifier_meagure_si_numerator identifier_meagure_si_denominator_clause;
+
+            identifier_meagure_si_numerator ::= identifier_meagure_si_sequence;
+
+            identifier_meagure_si_denominator_clause :: "/" .. identifier_meagure_si_sequence;
+
+            identifier_meagure_si_sequence ::= identifier_meagure_si_letters ^^ EMPTY;
+
+            identifier_meagure_si_letters ::= identifier_meagure_si_letter RECURSIVELY;
+
+            identifier_meagure_si_letter ::= "T" || "L" || "M" || "I" || "K" || "J" || "N";
+
+            identifier_meagure_local ::= STRING_VALUE ^^ EMPTY;
+        *}
+    @}
+
+/source

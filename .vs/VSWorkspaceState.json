@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\test\\pl2cc\\v01",
+    "\\test\\pl2cc\\v01\\pl2",
+    "\\v01\\Data\\Data",
+    "\\v01\\machine",
+    "\\v01\\pl2",
+    "\\v01\\pl2c",
+    "\\v01\\pl2cc"
   ],
-  "SelectedNode": "\\Turing.sln (v01\\pl2\\Turing\\Turing.sln)",
+  "SelectedNode": "\\pl2.html",
   "PreviewInSolutionExplorer": false
 }
