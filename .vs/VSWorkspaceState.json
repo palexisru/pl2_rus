@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\v01",
-    "\\v01\\pl2cc\\pl2cc"
+    "\\v01\\pl2cc",
+    "\\v01\\pl2lex"
   ],
-  "SelectedNode": "\\v01\\pl2cc",
+  "SelectedNode": "\\v01\\pl2cc\\pl2cc.sln",
   "PreviewInSolutionExplorer": false
 }
