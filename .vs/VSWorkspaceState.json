@@ -1,14 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\test\\pl2cc\\v01",
-    "\\test\\pl2cc\\v01\\pl2",
-    "\\v01\\Data\\Data",
-    "\\v01\\machine",
-    "\\v01\\pl2",
-    "\\v01\\pl2c",
-    "\\v01\\pl2cc"
+    "\\v01",
+    "\\v01\\pl2cc\\pl2cc"
   ],
-  "SelectedNode": "\\pl2.html",
+  "SelectedNode": "\\v01\\pl2cc",
   "PreviewInSolutionExplorer": false
 }
