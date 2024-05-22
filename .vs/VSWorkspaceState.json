@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\v01",
+    "\\v01\\pl2c",
     "\\v01\\pl2cr",
     "\\v01\\pl2cr\\forms",
     "\\v01\\pl2ide"
   ],
-  "SelectedNode": "\\v01\\pl2cr\\pl2cr.sln",
+  "SelectedNode": "\\v01\\pl2c\\user_story_map.html",
   "PreviewInSolutionExplorer": false
 }
