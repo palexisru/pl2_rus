@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle( "pl2_" )]
+[assembly: AssemblyTitle("pl2_ide")]
 [assembly: AssemblyDescription( "" )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "" )]
-[assembly: AssemblyProduct( "pl2_" )]
-[assembly: AssemblyCopyright( "Copyright ©  2014" )]
+[assembly: AssemblyProduct("pl2_ide")]
+[assembly: AssemblyCopyright("Copyright © Alexey Podorov  2014 - 2024")]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 

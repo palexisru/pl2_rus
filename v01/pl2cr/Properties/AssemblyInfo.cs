@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Российская Федерация")]
 [assembly: AssemblyProduct("Интернациональная версия")]
-[assembly: AssemblyCopyright("(L) Алексей Подоров 2024")]
+[assembly: AssemblyCopyright("Copyright © Alexey Podorov Алексей Подоров 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
